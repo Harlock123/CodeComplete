@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CF9D735-94DE-4D0C-B8AB-6F5E973906A2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TAICodeComplete</RootNamespace>
+    <AssemblyName>TAICodeComplete</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SupportDLLs\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ScintillaNET">
+      <HintPath>ScintellaSupportStuff\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TAIGridControl2, Version=1.0.0.22, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SupportDLLs\TAIGridControl2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsTBLMEMBERMAIN.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="frmFieldSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFieldSelect.Designer.cs">
+      <DependentUpon>frmFieldSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectLookupFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectLookupFields.Designer.cs">
+      <DependentUpon>frmSelectLookupFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTblLookupUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTblLookupUI.Designer.cs">
+      <DependentUpon>frmTblLookupUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SourceFormat.cs" />
+    <Compile Include="tblDocDefTemplateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tblDocDefTemplateUI.Designer.cs">
+      <DependentUpon>tblDocDefTemplateUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmFieldSelect.resx">
+      <DependentUpon>frmFieldSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectLookupFields.resx">
+      <DependentUpon>frmSelectLookupFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTblLookupUI.resx">
+      <DependentUpon>frmTblLookupUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="tblDocDefTemplateUI.resx">
+      <DependentUpon>tblDocDefTemplateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\JS\images\ui-icons_444444_256x240.png" />
+    <Content Include="bin\Debug\JS\images\ui-icons_555555_256x240.png" />
+    <Content Include="bin\Debug\JS\images\ui-icons_777620_256x240.png" />
+    <Content Include="bin\Debug\JS\images\ui-icons_777777_256x240.png" />
+    <Content Include="bin\Debug\JS\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="bin\Debug\JS\images\ui-icons_ffffff_256x240.png" />
+    <None Include="bin\Debug\JS\jquery-1.12.0.min.js" />
+    <None Include="bin\Debug\JS\jquery-ui.min.css" />
+    <None Include="bin\Debug\JS\jquery-ui.min.js" />
+    <None Include="bin\Debug\JS\jquery-ui.structure.min.css" />
+    <None Include="bin\Debug\JS\jquery-ui.theme.min.css" />
+    <None Include="bin\Debug\JS\w2ui-1.4.3.min.css" />
+    <None Include="bin\Debug\JS\w2ui-1.4.3.min.js" />
+    <Content Include="SupportDLLs\Microsoft.VisualBasic.PowerPacks.Vs.dll" />
+    <Content Include="SupportDLLs\TAIGridControl2.dll" />
+    <Content Include="SupportDLLs\TAIGridControl2.pdb" />
+    <Content Include="SupportDLLs\TAIGridControl2.xml" />
+    <EmbeddedResource Include="Images\ArrowDOWN.png" />
+    <EmbeddedResource Include="Images\ArrowLEFT.png" />
+    <EmbeddedResource Include="Images\ArrowRIGHT.png" />
+    <EmbeddedResource Include="Images\ArrowUP.png" />
+    <Content Include="ScintellaSupportStuff\License.txt" />
+    <Content Include="ScintellaSupportStuff\ReadMe.htm" />
+    <None Include="ScintellaSupportStuff\ScintillaNET.pdb" />
+    <None Include="ScintellaSupportStuff\ScintillaNET.xml" />
+    <None Include="ScintellaSupportStuff\ScintillaNET.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
