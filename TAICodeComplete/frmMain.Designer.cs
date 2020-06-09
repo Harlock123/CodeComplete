@@ -45,6 +45,7 @@
             this.txtPASSWORD = new System.Windows.Forms.TextBox();
             this.txtUSER = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkGenerateInsertStatements = new System.Windows.Forms.CheckBox();
             this.chkDOJAVASCRIPTUI = new System.Windows.Forms.CheckBox();
             this.chkXAMLFromOrUserControl = new System.Windows.Forms.CheckBox();
             this.chkPostProcessWSresultlist = new System.Windows.Forms.CheckBox();
@@ -135,7 +136,6 @@
             this.chkSQLLineNumber = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.chkGenerateInsertStatements = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -229,7 +229,7 @@
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1007, 633);
+            this.tabControl1.Size = new System.Drawing.Size(1133, 633);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
@@ -322,6 +322,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 116);
             this.panel1.TabIndex = 11;
+            // 
+            // chkGenerateInsertStatements
+            // 
+            this.chkGenerateInsertStatements.AutoSize = true;
+            this.chkGenerateInsertStatements.Location = new System.Drawing.Point(166, 91);
+            this.chkGenerateInsertStatements.Name = "chkGenerateInsertStatements";
+            this.chkGenerateInsertStatements.Size = new System.Drawing.Size(155, 17);
+            this.chkGenerateInsertStatements.TabIndex = 18;
+            this.chkGenerateInsertStatements.Text = "Generate Insert Statements";
+            this.chkGenerateInsertStatements.UseVisualStyleBackColor = true;
             // 
             // chkDOJAVASCRIPTUI
             // 
@@ -717,7 +727,7 @@
             this.tabPage9.Controls.Add(this.chkRestLineNumbers);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(999, 607);
+            this.tabPage9.Size = new System.Drawing.Size(1125, 607);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "REST";
             // 
@@ -730,13 +740,13 @@
             this.scintillaRestCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaRestCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaRestCode.Name = "scintillaRestCode";
-            this.scintillaRestCode.Size = new System.Drawing.Size(987, 573);
+            this.scintillaRestCode.Size = new System.Drawing.Size(1113, 573);
             this.scintillaRestCode.TabIndex = 11;
             // 
             // btnRestSaveToFile
             // 
             this.btnRestSaveToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestSaveToFile.Location = new System.Drawing.Point(919, 4);
+            this.btnRestSaveToFile.Location = new System.Drawing.Point(1045, 4);
             this.btnRestSaveToFile.Name = "btnRestSaveToFile";
             this.btnRestSaveToFile.Size = new System.Drawing.Size(75, 23);
             this.btnRestSaveToFile.TabIndex = 10;
@@ -778,14 +788,14 @@
             this.tabPage11.Controls.Add(this.chkHTMLLineNumbers);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(999, 607);
+            this.tabPage11.Size = new System.Drawing.Size(1125, 607);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "HTML";
             // 
             // btnFiddleIt
             // 
             this.btnFiddleIt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiddleIt.Location = new System.Drawing.Point(838, 4);
+            this.btnFiddleIt.Location = new System.Drawing.Point(964, 4);
             this.btnFiddleIt.Name = "btnFiddleIt";
             this.btnFiddleIt.Size = new System.Drawing.Size(75, 23);
             this.btnFiddleIt.TabIndex = 16;
@@ -802,13 +812,13 @@
             this.scintillaHTMLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaHTMLCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaHTMLCode.Name = "scintillaHTMLCode";
-            this.scintillaHTMLCode.Size = new System.Drawing.Size(987, 573);
+            this.scintillaHTMLCode.Size = new System.Drawing.Size(1113, 573);
             this.scintillaHTMLCode.TabIndex = 15;
             // 
             // btnSaveHTML
             // 
             this.btnSaveHTML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveHTML.Location = new System.Drawing.Point(919, 4);
+            this.btnSaveHTML.Location = new System.Drawing.Point(1045, 4);
             this.btnSaveHTML.Name = "btnSaveHTML";
             this.btnSaveHTML.Size = new System.Drawing.Size(75, 23);
             this.btnSaveHTML.TabIndex = 14;
@@ -849,7 +859,7 @@
             this.tabPage12.Controls.Add(this.chkCSSLineNumbers);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(999, 607);
+            this.tabPage12.Size = new System.Drawing.Size(1125, 607);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "CSS";
             // 
@@ -862,13 +872,13 @@
             this.scintillaCSSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaCSSCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaCSSCode.Name = "scintillaCSSCode";
-            this.scintillaCSSCode.Size = new System.Drawing.Size(987, 573);
+            this.scintillaCSSCode.Size = new System.Drawing.Size(1113, 573);
             this.scintillaCSSCode.TabIndex = 19;
             // 
             // btnsaveCSS
             // 
             this.btnsaveCSS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsaveCSS.Location = new System.Drawing.Point(919, 4);
+            this.btnsaveCSS.Location = new System.Drawing.Point(1045, 4);
             this.btnsaveCSS.Name = "btnsaveCSS";
             this.btnsaveCSS.Size = new System.Drawing.Size(75, 23);
             this.btnsaveCSS.TabIndex = 18;
@@ -909,7 +919,7 @@
             this.tabPage4.Controls.Add(this.chkLineNumbersXAML);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(999, 607);
+            this.tabPage4.Size = new System.Drawing.Size(1125, 607);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "XAML";
             // 
@@ -921,13 +931,13 @@
             this.scintillaXAML.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaXAML.Location = new System.Drawing.Point(7, 30);
             this.scintillaXAML.Name = "scintillaXAML";
-            this.scintillaXAML.Size = new System.Drawing.Size(984, 572);
+            this.scintillaXAML.Size = new System.Drawing.Size(1110, 572);
             this.scintillaXAML.TabIndex = 12;
             // 
             // btnSaveXaml
             // 
             this.btnSaveXaml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveXaml.Location = new System.Drawing.Point(916, 4);
+            this.btnSaveXaml.Location = new System.Drawing.Point(1042, 4);
             this.btnSaveXaml.Name = "btnSaveXaml";
             this.btnSaveXaml.Size = new System.Drawing.Size(75, 23);
             this.btnSaveXaml.TabIndex = 11;
@@ -1225,7 +1235,7 @@
             this.tabPage7.Controls.Add(this.cmboDATABASEFORLOOKUPS);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(999, 607);
+            this.tabPage7.Size = new System.Drawing.Size(1125, 607);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Doc Def Lookup Mgmt.";
             // 
@@ -1252,7 +1262,7 @@
             // btnDeactivateSelectedLookup
             // 
             this.btnDeactivateSelectedLookup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeactivateSelectedLookup.Location = new System.Drawing.Point(666, 3);
+            this.btnDeactivateSelectedLookup.Location = new System.Drawing.Point(792, 3);
             this.btnDeactivateSelectedLookup.Name = "btnDeactivateSelectedLookup";
             this.btnDeactivateSelectedLookup.Size = new System.Drawing.Size(104, 69);
             this.btnDeactivateSelectedLookup.TabIndex = 13;
@@ -1263,7 +1273,7 @@
             // btnRemoveSelectedLookup
             // 
             this.btnRemoveSelectedLookup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveSelectedLookup.Location = new System.Drawing.Point(776, 3);
+            this.btnRemoveSelectedLookup.Location = new System.Drawing.Point(902, 3);
             this.btnRemoveSelectedLookup.Name = "btnRemoveSelectedLookup";
             this.btnRemoveSelectedLookup.Size = new System.Drawing.Size(104, 69);
             this.btnRemoveSelectedLookup.TabIndex = 12;
@@ -1274,7 +1284,7 @@
             // btnAddNewLookup
             // 
             this.btnAddNewLookup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewLookup.Location = new System.Drawing.Point(886, 3);
+            this.btnAddNewLookup.Location = new System.Drawing.Point(1012, 3);
             this.btnAddNewLookup.Name = "btnAddNewLookup";
             this.btnAddNewLookup.Size = new System.Drawing.Size(104, 69);
             this.btnAddNewLookup.TabIndex = 11;
@@ -1337,7 +1347,7 @@
             this.taigLookupListGrid.SelectedRowBackColor = System.Drawing.Color.Blue;
             this.taigLookupListGrid.SelectedRowForeColor = System.Drawing.Color.White;
             this.taigLookupListGrid.SelectedRows = ((System.Collections.ArrayList)(resources.GetObject("taigLookupListGrid.SelectedRows")));
-            this.taigLookupListGrid.Size = new System.Drawing.Size(985, 524);
+            this.taigLookupListGrid.Size = new System.Drawing.Size(1111, 524);
             this.taigLookupListGrid.TabIndex = 10;
             this.taigLookupListGrid.TitleBackColor = System.Drawing.Color.Blue;
             this.taigLookupListGrid.TitleFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1455,21 +1465,11 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // chkGenerateInsertStatements
-            // 
-            this.chkGenerateInsertStatements.AutoSize = true;
-            this.chkGenerateInsertStatements.Location = new System.Drawing.Point(166, 91);
-            this.chkGenerateInsertStatements.Name = "chkGenerateInsertStatements";
-            this.chkGenerateInsertStatements.Size = new System.Drawing.Size(155, 17);
-            this.chkGenerateInsertStatements.TabIndex = 18;
-            this.chkGenerateInsertStatements.Text = "Generate Insert Statements";
-            this.chkGenerateInsertStatements.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 641);
+            this.ClientSize = new System.Drawing.Size(1136, 641);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMain";
             this.Text = "TAI Code Complete (automated code generator and support Toolset)";

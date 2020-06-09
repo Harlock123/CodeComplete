@@ -41,6 +41,13 @@ namespace TAICodeComplete
 
             //LocateSqlInstances();
 
+
+            // Remove the DOCDEF stuff
+
+            tabControl1.TabPages.Remove(tabPage6);
+            tabControl1.TabPages.Remove(tabPage7);
+
+
             // Setup Scintillas
 
             // Configuring the default style with properties
