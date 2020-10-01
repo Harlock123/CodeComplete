@@ -884,7 +884,6 @@ namespace TAICodeComplete
 
         #endregion
 
-
         #region UI Stuff
 
         private string GenerateDSN()
@@ -895,10 +894,20 @@ namespace TAICodeComplete
 
             if (cmboServers.SelectedItem == null)
             {
-                if (cmboDatabases.SelectedItem == null)
-                    result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=MASTER;";
+                if (txtUSER.Text.Trim() == "")
+                {
+                    if (cmboDatabases.SelectedItem == null)
+                        result = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
+                    else
+                        result = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
+                }
                 else
-                    result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
+                {
+                    if (cmboDatabases.SelectedItem == null)
+                        result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=MASTER;";
+                    else
+                        result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
+                }
             }
             else
             {
@@ -1767,7 +1776,6 @@ namespace TAICodeComplete
                 MessageBox.Show("Generate some code first");
             }
         }
-
 
         private void chkBaseTableTSLineNumbers_CheckedChanged(object sender, EventArgs e)
         {
@@ -4075,13 +4083,13 @@ namespace TAICodeComplete
 
                 if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
                 {
-                    s += "if (thing." + f.FieldNameConverted + " != convert.ToDateTime(null))\n";
+                    s += "if (thing." + f.FieldNameConverted + " != Convert.ToDateTime(null))\n";
                     s += "{\n";
-                    s += " dtp." + f.FieldNameConverted + ".Value = thing." + f.FieldNameConverted + ";\n";
+                    s += " dtp" + f.FieldNameConverted + ".Value = thing." + f.FieldNameConverted + ";\n";
                     s += "}\n";
                     s += "else\n";
                     s += "{\n";
-                    s += "dtp." + f.FieldNameConverted + ".Value = null;\n";
+                    s += "dtp" + f.FieldNameConverted + ".Value = null;\n";
                     s += "}\n";
                 }
 
@@ -4089,11 +4097,11 @@ namespace TAICodeComplete
                 {
                     s += "if (thing." + f.FieldNameConverted + ")\n";
                     s += "{\n";
-                    s += " chk." + f.FieldNameConverted + ".Checked = true;\n";
+                    s += " chk" + f.FieldNameConverted + ".Checked = true;\n";
                     s += "}\n";
                     s += "else\n";
                     s += "{\n";
-                    s += "chk." + f.FieldNameConverted + ".Checked = false;\n";
+                    s += "chk" + f.FieldNameConverted + ".Checked = false;\n";
                     s += "}\n";
                 }
             }
@@ -4146,7 +4154,7 @@ namespace TAICodeComplete
 
                 if (f.FieldType == "BOOL" || f.FieldType == "BIT")
                 {
-                    s += "if (chk" + f.FieldNameConverted + ".value)\n";
+                    s += "if (chk" + f.FieldNameConverted + ".Checked)\n";
                     s += "{\n";
                     s += "thing." + f.FieldNameConverted + " = true;\n";
                     s += "}\n";
@@ -5624,7 +5632,11 @@ namespace TAICodeComplete
             //MessageBox.Show(TheFields[e.RowIndex].FieldName);
         }
 
-
+        private void btnSSPI_Click(object sender, EventArgs e)
+        {
+            txtUSER.Text = "";
+            txtPASSWORD.Text = "";
+        }
     }
 
     public class DOCDEFCAT
