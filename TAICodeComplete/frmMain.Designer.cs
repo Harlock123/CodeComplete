@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Drawing.StringFormat stringFormat3 = new System.Drawing.StringFormat();
+            System.Drawing.StringFormat stringFormat1 = new System.Drawing.StringFormat();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Drawing.StringFormat stringFormat4 = new System.Drawing.StringFormat();
+            System.Drawing.StringFormat stringFormat2 = new System.Drawing.StringFormat();
             this.cmboServers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -271,9 +271,9 @@
             // 
             // btnSSPI
             // 
-            this.btnSSPI.Location = new System.Drawing.Point(771, 49);
+            this.btnSSPI.Location = new System.Drawing.Point(771, 52);
             this.btnSSPI.Name = "btnSSPI";
-            this.btnSSPI.Size = new System.Drawing.Size(73, 42);
+            this.btnSSPI.Size = new System.Drawing.Size(104, 42);
             this.btnSSPI.TabIndex = 17;
             this.btnSSPI.Text = "SSPI";
             this.btnSSPI.UseVisualStyleBackColor = true;
@@ -293,7 +293,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(458, 165);
+            this.label10.Location = new System.Drawing.Point(458, 182);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(392, 25);
@@ -303,7 +303,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(458, 137);
+            this.label9.Location = new System.Drawing.Point(458, 154);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(417, 25);
@@ -312,19 +312,19 @@
             // 
             // txtPASSWORD
             // 
-            this.txtPASSWORD.Location = new System.Drawing.Point(612, 96);
+            this.txtPASSWORD.Location = new System.Drawing.Point(612, 110);
             this.txtPASSWORD.Margin = new System.Windows.Forms.Padding(6);
             this.txtPASSWORD.Name = "txtPASSWORD";
-            this.txtPASSWORD.Size = new System.Drawing.Size(232, 31);
+            this.txtPASSWORD.Size = new System.Drawing.Size(260, 31);
             this.txtPASSWORD.TabIndex = 13;
             this.txtPASSWORD.Text = "P@ssw0rd";
             // 
             // txtUSER
             // 
-            this.txtUSER.Location = new System.Drawing.Point(460, 96);
+            this.txtUSER.Location = new System.Drawing.Point(463, 110);
             this.txtUSER.Margin = new System.Windows.Forms.Padding(6);
             this.txtUSER.Name = "txtUSER";
-            this.txtUSER.Size = new System.Drawing.Size(118, 31);
+            this.txtUSER.Size = new System.Drawing.Size(137, 31);
             this.txtUSER.TabIndex = 12;
             this.txtUSER.Text = "SA";
             // 
@@ -490,7 +490,7 @@
             this.txtManualServerName.Location = new System.Drawing.Point(462, 12);
             this.txtManualServerName.Margin = new System.Windows.Forms.Padding(6);
             this.txtManualServerName.Name = "txtManualServerName";
-            this.txtManualServerName.Size = new System.Drawing.Size(382, 31);
+            this.txtManualServerName.Size = new System.Drawing.Size(410, 31);
             this.txtManualServerName.TabIndex = 8;
             this.txtManualServerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandletxtManualServerNameKeyDown);
             // 
@@ -542,9 +542,11 @@
             this.sciBaseTableCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciBaseTableCode.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
             this.sciBaseTableCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciBaseTableCode.Lexer = ScintillaNET.Lexer.Cpp;
-            this.sciBaseTableCode.Location = new System.Drawing.Point(12, 56);
+            this.sciBaseTableCode.Location = new System.Drawing.Point(19, 62);
             this.sciBaseTableCode.Margin = new System.Windows.Forms.Padding(6);
             this.sciBaseTableCode.Name = "sciBaseTableCode";
             this.sciBaseTableCode.Size = new System.Drawing.Size(2226, 1096);
@@ -1173,11 +1175,11 @@
             this.TAIGridDocDef.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.TAIGridDocDef.GridHeaderForeColor = System.Drawing.Color.Black;
             this.TAIGridDocDef.GridHeaderHeight = 16;
-            stringFormat3.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat3.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat3.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat3.Trimming = System.Drawing.StringTrimming.Character;
-            this.TAIGridDocDef.GridHeaderStringFormat = stringFormat3;
+            stringFormat1.Alignment = System.Drawing.StringAlignment.Near;
+            stringFormat1.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
+            stringFormat1.LineAlignment = System.Drawing.StringAlignment.Near;
+            stringFormat1.Trimming = System.Drawing.StringTrimming.Character;
+            this.TAIGridDocDef.GridHeaderStringFormat = stringFormat1;
             this.TAIGridDocDef.GridheaderVisible = true;
             this.TAIGridDocDef.Location = new System.Drawing.Point(16, 292);
             this.TAIGridDocDef.Margin = new System.Windows.Forms.Padding(6);
@@ -1423,11 +1425,11 @@
             this.taigLookupListGrid.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.taigLookupListGrid.GridHeaderForeColor = System.Drawing.Color.Black;
             this.taigLookupListGrid.GridHeaderHeight = 16;
-            stringFormat4.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat4.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat4.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat4.Trimming = System.Drawing.StringTrimming.Character;
-            this.taigLookupListGrid.GridHeaderStringFormat = stringFormat4;
+            stringFormat2.Alignment = System.Drawing.StringAlignment.Near;
+            stringFormat2.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
+            stringFormat2.LineAlignment = System.Drawing.StringAlignment.Near;
+            stringFormat2.Trimming = System.Drawing.StringTrimming.Character;
+            this.taigLookupListGrid.GridHeaderStringFormat = stringFormat2;
             this.taigLookupListGrid.GridheaderVisible = true;
             this.taigLookupListGrid.Location = new System.Drawing.Point(10, 150);
             this.taigLookupListGrid.Margin = new System.Windows.Forms.Padding(6);

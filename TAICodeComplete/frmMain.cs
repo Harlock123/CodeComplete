@@ -73,6 +73,8 @@ namespace TAICodeComplete
             sciBaseTableCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
             sciBaseTableCode.Lexer = Lexer.Cpp;
 
+            ConfigScintillaControlForFolding(sciBaseTableCode);
+
             // Set the keywords
             sciBaseTableCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
             sciBaseTableCode.SetKeywords(1, "bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
@@ -98,6 +100,8 @@ namespace TAICodeComplete
             sciBaseTableTSCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
             sciBaseTableTSCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
             sciBaseTableTSCode.Lexer = Lexer.Cpp;
+
+            ConfigScintillaControlForFolding(sciBaseTableTSCode);
 
             // Set the keywords
             sciBaseTableTSCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
@@ -125,11 +129,11 @@ namespace TAICodeComplete
             scintillaJSCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
             scintillaJSCode.Lexer = Lexer.Cpp;
 
+            ConfigScintillaControlForFolding(scintillaJSCode);
+
             // Set the keywords
             scintillaJSCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
             scintillaJSCode.SetKeywords(1, "var Date bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
-
-
 
             scintillaWebMethodCode.StyleResetDefault();
             scintillaWebMethodCode.Styles[Style.Default].Font = "Consolas";
@@ -151,6 +155,8 @@ namespace TAICodeComplete
             scintillaWebMethodCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
             scintillaWebMethodCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
             scintillaWebMethodCode.Lexer = Lexer.Cpp;
+
+            ConfigScintillaControlForFolding(scintillaWebMethodCode);
 
             // Set the keywords
             scintillaWebMethodCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
@@ -178,6 +184,8 @@ namespace TAICodeComplete
             scintillaRestCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
             scintillaRestCode.Lexer = Lexer.Cpp;
 
+            ConfigScintillaControlForFolding(scintillaRestCode);
+
             // Set the keywords
             scintillaRestCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
             scintillaRestCode.SetKeywords(1, "var bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
@@ -204,6 +212,8 @@ namespace TAICodeComplete
             scintillaWFCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
             scintillaWFCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
             scintillaWFCode.Lexer = Lexer.Cpp;
+
+            ConfigScintillaControlForFolding(scintillaWFCode);
 
             // Set the keywords
             scintillaWFCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
@@ -927,10 +937,15 @@ namespace TAICodeComplete
             if (chkBaseTableCodeFolding.Checked)
             {
                 marginwidth = 20;
+                //sciBaseTableCode.SetProperty("fold", "1");
+                //sciBaseTableCode.SetProperty("fold.compact", "1");
+
             }
             else
             {
                 marginwidth = 0;
+                //sciBaseTableCode.SetProperty("fold", "0");
+                //sciBaseTableCode.SetProperty("fold.compact", "0");
             }
 
             sciBaseTableCode.Margins[2].Width = marginwidth;
@@ -1825,6 +1840,38 @@ namespace TAICodeComplete
             {
                 MessageBox.Show("Generate some code first");
             }
+        }
+
+        private void ConfigScintillaControlForFolding(ScintillaNET.Scintilla TheSCI)
+        {
+            // Instruct the lexer to calculate folding
+            TheSCI.SetProperty("fold", "1");
+            TheSCI.SetProperty("fold.compact", "1");
+
+            // Configure a margin to display folding symbols
+            TheSCI.Margins[2].Type = MarginType.Symbol;
+            TheSCI.Margins[2].Mask = Marker.MaskFolders;
+            TheSCI.Margins[2].Sensitive = true;
+            TheSCI.Margins[2].Width = 20;
+
+            // Set colors for all folding markers
+            for (int i = 25; i <= 31; i++)
+            {
+                TheSCI.Markers[i].SetForeColor(SystemColors.ControlLightLight);
+                TheSCI.Markers[i].SetBackColor(SystemColors.ControlDark);
+            }
+
+            // Configure folding markers with respective symbols
+            TheSCI.Markers[Marker.Folder].Symbol = MarkerSymbol.BoxPlus;
+            TheSCI.Markers[Marker.FolderOpen].Symbol = MarkerSymbol.BoxMinus;
+            TheSCI.Markers[Marker.FolderEnd].Symbol = MarkerSymbol.BoxPlusConnected;
+            TheSCI.Markers[Marker.FolderMidTail].Symbol = MarkerSymbol.TCorner;
+            TheSCI.Markers[Marker.FolderOpenMid].Symbol = MarkerSymbol.BoxMinusConnected;
+            TheSCI.Markers[Marker.FolderSub].Symbol = MarkerSymbol.VLine;
+            TheSCI.Markers[Marker.FolderTail].Symbol = MarkerSymbol.LCorner;
+
+            // Enable automatic folding
+            TheSCI.AutomaticFold = (AutomaticFold.Show | AutomaticFold.Click | AutomaticFold.Change);
         }
 
         #endregion

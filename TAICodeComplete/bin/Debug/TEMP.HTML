@@ -9,25 +9,17 @@
 	<script language="JavaScript" src="JS\jquery-ui.min.js" ></script>
 	<script language="JavaScript">
 		$(document).ready(function() {
-			$( "#fld_MEMBERDOB" ).datepicker();
-			$( "#fld_ALTAHCCCSDOB" ).datepicker();
-			$( "#fld_MEMBERXIXSTSDATEVERIFIED" ).datepicker();
-			$( "#fld_MEMBERCOTDATE" ).datepicker();
-			$( "#fld_MEMBERWAITDATE" ).datepicker();
-			$( "#fld_MEMBERENDDATE" ).datepicker();
-			$( "#fld_MEMBERBRIEFDATE" ).datepicker();
-			$( "#fld_MEMBERSTARTUP" ).datepicker();
-			$( "#fld_CREATEDATE" ).datepicker();
-			$( "#fld_UPDATEDATE" ).datepicker();
+			$( "#fld_CreateDate" ).datepicker();
+			$( "#fld_ModifiedDate" ).datepicker();
 		});
 
 	</script>
 </head>
 <body>
 	<div class="panel-frame">
-		<div class="panel-container" id="container_mmID" >
+		<div class="panel-container" id="container_ID" >
 			<nav class="panel-left">
-				mmID
+				ID
 			</nav>
 
 			<div class="panel-splitter">
@@ -35,13 +27,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_mmID" id="fld_mmID" /> 
+				<input type="number" name="fld_ID" id="fld_ID" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERID" >
+		<div class="panel-container" id="container_Name" >
 			<nav class="panel-left">
-				MEMBERID
+				Name
 			</nav>
 
 			<div class="panel-splitter">
@@ -49,13 +41,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_MEMBERID" id="fld_MEMBERID" /> 
+				<input type="text" maxlength="50" name="fld_Name" id="fld_Name" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERLASTNAME" >
+		<div class="panel-container" id="container_State" >
 			<nav class="panel-left">
-				MEMBERLASTNAME
+				State
 			</nav>
 
 			<div class="panel-splitter">
@@ -63,13 +55,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERLASTNAME" id="fld_MEMBERLASTNAME" /> 
+				<input type="text" maxlength="50" name="fld_State" id="fld_State" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERFIRSTNAME" >
+		<div class="panel-container" id="container_MailTo" >
 			<nav class="panel-left">
-				MEMBERFIRSTNAME
+				MailTo
 			</nav>
 
 			<div class="panel-splitter">
@@ -77,13 +69,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERFIRSTNAME" id="fld_MEMBERFIRSTNAME" /> 
+				<textarea rows="4" cols="50" name="fld_MailTo" id="fld_MailTo"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERMIDDLENAME" >
+		<div class="panel-container" id="container_MailFrom" >
 			<nav class="panel-left">
-				MEMBERMIDDLENAME
+				MailFrom
 			</nav>
 
 			<div class="panel-splitter">
@@ -91,13 +84,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERMIDDLENAME" id="fld_MEMBERMIDDLENAME" /> 
+				<textarea rows="4" cols="50" name="fld_MailFrom" id="fld_MailFrom"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERDOB" >
+		<div class="panel-container" id="container_Subject" >
 			<nav class="panel-left">
-				MEMBERDOB
+				Subject
 			</nav>
 
 			<div class="panel-splitter">
@@ -105,13 +99,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_MEMBERDOB" id="fld_MEMBERDOB" /> 
+				<textarea rows="4" cols="50" name="fld_Subject" id="fld_Subject"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERGENDER" >
+		<div class="panel-container" id="container_Body" >
 			<nav class="panel-left">
-				MEMBERGENDER
+				Body
 			</nav>
 
 			<div class="panel-splitter">
@@ -119,13 +114,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="1" name="fld_MEMBERGENDER" id="fld_MEMBERGENDER" /> 
+				<textarea rows="4" cols="50" name="fld_Body" id="fld_Body"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERSSN" >
+		<div class="panel-container" id="container_IsImportant" >
 			<nav class="panel-left">
-				MEMBERSSN
+				IsImportant
 			</nav>
 
 			<div class="panel-splitter">
@@ -133,13 +129,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="12" name="fld_MEMBERSSN" id="fld_MEMBERSSN" /> 
+				<input type="checkbox" name="fld_IsImportant" id="fld_IsImportant" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERAHCCCSID" >
+		<div class="panel-container" id="container_IsActive" >
 			<nav class="panel-left">
-				MEMBERAHCCCSID
+				IsActive
 			</nav>
 
 			<div class="panel-splitter">
@@ -147,13 +143,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERAHCCCSID" id="fld_MEMBERAHCCCSID" /> 
+				<input type="checkbox" name="fld_IsActive" id="fld_IsActive" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERADDRESS1" >
+		<div class="panel-container" id="container_CreateDate" >
 			<nav class="panel-left">
-				MEMBERADDRESS1
+				CreateDate
 			</nav>
 
 			<div class="panel-splitter">
@@ -161,13 +157,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERADDRESS1" id="fld_MEMBERADDRESS1" /> 
+				<input type="text" name="fld_CreateDate" id="fld_CreateDate" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MEMBERADDRESS2" >
+		<div class="panel-container" id="container_ModifiedDate" >
 			<nav class="panel-left">
-				MEMBERADDRESS2
+				ModifiedDate
 			</nav>
 
 			<div class="panel-splitter">
@@ -175,805 +171,7 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERADDRESS2" id="fld_MEMBERADDRESS2" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERADDRESS3" >
-			<nav class="panel-left">
-				MEMBERADDRESS3
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERADDRESS3" id="fld_MEMBERADDRESS3" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERCROSSSTREETS" >
-			<nav class="panel-left">
-				MEMBERCROSSSTREETS
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERCROSSSTREETS" id="fld_MEMBERCROSSSTREETS" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERAREACODE1" >
-			<nav class="panel-left">
-				MEMBERAREACODE1
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="12" name="fld_MEMBERAREACODE1" id="fld_MEMBERAREACODE1" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERPHONENUMBER1" >
-			<nav class="panel-left">
-				MEMBERPHONENUMBER1
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="12" name="fld_MEMBERPHONENUMBER1" id="fld_MEMBERPHONENUMBER1" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERAREACODE2" >
-			<nav class="panel-left">
-				MEMBERAREACODE2
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="12" name="fld_MEMBERAREACODE2" id="fld_MEMBERAREACODE2" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERPHONENUMBER2" >
-			<nav class="panel-left">
-				MEMBERPHONENUMBER2
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="12" name="fld_MEMBERPHONENUMBER2" id="fld_MEMBERPHONENUMBER2" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERPARENTNAME" >
-			<nav class="panel-left">
-				MEMBERPARENTNAME
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERPARENTNAME" id="fld_MEMBERPARENTNAME" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERPARENTPHONE" >
-			<nav class="panel-left">
-				MEMBERPARENTPHONE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERPARENTPHONE" id="fld_MEMBERPARENTPHONE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERPARENTEMAIL" >
-			<nav class="panel-left">
-				MEMBERPARENTEMAIL
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERPARENTEMAIL" id="fld_MEMBERPARENTEMAIL" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERHEIGHT" >
-			<nav class="panel-left">
-				MEMBERHEIGHT
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERHEIGHT" id="fld_MEMBERHEIGHT" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERWEIGHT" >
-			<nav class="panel-left">
-				MEMBERWEIGHT
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERWEIGHT" id="fld_MEMBERWEIGHT" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBEREYECOLOR" >
-			<nav class="panel-left">
-				MEMBEREYECOLOR
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="4" name="fld_MEMBEREYECOLOR" id="fld_MEMBEREYECOLOR" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERHAIRCOLOR" >
-			<nav class="panel-left">
-				MEMBERHAIRCOLOR
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="4" name="fld_MEMBERHAIRCOLOR" id="fld_MEMBERHAIRCOLOR" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERMARITALSTATUS" >
-			<nav class="panel-left">
-				MEMBERMARITALSTATUS
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="2" name="fld_MEMBERMARITALSTATUS" id="fld_MEMBERMARITALSTATUS" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERCENSUSTRACT" >
-			<nav class="panel-left">
-				MEMBERCENSUSTRACT
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERCENSUSTRACT" id="fld_MEMBERCENSUSTRACT" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERCENSUSPLACE" >
-			<nav class="panel-left">
-				MEMBERCENSUSPLACE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERCENSUSPLACE" id="fld_MEMBERCENSUSPLACE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERIDMARKINGSCOMMENTS" >
-			<nav class="panel-left">
-				MEMBERIDMARKINGSCOMMENTS
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="100" name="fld_MEMBERIDMARKINGSCOMMENTS" id="fld_MEMBERIDMARKINGSCOMMENTS" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_ALTAHCCCSDOB" >
-			<nav class="panel-left">
-				ALTAHCCCSDOB
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_ALTAHCCCSDOB" id="fld_ALTAHCCCSDOB" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_ALTAHCCCSSSN" >
-			<nav class="panel-left">
-				ALTAHCCCSSSN
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="12" name="fld_ALTAHCCCSSSN" id="fld_ALTAHCCCSSSN" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_ALTAHCCCSGENDER" >
-			<nav class="panel-left">
-				ALTAHCCCSGENDER
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="1" name="fld_ALTAHCCCSGENDER" id="fld_ALTAHCCCSGENDER" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_ALTAHCCCSLASTNAME" >
-			<nav class="panel-left">
-				ALTAHCCCSLASTNAME
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_ALTAHCCCSLASTNAME" id="fld_ALTAHCCCSLASTNAME" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_ALTAHCCCSFIRSTNAME" >
-			<nav class="panel-left">
-				ALTAHCCCSFIRSTNAME
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_ALTAHCCCSFIRSTNAME" id="fld_ALTAHCCCSFIRSTNAME" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_ALTAHCCCSMIDDLENAME" >
-			<nav class="panel-left">
-				ALTAHCCCSMIDDLENAME
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_ALTAHCCCSMIDDLENAME" id="fld_ALTAHCCCSMIDDLENAME" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERPHONETICCODE" >
-			<nav class="panel-left">
-				MEMBERPHONETICCODE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERPHONETICCODE" id="fld_MEMBERPHONETICCODE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBEREVSVERIFIEDFLAG" >
-			<nav class="panel-left">
-				MEMBEREVSVERIFIEDFLAG
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="1" name="fld_MEMBEREVSVERIFIEDFLAG" id="fld_MEMBEREVSVERIFIEDFLAG" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBEREMPLOYERNAME" >
-			<nav class="panel-left">
-				MEMBEREMPLOYERNAME
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="100" name="fld_MEMBEREMPLOYERNAME" id="fld_MEMBEREMPLOYERNAME" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBEREMPLOYERPHONE" >
-			<nav class="panel-left">
-				MEMBEREMPLOYERPHONE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="12" name="fld_MEMBEREMPLOYERPHONE" id="fld_MEMBEREMPLOYERPHONE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERXIXSTATUS" >
-			<nav class="panel-left">
-				MEMBERXIXSTATUS
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="1" name="fld_MEMBERXIXSTATUS" id="fld_MEMBERXIXSTATUS" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERXIXSTSDATEVERIFIED" >
-			<nav class="panel-left">
-				MEMBERXIXSTSDATEVERIFIED
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_MEMBERXIXSTSDATEVERIFIED" id="fld_MEMBERXIXSTSDATEVERIFIED" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERLEGALMHSTATUS" >
-			<nav class="panel-left">
-				MEMBERLEGALMHSTATUS
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="1" name="fld_MEMBERLEGALMHSTATUS" id="fld_MEMBERLEGALMHSTATUS" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERCOTDATE" >
-			<nav class="panel-left">
-				MEMBERCOTDATE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_MEMBERCOTDATE" id="fld_MEMBERCOTDATE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERNEEDFORSPCLSSASSIST" >
-			<nav class="panel-left">
-				MEMBERNEEDFORSPCLSSASSIST
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="100" name="fld_MEMBERNEEDFORSPCLSSASSIST" id="fld_MEMBERNEEDFORSPCLSSASSIST" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERCRISISPLANLINE1" >
-			<nav class="panel-left">
-				MEMBERCRISISPLANLINE1
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="100" name="fld_MEMBERCRISISPLANLINE1" id="fld_MEMBERCRISISPLANLINE1" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERCRISISPLANLINE2" >
-			<nav class="panel-left">
-				MEMBERCRISISPLANLINE2
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="100" name="fld_MEMBERCRISISPLANLINE2" id="fld_MEMBERCRISISPLANLINE2" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERRELIGIOUSPREF" >
-			<nav class="panel-left">
-				MEMBERRELIGIOUSPREF
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERRELIGIOUSPREF" id="fld_MEMBERRELIGIOUSPREF" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERPROGRAM" >
-			<nav class="panel-left">
-				MEMBERPROGRAM
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERPROGRAM" id="fld_MEMBERPROGRAM" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERSTATUS" >
-			<nav class="panel-left">
-				MEMBERSTATUS
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="1" name="fld_MEMBERSTATUS" id="fld_MEMBERSTATUS" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERWAITDATE" >
-			<nav class="panel-left">
-				MEMBERWAITDATE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_MEMBERWAITDATE" id="fld_MEMBERWAITDATE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERENDDATE" >
-			<nav class="panel-left">
-				MEMBERENDDATE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_MEMBERENDDATE" id="fld_MEMBERENDDATE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERBRIEFDATE" >
-			<nav class="panel-left">
-				MEMBERBRIEFDATE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_MEMBERBRIEFDATE" id="fld_MEMBERBRIEFDATE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERSUBCONTRACTOR" >
-			<nav class="panel-left">
-				MEMBERSUBCONTRACTOR
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERSUBCONTRACTOR" id="fld_MEMBERSUBCONTRACTOR" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERSTARTUP" >
-			<nav class="panel-left">
-				MEMBERSTARTUP
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_MEMBERSTARTUP" id="fld_MEMBERSTARTUP" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERZIPCODE" >
-			<nav class="panel-left">
-				MEMBERZIPCODE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERZIPCODE" id="fld_MEMBERZIPCODE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERETHNICITYCODE" >
-			<nav class="panel-left">
-				MEMBERETHNICITYCODE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERETHNICITYCODE" id="fld_MEMBERETHNICITYCODE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERID2" >
-			<nav class="panel-left">
-				MEMBERID2
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_MEMBERID2" id="fld_MEMBERID2" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERUSERID" >
-			<nav class="panel-left">
-				MEMBERUSERID
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="15" name="fld_MEMBERUSERID" id="fld_MEMBERUSERID" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_CREATEDATE" >
-			<nav class="panel-left">
-				CREATEDATE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_CREATEDATE" id="fld_CREATEDATE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_CREATEUSER" >
-			<nav class="panel-left">
-				CREATEUSER
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_CREATEUSER" id="fld_CREATEUSER" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_CREATEPLACE" >
-			<nav class="panel-left">
-				CREATEPLACE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_CREATEPLACE" id="fld_CREATEPLACE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_UPDATEDATE" >
-			<nav class="panel-left">
-				UPDATEDATE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_UPDATEDATE" id="fld_UPDATEDATE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_UPDATEUSER" >
-			<nav class="panel-left">
-				UPDATEUSER
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_UPDATEUSER" id="fld_UPDATEUSER" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_UPDATEPLACE" >
-			<nav class="panel-left">
-				UPDATEPLACE
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_UPDATEPLACE" id="fld_UPDATEPLACE" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_EMAIL" >
-			<nav class="panel-left">
-				EMAIL
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="100" name="fld_EMAIL" id="fld_EMAIL" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERMARITALSTATUS_LookupID" >
-			<nav class="panel-left">
-				MEMBERMARITALSTATUS_LookupID
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERMARITALSTATUS_LookupID" id="fld_MEMBERMARITALSTATUS_LookupID" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_MEMBERVETERANSTATUS_LookupID" >
-			<nav class="panel-left">
-				MEMBERVETERANSTATUS_LookupID
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_MEMBERVETERANSTATUS_LookupID" id="fld_MEMBERVETERANSTATUS_LookupID" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_METHODOFCONTACT_LookupID" >
-			<nav class="panel-left">
-				METHODOFCONTACT_LookupID
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_METHODOFCONTACT_LookupID" id="fld_METHODOFCONTACT_LookupID" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_ParGurMaritalStatus" >
-			<nav class="panel-left">
-				ParGurMaritalStatus
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_ParGurMaritalStatus" id="fld_ParGurMaritalStatus" /> 
+				<input type="text" name="fld_ModifiedDate" id="fld_ModifiedDate" /> 
 			</div>
 
 		</div>
