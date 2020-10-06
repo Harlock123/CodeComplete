@@ -20,6 +20,7 @@ namespace TAICodeComplete
         private BindingSource bsource = new BindingSource();
         private string DBSERVERNAME = "";
         private string DSN = "";
+        private string DSNTYPE = "";
         private string IDFIELDNAME = "";
         private string IDFIELDTYPE = "";
         private string TableName = "";
@@ -524,6 +525,123 @@ namespace TAICodeComplete
             return result;
         }
 
+        
+        #region JavaScript stuff
+
+        private string GenerateJavaScriptClass()
+        {
+            string s = "";
+
+            s += "var " + TableName.ToUpper() + " = {\n";
+            
+            foreach (Field f in TheFields)
+            {
+                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                    f.FieldType == "SYSNAME")
+                {
+                    s += "" + f.FieldNameConverted + ": \"\",\n";
+                }
+
+                if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT")
+                {
+                    s += "" + f.FieldNameConverted + ": 0,\n";
+                }
+
+                if (f.FieldType == "BIGINT")
+                {
+                    s += "" + f.FieldNameConverted + ": 0,\n";
+                }
+
+                if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT")
+                {
+                    s += "" + f.FieldNameConverted + ": 0.0,\n";
+                }
+
+                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                {
+                    s += "" + f.FieldNameConverted + ": new Date(),\n";
+                }
+
+                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                {
+                    s += "" + f.FieldNameConverted + ": false,\n";
+                }
+            }
+
+            s = s.Substring(0, s.Length - ",\n".Length);
+
+            s += "\n}\n\n";
+
+            return s;
+        }
+
+        #endregion
+
+        #region TypeScript Stuff
+
+        private string GenerateTSCode()
+        {
+            string s = "";
+
+            s += "class " + TableName.ToUpper() + " {\n";
+
+            foreach (Field f in TheFields)
+            {
+                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                    f.FieldType == "SYSNAME")
+                {
+                    s += "" + f.FieldNameConverted + ": string = \"\";\n";
+                }
+
+                if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT" || f.FieldType == "BIGINT" ||
+                    f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || 
+                    f.FieldType == "FLOAT")
+                {
+                    s += "" + f.FieldNameConverted + ": number = 0;\n";
+                }
+                                
+                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                {
+                    s += "" + f.FieldNameConverted + ": Date = new Date();\n";
+                }
+
+                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                {
+                    s += "" + f.FieldNameConverted + ": boolean = false;\n";
+                }
+            }
+
+            s += "\n";
+
+            //s += "constructor() {\n\n";
+            //s += "// The initialization code can go here\n\n";
+            //s += "}\n\n";
+
+            s += "constructor(jsonString?: string) {\n\n";
+            s += "// The initialization code can go here\n\n";
+            s += "if (jsonString) {\n";
+            s += "this.fillFromJSON(jsonString);\n";
+            s += "}\n";
+            s += "}\n\n";
+            
+            s += "fillFromJSON(json?: string) {\n\n";
+            s += "var jsonObj = JSON.parse(json);\n";
+            s += "for (var propName in jsonObj) {\n";
+            s += "this[propName] = jsonObj[propName];\n";
+            s += "}\n";
+            s += "}\n";
+                        
+            s += "\n}\n\n";
+            
+            return s;
+        }
+
+        #endregion
+
+        #region UI Stuff
+
         private void HandleDatabaseSelection(object sender, EventArgs e)
         {
             if (cmboDatabases.SelectedItem != null && cmboDatabases.SelectedItem.ToString() != "")
@@ -570,6 +688,7 @@ namespace TAICodeComplete
         {
             if (cmboServers.SelectedItem.ToString() != "")
             {
+                DSNTYPE = "";
                 DSN = "Data Source=" + cmboServers.SelectedItem.ToString() + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
 
                 DBSERVERNAME = cmboServers.SelectedItem.ToString();
@@ -773,158 +892,53 @@ namespace TAICodeComplete
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Something went horribly wrong
             }
 
         }
 
-        #region JavaScript stuff
-
-        private string GenerateJavaScriptClass()
-        {
-            string s = "";
-
-            s += "var " + TableName.ToUpper() + " = {\n";
-            
-            foreach (Field f in TheFields)
-            {
-                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
-                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
-                    f.FieldType == "SYSNAME")
-                {
-                    s += "" + f.FieldNameConverted + ": \"\",\n";
-                }
-
-                if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT")
-                {
-                    s += "" + f.FieldNameConverted + ": 0,\n";
-                }
-
-                if (f.FieldType == "BIGINT")
-                {
-                    s += "" + f.FieldNameConverted + ": 0,\n";
-                }
-
-                if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT")
-                {
-                    s += "" + f.FieldNameConverted + ": 0.0,\n";
-                }
-
-                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
-                {
-                    s += "" + f.FieldNameConverted + ": new Date(),\n";
-                }
-
-                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
-                {
-                    s += "" + f.FieldNameConverted + ": false,\n";
-                }
-            }
-
-            s = s.Substring(0, s.Length - ",\n".Length);
-
-            s += "\n}\n\n";
-
-            return s;
-        }
-
-        #endregion
-
-        #region TypeScript Stuff
-
-        private string GenerateTSCode()
-        {
-            string s = "";
-
-            s += "class " + TableName.ToUpper() + " {\n";
-
-            foreach (Field f in TheFields)
-            {
-                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
-                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
-                    f.FieldType == "SYSNAME")
-                {
-                    s += "" + f.FieldNameConverted + ": string = \"\";\n";
-                }
-
-                if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT" || f.FieldType == "BIGINT" ||
-                    f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || 
-                    f.FieldType == "FLOAT")
-                {
-                    s += "" + f.FieldNameConverted + ": number = 0;\n";
-                }
-                                
-                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
-                {
-                    s += "" + f.FieldNameConverted + ": Date = new Date();\n";
-                }
-
-                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
-                {
-                    s += "" + f.FieldNameConverted + ": boolean = false;\n";
-                }
-            }
-
-            s += "\n";
-
-            //s += "constructor() {\n\n";
-            //s += "// The initialization code can go here\n\n";
-            //s += "}\n\n";
-
-            s += "constructor(jsonString?: string) {\n\n";
-            s += "// The initialization code can go here\n\n";
-            s += "if (jsonString) {\n";
-            s += "this.fillFromJSON(jsonString);\n";
-            s += "}\n";
-            s += "}\n\n";
-            
-            s += "fillFromJSON(json?: string) {\n\n";
-            s += "var jsonObj = JSON.parse(json);\n";
-            s += "for (var propName in jsonObj) {\n";
-            s += "this[propName] = jsonObj[propName];\n";
-            s += "}\n";
-            s += "}\n";
-                        
-            s += "\n}\n\n";
-            
-            return s;
-        }
-
-        #endregion
-
-        #region UI Stuff
-
         private string GenerateDSN()
         {
             string result = "";
 
-            result = "Data Source=";
-
-            if (cmboServers.SelectedItem == null)
+            if (DSNTYPE == "MANUALDSN")
             {
-                if (txtUSER.Text.Trim() == "")
-                {
-                    if (cmboDatabases.SelectedItem == null)
-                        result = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
-                    else
-                        result = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
-                }
-                else
-                {
-                    if (cmboDatabases.SelectedItem == null)
-                        result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=MASTER;";
-                    else
-                        result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
-                }
+
+                result = DSN; // just return the existing dsn
+
             }
             else
             {
-                if (cmboDatabases.SelectedItem == null)
-                    result = "Data Source=" + cmboServers.SelectedItem.ToString() + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
+                // Make a new DSN based on the other settings
+
+                result = "Data Source=";
+
+                if (cmboServers.SelectedItem == null)
+                {
+                    if (txtUSER.Text.Trim() == "")
+                    {
+                        if (cmboDatabases.SelectedItem == null)
+                            result = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
+                        else
+                            result = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
+                    }
+                    else
+                    {
+                        if (cmboDatabases.SelectedItem == null)
+                            result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=MASTER;";
+                        else
+                            result = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
+                    }
+                }
                 else
-                    result = "Data Source=" + cmboServers.SelectedItem.ToString() + ";Integrated Security=SSPI;Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
+                {
+                    if (cmboDatabases.SelectedItem == null)
+                        result = "Data Source=" + cmboServers.SelectedItem.ToString() + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
+                    else
+                        result = "Data Source=" + cmboServers.SelectedItem.ToString() + ";Integrated Security=SSPI;Initial Catalog=" + cmboDatabases.SelectedItem.ToString() + ";";
+                }
             }
 
             return result;
@@ -974,6 +988,7 @@ namespace TAICodeComplete
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
+                DSNTYPE = "";
 
                 if (txtUSER.Text.Trim() == "" && txtPASSWORD.Text.Trim() == "")
                     DSN = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
@@ -1872,6 +1887,152 @@ namespace TAICodeComplete
 
             // Enable automatic folding
             TheSCI.AutomaticFold = (AutomaticFold.Show | AutomaticFold.Click | AutomaticFold.Change);
+        }
+
+        private void btnFiddleIt_Click(object sender, EventArgs e)
+        {
+
+            // Not yet
+
+            if (scintillaHTMLCode.Text.Trim() != "")
+            {
+                //string URL = "http://jsfiddle.net/api/post/library/pure/";
+                //string param = "";
+
+                string url = "FILE://" + Application.StartupPath + "/TEMP.HTML";
+
+                if (System.IO.File.Exists("TEMP.HTML"))
+                {
+                    System.IO.File.Delete("TEMP.HTML");
+                    System.IO.File.Delete("STYLE.CSS");
+                }
+
+                System.IO.File.WriteAllText("TEMP.HTML", scintillaHTMLCode.Text.Trim());
+                System.IO.File.WriteAllText("STYLE.CSS", scintillaCSSCode.Text.Trim());
+
+                System.Diagnostics.Process.Start(url);
+
+            }
+            else
+            {
+                MessageBox.Show("Generate some code first");
+            }
+        }
+
+        public static string PostMessageToURL(string url, string parameters)
+        {
+            using (System.Net.WebClient wc = new System.Net.WebClient())
+            {
+                wc.Headers[System.Net.HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+                string HtmlResult = wc.UploadString(url, "POST", parameters);
+                return HtmlResult;
+            }
+        }
+
+        static byte[] GetBytes(string str)
+        {
+            byte[] bytes = new byte[str.Length * sizeof(char)];
+            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
+
+        private void dgrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmSelectLookupFields frm = new frmSelectLookupFields(DSN);
+            frm.ShowDialog();
+
+            if (frm.TABLENAME != "")
+            {
+                TheFields[e.RowIndex].CROSSWALKTABLE = frm.TABLENAME;
+                TheFields[e.RowIndex].CROSSWALKVALUE = frm.VALUEFIELD;
+                TheFields[e.RowIndex].CROSSWALKDISPLAY = frm.DESCCRIPTIONFIELD;
+            }
+
+            scintillaHTMLCode.Text = "";
+            scintillaHTMLCode.InsertText(0, GenerateHTMLCode());
+
+
+            //MessageBox.Show(TheFields[e.RowIndex].FieldName);
+        }
+
+        private void btnSSPI_Click(object sender, EventArgs e)
+        {
+            txtUSER.Text = "";
+            txtPASSWORD.Text = "";
+        }
+
+        private void HandleManualConnectionStringKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                DSNTYPE = "MANUALDSN";
+
+                DSN = txtManualConnectionString.Text.Trim();
+
+                var eles = DSN.Split(";".ToCharArray()); // split the DSN on the ; characters so we can determine the server component
+
+                foreach (string s in eles)
+                {
+                    if (s.ToUpper().Trim().StartsWith("DATA SOURCE="))
+                    {
+                        DBSERVERNAME = s.Substring(11); // Remove the DATA SOURCE= and set servername
+                        break;
+                    }
+
+                    if (s.ToUpper().Trim().StartsWith("SERVER="))
+                    {
+                        DBSERVERNAME = s.Substring(6); // Remove the SERVER= and set servername
+                        break;
+                    }
+                }
+
+                //if (txtUSER.Text.Trim() == "" && txtPASSWORD.Text.Trim() == "")
+                //    DSN = "Data Source=" + txtManualServerName.Text + ";Integrated Security=SSPI;Initial Catalog=MASTER;";
+                //else
+                //    DSN = "Data Source=" + txtManualServerName.Text + ";USER=" + txtUSER.Text.Trim() + ";PASSWORD=" + txtPASSWORD.Text.Trim() + ";Initial Catalog=MASTER;";
+
+                //DBSERVERNAME = txtManualServerName.Text;
+
+                try
+                {
+
+                    SqlConnection cn = new SqlConnection(DSN);
+                    cn.Open();
+
+                    string sql = "select NAME from sys.databases ORDER BY NAME";
+
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+
+                    SqlDataReader r = cmd.ExecuteReader();
+
+                    cmboDatabases.Items.Clear();
+                    cmboDatabasedForDocDefForms.Items.Clear();
+                    cmboDATABASEFORLOOKUPS.Items.Clear();
+
+                    while (r.Read())
+                    {
+                        cmboDatabases.Items.Add(r[0] + "");
+                        cmboDatabasedForDocDefForms.Items.Add(r[0] + "");
+                        cmboDATABASEFORLOOKUPS.Items.Add(r[0] + "");
+                    }
+                    r.Close();
+                    cmd.Dispose();
+                    cn.Close();
+                    cn.Dispose();
+
+                    cmboDatabases.Focus();
+
+                    e.Handled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    cmboDatabases.Items.Clear();
+                    cmboDatabasedForDocDefForms.Items.Clear();
+                    cmboDATABASEFORLOOKUPS.Items.Clear();
+                }
+
+            }
         }
 
         #endregion
@@ -5613,77 +5774,6 @@ namespace TAICodeComplete
         
         #endregion
 
-        private void btnFiddleIt_Click(object sender, EventArgs e)
-        {
-            
-            // Not yet
-                       
-            if (scintillaHTMLCode.Text.Trim() != "")
-            {
-                //string URL = "http://jsfiddle.net/api/post/library/pure/";
-                //string param = "";
-
-                string url = "FILE://" + Application.StartupPath + "/TEMP.HTML";
-
-                if (System.IO.File.Exists("TEMP.HTML"))
-                {
-                    System.IO.File.Delete("TEMP.HTML");
-                    System.IO.File.Delete("STYLE.CSS");
-                }
-
-                System.IO.File.WriteAllText("TEMP.HTML", scintillaHTMLCode.Text.Trim());
-                System.IO.File.WriteAllText("STYLE.CSS", scintillaCSSCode.Text.Trim());
-                                
-                System.Diagnostics.Process.Start(url);
-
-            }
-            else
-            {
-                MessageBox.Show("Generate some code first");
-            }
-        }
-
-        public static string PostMessageToURL(string url, string parameters)
-        {
-            using (System.Net.WebClient wc = new System.Net.WebClient())
-            {
-                wc.Headers[System.Net.HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
-                string HtmlResult = wc.UploadString(url, "POST", parameters);
-                return HtmlResult;
-            }
-        }
-
-        static byte[] GetBytes(string str)
-        {
-            byte[] bytes = new byte[str.Length * sizeof(char)];
-            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-            return bytes;
-        }
-
-        private void dgrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmSelectLookupFields frm = new frmSelectLookupFields(DSN);
-            frm.ShowDialog();
-
-            if (frm.TABLENAME != "")
-            {
-                TheFields[e.RowIndex].CROSSWALKTABLE = frm.TABLENAME;
-                TheFields[e.RowIndex].CROSSWALKVALUE = frm.VALUEFIELD;
-                TheFields[e.RowIndex].CROSSWALKDISPLAY = frm.DESCCRIPTIONFIELD;
-            }
-
-            scintillaHTMLCode.Text = "";
-            scintillaHTMLCode.InsertText(0, GenerateHTMLCode());
-
-            
-            //MessageBox.Show(TheFields[e.RowIndex].FieldName);
-        }
-
-        private void btnSSPI_Click(object sender, EventArgs e)
-        {
-            txtUSER.Text = "";
-            txtPASSWORD.Text = "";
-        }
     }
 
     public class DOCDEFCAT
