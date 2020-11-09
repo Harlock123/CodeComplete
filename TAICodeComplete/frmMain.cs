@@ -831,6 +831,7 @@ namespace TAICodeComplete
                             GenerateCopyFieldsMethod() +
                             GenerateRecExistsMethod() +
                             GenerateAddMethod() +
+                            GenerateFastAddMethod() +
                             GenerateUpdateMethod() +
                             GenerateDeleteMethod() +
                             GenerateReadMethod() +
@@ -2252,6 +2253,179 @@ namespace TAICodeComplete
                 s += "}\n";
 
             }
+
+            s += "cn.Close();\n";
+            s += "cn.Dispose();\n";
+
+            if (!AUTONUMBER)
+            {
+                s += "}\n";
+            }
+
+            s += "}\n";
+            s += "catch (Exception ex)\n";
+            s += "{\n";
+            s += "throw(new Exception(\"" + TableName + ".Add \" +  ex.ToString()));\n";
+            s += "}\n";
+            s += "}\n\n";
+
+
+
+            return s;
+        }
+
+        private string GenerateFastAddMethod()
+        {
+            string s = "";
+
+            s += "public void FastAdd()\n";
+
+            s += "{\n";
+            s += "try\n";
+            s += "{\n";
+
+            if (!AUTONUMBER)
+            {
+                s += "if (RecExists(this." + IDFIELDNAME + "))\n" +
+                    "{\n" +
+                    "Update();\n" +
+                    "}\n" +
+                    "else\n" +
+                    "{\n";
+            }
+
+
+            if (AUTONUMBER)
+                s += "string sql = GetParameterSQL();\n";
+            else
+                s += "string sql = GetParameterSQLForAdd();\n";
+
+            s += "SqlConnection cn = new SqlConnection(_classDatabaseConnectionString);\n";
+            s += "cn.Open();\n";
+            s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
+
+            foreach (Field f in TheFields)
+            {
+                if (f.FieldName != IDFIELDNAME || (!AUTONUMBER && f.FieldName == IDFIELDNAME))
+                {
+
+                    if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                        f.FieldType == "TEXT" || f.FieldType == "SYSNAME")
+                    {
+                        if (f.AllowNulls) // also add the UI check here
+                        {
+                            s += "if (this._" + f.FieldNameConverted + " == null || this._" + f.FieldNameConverted + " == \"\" || this._" + f.FieldNameConverted + " == string.Empty)\n" +
+                                 "{\n " +
+                                 "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.VarChar).Value = DBNull.Value;\n" +
+                                 "}\n" +
+                                 "else\n" +
+                                 "{\n " +
+                                 "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.VarChar).Value = this._" + f.FieldNameConverted + ";\n" +
+                                 "}\n";
+                        }
+                        else
+                        {
+                            s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.VarChar).Value = this._" + f.FieldNameConverted + ";\n";
+                        }
+                    }
+
+                    if (f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.UniqueIdentifier).Value = System.Guid.Parse(this._" + f.FieldNameConverted + ");\n";
+                    }
+
+                    if (f.FieldType == "INT")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Int).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "SMALLINT")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.SmallInt).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "TINYINT")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.TinyInt).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "BIGINT")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.BigInt).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Money).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "DECIMAL")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Decimal).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.DateTime).Value = getDateOrNull(this._" + f.FieldNameConverted + ");\n";
+                    }
+
+                    if (f.FieldType == "BOOL")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Bool).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "BIT")
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Bit).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+
+                    //System.Guid.Parse()
+                }
+            }
+
+            s += "cmd.ExecuteNonQuery();\n";
+            s += "cmd.Cancel();\n";
+            s += "cmd.Dispose();\n";
+
+
+            //if (AUTONUMBER)
+            //{
+
+            //    s += "if(" + IDFIELDNAME + " < 1)\n";
+            //    s += "{\n";
+            //    s += "SqlCommand cmd2 = new SqlCommand(\"SELECT @@IDENTITY\",cn);\n";
+
+            //    if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
+            //    {
+            //        s += "System.Int64 ii = Convert.ToInt64(cmd2.ExecuteScalar());\n";
+            //    }
+            //    else
+            //    {
+            //        if (IDFIELDTYPE == "INT" || IDFIELDTYPE == "SMALLINT" || IDFIELDTYPE == "TINYINT")
+            //        {
+            //            s += "System.Int32 ii = Convert.ToInt32(cmd2.ExecuteScalar());\n";
+            //        }
+            //        else
+            //        {
+            //            // this should never happen
+            //            if (IDFIELDTYPE == "DOUBLE" || IDFIELDTYPE == "MONEY" || IDFIELDTYPE == "CURRENCY" || IDFIELDTYPE == "FLOAT")
+            //            {
+            //                s += "System.Double ii = Convert.ToDouble(cmd2.ExecuteScalar());\n";
+            //            }
+            //            else
+            //            {
+            //                // default to a long
+            //                s += "System.Int64 ii = Convert.ToInt64(cmd2.ExecuteScalar());\n";
+            //            }
+            //        }
+            //    }
+            //    s += "cmd2.Cancel();\n";
+            //    s += "cmd2.Dispose();\n";
+            //    s += "_" + IDFIELDNAME + " = ii;\n";
+            //    s += "}\n";
+
+            //}
 
             s += "cn.Close();\n";
             s += "cn.Dispose();\n";
