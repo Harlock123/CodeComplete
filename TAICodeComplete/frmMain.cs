@@ -51,176 +51,13 @@ namespace TAICodeComplete
 
             // Setup Scintillas
 
-            // Configuring the default style with properties
-            // we have common to every lexer style saves time.
-            sciBaseTableCode.StyleResetDefault();
-            sciBaseTableCode.Styles[Style.Default].Font = "Consolas";
-            sciBaseTableCode.Styles[Style.Default].Size = 10;
-            sciBaseTableCode.StyleClearAll();
-
-            // Configure the CPP (C#) lexer styles
-            sciBaseTableCode.Styles[Style.Cpp.Default].ForeColor = Color.Silver;
-            sciBaseTableCode.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            sciBaseTableCode.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            sciBaseTableCode.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
-            sciBaseTableCode.Styles[Style.Cpp.Number].ForeColor = Color.Olive;
-            sciBaseTableCode.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
-            sciBaseTableCode.Styles[Style.Cpp.Word2].ForeColor = Color.Blue;
-            sciBaseTableCode.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            sciBaseTableCode.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            sciBaseTableCode.Styles[Style.Cpp.Verbatim].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            sciBaseTableCode.Styles[Style.Cpp.StringEol].BackColor = Color.Pink;
-            sciBaseTableCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
-            sciBaseTableCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
-            sciBaseTableCode.Lexer = Lexer.Cpp;
-
-            ConfigScintillaControlForFolding(sciBaseTableCode);
-
-            // Set the keywords
-            sciBaseTableCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
-            sciBaseTableCode.SetKeywords(1, "bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
-
-
-            sciBaseTableTSCode.StyleResetDefault();
-            sciBaseTableTSCode.Styles[Style.Default].Font = "Consolas";
-            sciBaseTableTSCode.Styles[Style.Default].Size = 10;
-            sciBaseTableTSCode.StyleClearAll();
-
-            // Configure the CPP (C#) lexer styles
-            sciBaseTableTSCode.Styles[Style.Cpp.Default].ForeColor = Color.Silver;
-            sciBaseTableTSCode.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            sciBaseTableTSCode.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            sciBaseTableTSCode.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
-            sciBaseTableTSCode.Styles[Style.Cpp.Number].ForeColor = Color.Olive;
-            sciBaseTableTSCode.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
-            sciBaseTableTSCode.Styles[Style.Cpp.Word2].ForeColor = Color.Purple;
-            sciBaseTableTSCode.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            sciBaseTableTSCode.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            sciBaseTableTSCode.Styles[Style.Cpp.Verbatim].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            sciBaseTableTSCode.Styles[Style.Cpp.StringEol].BackColor = Color.Pink;
-            sciBaseTableTSCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
-            sciBaseTableTSCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
-            sciBaseTableTSCode.Lexer = Lexer.Cpp;
-
-            ConfigScintillaControlForFolding(sciBaseTableTSCode);
-
-            // Set the keywords
-            sciBaseTableTSCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
-            sciBaseTableTSCode.SetKeywords(1, "var Date bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
-
-
-            scintillaJSCode.StyleResetDefault();
-            scintillaJSCode.Styles[Style.Default].Font = "Consolas";
-            scintillaJSCode.Styles[Style.Default].Size = 10;
-            scintillaJSCode.StyleClearAll();
-
-            // Configure the CPP (C#) lexer styles
-            scintillaJSCode.Styles[Style.Cpp.Default].ForeColor = Color.Silver;
-            scintillaJSCode.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaJSCode.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaJSCode.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
-            scintillaJSCode.Styles[Style.Cpp.Number].ForeColor = Color.Olive;
-            scintillaJSCode.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
-            scintillaJSCode.Styles[Style.Cpp.Word2].ForeColor = Color.Purple;
-            scintillaJSCode.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaJSCode.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaJSCode.Styles[Style.Cpp.Verbatim].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaJSCode.Styles[Style.Cpp.StringEol].BackColor = Color.Pink;
-            scintillaJSCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
-            scintillaJSCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
-            scintillaJSCode.Lexer = Lexer.Cpp;
-
-            ConfigScintillaControlForFolding(scintillaJSCode);
-
-            // Set the keywords
-            scintillaJSCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
-            scintillaJSCode.SetKeywords(1, "var Date bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
-
-            scintillaWebMethodCode.StyleResetDefault();
-            scintillaWebMethodCode.Styles[Style.Default].Font = "Consolas";
-            scintillaWebMethodCode.Styles[Style.Default].Size = 10;
-            scintillaWebMethodCode.StyleClearAll();
-
-            // Configure the CPP (C#) lexer styles
-            scintillaWebMethodCode.Styles[Style.Cpp.Default].ForeColor = Color.Silver;
-            scintillaWebMethodCode.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaWebMethodCode.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaWebMethodCode.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
-            scintillaWebMethodCode.Styles[Style.Cpp.Number].ForeColor = Color.Olive;
-            scintillaWebMethodCode.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
-            scintillaWebMethodCode.Styles[Style.Cpp.Word2].ForeColor = Color.Blue;
-            scintillaWebMethodCode.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaWebMethodCode.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaWebMethodCode.Styles[Style.Cpp.Verbatim].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaWebMethodCode.Styles[Style.Cpp.StringEol].BackColor = Color.Pink;
-            scintillaWebMethodCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
-            scintillaWebMethodCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
-            scintillaWebMethodCode.Lexer = Lexer.Cpp;
-
-            ConfigScintillaControlForFolding(scintillaWebMethodCode);
-
-            // Set the keywords
-            scintillaWebMethodCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
-            scintillaWebMethodCode.SetKeywords(1, "bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
-
-
-            scintillaRestCode.StyleResetDefault();
-            scintillaRestCode.Styles[Style.Default].Font = "Consolas";
-            scintillaRestCode.Styles[Style.Default].Size = 10;
-            scintillaRestCode.StyleClearAll();
-
-            // Configure the CPP (C#) lexer styles
-            scintillaRestCode.Styles[Style.Cpp.Default].ForeColor = Color.Silver;
-            scintillaRestCode.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaRestCode.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaRestCode.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
-            scintillaRestCode.Styles[Style.Cpp.Number].ForeColor = Color.Olive;
-            scintillaRestCode.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
-            scintillaRestCode.Styles[Style.Cpp.Word2].ForeColor = Color.Blue;
-            scintillaRestCode.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaRestCode.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaRestCode.Styles[Style.Cpp.Verbatim].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaRestCode.Styles[Style.Cpp.StringEol].BackColor = Color.Pink;
-            scintillaRestCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
-            scintillaRestCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
-            scintillaRestCode.Lexer = Lexer.Cpp;
-
-            ConfigScintillaControlForFolding(scintillaRestCode);
-
-            // Set the keywords
-            scintillaRestCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
-            scintillaRestCode.SetKeywords(1, "var bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
-
-
-
-            scintillaWFCode.StyleResetDefault();
-            scintillaWFCode.Styles[Style.Default].Font = "Consolas";
-            scintillaWFCode.Styles[Style.Default].Size = 10;
-            scintillaWFCode.StyleClearAll();
-
-            // Configure the CPP (C#) lexer styles
-            scintillaWFCode.Styles[Style.Cpp.Default].ForeColor = Color.Silver;
-            scintillaWFCode.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaWFCode.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaWFCode.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
-            scintillaWFCode.Styles[Style.Cpp.Number].ForeColor = Color.Olive;
-            scintillaWFCode.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
-            scintillaWFCode.Styles[Style.Cpp.Word2].ForeColor = Color.Blue;
-            scintillaWFCode.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaWFCode.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaWFCode.Styles[Style.Cpp.Verbatim].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaWFCode.Styles[Style.Cpp.StringEol].BackColor = Color.Pink;
-            scintillaWFCode.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
-            scintillaWFCode.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
-            scintillaWFCode.Lexer = Lexer.Cpp;
-
-            ConfigScintillaControlForFolding(scintillaWFCode);
-
-            // Set the keywords
-            scintillaWFCode.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
-            scintillaWFCode.SetKeywords(1, "bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
-
-
+            ConfigureScintillaControlForCPP(sciBaseTableCode);
+            ConfigureScintillaControlForCPP(sciStringify);
+            ConfigureScintillaControlForCPP(sciBaseTableTSCode);
+            ConfigureScintillaControlForCPP(scintillaJSCode);
+            ConfigureScintillaControlForCPP(scintillaWebMethodCode);
+            ConfigureScintillaControlForCPP(scintillaRestCode);
+            ConfigureScintillaControlForCPP(scintillaWFCode);
 
 
             // Reset the styles
@@ -1858,6 +1695,39 @@ namespace TAICodeComplete
             }
         }
 
+        private void ConfigureScintillaControlForCPP(ScintillaNET.Scintilla theSCI)
+        {
+            // Configuring the default style with properties
+            // we have common to every lexer style saves time.
+            theSCI.StyleResetDefault();
+            theSCI.Styles[Style.Default].Font = "Consolas";
+            theSCI.Styles[Style.Default].Size = 10;
+            theSCI.StyleClearAll();
+
+            // Configure the CPP (C#) lexer styles
+            theSCI.Styles[Style.Cpp.Default].ForeColor = Color.Silver;
+            theSCI.Styles[Style.Cpp.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
+            theSCI.Styles[Style.Cpp.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
+            theSCI.Styles[Style.Cpp.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
+            theSCI.Styles[Style.Cpp.Number].ForeColor = Color.Olive;
+            theSCI.Styles[Style.Cpp.Word].ForeColor = Color.Blue;
+            theSCI.Styles[Style.Cpp.Word2].ForeColor = Color.Blue;
+            theSCI.Styles[Style.Cpp.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
+            theSCI.Styles[Style.Cpp.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
+            theSCI.Styles[Style.Cpp.Verbatim].ForeColor = Color.FromArgb(163, 21, 21); // Red
+            theSCI.Styles[Style.Cpp.StringEol].BackColor = Color.Pink;
+            theSCI.Styles[Style.Cpp.Operator].ForeColor = Color.Purple;
+            theSCI.Styles[Style.Cpp.Preprocessor].ForeColor = Color.Maroon;
+            theSCI.Lexer = Lexer.Cpp;
+
+            ConfigScintillaControlForFolding(theSCI);
+
+            // Set the keywords
+            theSCI.SetKeywords(0, "abstract as base break case catch checked continue default delegate do else event explicit extern false finally fixed for foreach goto if implicit in interface internal is lock namespace new null object operator out override params private protected public readonly ref return sealed sizeof stackalloc switch this throw true try typeof unchecked unsafe using virtual while");
+            theSCI.SetKeywords(1, "bool byte char class const decimal double enum float int long sbyte short static string struct uint ulong ushort void");
+
+        }
+
         private void ConfigScintillaControlForFolding(ScintillaNET.Scintilla TheSCI)
         {
             // Instruct the lexer to calculate folding
@@ -2034,6 +1904,55 @@ namespace TAICodeComplete
                 }
 
             }
+        }
+
+        private void btnStringify_Click(object sender, EventArgs e)
+        {
+            string[] arr = txtStringIfy.Text.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            StringBuilder s = new StringBuilder();
+
+            s.Append("var thestring = \"\";\n");
+
+            foreach (string ss in arr)
+            {
+                s.Append("\tthestring += \"" + ss + "\";\n");
+            }
+
+            sciStringify.Text = s.ToString();
+
+        }
+
+        private void handlechkStringifyLineNumberCheckChanged(object sender, EventArgs e)
+        {
+            int marginwidth = 0;
+
+            if (chkStringifyLineNumbers.Checked)
+            {
+                marginwidth = 60;
+            }
+            else
+            {
+                marginwidth = 0;
+            }
+
+            sciStringify.Margins[0].Width = marginwidth;
+        }
+
+        private void handlechkStringifyCodeFoldingCheckChanged(object sender, EventArgs e)
+        {
+            int marginwidth = 0;
+
+            if (chkStringifyCodeFolding.Checked)
+            {
+                marginwidth = 20;
+            }
+            else
+            {
+                marginwidth = 0;
+            }
+
+            sciStringify.Margins[2].Width = marginwidth;
         }
 
         #endregion
@@ -5945,7 +5864,7 @@ namespace TAICodeComplete
 
             return s;
         }
-        
+
         #endregion
 
     }

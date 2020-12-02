@@ -137,6 +137,13 @@
             this.dtnSaveSQLToFile = new System.Windows.Forms.Button();
             this.chkSQLCodeFolding = new System.Windows.Forms.CheckBox();
             this.chkSQLLineNumber = new System.Windows.Forms.CheckBox();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.btnStringify = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtStringIfy = new System.Windows.Forms.TextBox();
+            this.sciStringify = new ScintillaNET.Scintilla();
+            this.chkStringifyCodeFolding = new System.Windows.Forms.CheckBox();
+            this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
@@ -155,6 +162,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.tabPage14.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -229,6 +237,7 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage14);
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -260,7 +269,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(949, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
@@ -285,7 +294,7 @@
             // btnSSPI
             // 
             this.btnSSPI.Location = new System.Drawing.Point(386, 73);
-            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2);
             this.btnSSPI.Name = "btnSSPI";
             this.btnSSPI.Size = new System.Drawing.Size(52, 22);
             this.btnSSPI.TabIndex = 17;
@@ -523,7 +532,7 @@
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(949, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
@@ -540,7 +549,7 @@
             this.sciBaseTableCode.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciBaseTableCode.Location = new System.Drawing.Point(10, 32);
             this.sciBaseTableCode.Name = "sciBaseTableCode";
-            this.sciBaseTableCode.Size = new System.Drawing.Size(939, 484);
+            this.sciBaseTableCode.Size = new System.Drawing.Size(933, 481);
             this.sciBaseTableCode.TabIndex = 4;
             // 
             // btnSaveBaseCodeTableToFile
@@ -568,8 +577,6 @@
             // chkBaseTableLineNumbers
             // 
             this.chkBaseTableLineNumbers.AutoSize = true;
-            this.chkBaseTableLineNumbers.Checked = true;
-            this.chkBaseTableLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBaseTableLineNumbers.Location = new System.Drawing.Point(6, 6);
             this.chkBaseTableLineNumbers.Name = "chkBaseTableLineNumbers";
             this.chkBaseTableLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -628,8 +635,6 @@
             // chkBaseTableTSLineNumbers
             // 
             this.chkBaseTableTSLineNumbers.AutoSize = true;
-            this.chkBaseTableTSLineNumbers.Checked = true;
-            this.chkBaseTableTSLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBaseTableTSLineNumbers.Location = new System.Drawing.Point(7, 7);
             this.chkBaseTableTSLineNumbers.Name = "chkBaseTableTSLineNumbers";
             this.chkBaseTableTSLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -688,8 +693,6 @@
             // chkWebMethodLineNumbers
             // 
             this.chkWebMethodLineNumbers.AutoSize = true;
-            this.chkWebMethodLineNumbers.Checked = true;
-            this.chkWebMethodLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkWebMethodLineNumbers.Location = new System.Drawing.Point(8, 6);
             this.chkWebMethodLineNumbers.Name = "chkWebMethodLineNumbers";
             this.chkWebMethodLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -746,8 +749,6 @@
             // chkJSLineNumbers
             // 
             this.chkJSLineNumbers.AutoSize = true;
-            this.chkJSLineNumbers.Checked = true;
-            this.chkJSLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkJSLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkJSLineNumbers.Name = "chkJSLineNumbers";
             this.chkJSLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -805,8 +806,6 @@
             // chkRestLineNumbers
             // 
             this.chkRestLineNumbers.AutoSize = true;
-            this.chkRestLineNumbers.Checked = true;
-            this.chkRestLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkRestLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkRestLineNumbers.Name = "chkRestLineNumbers";
             this.chkRestLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -877,8 +876,6 @@
             // chkHTMLLineNumbers
             // 
             this.chkHTMLLineNumbers.AutoSize = true;
-            this.chkHTMLLineNumbers.Checked = true;
-            this.chkHTMLLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHTMLLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkHTMLLineNumbers.Name = "chkHTMLLineNumbers";
             this.chkHTMLLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -937,8 +934,6 @@
             // chkCSSLineNumbers
             // 
             this.chkCSSLineNumbers.AutoSize = true;
-            this.chkCSSLineNumbers.Checked = true;
-            this.chkCSSLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkCSSLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkCSSLineNumbers.Name = "chkCSSLineNumbers";
             this.chkCSSLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -956,7 +951,7 @@
             this.tabPage4.Controls.Add(this.chkLineNumbersXAML);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1125, 607);
+            this.tabPage4.Size = new System.Drawing.Size(949, 519);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "XAML";
             // 
@@ -968,7 +963,7 @@
             this.scintillaXAML.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaXAML.Location = new System.Drawing.Point(7, 30);
             this.scintillaXAML.Name = "scintillaXAML";
-            this.scintillaXAML.Size = new System.Drawing.Size(1110, 572);
+            this.scintillaXAML.Size = new System.Drawing.Size(937, 483);
             this.scintillaXAML.TabIndex = 12;
             // 
             // btnSaveXaml
@@ -996,8 +991,6 @@
             // chkLineNumbersXAML
             // 
             this.chkLineNumbersXAML.AutoSize = true;
-            this.chkLineNumbersXAML.Checked = true;
-            this.chkLineNumbersXAML.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLineNumbersXAML.Location = new System.Drawing.Point(7, 6);
             this.chkLineNumbersXAML.Name = "chkLineNumbersXAML";
             this.chkLineNumbersXAML.Size = new System.Drawing.Size(91, 17);
@@ -1015,7 +1008,7 @@
             this.tabPage5.Controls.Add(this.chkWFLineNumbers);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1125, 607);
+            this.tabPage5.Size = new System.Drawing.Size(949, 519);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "WinForms";
             // 
@@ -1027,7 +1020,7 @@
             this.scintillaWFCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWFCode.Location = new System.Drawing.Point(9, 29);
             this.scintillaWFCode.Name = "scintillaWFCode";
-            this.scintillaWFCode.Size = new System.Drawing.Size(1109, 572);
+            this.scintillaWFCode.Size = new System.Drawing.Size(935, 484);
             this.scintillaWFCode.TabIndex = 8;
             // 
             // btnWFSaveToFile
@@ -1055,8 +1048,6 @@
             // chkWFLineNumbers
             // 
             this.chkWFLineNumbers.AutoSize = true;
-            this.chkWFLineNumbers.Checked = true;
-            this.chkWFLineNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkWFLineNumbers.Location = new System.Drawing.Point(9, 8);
             this.chkWFLineNumbers.Name = "chkWFLineNumbers";
             this.chkWFLineNumbers.Size = new System.Drawing.Size(91, 17);
@@ -1080,9 +1071,9 @@
             this.tabPage6.Controls.Add(this.btnAddNewDocDefForm);
             this.tabPage6.Controls.Add(this.btnReadDocDefForms);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1125, 607);
+            this.tabPage6.Size = new System.Drawing.Size(949, 519);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Doc Definition";
             // 
@@ -1169,7 +1160,7 @@
             // 
             this.cmboDocDefSubSubForms.FormattingEnabled = true;
             this.cmboDocDefSubSubForms.Location = new System.Drawing.Point(8, 117);
-            this.cmboDocDefSubSubForms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboDocDefSubSubForms.Margin = new System.Windows.Forms.Padding(2);
             this.cmboDocDefSubSubForms.Name = "cmboDocDefSubSubForms";
             this.cmboDocDefSubSubForms.Size = new System.Drawing.Size(189, 21);
             this.cmboDocDefSubSubForms.TabIndex = 8;
@@ -1189,7 +1180,7 @@
             // 
             this.cmboDocDefSubForms.FormattingEnabled = true;
             this.cmboDocDefSubForms.Location = new System.Drawing.Point(8, 81);
-            this.cmboDocDefSubForms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboDocDefSubForms.Margin = new System.Windows.Forms.Padding(2);
             this.cmboDocDefSubForms.Name = "cmboDocDefSubForms";
             this.cmboDocDefSubForms.Size = new System.Drawing.Size(189, 21);
             this.cmboDocDefSubForms.TabIndex = 6;
@@ -1209,7 +1200,7 @@
             // 
             this.cmboDatabasedForDocDefForms.FormattingEnabled = true;
             this.cmboDatabasedForDocDefForms.Location = new System.Drawing.Point(8, 10);
-            this.cmboDatabasedForDocDefForms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboDatabasedForDocDefForms.Margin = new System.Windows.Forms.Padding(2);
             this.cmboDatabasedForDocDefForms.Name = "cmboDatabasedForDocDefForms";
             this.cmboDatabasedForDocDefForms.Size = new System.Drawing.Size(189, 21);
             this.cmboDatabasedForDocDefForms.TabIndex = 4;
@@ -1229,7 +1220,7 @@
             // 
             this.cmboDocDefForms.FormattingEnabled = true;
             this.cmboDocDefForms.Location = new System.Drawing.Point(8, 46);
-            this.cmboDocDefForms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboDocDefForms.Margin = new System.Windows.Forms.Padding(2);
             this.cmboDocDefForms.Name = "cmboDocDefForms";
             this.cmboDocDefForms.Size = new System.Drawing.Size(189, 21);
             this.cmboDocDefForms.TabIndex = 2;
@@ -1238,7 +1229,7 @@
             // btnAddNewDocDefForm
             // 
             this.btnAddNewDocDefForm.Location = new System.Drawing.Point(297, 46);
-            this.btnAddNewDocDefForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddNewDocDefForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddNewDocDefForm.Name = "btnAddNewDocDefForm";
             this.btnAddNewDocDefForm.Size = new System.Drawing.Size(92, 26);
             this.btnAddNewDocDefForm.TabIndex = 1;
@@ -1249,7 +1240,7 @@
             // btnReadDocDefForms
             // 
             this.btnReadDocDefForms.Location = new System.Drawing.Point(200, 46);
-            this.btnReadDocDefForms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReadDocDefForms.Margin = new System.Windows.Forms.Padding(2);
             this.btnReadDocDefForms.Name = "btnReadDocDefForms";
             this.btnReadDocDefForms.Size = new System.Drawing.Size(92, 26);
             this.btnReadDocDefForms.TabIndex = 0;
@@ -1272,7 +1263,7 @@
             this.tabPage7.Controls.Add(this.cmboDATABASEFORLOOKUPS);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1125, 607);
+            this.tabPage7.Size = new System.Drawing.Size(949, 519);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Doc Def Lookup Mgmt.";
             // 
@@ -1412,7 +1403,7 @@
             // 
             this.cmboSpecificLookupList.FormattingEnabled = true;
             this.cmboSpecificLookupList.Location = new System.Drawing.Point(2, 38);
-            this.cmboSpecificLookupList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboSpecificLookupList.Margin = new System.Windows.Forms.Padding(2);
             this.cmboSpecificLookupList.Name = "cmboSpecificLookupList";
             this.cmboSpecificLookupList.Size = new System.Drawing.Size(363, 21);
             this.cmboSpecificLookupList.TabIndex = 8;
@@ -1432,7 +1423,7 @@
             // 
             this.cmboDATABASEFORLOOKUPS.FormattingEnabled = true;
             this.cmboDATABASEFORLOOKUPS.Location = new System.Drawing.Point(2, 2);
-            this.cmboDATABASEFORLOOKUPS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboDATABASEFORLOOKUPS.Margin = new System.Windows.Forms.Padding(2);
             this.cmboDATABASEFORLOOKUPS.Name = "cmboDATABASEFORLOOKUPS";
             this.cmboDATABASEFORLOOKUPS.Size = new System.Drawing.Size(189, 21);
             this.cmboDATABASEFORLOOKUPS.TabIndex = 6;
@@ -1446,7 +1437,7 @@
             this.tabPage8.Controls.Add(this.chkSQLLineNumber);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1125, 607);
+            this.tabPage8.Size = new System.Drawing.Size(949, 519);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "SQL Code";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1497,6 +1488,87 @@
             this.chkSQLLineNumber.UseVisualStyleBackColor = true;
             this.chkSQLLineNumber.CheckedChanged += new System.EventHandler(this.chkSQLLineNumber_CheckedChanged);
             // 
+            // tabPage14
+            // 
+            this.tabPage14.BackColor = System.Drawing.Color.SeaShell;
+            this.tabPage14.Controls.Add(this.btnStringify);
+            this.tabPage14.Controls.Add(this.textBox1);
+            this.tabPage14.Controls.Add(this.txtStringIfy);
+            this.tabPage14.Controls.Add(this.sciStringify);
+            this.tabPage14.Controls.Add(this.chkStringifyCodeFolding);
+            this.tabPage14.Controls.Add(this.chkStringifyLineNumbers);
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Size = new System.Drawing.Size(949, 519);
+            this.tabPage14.TabIndex = 13;
+            this.tabPage14.Text = "Stringify";
+            // 
+            // btnStringify
+            // 
+            this.btnStringify.Location = new System.Drawing.Point(95, 131);
+            this.btnStringify.Name = "btnStringify";
+            this.btnStringify.Size = new System.Drawing.Size(75, 23);
+            this.btnStringify.TabIndex = 10;
+            this.btnStringify.Text = "Stringify";
+            this.btnStringify.UseVisualStyleBackColor = true;
+            this.btnStringify.Click += new System.EventHandler(this.btnStringify_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(61, 52);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(147, 60);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "Paste the desired long piece of text into the box on the right. Then click the ST" +
+    "RINGIFY button below";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtStringIfy
+            // 
+            this.txtStringIfy.Location = new System.Drawing.Point(270, 9);
+            this.txtStringIfy.Multiline = true;
+            this.txtStringIfy.Name = "txtStringIfy";
+            this.txtStringIfy.Size = new System.Drawing.Size(675, 185);
+            this.txtStringIfy.TabIndex = 8;
+            // 
+            // sciStringify
+            // 
+            this.sciStringify.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciStringify.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
+            this.sciStringify.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sciStringify.Lexer = ScintillaNET.Lexer.Cpp;
+            this.sciStringify.Location = new System.Drawing.Point(7, 200);
+            this.sciStringify.Name = "sciStringify";
+            this.sciStringify.Size = new System.Drawing.Size(939, 314);
+            this.sciStringify.TabIndex = 7;
+            // 
+            // chkStringifyCodeFolding
+            // 
+            this.chkStringifyCodeFolding.AutoSize = true;
+            this.chkStringifyCodeFolding.Location = new System.Drawing.Point(104, 183);
+            this.chkStringifyCodeFolding.Name = "chkStringifyCodeFolding";
+            this.chkStringifyCodeFolding.Size = new System.Drawing.Size(118, 17);
+            this.chkStringifyCodeFolding.TabIndex = 6;
+            this.chkStringifyCodeFolding.Text = "Show Code Folding";
+            this.chkStringifyCodeFolding.UseVisualStyleBackColor = true;
+            this.chkStringifyCodeFolding.CheckedChanged += new System.EventHandler(this.handlechkStringifyCodeFoldingCheckChanged);
+            // 
+            // chkStringifyLineNumbers
+            // 
+            this.chkStringifyLineNumbers.AutoSize = true;
+            this.chkStringifyLineNumbers.Location = new System.Drawing.Point(7, 183);
+            this.chkStringifyLineNumbers.Name = "chkStringifyLineNumbers";
+            this.chkStringifyLineNumbers.Size = new System.Drawing.Size(91, 17);
+            this.chkStringifyLineNumbers.TabIndex = 5;
+            this.chkStringifyLineNumbers.Text = "Line Numbers";
+            this.chkStringifyLineNumbers.UseVisualStyleBackColor = true;
+            this.chkStringifyLineNumbers.CheckedChanged += new System.EventHandler(this.handlechkStringifyLineNumberCheckChanged);
+            // 
             // backgroundworkerThread
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
@@ -1540,6 +1612,8 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.tabPage14.ResumeLayout(false);
+            this.tabPage14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1656,6 +1730,13 @@
         private System.Windows.Forms.Button btnSSPI;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtManualConnectionString;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.Button btnStringify;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtStringIfy;
+        private ScintillaNET.Scintilla sciStringify;
+        private System.Windows.Forms.CheckBox chkStringifyCodeFolding;
+        private System.Windows.Forms.CheckBox chkStringifyLineNumbers;
     }
 }
 
