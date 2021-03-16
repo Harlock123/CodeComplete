@@ -172,6 +172,7 @@
     <None Include="bin\Debug\JS\jquery-ui.theme.min.css" />
     <None Include="bin\Debug\JS\w2ui-1.4.3.min.css" />
     <None Include="bin\Debug\JS\w2ui-1.4.3.min.js" />
+    <None Include="Images\Binoculors.bmp" />
     <Content Include="SupportDLLs\Microsoft.VisualBasic.PowerPacks.Vs.dll" />
     <Content Include="SupportDLLs\TAIGridControl2.dll" />
     <Content Include="SupportDLLs\TAIGridControl2.pdb" />

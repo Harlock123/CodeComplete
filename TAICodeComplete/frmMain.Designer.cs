@@ -146,6 +146,7 @@
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.btnEnumerateLocalSQLServers = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,7 +171,7 @@
             this.cmboServers.FormattingEnabled = true;
             this.cmboServers.Location = new System.Drawing.Point(6, 52);
             this.cmboServers.Name = "cmboServers";
-            this.cmboServers.Size = new System.Drawing.Size(197, 21);
+            this.cmboServers.Size = new System.Drawing.Size(167, 21);
             this.cmboServers.TabIndex = 0;
             this.cmboServers.SelectedIndexChanged += new System.EventHandler(this.HandleServerSelection);
             // 
@@ -241,12 +242,13 @@
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(957, 545);
+            this.tabControl1.Size = new System.Drawing.Size(1145, 545);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
+            this.tabPage1.Controls.Add(this.btnEnumerateLocalSQLServers);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.txtManualConnectionString);
             this.tabPage1.Controls.Add(this.btnSSPI);
@@ -270,7 +272,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(949, 519);
+            this.tabPage1.Size = new System.Drawing.Size(1137, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
             // 
@@ -279,9 +281,10 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(6, 32);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(275, 13);
+            this.label17.Size = new System.Drawing.Size(392, 13);
             this.label17.TabIndex = 19;
-            this.label17.Text = "Type in a manual connection string here if thats available";
+            this.label17.Text = "Type in  or Paste a manual connection string here if thats available pressing ent" +
+    "er ";
             // 
             // txtManualConnectionString
             // 
@@ -306,11 +309,12 @@
             // 
             this.lblOneMoment.AutoSize = true;
             this.lblOneMoment.BackColor = System.Drawing.Color.White;
-            this.lblOneMoment.Location = new System.Drawing.Point(17, 55);
+            this.lblOneMoment.Location = new System.Drawing.Point(6, 55);
             this.lblOneMoment.Name = "lblOneMoment";
             this.lblOneMoment.Size = new System.Drawing.Size(169, 13);
             this.lblOneMoment.TabIndex = 16;
             this.lblOneMoment.Text = "One Moment Enumerating Servers";
+            this.lblOneMoment.Visible = false;
             // 
             // label10
             // 
@@ -361,9 +365,9 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtInterfaceOBJPrefix);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(570, 6);
+            this.panel1.Location = new System.Drawing.Point(445, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(373, 154);
+            this.panel1.Size = new System.Drawing.Size(686, 154);
             this.panel1.TabIndex = 11;
             // 
             // chkGenerateInsertStatements
@@ -520,7 +524,7 @@
             this.dgrid.Name = "dgrid";
             this.dgrid.ReadOnly = true;
             this.dgrid.RowHeadersWidth = 82;
-            this.dgrid.Size = new System.Drawing.Size(936, 320);
+            this.dgrid.Size = new System.Drawing.Size(1124, 320);
             this.dgrid.TabIndex = 6;
             this.dgrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_CellContentDoubleClick);
             // 
@@ -1574,11 +1578,21 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
+            // btnEnumerateLocalSQLServers
+            // 
+            this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
+            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
+            this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
+            this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
+            this.btnEnumerateLocalSQLServers.TabIndex = 20;
+            this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
+            this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 552);
+            this.ClientSize = new System.Drawing.Size(1150, 552);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMain";
             this.Text = "TAI Code Complete (automated code generator and support Toolset)";
@@ -1737,6 +1751,7 @@
         private ScintillaNET.Scintilla sciStringify;
         private System.Windows.Forms.CheckBox chkStringifyCodeFolding;
         private System.Windows.Forms.CheckBox chkStringifyLineNumbers;
+        private System.Windows.Forms.Button btnEnumerateLocalSQLServers;
     }
 }
 

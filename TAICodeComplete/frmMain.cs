@@ -36,7 +36,9 @@ namespace TAICodeComplete
             lblOneMoment.Visible = true;
             cmboServers.Enabled = false;
 
-            backgroundworkerThread.RunWorkerAsync();
+            lblOneMoment.Visible = false;
+
+            //backgroundworkerThread.RunWorkerAsync();
 
             this.Text += " ver " + ApplicationInfo.Version.ToString();
 
@@ -5867,6 +5869,12 @@ namespace TAICodeComplete
 
         #endregion
 
+        private void btnEnumerateLocalSQLServers_Click(object sender, EventArgs e)
+        {
+            lblOneMoment.Visible = true;
+
+            backgroundworkerThread.RunWorkerAsync();
+        }
     }
 
     public class DOCDEFCAT
