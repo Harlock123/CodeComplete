@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Drawing.StringFormat stringFormat1 = new System.Drawing.StringFormat();
+            System.Drawing.StringFormat stringFormat5 = new System.Drawing.StringFormat();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Drawing.StringFormat stringFormat2 = new System.Drawing.StringFormat();
+            System.Drawing.StringFormat stringFormat6 = new System.Drawing.StringFormat();
             this.cmboServers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.cmboTables = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnEnumerateLocalSQLServers = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtManualConnectionString = new System.Windows.Forms.TextBox();
             this.btnSSPI = new System.Windows.Forms.Button();
@@ -146,7 +147,6 @@
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.btnEnumerateLocalSQLServers = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -276,6 +276,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
             // 
+            // btnEnumerateLocalSQLServers
+            // 
+            this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
+            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
+            this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
+            this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
+            this.btnEnumerateLocalSQLServers.TabIndex = 20;
+            this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
+            this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -338,6 +348,7 @@
             // 
             this.txtPASSWORD.Location = new System.Drawing.Point(306, 103);
             this.txtPASSWORD.Name = "txtPASSWORD";
+            this.txtPASSWORD.PasswordChar = '*';
             this.txtPASSWORD.Size = new System.Drawing.Size(132, 20);
             this.txtPASSWORD.TabIndex = 13;
             this.txtPASSWORD.Text = "P@ssw0rd";
@@ -537,7 +548,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(949, 519);
+            this.tabPage2.Size = new System.Drawing.Size(1137, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -553,13 +564,13 @@
             this.sciBaseTableCode.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciBaseTableCode.Location = new System.Drawing.Point(10, 32);
             this.sciBaseTableCode.Name = "sciBaseTableCode";
-            this.sciBaseTableCode.Size = new System.Drawing.Size(933, 481);
+            this.sciBaseTableCode.Size = new System.Drawing.Size(1121, 481);
             this.sciBaseTableCode.TabIndex = 4;
             // 
             // btnSaveBaseCodeTableToFile
             // 
             this.btnSaveBaseCodeTableToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(868, 3);
+            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(1056, 3);
             this.btnSaveBaseCodeTableToFile.Name = "btnSaveBaseCodeTableToFile";
             this.btnSaveBaseCodeTableToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBaseCodeTableToFile.TabIndex = 3;
@@ -598,7 +609,7 @@
             this.tabPage13.Controls.Add(this.chkBaseTableTSLineNumbers);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(949, 519);
+            this.tabPage13.Size = new System.Drawing.Size(1137, 519);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Base Code ts";
             // 
@@ -611,13 +622,13 @@
             this.sciBaseTableTSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciBaseTableTSCode.Location = new System.Drawing.Point(7, 30);
             this.sciBaseTableTSCode.Name = "sciBaseTableTSCode";
-            this.sciBaseTableTSCode.Size = new System.Drawing.Size(937, 484);
+            this.sciBaseTableTSCode.Size = new System.Drawing.Size(1125, 484);
             this.sciBaseTableTSCode.TabIndex = 8;
             // 
             // btnSaveTSCode
             // 
             this.btnSaveTSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveTSCode.Location = new System.Drawing.Point(867, 2);
+            this.btnSaveTSCode.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveTSCode.Name = "btnSaveTSCode";
             this.btnSaveTSCode.Size = new System.Drawing.Size(75, 23);
             this.btnSaveTSCode.TabIndex = 7;
@@ -656,7 +667,7 @@
             this.tabPage3.Controls.Add(this.chkWebMethodLineNumbers);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(949, 519);
+            this.tabPage3.Size = new System.Drawing.Size(1137, 519);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Web Method";
             // 
@@ -669,13 +680,13 @@
             this.scintillaWebMethodCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWebMethodCode.Location = new System.Drawing.Point(3, 29);
             this.scintillaWebMethodCode.Name = "scintillaWebMethodCode";
-            this.scintillaWebMethodCode.Size = new System.Drawing.Size(939, 485);
+            this.scintillaWebMethodCode.Size = new System.Drawing.Size(1129, 485);
             this.scintillaWebMethodCode.TabIndex = 7;
             // 
             // btnSaveWebMethodsToFile
             // 
             this.btnSaveWebMethodsToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveWebMethodsToFile.Location = new System.Drawing.Point(865, 2);
+            this.btnSaveWebMethodsToFile.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveWebMethodsToFile.Name = "btnSaveWebMethodsToFile";
             this.btnSaveWebMethodsToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveWebMethodsToFile.TabIndex = 6;
@@ -714,7 +725,7 @@
             this.tabPage10.Controls.Add(this.chkJSLineNumbers);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(949, 519);
+            this.tabPage10.Size = new System.Drawing.Size(1137, 519);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "JavaScript";
             // 
@@ -727,13 +738,13 @@
             this.scintillaJSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaJSCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaJSCode.Name = "scintillaJSCode";
-            this.scintillaJSCode.Size = new System.Drawing.Size(938, 485);
+            this.scintillaJSCode.Size = new System.Drawing.Size(1127, 485);
             this.scintillaJSCode.TabIndex = 11;
             // 
             // btnSaveJSToFile
             // 
             this.btnSaveJSToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveJSToFile.Location = new System.Drawing.Point(866, 3);
+            this.btnSaveJSToFile.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveJSToFile.Name = "btnSaveJSToFile";
             this.btnSaveJSToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveJSToFile.TabIndex = 10;
@@ -769,7 +780,7 @@
             this.tabPage9.Controls.Add(this.chkRestLineNumbers);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(949, 519);
+            this.tabPage9.Size = new System.Drawing.Size(1137, 519);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "REST";
             // 
@@ -780,15 +791,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaRestCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaRestCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scintillaRestCode.Location = new System.Drawing.Point(5, 30);
+            this.scintillaRestCode.Location = new System.Drawing.Point(6, 28);
             this.scintillaRestCode.Name = "scintillaRestCode";
-            this.scintillaRestCode.Size = new System.Drawing.Size(937, 485);
+            this.scintillaRestCode.Size = new System.Drawing.Size(1126, 485);
             this.scintillaRestCode.TabIndex = 11;
             // 
             // btnRestSaveToFile
             // 
             this.btnRestSaveToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestSaveToFile.Location = new System.Drawing.Point(869, 4);
+            this.btnRestSaveToFile.Location = new System.Drawing.Point(1057, 3);
             this.btnRestSaveToFile.Name = "btnRestSaveToFile";
             this.btnRestSaveToFile.Size = new System.Drawing.Size(75, 23);
             this.btnRestSaveToFile.TabIndex = 10;
@@ -828,14 +839,14 @@
             this.tabPage11.Controls.Add(this.chkHTMLLineNumbers);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(949, 519);
+            this.tabPage11.Size = new System.Drawing.Size(1137, 519);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "HTML";
             // 
             // btnFiddleIt
             // 
             this.btnFiddleIt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiddleIt.Location = new System.Drawing.Point(788, 4);
+            this.btnFiddleIt.Location = new System.Drawing.Point(976, 3);
             this.btnFiddleIt.Name = "btnFiddleIt";
             this.btnFiddleIt.Size = new System.Drawing.Size(75, 23);
             this.btnFiddleIt.TabIndex = 16;
@@ -850,15 +861,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaHTMLCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaHTMLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scintillaHTMLCode.Location = new System.Drawing.Point(5, 30);
+            this.scintillaHTMLCode.Location = new System.Drawing.Point(3, 28);
             this.scintillaHTMLCode.Name = "scintillaHTMLCode";
-            this.scintillaHTMLCode.Size = new System.Drawing.Size(937, 485);
+            this.scintillaHTMLCode.Size = new System.Drawing.Size(1129, 485);
             this.scintillaHTMLCode.TabIndex = 15;
             // 
             // btnSaveHTML
             // 
             this.btnSaveHTML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveHTML.Location = new System.Drawing.Point(869, 4);
+            this.btnSaveHTML.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveHTML.Name = "btnSaveHTML";
             this.btnSaveHTML.Size = new System.Drawing.Size(75, 23);
             this.btnSaveHTML.TabIndex = 14;
@@ -897,7 +908,7 @@
             this.tabPage12.Controls.Add(this.chkCSSLineNumbers);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(949, 519);
+            this.tabPage12.Size = new System.Drawing.Size(1137, 519);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "CSS";
             // 
@@ -910,13 +921,13 @@
             this.scintillaCSSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaCSSCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaCSSCode.Name = "scintillaCSSCode";
-            this.scintillaCSSCode.Size = new System.Drawing.Size(937, 485);
+            this.scintillaCSSCode.Size = new System.Drawing.Size(1127, 485);
             this.scintillaCSSCode.TabIndex = 19;
             // 
             // btnsaveCSS
             // 
             this.btnsaveCSS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsaveCSS.Location = new System.Drawing.Point(869, 4);
+            this.btnsaveCSS.Location = new System.Drawing.Point(1059, 4);
             this.btnsaveCSS.Name = "btnsaveCSS";
             this.btnsaveCSS.Size = new System.Drawing.Size(75, 23);
             this.btnsaveCSS.TabIndex = 18;
@@ -955,7 +966,7 @@
             this.tabPage4.Controls.Add(this.chkLineNumbersXAML);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(949, 519);
+            this.tabPage4.Size = new System.Drawing.Size(1137, 519);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "XAML";
             // 
@@ -967,13 +978,13 @@
             this.scintillaXAML.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaXAML.Location = new System.Drawing.Point(7, 30);
             this.scintillaXAML.Name = "scintillaXAML";
-            this.scintillaXAML.Size = new System.Drawing.Size(937, 483);
+            this.scintillaXAML.Size = new System.Drawing.Size(1125, 483);
             this.scintillaXAML.TabIndex = 12;
             // 
             // btnSaveXaml
             // 
             this.btnSaveXaml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveXaml.Location = new System.Drawing.Point(1042, 4);
+            this.btnSaveXaml.Location = new System.Drawing.Point(1055, 4);
             this.btnSaveXaml.Name = "btnSaveXaml";
             this.btnSaveXaml.Size = new System.Drawing.Size(75, 23);
             this.btnSaveXaml.TabIndex = 11;
@@ -1012,7 +1023,7 @@
             this.tabPage5.Controls.Add(this.chkWFLineNumbers);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(949, 519);
+            this.tabPage5.Size = new System.Drawing.Size(1137, 519);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "WinForms";
             // 
@@ -1024,13 +1035,13 @@
             this.scintillaWFCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWFCode.Location = new System.Drawing.Point(9, 29);
             this.scintillaWFCode.Name = "scintillaWFCode";
-            this.scintillaWFCode.Size = new System.Drawing.Size(935, 484);
+            this.scintillaWFCode.Size = new System.Drawing.Size(1123, 484);
             this.scintillaWFCode.TabIndex = 8;
             // 
             // btnWFSaveToFile
             // 
             this.btnWFSaveToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWFSaveToFile.Location = new System.Drawing.Point(1041, 3);
+            this.btnWFSaveToFile.Location = new System.Drawing.Point(1053, 3);
             this.btnWFSaveToFile.Name = "btnWFSaveToFile";
             this.btnWFSaveToFile.Size = new System.Drawing.Size(75, 23);
             this.btnWFSaveToFile.TabIndex = 7;
@@ -1077,7 +1088,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(949, 519);
+            this.tabPage6.Size = new System.Drawing.Size(1137, 519);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Doc Definition";
             // 
@@ -1117,11 +1128,11 @@
             this.TAIGridDocDef.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.TAIGridDocDef.GridHeaderForeColor = System.Drawing.Color.Black;
             this.TAIGridDocDef.GridHeaderHeight = 16;
-            stringFormat1.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat1.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat1.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat1.Trimming = System.Drawing.StringTrimming.Character;
-            this.TAIGridDocDef.GridHeaderStringFormat = stringFormat1;
+            stringFormat5.Alignment = System.Drawing.StringAlignment.Near;
+            stringFormat5.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
+            stringFormat5.LineAlignment = System.Drawing.StringAlignment.Near;
+            stringFormat5.Trimming = System.Drawing.StringTrimming.Character;
+            this.TAIGridDocDef.GridHeaderStringFormat = stringFormat5;
             this.TAIGridDocDef.GridheaderVisible = true;
             this.TAIGridDocDef.Location = new System.Drawing.Point(8, 152);
             this.TAIGridDocDef.Name = "TAIGridDocDef";
@@ -1267,7 +1278,7 @@
             this.tabPage7.Controls.Add(this.cmboDATABASEFORLOOKUPS);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(949, 519);
+            this.tabPage7.Size = new System.Drawing.Size(1137, 519);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Doc Def Lookup Mgmt.";
             // 
@@ -1360,11 +1371,11 @@
             this.taigLookupListGrid.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.taigLookupListGrid.GridHeaderForeColor = System.Drawing.Color.Black;
             this.taigLookupListGrid.GridHeaderHeight = 16;
-            stringFormat2.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat2.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat2.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat2.Trimming = System.Drawing.StringTrimming.Character;
-            this.taigLookupListGrid.GridHeaderStringFormat = stringFormat2;
+            stringFormat6.Alignment = System.Drawing.StringAlignment.Near;
+            stringFormat6.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
+            stringFormat6.LineAlignment = System.Drawing.StringAlignment.Near;
+            stringFormat6.Trimming = System.Drawing.StringTrimming.Character;
+            this.taigLookupListGrid.GridHeaderStringFormat = stringFormat6;
             this.taigLookupListGrid.GridheaderVisible = true;
             this.taigLookupListGrid.Location = new System.Drawing.Point(5, 78);
             this.taigLookupListGrid.Name = "taigLookupListGrid";
@@ -1441,7 +1452,7 @@
             this.tabPage8.Controls.Add(this.chkSQLLineNumber);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(949, 519);
+            this.tabPage8.Size = new System.Drawing.Size(1137, 519);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "SQL Code";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1503,7 +1514,7 @@
             this.tabPage14.Controls.Add(this.chkStringifyLineNumbers);
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(949, 519);
+            this.tabPage14.Size = new System.Drawing.Size(1137, 519);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "Stringify";
             // 
@@ -1531,10 +1542,12 @@
             // 
             // txtStringIfy
             // 
+            this.txtStringIfy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStringIfy.Location = new System.Drawing.Point(270, 9);
             this.txtStringIfy.Multiline = true;
             this.txtStringIfy.Name = "txtStringIfy";
-            this.txtStringIfy.Size = new System.Drawing.Size(675, 185);
+            this.txtStringIfy.Size = new System.Drawing.Size(862, 185);
             this.txtStringIfy.TabIndex = 8;
             // 
             // sciStringify
@@ -1546,9 +1559,9 @@
             | ScintillaNET.AutomaticFold.Change)));
             this.sciStringify.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciStringify.Lexer = ScintillaNET.Lexer.Cpp;
-            this.sciStringify.Location = new System.Drawing.Point(7, 200);
+            this.sciStringify.Location = new System.Drawing.Point(6, 199);
             this.sciStringify.Name = "sciStringify";
-            this.sciStringify.Size = new System.Drawing.Size(939, 314);
+            this.sciStringify.Size = new System.Drawing.Size(1125, 314);
             this.sciStringify.TabIndex = 7;
             // 
             // chkStringifyCodeFolding
@@ -1577,16 +1590,6 @@
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
-            // 
-            // btnEnumerateLocalSQLServers
-            // 
-            this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
-            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
-            this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
-            this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
-            this.btnEnumerateLocalSQLServers.TabIndex = 20;
-            this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
-            this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
             // 
             // frmMain
             // 
