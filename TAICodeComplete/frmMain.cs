@@ -4388,11 +4388,11 @@ namespace TAICodeComplete
                 {
                     s += "if (thing." + f.FieldNameConverted + " != Convert.ToDateTime(null))\n";
                     s += "{\n";
-                    s += " dtp" + f.FieldNameConverted + ".Value = thing." + f.FieldNameConverted + ";\n";
+                    s += "dtp" + f.FieldNameConverted + ".Value = thing." + f.FieldNameConverted + ";\n";
                     s += "}\n";
                     s += "else\n";
                     s += "{\n";
-                    s += "dtp" + f.FieldNameConverted + ".Value = null;\n";
+                    s += "dtp" + f.FieldNameConverted + ".Value = Convert.ToDateTime(null);\n";
                     s += "}\n";
                 }
 
@@ -4400,7 +4400,7 @@ namespace TAICodeComplete
                 {
                     s += "if (thing." + f.FieldNameConverted + ")\n";
                     s += "{\n";
-                    s += " chk" + f.FieldNameConverted + ".Checked = true;\n";
+                    s += "chk" + f.FieldNameConverted + ".Checked = true;\n";
                     s += "}\n";
                     s += "else\n";
                     s += "{\n";
