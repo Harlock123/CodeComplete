@@ -1918,7 +1918,11 @@ namespace TAICodeComplete
 
             foreach (string ss in arr)
             {
-                s.Append("\tthestring += \"" + ss + "\";\n");
+                if (chkPad.Checked)
+                { s.Append("\tthestring += \"" + ss + " \";\n"); }
+                else
+                { s.Append("\tthestring += \"" + ss + "\";\n");  }
+                
             }
 
             sciStringify.Text = s.ToString();

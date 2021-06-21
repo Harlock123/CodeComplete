@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Drawing.StringFormat stringFormat5 = new System.Drawing.StringFormat();
+            System.Drawing.StringFormat stringFormat1 = new System.Drawing.StringFormat();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Drawing.StringFormat stringFormat6 = new System.Drawing.StringFormat();
+            System.Drawing.StringFormat stringFormat2 = new System.Drawing.StringFormat();
             this.cmboServers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -147,6 +147,7 @@
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.chkPad = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1128,11 +1129,11 @@
             this.TAIGridDocDef.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.TAIGridDocDef.GridHeaderForeColor = System.Drawing.Color.Black;
             this.TAIGridDocDef.GridHeaderHeight = 16;
-            stringFormat5.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat5.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat5.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat5.Trimming = System.Drawing.StringTrimming.Character;
-            this.TAIGridDocDef.GridHeaderStringFormat = stringFormat5;
+            stringFormat1.Alignment = System.Drawing.StringAlignment.Near;
+            stringFormat1.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
+            stringFormat1.LineAlignment = System.Drawing.StringAlignment.Near;
+            stringFormat1.Trimming = System.Drawing.StringTrimming.Character;
+            this.TAIGridDocDef.GridHeaderStringFormat = stringFormat1;
             this.TAIGridDocDef.GridheaderVisible = true;
             this.TAIGridDocDef.Location = new System.Drawing.Point(8, 152);
             this.TAIGridDocDef.Name = "TAIGridDocDef";
@@ -1371,11 +1372,11 @@
             this.taigLookupListGrid.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.taigLookupListGrid.GridHeaderForeColor = System.Drawing.Color.Black;
             this.taigLookupListGrid.GridHeaderHeight = 16;
-            stringFormat6.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat6.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat6.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat6.Trimming = System.Drawing.StringTrimming.Character;
-            this.taigLookupListGrid.GridHeaderStringFormat = stringFormat6;
+            stringFormat2.Alignment = System.Drawing.StringAlignment.Near;
+            stringFormat2.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
+            stringFormat2.LineAlignment = System.Drawing.StringAlignment.Near;
+            stringFormat2.Trimming = System.Drawing.StringTrimming.Character;
+            this.taigLookupListGrid.GridHeaderStringFormat = stringFormat2;
             this.taigLookupListGrid.GridheaderVisible = true;
             this.taigLookupListGrid.Location = new System.Drawing.Point(5, 78);
             this.taigLookupListGrid.Name = "taigLookupListGrid";
@@ -1506,6 +1507,7 @@
             // tabPage14
             // 
             this.tabPage14.BackColor = System.Drawing.Color.SeaShell;
+            this.tabPage14.Controls.Add(this.chkPad);
             this.tabPage14.Controls.Add(this.btnStringify);
             this.tabPage14.Controls.Add(this.textBox1);
             this.tabPage14.Controls.Add(this.txtStringIfy);
@@ -1520,7 +1522,7 @@
             // 
             // btnStringify
             // 
-            this.btnStringify.Location = new System.Drawing.Point(95, 131);
+            this.btnStringify.Location = new System.Drawing.Point(94, 75);
             this.btnStringify.Name = "btnStringify";
             this.btnStringify.Size = new System.Drawing.Size(75, 23);
             this.btnStringify.TabIndex = 10;
@@ -1530,7 +1532,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 52);
+            this.textBox1.Location = new System.Drawing.Point(61, 9);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -1590,6 +1592,16 @@
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
+            // 
+            // chkPad
+            // 
+            this.chkPad.AutoSize = true;
+            this.chkPad.Location = new System.Drawing.Point(71, 104);
+            this.chkPad.Name = "chkPad";
+            this.chkPad.Size = new System.Drawing.Size(128, 17);
+            this.chkPad.TabIndex = 11;
+            this.chkPad.Text = "Pad NLs with Spaces";
+            this.chkPad.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -1755,6 +1767,7 @@
         private System.Windows.Forms.CheckBox chkStringifyCodeFolding;
         private System.Windows.Forms.CheckBox chkStringifyLineNumbers;
         private System.Windows.Forms.Button btnEnumerateLocalSQLServers;
+        private System.Windows.Forms.CheckBox chkPad;
     }
 }
 
