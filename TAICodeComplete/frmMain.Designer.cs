@@ -39,6 +39,7 @@
             this.cmboTables = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnEnumerateLocalSQLServers = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtManualConnectionString = new System.Windows.Forms.TextBox();
             this.btnSSPI = new System.Windows.Forms.Button();
@@ -146,7 +147,6 @@
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.btnEnumerateLocalSQLServers = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -275,6 +275,16 @@
             this.tabPage1.Size = new System.Drawing.Size(1137, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
+            // 
+            // btnEnumerateLocalSQLServers
+            // 
+            this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
+            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
+            this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
+            this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
+            this.btnEnumerateLocalSQLServers.TabIndex = 20;
+            this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
+            this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
             // 
             // label17
             // 
@@ -537,7 +547,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(949, 519);
+            this.tabPage2.Size = new System.Drawing.Size(1137, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -598,7 +608,7 @@
             this.tabPage13.Controls.Add(this.chkBaseTableTSLineNumbers);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(949, 519);
+            this.tabPage13.Size = new System.Drawing.Size(1137, 519);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Base Code ts";
             // 
@@ -656,7 +666,7 @@
             this.tabPage3.Controls.Add(this.chkWebMethodLineNumbers);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(949, 519);
+            this.tabPage3.Size = new System.Drawing.Size(1137, 519);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Web Method";
             // 
@@ -714,7 +724,7 @@
             this.tabPage10.Controls.Add(this.chkJSLineNumbers);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(949, 519);
+            this.tabPage10.Size = new System.Drawing.Size(1137, 519);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "JavaScript";
             // 
@@ -769,7 +779,7 @@
             this.tabPage9.Controls.Add(this.chkRestLineNumbers);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(949, 519);
+            this.tabPage9.Size = new System.Drawing.Size(1137, 519);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "REST";
             // 
@@ -828,7 +838,7 @@
             this.tabPage11.Controls.Add(this.chkHTMLLineNumbers);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(949, 519);
+            this.tabPage11.Size = new System.Drawing.Size(1137, 519);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "HTML";
             // 
@@ -897,7 +907,7 @@
             this.tabPage12.Controls.Add(this.chkCSSLineNumbers);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(949, 519);
+            this.tabPage12.Size = new System.Drawing.Size(1137, 519);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "CSS";
             // 
@@ -955,7 +965,7 @@
             this.tabPage4.Controls.Add(this.chkLineNumbersXAML);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(949, 519);
+            this.tabPage4.Size = new System.Drawing.Size(1137, 519);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "XAML";
             // 
@@ -1012,7 +1022,7 @@
             this.tabPage5.Controls.Add(this.chkWFLineNumbers);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(949, 519);
+            this.tabPage5.Size = new System.Drawing.Size(1137, 519);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "WinForms";
             // 
@@ -1077,7 +1087,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(949, 519);
+            this.tabPage6.Size = new System.Drawing.Size(1137, 519);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Doc Definition";
             // 
@@ -1267,7 +1277,7 @@
             this.tabPage7.Controls.Add(this.cmboDATABASEFORLOOKUPS);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(949, 519);
+            this.tabPage7.Size = new System.Drawing.Size(1137, 519);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Doc Def Lookup Mgmt.";
             // 
@@ -1441,7 +1451,7 @@
             this.tabPage8.Controls.Add(this.chkSQLLineNumber);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(949, 519);
+            this.tabPage8.Size = new System.Drawing.Size(1137, 519);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "SQL Code";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1454,13 +1464,13 @@
             this.sciSQLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciSQLCode.Location = new System.Drawing.Point(7, 30);
             this.sciSQLCode.Name = "sciSQLCode";
-            this.sciSQLCode.Size = new System.Drawing.Size(1112, 572);
+            this.sciSQLCode.Size = new System.Drawing.Size(1125, 483);
             this.sciSQLCode.TabIndex = 8;
             // 
             // dtnSaveSQLToFile
             // 
             this.dtnSaveSQLToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtnSaveSQLToFile.Location = new System.Drawing.Point(1042, 3);
+            this.dtnSaveSQLToFile.Location = new System.Drawing.Point(1057, 3);
             this.dtnSaveSQLToFile.Name = "dtnSaveSQLToFile";
             this.dtnSaveSQLToFile.Size = new System.Drawing.Size(75, 23);
             this.dtnSaveSQLToFile.TabIndex = 7;
@@ -1503,7 +1513,7 @@
             this.tabPage14.Controls.Add(this.chkStringifyLineNumbers);
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(949, 519);
+            this.tabPage14.Size = new System.Drawing.Size(1137, 519);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "Stringify";
             // 
@@ -1577,16 +1587,6 @@
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
-            // 
-            // btnEnumerateLocalSQLServers
-            // 
-            this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
-            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
-            this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
-            this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
-            this.btnEnumerateLocalSQLServers.TabIndex = 20;
-            this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
-            this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
             // 
             // frmMain
             // 
