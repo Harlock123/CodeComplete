@@ -147,6 +147,7 @@
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.chkPad = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -348,6 +349,7 @@
             // 
             this.txtPASSWORD.Location = new System.Drawing.Point(306, 103);
             this.txtPASSWORD.Name = "txtPASSWORD";
+            this.txtPASSWORD.PasswordChar = '*';
             this.txtPASSWORD.Size = new System.Drawing.Size(132, 20);
             this.txtPASSWORD.TabIndex = 13;
             this.txtPASSWORD.Text = "P@ssw0rd";
@@ -563,13 +565,13 @@
             this.sciBaseTableCode.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciBaseTableCode.Location = new System.Drawing.Point(10, 32);
             this.sciBaseTableCode.Name = "sciBaseTableCode";
-            this.sciBaseTableCode.Size = new System.Drawing.Size(933, 481);
+            this.sciBaseTableCode.Size = new System.Drawing.Size(1121, 481);
             this.sciBaseTableCode.TabIndex = 4;
             // 
             // btnSaveBaseCodeTableToFile
             // 
             this.btnSaveBaseCodeTableToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(868, 3);
+            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(1056, 3);
             this.btnSaveBaseCodeTableToFile.Name = "btnSaveBaseCodeTableToFile";
             this.btnSaveBaseCodeTableToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBaseCodeTableToFile.TabIndex = 3;
@@ -621,13 +623,13 @@
             this.sciBaseTableTSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciBaseTableTSCode.Location = new System.Drawing.Point(7, 30);
             this.sciBaseTableTSCode.Name = "sciBaseTableTSCode";
-            this.sciBaseTableTSCode.Size = new System.Drawing.Size(937, 484);
+            this.sciBaseTableTSCode.Size = new System.Drawing.Size(1125, 484);
             this.sciBaseTableTSCode.TabIndex = 8;
             // 
             // btnSaveTSCode
             // 
             this.btnSaveTSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveTSCode.Location = new System.Drawing.Point(867, 2);
+            this.btnSaveTSCode.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveTSCode.Name = "btnSaveTSCode";
             this.btnSaveTSCode.Size = new System.Drawing.Size(75, 23);
             this.btnSaveTSCode.TabIndex = 7;
@@ -679,13 +681,13 @@
             this.scintillaWebMethodCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWebMethodCode.Location = new System.Drawing.Point(3, 29);
             this.scintillaWebMethodCode.Name = "scintillaWebMethodCode";
-            this.scintillaWebMethodCode.Size = new System.Drawing.Size(939, 485);
+            this.scintillaWebMethodCode.Size = new System.Drawing.Size(1129, 485);
             this.scintillaWebMethodCode.TabIndex = 7;
             // 
             // btnSaveWebMethodsToFile
             // 
             this.btnSaveWebMethodsToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveWebMethodsToFile.Location = new System.Drawing.Point(865, 2);
+            this.btnSaveWebMethodsToFile.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveWebMethodsToFile.Name = "btnSaveWebMethodsToFile";
             this.btnSaveWebMethodsToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveWebMethodsToFile.TabIndex = 6;
@@ -737,13 +739,13 @@
             this.scintillaJSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaJSCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaJSCode.Name = "scintillaJSCode";
-            this.scintillaJSCode.Size = new System.Drawing.Size(938, 485);
+            this.scintillaJSCode.Size = new System.Drawing.Size(1127, 485);
             this.scintillaJSCode.TabIndex = 11;
             // 
             // btnSaveJSToFile
             // 
             this.btnSaveJSToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveJSToFile.Location = new System.Drawing.Point(866, 3);
+            this.btnSaveJSToFile.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveJSToFile.Name = "btnSaveJSToFile";
             this.btnSaveJSToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveJSToFile.TabIndex = 10;
@@ -790,15 +792,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaRestCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaRestCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scintillaRestCode.Location = new System.Drawing.Point(5, 30);
+            this.scintillaRestCode.Location = new System.Drawing.Point(6, 28);
             this.scintillaRestCode.Name = "scintillaRestCode";
-            this.scintillaRestCode.Size = new System.Drawing.Size(937, 485);
+            this.scintillaRestCode.Size = new System.Drawing.Size(1126, 485);
             this.scintillaRestCode.TabIndex = 11;
             // 
             // btnRestSaveToFile
             // 
             this.btnRestSaveToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestSaveToFile.Location = new System.Drawing.Point(869, 4);
+            this.btnRestSaveToFile.Location = new System.Drawing.Point(1057, 3);
             this.btnRestSaveToFile.Name = "btnRestSaveToFile";
             this.btnRestSaveToFile.Size = new System.Drawing.Size(75, 23);
             this.btnRestSaveToFile.TabIndex = 10;
@@ -845,7 +847,7 @@
             // btnFiddleIt
             // 
             this.btnFiddleIt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiddleIt.Location = new System.Drawing.Point(788, 4);
+            this.btnFiddleIt.Location = new System.Drawing.Point(976, 3);
             this.btnFiddleIt.Name = "btnFiddleIt";
             this.btnFiddleIt.Size = new System.Drawing.Size(75, 23);
             this.btnFiddleIt.TabIndex = 16;
@@ -860,15 +862,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaHTMLCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaHTMLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scintillaHTMLCode.Location = new System.Drawing.Point(5, 30);
+            this.scintillaHTMLCode.Location = new System.Drawing.Point(3, 28);
             this.scintillaHTMLCode.Name = "scintillaHTMLCode";
-            this.scintillaHTMLCode.Size = new System.Drawing.Size(937, 485);
+            this.scintillaHTMLCode.Size = new System.Drawing.Size(1129, 485);
             this.scintillaHTMLCode.TabIndex = 15;
             // 
             // btnSaveHTML
             // 
             this.btnSaveHTML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveHTML.Location = new System.Drawing.Point(869, 4);
+            this.btnSaveHTML.Location = new System.Drawing.Point(1057, 3);
             this.btnSaveHTML.Name = "btnSaveHTML";
             this.btnSaveHTML.Size = new System.Drawing.Size(75, 23);
             this.btnSaveHTML.TabIndex = 14;
@@ -920,13 +922,13 @@
             this.scintillaCSSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaCSSCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaCSSCode.Name = "scintillaCSSCode";
-            this.scintillaCSSCode.Size = new System.Drawing.Size(937, 485);
+            this.scintillaCSSCode.Size = new System.Drawing.Size(1127, 485);
             this.scintillaCSSCode.TabIndex = 19;
             // 
             // btnsaveCSS
             // 
             this.btnsaveCSS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsaveCSS.Location = new System.Drawing.Point(869, 4);
+            this.btnsaveCSS.Location = new System.Drawing.Point(1059, 4);
             this.btnsaveCSS.Name = "btnsaveCSS";
             this.btnsaveCSS.Size = new System.Drawing.Size(75, 23);
             this.btnsaveCSS.TabIndex = 18;
@@ -977,13 +979,13 @@
             this.scintillaXAML.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaXAML.Location = new System.Drawing.Point(7, 30);
             this.scintillaXAML.Name = "scintillaXAML";
-            this.scintillaXAML.Size = new System.Drawing.Size(937, 483);
+            this.scintillaXAML.Size = new System.Drawing.Size(1125, 483);
             this.scintillaXAML.TabIndex = 12;
             // 
             // btnSaveXaml
             // 
             this.btnSaveXaml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveXaml.Location = new System.Drawing.Point(1042, 4);
+            this.btnSaveXaml.Location = new System.Drawing.Point(1055, 4);
             this.btnSaveXaml.Name = "btnSaveXaml";
             this.btnSaveXaml.Size = new System.Drawing.Size(75, 23);
             this.btnSaveXaml.TabIndex = 11;
@@ -1034,13 +1036,13 @@
             this.scintillaWFCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWFCode.Location = new System.Drawing.Point(9, 29);
             this.scintillaWFCode.Name = "scintillaWFCode";
-            this.scintillaWFCode.Size = new System.Drawing.Size(935, 484);
+            this.scintillaWFCode.Size = new System.Drawing.Size(1123, 484);
             this.scintillaWFCode.TabIndex = 8;
             // 
             // btnWFSaveToFile
             // 
             this.btnWFSaveToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWFSaveToFile.Location = new System.Drawing.Point(1041, 3);
+            this.btnWFSaveToFile.Location = new System.Drawing.Point(1053, 3);
             this.btnWFSaveToFile.Name = "btnWFSaveToFile";
             this.btnWFSaveToFile.Size = new System.Drawing.Size(75, 23);
             this.btnWFSaveToFile.TabIndex = 7;
@@ -1505,6 +1507,7 @@
             // tabPage14
             // 
             this.tabPage14.BackColor = System.Drawing.Color.SeaShell;
+            this.tabPage14.Controls.Add(this.chkPad);
             this.tabPage14.Controls.Add(this.btnStringify);
             this.tabPage14.Controls.Add(this.textBox1);
             this.tabPage14.Controls.Add(this.txtStringIfy);
@@ -1519,7 +1522,7 @@
             // 
             // btnStringify
             // 
-            this.btnStringify.Location = new System.Drawing.Point(95, 131);
+            this.btnStringify.Location = new System.Drawing.Point(94, 75);
             this.btnStringify.Name = "btnStringify";
             this.btnStringify.Size = new System.Drawing.Size(75, 23);
             this.btnStringify.TabIndex = 10;
@@ -1529,7 +1532,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 52);
+            this.textBox1.Location = new System.Drawing.Point(61, 9);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -1541,10 +1544,12 @@
             // 
             // txtStringIfy
             // 
+            this.txtStringIfy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStringIfy.Location = new System.Drawing.Point(270, 9);
             this.txtStringIfy.Multiline = true;
             this.txtStringIfy.Name = "txtStringIfy";
-            this.txtStringIfy.Size = new System.Drawing.Size(675, 185);
+            this.txtStringIfy.Size = new System.Drawing.Size(862, 185);
             this.txtStringIfy.TabIndex = 8;
             // 
             // sciStringify
@@ -1556,9 +1561,9 @@
             | ScintillaNET.AutomaticFold.Change)));
             this.sciStringify.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciStringify.Lexer = ScintillaNET.Lexer.Cpp;
-            this.sciStringify.Location = new System.Drawing.Point(7, 200);
+            this.sciStringify.Location = new System.Drawing.Point(6, 199);
             this.sciStringify.Name = "sciStringify";
-            this.sciStringify.Size = new System.Drawing.Size(939, 314);
+            this.sciStringify.Size = new System.Drawing.Size(1125, 314);
             this.sciStringify.TabIndex = 7;
             // 
             // chkStringifyCodeFolding
@@ -1587,6 +1592,16 @@
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
+            // 
+            // btnEnumerateLocalSQLServers
+            // 
+            this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
+            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
+            this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
+            this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
+            this.btnEnumerateLocalSQLServers.TabIndex = 20;
+            this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
+            this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
             // 
             // frmMain
             // 
@@ -1752,6 +1767,7 @@
         private System.Windows.Forms.CheckBox chkStringifyCodeFolding;
         private System.Windows.Forms.CheckBox chkStringifyLineNumbers;
         private System.Windows.Forms.Button btnEnumerateLocalSQLServers;
+        private System.Windows.Forms.CheckBox chkPad;
     }
 }
 
