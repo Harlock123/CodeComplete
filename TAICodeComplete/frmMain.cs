@@ -47,8 +47,8 @@ namespace TAICodeComplete
 
             // Remove the DOCDEF stuff
 
-            tabControl1.TabPages.Remove(tabPage6);
-            tabControl1.TabPages.Remove(tabPage7);
+            //tabControl1.TabPages.Remove(tabPage6);
+            //tabControl1.TabPages.Remove(tabPage7);
 
 
             // Setup Scintillas
@@ -545,14 +545,14 @@ namespace TAICodeComplete
                     SqlDataReader r = cmd.ExecuteReader();
 
                     cmboDatabases.Items.Clear();
-                    cmboDatabasedForDocDefForms.Items.Clear();
-                    cmboDATABASEFORLOOKUPS.Items.Clear();
+                    //cmboDatabasedForDocDefForms.Items.Clear();
+                    //cmboDATABASEFORLOOKUPS.Items.Clear();
 
                     while (r.Read())
                     {
                         cmboDatabases.Items.Add(r[0] + "");
-                        cmboDatabasedForDocDefForms.Items.Add(r[0] + "");
-                        cmboDATABASEFORLOOKUPS.Items.Add(r[0] + "");
+                        //cmboDatabasedForDocDefForms.Items.Add(r[0] + "");
+                        //cmboDATABASEFORLOOKUPS.Items.Add(r[0] + "");
                     }
                     r.Close();
                     cmd.Dispose();
@@ -563,8 +563,8 @@ namespace TAICodeComplete
                 {
                     MessageBox.Show(ex.Message);
                     cmboDatabases.Items.Clear();
-                    cmboDatabasedForDocDefForms.Items.Clear();
-                    cmboDATABASEFORLOOKUPS.Items.Clear();
+                    //cmboDatabasedForDocDefForms.Items.Clear();
+                    //cmboDATABASEFORLOOKUPS.Items.Clear();
                 }
 
             }
@@ -850,14 +850,14 @@ namespace TAICodeComplete
                     SqlDataReader r = cmd.ExecuteReader();
 
                     cmboDatabases.Items.Clear();
-                    cmboDatabasedForDocDefForms.Items.Clear();
-                    cmboDATABASEFORLOOKUPS.Items.Clear();
+                    //cmboDatabasedForDocDefForms.Items.Clear();
+                    //cmboDATABASEFORLOOKUPS.Items.Clear();
 
                     while (r.Read())
                     {
                         cmboDatabases.Items.Add(r[0] + "");
-                        cmboDatabasedForDocDefForms.Items.Add(r[0] + "");
-                        cmboDATABASEFORLOOKUPS.Items.Add(r[0] + "");
+                        //cmboDatabasedForDocDefForms.Items.Add(r[0] + "");
+                        //cmboDATABASEFORLOOKUPS.Items.Add(r[0] + "");
                     }
                     r.Close();
                     cmd.Dispose();
@@ -872,8 +872,8 @@ namespace TAICodeComplete
                 {
                     MessageBox.Show(ex.Message);
                     cmboDatabases.Items.Clear();
-                    cmboDatabasedForDocDefForms.Items.Clear();
-                    cmboDATABASEFORLOOKUPS.Items.Clear();
+                    //cmboDatabasedForDocDefForms.Items.Clear();
+                    //cmboDATABASEFORLOOKUPS.Items.Clear();
                 }
 
             }
@@ -984,263 +984,263 @@ namespace TAICodeComplete
             scintillaWFCode.Margins[0].Width = marginwidth;
         }
 
-        private void btnReadDocDefForms_Click(object sender, EventArgs e)
-        {
+        //private void btnReadDocDefForms_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void btnAddNewDocDefForm_Click(object sender, EventArgs e)
-        {
+        //private void btnAddNewDocDefForm_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void HandleSelectingDatabaseForLOOKUPMGMT(object sender, EventArgs e)
-        {
-            if (cmboDATABASEFORLOOKUPS.SelectedItem.ToString() != "")
-            {
-                if (DSN.EndsWith("Initial Catalog=MASTER;"))
-                    DSN = DSN.Replace("Initial Catalog=MASTER;", "Initial Catalog=" + cmboDATABASEFORLOOKUPS.SelectedItem.ToString() + ";");
+        //private void HandleSelectingDatabaseForLOOKUPMGMT(object sender, EventArgs e)
+        //{
+        //    if (cmboDATABASEFORLOOKUPS.SelectedItem.ToString() != "")
+        //    {
+        //        if (DSN.EndsWith("Initial Catalog=MASTER;"))
+        //            DSN = DSN.Replace("Initial Catalog=MASTER;", "Initial Catalog=" + cmboDATABASEFORLOOKUPS.SelectedItem.ToString() + ";");
 
-                try
-                {
-                    string sql = "Select distinct LOOKUPTYPE from tblLookup ORDER BY LOOKUPTYPE";
+        //        try
+        //        {
+        //            string sql = "Select distinct LOOKUPTYPE from tblLookup ORDER BY LOOKUPTYPE";
 
-                    cmboSpecificLookupList.Items.Clear();
+        //            cmboSpecificLookupList.Items.Clear();
 
-                    SqlConnection cn = new SqlConnection(DSN);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(sql, cn);
+        //            SqlConnection cn = new SqlConnection(DSN);
+        //            cn.Open();
+        //            SqlCommand cmd = new SqlCommand(sql, cn);
 
-                    SqlDataReader r = cmd.ExecuteReader();
+        //            SqlDataReader r = cmd.ExecuteReader();
 
-                    while (r.Read())
-                    {
-                        cmboSpecificLookupList.Items.Add(r[0] + "");
-                    }
-                    r.Close();
-                    cmd.Dispose();
-                    cn.Close();
-                    cn.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    cmboSpecificLookupList.Items.Clear();
-                }
-            }
-        }
+        //            while (r.Read())
+        //            {
+        //                cmboSpecificLookupList.Items.Add(r[0] + "");
+        //            }
+        //            r.Close();
+        //            cmd.Dispose();
+        //            cn.Close();
+        //            cn.Dispose();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //            cmboSpecificLookupList.Items.Clear();
+        //        }
+        //    }
+        //}
 
-        private void HandleSelectionADatabaseforDocDef(object sender, EventArgs e)
-        {
-            if (cmboDatabasedForDocDefForms.SelectedItem.ToString() != "")
-            {
-                if (DSN.EndsWith("Initial Catalog=MASTER;"))
-                    DSN = DSN.Replace("Initial Catalog=MASTER;", "Initial Catalog=" + cmboDatabasedForDocDefForms.SelectedItem.ToString() + ";");
-
-
-                cmboDocDefForms.Items.Clear();
-                cmboDocDefSubForms.Items.Clear();
-                cmboDocDefSubSubForms.Items.Clear();
-                cmboDocDefForms.SelectedItem = null;
-                cmboDocDefSubForms.SelectedItem = null;
-                cmboDocDefSubSubForms.SelectedItem = null;
-
-                try
-                {
-                    string sql = "SELECT [DocDefCat_Id],[DocDefCatCode],[DocDefCatDesc],[isActive]  FROM [tblDocDefCat]";
-
-                    SqlConnection cn = new SqlConnection(DSN);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(sql, cn);
-
-                    SqlDataReader r = cmd.ExecuteReader();
-
-                    cmboDocDefForms.Items.Clear();
-
-                    while (r.Read())
-                    {
-                        DOCDEFCAT thefrm = new DOCDEFCAT();
-
-                        thefrm.DocDefCat_Id = r[0] + "";
-                        thefrm.DocDefCatCode = r[1] + "";
-                        thefrm.DocDefCatDesc = r[2] + "";
-                        thefrm.isActive = r[3] + "";
-
-                        cmboDocDefForms.Items.Add(thefrm);
-                    }
-                    r.Close();
-                    cmd.Dispose();
-                    cn.Close();
-                    cn.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    cmboDocDefForms.Items.Clear();
-                    cmboDocDefSubForms.Items.Clear();
-                    cmboDocDefSubSubForms.Items.Clear();
-                    cmboDocDefForms.SelectedItem = null;
-                    cmboDocDefSubForms.SelectedItem = null;
-                    cmboDocDefSubSubForms.SelectedItem = null;
-                }
+        //private void HandleSelectionADatabaseforDocDef(object sender, EventArgs e)
+        //{
+        //    if (cmboDatabasedForDocDefForms.SelectedItem.ToString() != "")
+        //    {
+        //        if (DSN.EndsWith("Initial Catalog=MASTER;"))
+        //            DSN = DSN.Replace("Initial Catalog=MASTER;", "Initial Catalog=" + cmboDatabasedForDocDefForms.SelectedItem.ToString() + ";");
 
 
-            }
-        }
+        //        cmboDocDefForms.Items.Clear();
+        //        cmboDocDefSubForms.Items.Clear();
+        //        cmboDocDefSubSubForms.Items.Clear();
+        //        cmboDocDefForms.SelectedItem = null;
+        //        cmboDocDefSubForms.SelectedItem = null;
+        //        cmboDocDefSubSubForms.SelectedItem = null;
 
-        private void HandelSelectionOfAFormInTheDatabase(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmboDocDefForms.SelectedItem != null)
-                {
+        //        try
+        //        {
+        //            string sql = "SELECT [DocDefCat_Id],[DocDefCatCode],[DocDefCatDesc],[isActive]  FROM [tblDocDefCat]";
 
-                    string sql = "SELECT [DocDefType_Id],[DocDefCat_Id],[DocDefTypeCode],[DocDefTypeDesc],[isActive],[Forms] FROM [tblDocDefType] WHERE DocDefCat_Id = " + ((DOCDEFCAT)cmboDocDefForms.SelectedItem).DocDefCat_Id;
+        //            SqlConnection cn = new SqlConnection(DSN);
+        //            cn.Open();
+        //            SqlCommand cmd = new SqlCommand(sql, cn);
 
-                    SqlConnection cn = new SqlConnection(DSN);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(sql, cn);
+        //            SqlDataReader r = cmd.ExecuteReader();
 
-                    SqlDataReader r = cmd.ExecuteReader();
+        //            cmboDocDefForms.Items.Clear();
 
-                    cmboDocDefSubForms.Items.Clear();
-                    cmboDocDefSubSubForms.Items.Clear();
-                    cmboDocDefSubForms.SelectedItem = null;
-                    cmboDocDefSubSubForms.SelectedItem = null;
+        //            while (r.Read())
+        //            {
+        //                DOCDEFCAT thefrm = new DOCDEFCAT();
 
-                    while (r.Read())
-                    {
-                        DOCDEFTYPE thefrm = new DOCDEFTYPE();
+        //                thefrm.DocDefCat_Id = r[0] + "";
+        //                thefrm.DocDefCatCode = r[1] + "";
+        //                thefrm.DocDefCatDesc = r[2] + "";
+        //                thefrm.isActive = r[3] + "";
 
-                        thefrm.DocDefType_Id = r[0] + "";
-                        thefrm.DocDefCat_Id = r[1] + "";
-                        thefrm.DocDefTypeCode = r[2] + "";
-                        thefrm.DocDefTypeDesc = r[3] + "";
-                        thefrm.isActive = r[4] + "";
-                        thefrm.Forms = r[5] + "";
+        //                cmboDocDefForms.Items.Add(thefrm);
+        //            }
+        //            r.Close();
+        //            cmd.Dispose();
+        //            cn.Close();
+        //            cn.Dispose();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //            cmboDocDefForms.Items.Clear();
+        //            cmboDocDefSubForms.Items.Clear();
+        //            cmboDocDefSubSubForms.Items.Clear();
+        //            cmboDocDefForms.SelectedItem = null;
+        //            cmboDocDefSubForms.SelectedItem = null;
+        //            cmboDocDefSubSubForms.SelectedItem = null;
+        //        }
 
-                        cmboDocDefSubForms.Items.Add(thefrm);
-                    }
-                    r.Close();
-                    cmd.Dispose();
-                    cn.Close();
-                    cn.Dispose();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                cmboDocDefSubForms.Items.Clear();
-                cmboDocDefSubSubForms.Items.Clear();
-                cmboDocDefSubForms.SelectedItem = null;
-                cmboDocDefSubSubForms.SelectedItem = null;
-            }
-        }
 
-        private void HandleSelectionOfAformForTHatCatgory(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cmboDocDefSubForms.SelectedItem != null)
-                {
+        //    }
+        //}
 
-                    string sql = "SELECT [DocDefTypeSub_Id],[DocDefType_Id],[DocDefTypeSubCode],[DocDefTypeSubDesc],[DocDefTypeSubOrder],[isActive] FROM [tblDocDefTypeSub] WHERE DocDefType_Id = " + ((DOCDEFTYPE)cmboDocDefSubForms.SelectedItem).DocDefType_Id;
+        //private void HandelSelectionOfAFormInTheDatabase(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (cmboDocDefForms.SelectedItem != null)
+        //        {
 
-                    SqlConnection cn = new SqlConnection(DSN);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(sql, cn);
+        //            string sql = "SELECT [DocDefType_Id],[DocDefCat_Id],[DocDefTypeCode],[DocDefTypeDesc],[isActive],[Forms] FROM [tblDocDefType] WHERE DocDefCat_Id = " + ((DOCDEFCAT)cmboDocDefForms.SelectedItem).DocDefCat_Id;
 
-                    SqlDataReader r = cmd.ExecuteReader();
+        //            SqlConnection cn = new SqlConnection(DSN);
+        //            cn.Open();
+        //            SqlCommand cmd = new SqlCommand(sql, cn);
 
-                    cmboDocDefSubSubForms.Items.Clear();
-                    cmboDocDefSubSubForms.SelectedItem = null;
+        //            SqlDataReader r = cmd.ExecuteReader();
 
-                    while (r.Read())
-                    {
-                        DOCDEFSUBTYPE thefrm = new DOCDEFSUBTYPE();
+        //            cmboDocDefSubForms.Items.Clear();
+        //            cmboDocDefSubSubForms.Items.Clear();
+        //            cmboDocDefSubForms.SelectedItem = null;
+        //            cmboDocDefSubSubForms.SelectedItem = null;
 
-                        thefrm.DocDefTypeSub_Id = r[0] + "";
-                        thefrm.DocDefType_Id = r[1] + "";
-                        thefrm.DocDefTypeSubCode = r[2] + "";
-                        thefrm.DocDefTypeSubDesc = r[3] + "";
-                        thefrm.DocDefTypeSubOrder = r[4] + "";
-                        thefrm.isActive = r[5] + "";
+        //            while (r.Read())
+        //            {
+        //                DOCDEFTYPE thefrm = new DOCDEFTYPE();
 
-                        cmboDocDefSubSubForms.Items.Add(thefrm);
-                    }
-                    r.Close();
-                    cmd.Dispose();
-                    cn.Close();
-                    cn.Dispose();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                cmboDocDefSubSubForms.Items.Clear();
-                cmboDocDefSubSubForms.SelectedItem = null;
+        //                thefrm.DocDefType_Id = r[0] + "";
+        //                thefrm.DocDefCat_Id = r[1] + "";
+        //                thefrm.DocDefTypeCode = r[2] + "";
+        //                thefrm.DocDefTypeDesc = r[3] + "";
+        //                thefrm.isActive = r[4] + "";
+        //                thefrm.Forms = r[5] + "";
 
-            }
-        }
+        //                cmboDocDefSubForms.Items.Add(thefrm);
+        //            }
+        //            r.Close();
+        //            cmd.Dispose();
+        //            cn.Close();
+        //            cn.Dispose();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        cmboDocDefSubForms.Items.Clear();
+        //        cmboDocDefSubSubForms.Items.Clear();
+        //        cmboDocDefSubForms.SelectedItem = null;
+        //        cmboDocDefSubSubForms.SelectedItem = null;
+        //    }
+        //}
 
-        private void HandelSelectionOfASpecificFormFinally(object sender, EventArgs e)
-        {
-            try
-            {
-                PopulateDocDefinitionsTable();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void HandleSelectionOfAformForTHatCatgory(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (cmboDocDefSubForms.SelectedItem != null)
+        //        {
 
-        private void HandleMouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            int row = ((TAIGridControl2.TAIGridControl)sender).SelectedRow;
+        //            string sql = "SELECT [DocDefTypeSub_Id],[DocDefType_Id],[DocDefTypeSubCode],[DocDefTypeSubDesc],[DocDefTypeSubOrder],[isActive] FROM [tblDocDefTypeSub] WHERE DocDefType_Id = " + ((DOCDEFTYPE)cmboDocDefSubForms.SelectedItem).DocDefType_Id;
 
-            string ID = ((TAIGridControl2.TAIGridControl)sender).get_item(row, "DocDefTemplateID");
+        //            SqlConnection cn = new SqlConnection(DSN);
+        //            cn.Open();
+        //            SqlCommand cmd = new SqlCommand(sql, cn);
 
-            tbldocDefTemplate template = new tbldocDefTemplate(DSN);
+        //            SqlDataReader r = cmd.ExecuteReader();
 
-            template.Read(Convert.ToInt32(ID));
+        //            cmboDocDefSubSubForms.Items.Clear();
+        //            cmboDocDefSubSubForms.SelectedItem = null;
 
-            tblDocDefTemplateUI thefrm = new tblDocDefTemplateUI(template);
+        //            while (r.Read())
+        //            {
+        //                DOCDEFSUBTYPE thefrm = new DOCDEFSUBTYPE();
 
-            thefrm.FormClosed += thefrm_FormClosed;
+        //                thefrm.DocDefTypeSub_Id = r[0] + "";
+        //                thefrm.DocDefType_Id = r[1] + "";
+        //                thefrm.DocDefTypeSubCode = r[2] + "";
+        //                thefrm.DocDefTypeSubDesc = r[3] + "";
+        //                thefrm.DocDefTypeSubOrder = r[4] + "";
+        //                thefrm.isActive = r[5] + "";
 
-            thefrm.Show();
+        //                cmboDocDefSubSubForms.Items.Add(thefrm);
+        //            }
+        //            r.Close();
+        //            cmd.Dispose();
+        //            cn.Close();
+        //            cn.Dispose();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        cmboDocDefSubSubForms.Items.Clear();
+        //        cmboDocDefSubSubForms.SelectedItem = null;
 
-        }
+        //    }
+        //}
 
-        private void HandleDoubleClickingOnALookup(object sender, MouseEventArgs e)
-        {
-            int row = ((TAIGridControl2.TAIGridControl)sender).SelectedRow;
+        //private void HandelSelectionOfASpecificFormFinally(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        PopulateDocDefinitionsTable();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
-            string ID = ((TAIGridControl2.TAIGridControl)sender).get_item(row, "LookupId");
+        //private void HandleMouseDoubleClick(object sender, MouseEventArgs e)
+        //{
+        //    int row = ((TAIGridControl2.TAIGridControl)sender).SelectedRow;
 
-            tblLookup lkp = new tblLookup(DSN);
+        //    string ID = ((TAIGridControl2.TAIGridControl)sender).get_item(row, "DocDefTemplateID");
 
-            lkp.Read(Convert.ToInt32(ID));
+        //    tbldocDefTemplate template = new tbldocDefTemplate(DSN);
 
-            frmTblLookupUI thelkpfrm = new frmTblLookupUI(lkp);
+        //    template.Read(Convert.ToInt32(ID));
 
-            thelkpfrm.FormClosed += thelkpfrm_FormClosed;
+        //    tblDocDefTemplateUI thefrm = new tblDocDefTemplateUI(template);
 
-            thelkpfrm.Show();
+        //    thefrm.FormClosed += thefrm_FormClosed;
 
-        }
+        //    thefrm.Show();
+
+        //}
+
+        //private void HandleDoubleClickingOnALookup(object sender, MouseEventArgs e)
+        //{
+        //    int row = ((TAIGridControl2.TAIGridControl)sender).SelectedRow;
+
+        //    string ID = ((TAIGridControl2.TAIGridControl)sender).get_item(row, "LookupId");
+
+        //    tblLookup lkp = new tblLookup(DSN);
+
+        //    lkp.Read(Convert.ToInt32(ID));
+
+        //    frmTblLookupUI thelkpfrm = new frmTblLookupUI(lkp);
+
+        //    thelkpfrm.FormClosed += thelkpfrm_FormClosed;
+
+        //    thelkpfrm.Show();
+
+        //}
                 
-        private void HandleSelectionOfASpecificLookupList(object sender, EventArgs e)
-        {
-            if (cmboSpecificLookupList.SelectedItem.ToString() != "")
-            {
+        //private void HandleSelectionOfASpecificLookupList(object sender, EventArgs e)
+        //{
+        //    if (cmboSpecificLookupList.SelectedItem.ToString() != "")
+        //    {
 
-                string sql = "select * from tbllookup where LOOKUPTYPE = '" + cmboSpecificLookupList.SelectedItem.ToString() + "' ORDER BY SORTORDER; ";
+        //        string sql = "select * from tbllookup where LOOKUPTYPE = '" + cmboSpecificLookupList.SelectedItem.ToString() + "' ORDER BY SORTORDER; ";
 
-                taigLookupListGrid.PopulateGridWithData(DSN, sql);
-            }
-        }
+        //        taigLookupListGrid.PopulateGridWithData(DSN, sql);
+        //    }
+        //}
         
         private void chkSQLLineNumber_CheckedChanged(object sender, EventArgs e)
         {
@@ -1289,177 +1289,177 @@ namespace TAICodeComplete
             }
         }
         
-        private void btnAddNewLookup_Click(object sender, EventArgs e)
-        {
-            int sorder = 0;
+        //private void btnAddNewLookup_Click(object sender, EventArgs e)
+        //{
+        //    int sorder = 0;
 
-            int lookuptypeid = 0;
+        //    int lookuptypeid = 0;
 
-            string lookuptype = "";
+        //    string lookuptype = "";
 
-            for (int i = 0; i < taigLookupListGrid.Rows; i++)
-            {
-                sorder = Convert.ToInt32(taigLookupListGrid.get_item(i, "SortOrder"));
-                lookuptypeid = Convert.ToInt32(taigLookupListGrid.get_item(i, "LookupTypeId"));
+        //    for (int i = 0; i < taigLookupListGrid.Rows; i++)
+        //    {
+        //        sorder = Convert.ToInt32(taigLookupListGrid.get_item(i, "SortOrder"));
+        //        lookuptypeid = Convert.ToInt32(taigLookupListGrid.get_item(i, "LookupTypeId"));
 
-                lookuptype = taigLookupListGrid.get_item(i, "LookupType");
+        //        lookuptype = taigLookupListGrid.get_item(i, "LookupType");
 
-            }
+        //    }
 
-            tblLookup lkp = new tblLookup(DSN);
+        //    tblLookup lkp = new tblLookup(DSN);
 
-            lkp.Initialize();
+        //    lkp.Initialize();
 
-            lkp.SortOrder = sorder + 1;
-            lkp.LookupTypeId = lookuptypeid;
-            lkp.LookupType = lookuptype;
+        //    lkp.SortOrder = sorder + 1;
+        //    lkp.LookupTypeId = lookuptypeid;
+        //    lkp.LookupType = lookuptype;
 
-            frmTblLookupUI thelkpfrm = new frmTblLookupUI(lkp, true);
+        //    frmTblLookupUI thelkpfrm = new frmTblLookupUI(lkp, true);
 
-            thelkpfrm.FormClosed += thelkpfrm_FormClosed;
+        //    thelkpfrm.FormClosed += thelkpfrm_FormClosed;
 
-            thelkpfrm.Show();
+        //    thelkpfrm.Show();
 
-        }
+        //}
 
-        private void btnRemoveSelectedLookup_Click(object sender, EventArgs e)
-        {
-            if (taigLookupListGrid.SelectedRow < 0)
-            {
-                MessageBox.Show("You have to select a row to remove");
-            }
-            else
-            {
-                int ID = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
+        //private void btnRemoveSelectedLookup_Click(object sender, EventArgs e)
+        //{
+        //    if (taigLookupListGrid.SelectedRow < 0)
+        //    {
+        //        MessageBox.Show("You have to select a row to remove");
+        //    }
+        //    else
+        //    {
+        //        int ID = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
 
-                string sql = "DELETE FROM TBLLOOKUP WHERE LOOKUPID = " + ID.ToString();
+        //        string sql = "DELETE FROM TBLLOOKUP WHERE LOOKUPID = " + ID.ToString();
 
-                SqlConnection cn = new SqlConnection(DSN);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(sql, cn);
+        //        SqlConnection cn = new SqlConnection(DSN);
+        //        cn.Open();
+        //        SqlCommand cmd = new SqlCommand(sql, cn);
 
-                cmd.ExecuteNonQuery();
+        //        cmd.ExecuteNonQuery();
 
-                cmd.Dispose();
-                cn.Close();
-                cn.Dispose();
+        //        cmd.Dispose();
+        //        cn.Close();
+        //        cn.Dispose();
 
-                PopulateTheLookupGrid();
+        //        PopulateTheLookupGrid();
 
-            }
-        }
+        //    }
+        //}
 
-        private void btnDeactivateSelectedLookup_Click(object sender, EventArgs e)
-        {
-            if (taigLookupListGrid.SelectedRow < 0)
-            {
-                MessageBox.Show("You have to select a row to Toggle Activation On");
-            }
-            else
-            {
-                int ID = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
+        //private void btnDeactivateSelectedLookup_Click(object sender, EventArgs e)
+        //{
+        //    if (taigLookupListGrid.SelectedRow < 0)
+        //    {
+        //        MessageBox.Show("You have to select a row to Toggle Activation On");
+        //    }
+        //    else
+        //    {
+        //        int ID = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
 
-                tblLookup lkp = new tblLookup(DSN);
-                lkp.Read(ID);
+        //        tblLookup lkp = new tblLookup(DSN);
+        //        lkp.Read(ID);
 
-                if (lkp.Active.ToUpper() == "Y")
-                {
-                    lkp.Active = "N";
-                }
-                else
-                {
-                    lkp.Active = "Y";
-                }
+        //        if (lkp.Active.ToUpper() == "Y")
+        //        {
+        //            lkp.Active = "N";
+        //        }
+        //        else
+        //        {
+        //            lkp.Active = "Y";
+        //        }
 
-                lkp.Update();
+        //        lkp.Update();
 
-                PopulateTheLookupGrid();
-            }
-        }
+        //        PopulateTheLookupGrid();
+        //    }
+        //}
 
-        private void btnMOVELOOKUPUP_Click(object sender, EventArgs e)
-        {
-            if (taigLookupListGrid.SelectedRow < 0)
-            {
-                MessageBox.Show("You have to select a row to Move");
-            }
-            else
-            {
-                if (taigLookupListGrid.SelectedRow == 0)
-                {
-                    // we are already at the top
+        //private void btnMOVELOOKUPUP_Click(object sender, EventArgs e)
+        //{
+        //    if (taigLookupListGrid.SelectedRow < 0)
+        //    {
+        //        MessageBox.Show("You have to select a row to Move");
+        //    }
+        //    else
+        //    {
+        //        if (taigLookupListGrid.SelectedRow == 0)
+        //        {
+        //            // we are already at the top
 
-                    MessageBox.Show("The Row select is already at the top");
-                }
-                else
-                {
-                    int IDtoMove = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
-                    int IDtoMoveTo = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow - 1, "LookupId"));
+        //            MessageBox.Show("The Row select is already at the top");
+        //        }
+        //        else
+        //        {
+        //            int IDtoMove = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
+        //            int IDtoMoveTo = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow - 1, "LookupId"));
 
-                    int RowToSelectAfterWards = taigLookupListGrid.SelectedRow - 1;
+        //            int RowToSelectAfterWards = taigLookupListGrid.SelectedRow - 1;
 
-                    tblLookup lkptoMove = new tblLookup(DSN);
-                    tblLookup lkptoMoveTo = new tblLookup(DSN);
+        //            tblLookup lkptoMove = new tblLookup(DSN);
+        //            tblLookup lkptoMoveTo = new tblLookup(DSN);
 
-                    lkptoMove.Read(IDtoMove);
-                    lkptoMoveTo.Read(IDtoMoveTo);
+        //            lkptoMove.Read(IDtoMove);
+        //            lkptoMoveTo.Read(IDtoMoveTo);
 
-                    int sorder = lkptoMoveTo.SortOrder;
+        //            int sorder = lkptoMoveTo.SortOrder;
 
-                    lkptoMoveTo.SortOrder = lkptoMove.SortOrder;
-                    lkptoMove.SortOrder = sorder;
+        //            lkptoMoveTo.SortOrder = lkptoMove.SortOrder;
+        //            lkptoMove.SortOrder = sorder;
 
-                    lkptoMove.Update();
-                    lkptoMoveTo.Update();
+        //            lkptoMove.Update();
+        //            lkptoMoveTo.Update();
 
-                    PopulateTheLookupGrid();
+        //            PopulateTheLookupGrid();
 
-                    taigLookupListGrid.SelectedRow = RowToSelectAfterWards;
-                }
-            }
-        }
+        //            taigLookupListGrid.SelectedRow = RowToSelectAfterWards;
+        //        }
+        //    }
+        //}
 
-        private void btnMOVELOOKUPDOWN_Click(object sender, EventArgs e)
-        {
-            if (taigLookupListGrid.SelectedRow < 0)
-            {
-                MessageBox.Show("You have to select a row to Move");
-            }
-            else
-            {
-                if (taigLookupListGrid.SelectedRow == taigLookupListGrid.Rows - 1)
-                {
-                    // we are already at the top
+        //private void btnMOVELOOKUPDOWN_Click(object sender, EventArgs e)
+        //{
+        //    if (taigLookupListGrid.SelectedRow < 0)
+        //    {
+        //        MessageBox.Show("You have to select a row to Move");
+        //    }
+        //    else
+        //    {
+        //        if (taigLookupListGrid.SelectedRow == taigLookupListGrid.Rows - 1)
+        //        {
+        //            // we are already at the top
 
-                    MessageBox.Show("The Row select is already at the top");
-                }
-                else
-                {
-                    int IDtoMove = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
-                    int IDtoMoveTo = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow + 1, "LookupId"));
+        //            MessageBox.Show("The Row select is already at the top");
+        //        }
+        //        else
+        //        {
+        //            int IDtoMove = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow, "LookupId"));
+        //            int IDtoMoveTo = Convert.ToInt32(taigLookupListGrid.get_item(taigLookupListGrid.SelectedRow + 1, "LookupId"));
 
-                    int RowToSelectAfterWards = taigLookupListGrid.SelectedRow + 1;
+        //            int RowToSelectAfterWards = taigLookupListGrid.SelectedRow + 1;
 
-                    tblLookup lkptoMove = new tblLookup(DSN);
-                    tblLookup lkptoMoveTo = new tblLookup(DSN);
+        //            tblLookup lkptoMove = new tblLookup(DSN);
+        //            tblLookup lkptoMoveTo = new tblLookup(DSN);
 
-                    lkptoMove.Read(IDtoMove);
-                    lkptoMoveTo.Read(IDtoMoveTo);
+        //            lkptoMove.Read(IDtoMove);
+        //            lkptoMoveTo.Read(IDtoMoveTo);
 
-                    int sorder = lkptoMoveTo.SortOrder;
+        //            int sorder = lkptoMoveTo.SortOrder;
 
-                    lkptoMoveTo.SortOrder = lkptoMove.SortOrder;
-                    lkptoMove.SortOrder = sorder;
+        //            lkptoMoveTo.SortOrder = lkptoMove.SortOrder;
+        //            lkptoMove.SortOrder = sorder;
 
-                    lkptoMove.Update();
-                    lkptoMoveTo.Update();
+        //            lkptoMove.Update();
+        //            lkptoMoveTo.Update();
 
-                    PopulateTheLookupGrid();
+        //            PopulateTheLookupGrid();
 
-                    taigLookupListGrid.SelectedRow = RowToSelectAfterWards;
-                }
-            }
-        }
+        //            taigLookupListGrid.SelectedRow = RowToSelectAfterWards;
+        //        }
+        //    }
+        //}
 
         private void btnSaveXaml_Click(object sender, EventArgs e)
         {
@@ -1879,14 +1879,14 @@ namespace TAICodeComplete
                     SqlDataReader r = cmd.ExecuteReader();
 
                     cmboDatabases.Items.Clear();
-                    cmboDatabasedForDocDefForms.Items.Clear();
-                    cmboDATABASEFORLOOKUPS.Items.Clear();
+                    //cmboDatabasedForDocDefForms.Items.Clear();
+                    //cmboDATABASEFORLOOKUPS.Items.Clear();
 
                     while (r.Read())
                     {
                         cmboDatabases.Items.Add(r[0] + "");
-                        cmboDatabasedForDocDefForms.Items.Add(r[0] + "");
-                        cmboDATABASEFORLOOKUPS.Items.Add(r[0] + "");
+                        //cmboDatabasedForDocDefForms.Items.Add(r[0] + "");
+                        //cmboDATABASEFORLOOKUPS.Items.Add(r[0] + "");
                     }
                     r.Close();
                     cmd.Dispose();
@@ -1901,8 +1901,8 @@ namespace TAICodeComplete
                 {
                     MessageBox.Show(ex.Message);
                     cmboDatabases.Items.Clear();
-                    cmboDatabasedForDocDefForms.Items.Clear();
-                    cmboDATABASEFORLOOKUPS.Items.Clear();
+                    //cmboDatabasedForDocDefForms.Items.Clear();
+                    //cmboDATABASEFORLOOKUPS.Items.Clear();
                 }
 
             }
@@ -5511,55 +5511,55 @@ namespace TAICodeComplete
 
         #region Grid Populators
 
-        void PopulateDocDefinitionsTable()
-        {
-            if (cmboDocDefSubSubForms.SelectedItem != null)
-            {
+        //void PopulateDocDefinitionsTable()
+        //{
+        //    if (cmboDocDefSubSubForms.SelectedItem != null)
+        //    {
 
-                string sql = "SELECT [DocDefTemplateID],[DocDefTypeId],[DocDefTypeSubId],[DocDefTemplateParID],[DocDefSecId],[TType]" +
-                             ",[TLabel],[TLabelPosition],[TLabelFontWeight],[TableName],[TableColumnName],[ValidationType],[CustomParameters],[TOrder]" +
-                             ",[LookupTypeId],[Indent],[TemplateCode],[COPY] FROM [tbldocDefTemplate] WHERE DocDefTypeSubId = " +
-                             ((DOCDEFSUBTYPE)cmboDocDefSubSubForms.SelectedItem).DocDefTypeSub_Id +
-                             " ORDER BY TORDER ";
+        //        string sql = "SELECT [DocDefTemplateID],[DocDefTypeId],[DocDefTypeSubId],[DocDefTemplateParID],[DocDefSecId],[TType]" +
+        //                     ",[TLabel],[TLabelPosition],[TLabelFontWeight],[TableName],[TableColumnName],[ValidationType],[CustomParameters],[TOrder]" +
+        //                     ",[LookupTypeId],[Indent],[TemplateCode],[COPY] FROM [tbldocDefTemplate] WHERE DocDefTypeSubId = " +
+        //                     ((DOCDEFSUBTYPE)cmboDocDefSubSubForms.SelectedItem).DocDefTypeSub_Id +
+        //                     " ORDER BY TORDER ";
 
-                TAIGridDocDef.PopulateGridWithData(DSN, sql);
+        //        TAIGridDocDef.PopulateGridWithData(DSN, sql);
 
-                //bsource.DataSource = GetData(sql);
-                //TheFormGrid.DataSource = bsource;
+        //        //bsource.DataSource = GetData(sql);
+        //        //TheFormGrid.DataSource = bsource;
 
-                //TheFormGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+        //        //TheFormGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
 
-                //TheFormGrid.BorderStyle = BorderStyle.Fixed3D;
+        //        //TheFormGrid.BorderStyle = BorderStyle.Fixed3D;
 
-                //TheFormGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
+        //        //TheFormGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
 
-            }
-        }
+        //    }
+        //}
 
-        void PopulateTheLookupGrid()
-        {
-            if (cmboSpecificLookupList.SelectedItem.ToString() != "")
-            {
+        //void PopulateTheLookupGrid()
+        //{
+        //    if (cmboSpecificLookupList.SelectedItem.ToString() != "")
+        //    {
 
-                string sql = "select * from tbllookup where LOOKUPTYPE = '" + cmboSpecificLookupList.SelectedItem.ToString() + "' ORDER BY SORTORDER; ";
+        //        string sql = "select * from tbllookup where LOOKUPTYPE = '" + cmboSpecificLookupList.SelectedItem.ToString() + "' ORDER BY SORTORDER; ";
 
-                taigLookupListGrid.PopulateGridWithData(DSN, sql);
-            }
-        }
+        //        taigLookupListGrid.PopulateGridWithData(DSN, sql);
+        //    }
+        //}
 
         #endregion
 
         #region Window/Dialog Close Handlers
 
-        void thefrm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            PopulateDocDefinitionsTable();
-        }
+        //void thefrm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    PopulateDocDefinitionsTable();
+        //}
 
-        void thelkpfrm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            PopulateTheLookupGrid();
-        }
+        //void thelkpfrm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    PopulateTheLookupGrid();
+        //}
 
         #endregion
 

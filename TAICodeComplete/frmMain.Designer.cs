@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Drawing.StringFormat stringFormat1 = new System.Drawing.StringFormat();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Drawing.StringFormat stringFormat2 = new System.Drawing.StringFormat();
             this.cmboServers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -110,35 +107,13 @@
             this.btnWFSaveToFile = new System.Windows.Forms.Button();
             this.chkWFCodeFolding = new System.Windows.Forms.CheckBox();
             this.chkWFLineNumbers = new System.Windows.Forms.CheckBox();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.TAIGridDocDef = new TAIGridControl2.TAIGridControl();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cmboDocDefSubSubForms = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cmboDocDefSubForms = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmboDatabasedForDocDefForms = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmboDocDefForms = new System.Windows.Forms.ComboBox();
-            this.btnAddNewDocDefForm = new System.Windows.Forms.Button();
-            this.btnReadDocDefForms = new System.Windows.Forms.Button();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.btnMOVELOOKUPDOWN = new System.Windows.Forms.Button();
-            this.btnMOVELOOKUPUP = new System.Windows.Forms.Button();
-            this.btnDeactivateSelectedLookup = new System.Windows.Forms.Button();
-            this.btnRemoveSelectedLookup = new System.Windows.Forms.Button();
-            this.btnAddNewLookup = new System.Windows.Forms.Button();
-            this.taigLookupListGrid = new TAIGridControl2.TAIGridControl();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cmboSpecificLookupList = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cmboDATABASEFORLOOKUPS = new System.Windows.Forms.ComboBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.sciSQLCode = new ScintillaNET.Scintilla();
             this.dtnSaveSQLToFile = new System.Windows.Forms.Button();
             this.chkSQLCodeFolding = new System.Windows.Forms.CheckBox();
             this.chkSQLLineNumber = new System.Windows.Forms.CheckBox();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.chkPad = new System.Windows.Forms.CheckBox();
             this.btnStringify = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtStringIfy = new System.Windows.Forms.TextBox();
@@ -147,7 +122,6 @@
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.chkPad = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -161,8 +135,6 @@
             this.tabPage12.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.SuspendLayout();
@@ -236,8 +208,6 @@
             this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage14);
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
@@ -1072,379 +1042,6 @@
             this.chkWFLineNumbers.UseVisualStyleBackColor = true;
             this.chkWFLineNumbers.CheckedChanged += new System.EventHandler(this.HandleWinformsLineNumberCheckChanged);
             // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tabPage6.Controls.Add(this.TAIGridDocDef);
-            this.tabPage6.Controls.Add(this.label14);
-            this.tabPage6.Controls.Add(this.cmboDocDefSubSubForms);
-            this.tabPage6.Controls.Add(this.label13);
-            this.tabPage6.Controls.Add(this.cmboDocDefSubForms);
-            this.tabPage6.Controls.Add(this.label12);
-            this.tabPage6.Controls.Add(this.cmboDatabasedForDocDefForms);
-            this.tabPage6.Controls.Add(this.label11);
-            this.tabPage6.Controls.Add(this.cmboDocDefForms);
-            this.tabPage6.Controls.Add(this.btnAddNewDocDefForm);
-            this.tabPage6.Controls.Add(this.btnReadDocDefForms);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1137, 519);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Doc Definition";
-            // 
-            // TAIGridDocDef
-            // 
-            this.TAIGridDocDef.AlternateColoration = false;
-            this.TAIGridDocDef.AlternateColorationAltColor = System.Drawing.Color.MediumSpringGreen;
-            this.TAIGridDocDef.AlternateColorationBaseColor = System.Drawing.Color.AntiqueWhite;
-            this.TAIGridDocDef.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TAIGridDocDef.BorderColor = System.Drawing.Color.Black;
-            this.TAIGridDocDef.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TAIGridDocDef.CellOutlines = true;
-            this.TAIGridDocDef.ColBackColorEdit = System.Drawing.Color.Yellow;
-            this.TAIGridDocDef.Cols = 0;
-            this.TAIGridDocDef.DefaultBackgroundColor = System.Drawing.Color.AntiqueWhite;
-            this.TAIGridDocDef.DefaultCellFont = new System.Drawing.Font("Arial", 9F);
-            this.TAIGridDocDef.DefaultForegroundColor = System.Drawing.Color.Black;
-            this.TAIGridDocDef.Delimiter = ",";
-            this.TAIGridDocDef.ExcelAlternateColoration = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
-            this.TAIGridDocDef.ExcelAutoFitColumn = true;
-            this.TAIGridDocDef.ExcelAutoFitRow = true;
-            this.TAIGridDocDef.ExcelFilename = "";
-            this.TAIGridDocDef.ExcelIncludeColumnHeaders = true;
-            this.TAIGridDocDef.ExcelKeepAlive = true;
-            this.TAIGridDocDef.ExcelMatchGridColorScheme = true;
-            this.TAIGridDocDef.ExcelMaximized = true;
-            this.TAIGridDocDef.ExcelMaxRowsPerSheet = 30000;
-            this.TAIGridDocDef.ExcelOutlineCells = true;
-            this.TAIGridDocDef.ExcelPageOrientation = 1;
-            this.TAIGridDocDef.ExcelShowBorders = false;
-            this.TAIGridDocDef.ExcelUseAlternateRowColor = true;
-            this.TAIGridDocDef.ExcelWorksheetName = "Grid Output";
-            this.TAIGridDocDef.GridEditMode = TAIGridControl2.TAIGridControl.GridEditModes.KeyReturn;
-            this.TAIGridDocDef.GridHeaderBackColor = System.Drawing.Color.LightBlue;
-            this.TAIGridDocDef.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.TAIGridDocDef.GridHeaderForeColor = System.Drawing.Color.Black;
-            this.TAIGridDocDef.GridHeaderHeight = 16;
-            stringFormat1.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat1.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat1.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat1.Trimming = System.Drawing.StringTrimming.Character;
-            this.TAIGridDocDef.GridHeaderStringFormat = stringFormat1;
-            this.TAIGridDocDef.GridheaderVisible = true;
-            this.TAIGridDocDef.Location = new System.Drawing.Point(8, 152);
-            this.TAIGridDocDef.Name = "TAIGridDocDef";
-            this.TAIGridDocDef.PageSettings = null;
-            this.TAIGridDocDef.PaginationSize = 0;
-            this.TAIGridDocDef.Rows = 0;
-            this.TAIGridDocDef.ScrollInterval = 5;
-            this.TAIGridDocDef.SelectedColBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.TAIGridDocDef.SelectedColForeColor = System.Drawing.Color.LightGray;
-            this.TAIGridDocDef.SelectedColumn = -1;
-            this.TAIGridDocDef.SelectedRow = -1;
-            this.TAIGridDocDef.SelectedRowBackColor = System.Drawing.Color.Blue;
-            this.TAIGridDocDef.SelectedRowForeColor = System.Drawing.Color.White;
-            this.TAIGridDocDef.SelectedRows = ((System.Collections.ArrayList)(resources.GetObject("TAIGridDocDef.SelectedRows")));
-            this.TAIGridDocDef.Size = new System.Drawing.Size(988, 450);
-            this.TAIGridDocDef.TabIndex = 12;
-            this.TAIGridDocDef.TitleBackColor = System.Drawing.Color.Blue;
-            this.TAIGridDocDef.TitleFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TAIGridDocDef.TitleForeColor = System.Drawing.Color.White;
-            this.TAIGridDocDef.TitleText = "Form Fields As Defined in the DOCUMENT Definition";
-            this.TAIGridDocDef.TitleVisible = true;
-            this.TAIGridDocDef.XMLDataSetName = "Grid_Output";
-            this.TAIGridDocDef.XMLFileName = "";
-            this.TAIGridDocDef.XMLIncludeSchema = false;
-            this.TAIGridDocDef.XMLNameSpace = "TAI_Grid_Ouptut";
-            this.TAIGridDocDef.XMLTableName = "Table";
-            this.TAIGridDocDef.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDoubleClick);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 138);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(137, 13);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Sub-Forms for that category";
-            // 
-            // cmboDocDefSubSubForms
-            // 
-            this.cmboDocDefSubSubForms.FormattingEnabled = true;
-            this.cmboDocDefSubSubForms.Location = new System.Drawing.Point(8, 117);
-            this.cmboDocDefSubSubForms.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboDocDefSubSubForms.Name = "cmboDocDefSubSubForms";
-            this.cmboDocDefSubSubForms.Size = new System.Drawing.Size(189, 21);
-            this.cmboDocDefSubSubForms.TabIndex = 8;
-            this.cmboDocDefSubSubForms.SelectedIndexChanged += new System.EventHandler(this.HandelSelectionOfASpecificFormFinally);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 102);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 13);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Forms for that category";
-            // 
-            // cmboDocDefSubForms
-            // 
-            this.cmboDocDefSubForms.FormattingEnabled = true;
-            this.cmboDocDefSubForms.Location = new System.Drawing.Point(8, 81);
-            this.cmboDocDefSubForms.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboDocDefSubForms.Name = "cmboDocDefSubForms";
-            this.cmboDocDefSubForms.Size = new System.Drawing.Size(189, 21);
-            this.cmboDocDefSubForms.TabIndex = 6;
-            this.cmboDocDefSubForms.SelectedIndexChanged += new System.EventHandler(this.HandleSelectionOfAformForTHatCatgory);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 31);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(143, 13);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Database on selected server";
-            // 
-            // cmboDatabasedForDocDefForms
-            // 
-            this.cmboDatabasedForDocDefForms.FormattingEnabled = true;
-            this.cmboDatabasedForDocDefForms.Location = new System.Drawing.Point(8, 10);
-            this.cmboDatabasedForDocDefForms.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboDatabasedForDocDefForms.Name = "cmboDatabasedForDocDefForms";
-            this.cmboDatabasedForDocDefForms.Size = new System.Drawing.Size(189, 21);
-            this.cmboDatabasedForDocDefForms.TabIndex = 4;
-            this.cmboDatabasedForDocDefForms.SelectedIndexChanged += new System.EventHandler(this.HandleSelectionADatabaseforDocDef);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 67);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Form Categories in the database";
-            // 
-            // cmboDocDefForms
-            // 
-            this.cmboDocDefForms.FormattingEnabled = true;
-            this.cmboDocDefForms.Location = new System.Drawing.Point(8, 46);
-            this.cmboDocDefForms.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboDocDefForms.Name = "cmboDocDefForms";
-            this.cmboDocDefForms.Size = new System.Drawing.Size(189, 21);
-            this.cmboDocDefForms.TabIndex = 2;
-            this.cmboDocDefForms.SelectedIndexChanged += new System.EventHandler(this.HandelSelectionOfAFormInTheDatabase);
-            // 
-            // btnAddNewDocDefForm
-            // 
-            this.btnAddNewDocDefForm.Location = new System.Drawing.Point(297, 46);
-            this.btnAddNewDocDefForm.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddNewDocDefForm.Name = "btnAddNewDocDefForm";
-            this.btnAddNewDocDefForm.Size = new System.Drawing.Size(92, 26);
-            this.btnAddNewDocDefForm.TabIndex = 1;
-            this.btnAddNewDocDefForm.Text = "Add a Form";
-            this.btnAddNewDocDefForm.UseVisualStyleBackColor = true;
-            this.btnAddNewDocDefForm.Click += new System.EventHandler(this.btnAddNewDocDefForm_Click);
-            // 
-            // btnReadDocDefForms
-            // 
-            this.btnReadDocDefForms.Location = new System.Drawing.Point(200, 46);
-            this.btnReadDocDefForms.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReadDocDefForms.Name = "btnReadDocDefForms";
-            this.btnReadDocDefForms.Size = new System.Drawing.Size(92, 26);
-            this.btnReadDocDefForms.TabIndex = 0;
-            this.btnReadDocDefForms.Text = "Read Forms";
-            this.btnReadDocDefForms.UseVisualStyleBackColor = true;
-            this.btnReadDocDefForms.Click += new System.EventHandler(this.btnReadDocDefForms_Click);
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.BackColor = System.Drawing.Color.LightYellow;
-            this.tabPage7.Controls.Add(this.btnMOVELOOKUPDOWN);
-            this.tabPage7.Controls.Add(this.btnMOVELOOKUPUP);
-            this.tabPage7.Controls.Add(this.btnDeactivateSelectedLookup);
-            this.tabPage7.Controls.Add(this.btnRemoveSelectedLookup);
-            this.tabPage7.Controls.Add(this.btnAddNewLookup);
-            this.tabPage7.Controls.Add(this.taigLookupListGrid);
-            this.tabPage7.Controls.Add(this.label16);
-            this.tabPage7.Controls.Add(this.cmboSpecificLookupList);
-            this.tabPage7.Controls.Add(this.label15);
-            this.tabPage7.Controls.Add(this.cmboDATABASEFORLOOKUPS);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1137, 519);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Doc Def Lookup Mgmt.";
-            // 
-            // btnMOVELOOKUPDOWN
-            // 
-            this.btnMOVELOOKUPDOWN.Image = ((System.Drawing.Image)(resources.GetObject("btnMOVELOOKUPDOWN.Image")));
-            this.btnMOVELOOKUPDOWN.Location = new System.Drawing.Point(512, 2);
-            this.btnMOVELOOKUPDOWN.Name = "btnMOVELOOKUPDOWN";
-            this.btnMOVELOOKUPDOWN.Size = new System.Drawing.Size(72, 72);
-            this.btnMOVELOOKUPDOWN.TabIndex = 15;
-            this.btnMOVELOOKUPDOWN.UseVisualStyleBackColor = true;
-            this.btnMOVELOOKUPDOWN.Click += new System.EventHandler(this.btnMOVELOOKUPDOWN_Click);
-            // 
-            // btnMOVELOOKUPUP
-            // 
-            this.btnMOVELOOKUPUP.Image = ((System.Drawing.Image)(resources.GetObject("btnMOVELOOKUPUP.Image")));
-            this.btnMOVELOOKUPUP.Location = new System.Drawing.Point(590, 2);
-            this.btnMOVELOOKUPUP.Name = "btnMOVELOOKUPUP";
-            this.btnMOVELOOKUPUP.Size = new System.Drawing.Size(72, 72);
-            this.btnMOVELOOKUPUP.TabIndex = 14;
-            this.btnMOVELOOKUPUP.UseVisualStyleBackColor = true;
-            this.btnMOVELOOKUPUP.Click += new System.EventHandler(this.btnMOVELOOKUPUP_Click);
-            // 
-            // btnDeactivateSelectedLookup
-            // 
-            this.btnDeactivateSelectedLookup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeactivateSelectedLookup.Location = new System.Drawing.Point(792, 3);
-            this.btnDeactivateSelectedLookup.Name = "btnDeactivateSelectedLookup";
-            this.btnDeactivateSelectedLookup.Size = new System.Drawing.Size(104, 69);
-            this.btnDeactivateSelectedLookup.TabIndex = 13;
-            this.btnDeactivateSelectedLookup.Text = "Toggle Activation of Selected";
-            this.btnDeactivateSelectedLookup.UseVisualStyleBackColor = true;
-            this.btnDeactivateSelectedLookup.Click += new System.EventHandler(this.btnDeactivateSelectedLookup_Click);
-            // 
-            // btnRemoveSelectedLookup
-            // 
-            this.btnRemoveSelectedLookup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveSelectedLookup.Location = new System.Drawing.Point(902, 3);
-            this.btnRemoveSelectedLookup.Name = "btnRemoveSelectedLookup";
-            this.btnRemoveSelectedLookup.Size = new System.Drawing.Size(104, 69);
-            this.btnRemoveSelectedLookup.TabIndex = 12;
-            this.btnRemoveSelectedLookup.Text = "Remove Selected";
-            this.btnRemoveSelectedLookup.UseVisualStyleBackColor = true;
-            this.btnRemoveSelectedLookup.Click += new System.EventHandler(this.btnRemoveSelectedLookup_Click);
-            // 
-            // btnAddNewLookup
-            // 
-            this.btnAddNewLookup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewLookup.Location = new System.Drawing.Point(1012, 3);
-            this.btnAddNewLookup.Name = "btnAddNewLookup";
-            this.btnAddNewLookup.Size = new System.Drawing.Size(104, 69);
-            this.btnAddNewLookup.TabIndex = 11;
-            this.btnAddNewLookup.Text = "Add New";
-            this.btnAddNewLookup.UseVisualStyleBackColor = true;
-            this.btnAddNewLookup.Click += new System.EventHandler(this.btnAddNewLookup_Click);
-            // 
-            // taigLookupListGrid
-            // 
-            this.taigLookupListGrid.AlternateColoration = false;
-            this.taigLookupListGrid.AlternateColorationAltColor = System.Drawing.Color.MediumSpringGreen;
-            this.taigLookupListGrid.AlternateColorationBaseColor = System.Drawing.Color.AntiqueWhite;
-            this.taigLookupListGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.taigLookupListGrid.BorderColor = System.Drawing.Color.Black;
-            this.taigLookupListGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.taigLookupListGrid.CellOutlines = true;
-            this.taigLookupListGrid.ColBackColorEdit = System.Drawing.Color.Yellow;
-            this.taigLookupListGrid.Cols = 0;
-            this.taigLookupListGrid.DefaultBackgroundColor = System.Drawing.Color.AntiqueWhite;
-            this.taigLookupListGrid.DefaultCellFont = new System.Drawing.Font("Arial", 9F);
-            this.taigLookupListGrid.DefaultForegroundColor = System.Drawing.Color.Black;
-            this.taigLookupListGrid.Delimiter = ",";
-            this.taigLookupListGrid.ExcelAlternateColoration = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
-            this.taigLookupListGrid.ExcelAutoFitColumn = true;
-            this.taigLookupListGrid.ExcelAutoFitRow = true;
-            this.taigLookupListGrid.ExcelFilename = "";
-            this.taigLookupListGrid.ExcelIncludeColumnHeaders = true;
-            this.taigLookupListGrid.ExcelKeepAlive = true;
-            this.taigLookupListGrid.ExcelMatchGridColorScheme = true;
-            this.taigLookupListGrid.ExcelMaximized = true;
-            this.taigLookupListGrid.ExcelMaxRowsPerSheet = 30000;
-            this.taigLookupListGrid.ExcelOutlineCells = true;
-            this.taigLookupListGrid.ExcelPageOrientation = 1;
-            this.taigLookupListGrid.ExcelShowBorders = false;
-            this.taigLookupListGrid.ExcelUseAlternateRowColor = true;
-            this.taigLookupListGrid.ExcelWorksheetName = "Grid Output";
-            this.taigLookupListGrid.GridEditMode = TAIGridControl2.TAIGridControl.GridEditModes.KeyReturn;
-            this.taigLookupListGrid.GridHeaderBackColor = System.Drawing.Color.LightBlue;
-            this.taigLookupListGrid.GridHeaderFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.taigLookupListGrid.GridHeaderForeColor = System.Drawing.Color.Black;
-            this.taigLookupListGrid.GridHeaderHeight = 16;
-            stringFormat2.Alignment = System.Drawing.StringAlignment.Near;
-            stringFormat2.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
-            stringFormat2.LineAlignment = System.Drawing.StringAlignment.Near;
-            stringFormat2.Trimming = System.Drawing.StringTrimming.Character;
-            this.taigLookupListGrid.GridHeaderStringFormat = stringFormat2;
-            this.taigLookupListGrid.GridheaderVisible = true;
-            this.taigLookupListGrid.Location = new System.Drawing.Point(5, 78);
-            this.taigLookupListGrid.Name = "taigLookupListGrid";
-            this.taigLookupListGrid.PageSettings = null;
-            this.taigLookupListGrid.PaginationSize = 0;
-            this.taigLookupListGrid.Rows = 0;
-            this.taigLookupListGrid.ScrollInterval = 5;
-            this.taigLookupListGrid.SelectedColBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.taigLookupListGrid.SelectedColForeColor = System.Drawing.Color.LightGray;
-            this.taigLookupListGrid.SelectedColumn = -1;
-            this.taigLookupListGrid.SelectedRow = -1;
-            this.taigLookupListGrid.SelectedRowBackColor = System.Drawing.Color.Blue;
-            this.taigLookupListGrid.SelectedRowForeColor = System.Drawing.Color.White;
-            this.taigLookupListGrid.SelectedRows = ((System.Collections.ArrayList)(resources.GetObject("taigLookupListGrid.SelectedRows")));
-            this.taigLookupListGrid.Size = new System.Drawing.Size(1111, 524);
-            this.taigLookupListGrid.TabIndex = 10;
-            this.taigLookupListGrid.TitleBackColor = System.Drawing.Color.Blue;
-            this.taigLookupListGrid.TitleFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taigLookupListGrid.TitleForeColor = System.Drawing.Color.White;
-            this.taigLookupListGrid.TitleText = "Selected Lookup List Entries";
-            this.taigLookupListGrid.TitleVisible = true;
-            this.taigLookupListGrid.XMLDataSetName = "Grid_Output";
-            this.taigLookupListGrid.XMLFileName = "";
-            this.taigLookupListGrid.XMLIncludeSchema = false;
-            this.taigLookupListGrid.XMLNameSpace = "TAI_Grid_Ouptut";
-            this.taigLookupListGrid.XMLTableName = "Table";
-            this.taigLookupListGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.HandleDoubleClickingOnALookup);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(2, 59);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(134, 13);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "Select specific Lookup List";
-            // 
-            // cmboSpecificLookupList
-            // 
-            this.cmboSpecificLookupList.FormattingEnabled = true;
-            this.cmboSpecificLookupList.Location = new System.Drawing.Point(2, 38);
-            this.cmboSpecificLookupList.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboSpecificLookupList.Name = "cmboSpecificLookupList";
-            this.cmboSpecificLookupList.Size = new System.Drawing.Size(363, 21);
-            this.cmboSpecificLookupList.TabIndex = 8;
-            this.cmboSpecificLookupList.SelectedIndexChanged += new System.EventHandler(this.HandleSelectionOfASpecificLookupList);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(2, 23);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(143, 13);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Database on selected server";
-            // 
-            // cmboDATABASEFORLOOKUPS
-            // 
-            this.cmboDATABASEFORLOOKUPS.FormattingEnabled = true;
-            this.cmboDATABASEFORLOOKUPS.Location = new System.Drawing.Point(2, 2);
-            this.cmboDATABASEFORLOOKUPS.Margin = new System.Windows.Forms.Padding(2);
-            this.cmboDATABASEFORLOOKUPS.Name = "cmboDATABASEFORLOOKUPS";
-            this.cmboDATABASEFORLOOKUPS.Size = new System.Drawing.Size(189, 21);
-            this.cmboDATABASEFORLOOKUPS.TabIndex = 6;
-            this.cmboDATABASEFORLOOKUPS.SelectedIndexChanged += new System.EventHandler(this.HandleSelectingDatabaseForLOOKUPMGMT);
-            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.sciSQLCode);
@@ -1520,6 +1117,13 @@
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "Stringify";
             // 
+            // chkPad
+            // 
+            this.chkPad.Location = new System.Drawing.Point(0, 0);
+            this.chkPad.Name = "chkPad";
+            this.chkPad.Size = new System.Drawing.Size(104, 24);
+            this.chkPad.TabIndex = 0;
+            // 
             // btnStringify
             // 
             this.btnStringify.Location = new System.Drawing.Point(94, 75);
@@ -1593,16 +1197,6 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // btnEnumerateLocalSQLServers
-            // 
-            this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
-            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
-            this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
-            this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
-            this.btnEnumerateLocalSQLServers.TabIndex = 20;
-            this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
-            this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1635,10 +1229,6 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.tabPage14.ResumeLayout(false);
@@ -1689,17 +1279,6 @@
         private System.Windows.Forms.TextBox txtPASSWORD;
         private System.Windows.Forms.TextBox txtUSER;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmboDocDefForms;
-        private System.Windows.Forms.Button btnAddNewDocDefForm;
-        private System.Windows.Forms.Button btnReadDocDefForms;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmboDatabasedForDocDefForms;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cmboDocDefSubForms;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cmboDocDefSubSubForms;
         private TAIGridControl2.TAIGridControl TAIGridDocDef;
         private ScintillaNET.Scintilla scintillaWFCode;
         private System.Windows.Forms.Button btnWFSaveToFile;
@@ -1710,17 +1289,7 @@
         private System.Windows.Forms.CheckBox chkXAMLCodeFoldingXaml;
         private System.Windows.Forms.CheckBox chkLineNumbersXAML;
         private System.Windows.Forms.CheckBox chkXAMLFromOrUserControl;
-        private System.Windows.Forms.TabPage tabPage7;
         private TAIGridControl2.TAIGridControl taigLookupListGrid;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cmboSpecificLookupList;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cmboDATABASEFORLOOKUPS;
-        private System.Windows.Forms.Button btnAddNewLookup;
-        private System.Windows.Forms.Button btnDeactivateSelectedLookup;
-        private System.Windows.Forms.Button btnRemoveSelectedLookup;
-        private System.Windows.Forms.Button btnMOVELOOKUPUP;
-        private System.Windows.Forms.Button btnMOVELOOKUPDOWN;
         private System.Windows.Forms.TabPage tabPage8;
         private ScintillaNET.Scintilla sciSQLCode;
         private System.Windows.Forms.Button dtnSaveSQLToFile;
