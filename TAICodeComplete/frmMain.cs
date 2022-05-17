@@ -109,13 +109,13 @@ namespace TAICodeComplete
             SQLCODEPRETTY.Styles[Style.Sql.CommentLineDoc].ForeColor = Color.Green;
             SQLCODEPRETTY.Styles[Style.Sql.Number].ForeColor = Color.Maroon;
             SQLCODEPRETTY.Styles[Style.Sql.Word].ForeColor = Color.Blue;
-            SQLCODEPRETTY.Styles[Style.Sql.Word2].ForeColor = Color.Fuchsia;
+            SQLCODEPRETTY.Styles[Style.Sql.Word2].ForeColor = Color.Plum;
             SQLCODEPRETTY.Styles[Style.Sql.User1].ForeColor = Color.Gray;
             SQLCODEPRETTY.Styles[Style.Sql.User2].ForeColor = Color.FromArgb(255, 00, 128, 192);    //Medium Blue-Green
             SQLCODEPRETTY.Styles[Style.Sql.String].ForeColor = Color.Red;
             SQLCODEPRETTY.Styles[Style.Sql.Character].ForeColor = Color.Red;
             SQLCODEPRETTY.Styles[Style.Sql.Operator].ForeColor = Color.Black;
-            SQLCODEPRETTY.Styles[Style.Sql.Identifier].ForeColor = Color.Coral;
+            SQLCODEPRETTY.Styles[Style.Sql.Identifier].ForeColor = Color.Purple;
 
             // Set keyword lists
             // Word = 0
