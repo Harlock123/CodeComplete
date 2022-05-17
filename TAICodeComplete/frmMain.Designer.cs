@@ -120,8 +120,6 @@
             this.sciStringify = new ScintillaNET.Scintilla();
             this.chkStringifyCodeFolding = new System.Windows.Forms.CheckBox();
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
-            this.sfd = new System.Windows.Forms.SaveFileDialog();
-            this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnSQLPRETTY = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -129,6 +127,8 @@
             this.SQLCODEPRETTY = new ScintillaNET.Scintilla();
             this.chkSQLCODEPRETTYFOLDING = new System.Windows.Forms.CheckBox();
             this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1132,6 +1132,7 @@
             this.chkPad.Name = "chkPad";
             this.chkPad.Size = new System.Drawing.Size(104, 24);
             this.chkPad.TabIndex = 0;
+            this.chkPad.Visible = false;
             // 
             // btnStringify
             // 
@@ -1200,11 +1201,6 @@
             this.chkStringifyLineNumbers.Text = "Line Numbers";
             this.chkStringifyLineNumbers.UseVisualStyleBackColor = true;
             this.chkStringifyLineNumbers.CheckedChanged += new System.EventHandler(this.handlechkStringifyLineNumberCheckChanged);
-            // 
-            // backgroundworkerThread
-            // 
-            this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
-            this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
             // tabPage6
             // 
@@ -1286,6 +1282,11 @@
             this.chkSQLCODEPRETTYLINENUMBERS.TabIndex = 11;
             this.chkSQLCODEPRETTYLINENUMBERS.Text = "Line Numbers";
             this.chkSQLCODEPRETTYLINENUMBERS.UseVisualStyleBackColor = true;
+            // 
+            // backgroundworkerThread
+            // 
+            this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
+            this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
             // frmMain
             // 
