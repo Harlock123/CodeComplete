@@ -9,15 +9,20 @@
 	<script language="JavaScript" src="JS\jquery-ui.min.js" ></script>
 	<script language="JavaScript">
 		$(document).ready(function() {
-			$( "#fld_StartDate" ).datepicker();
+			$( "#fld_PaidDate" ).datepicker();
+			$( "#fld_BeginDate" ).datepicker();
 			$( "#fld_EndDate" ).datepicker();
-			$( "#fld_ContactDate" ).datepicker();
-			$( "#fld_AuthReviewDate" ).datepicker();
-			$( "#fld_DataEntryDate" ).datepicker();
-			$( "#fld_ApprovalDate" ).datepicker();
-			$( "#fld_LastPrintedDate" ).datepicker();
+			$( "#fld_ReceivedDate" ).datepicker();
+			$( "#fld_ProcedureStartDate" ).datepicker();
+			$( "#fld_ProcedureEndDate" ).datepicker();
 			$( "#fld_CreatedDate" ).datepicker();
 			$( "#fld_UpdatedDate" ).datepicker();
+			$( "#fld_837SubmissionDate" ).datepicker();
+			$( "#fld_EncounterSubmittedDate" ).datepicker();
+			$( "#fld_FiscalInvoicePaidDate" ).datepicker();
+			$( "#fld_PeopleSoftSubmittedDate" ).datepicker();
+			$( "#fld_837CBHNPSubmissionDate" ).datepicker();
+			$( "#fld_InvoiceDate" ).datepicker();
 		});
 
 	</script>
@@ -38,9 +43,9 @@
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthNumber" >
+		<div class="panel-container" id="container_ClaimNumber" >
 			<nav class="panel-left">
-				AuthNumber
+				ClaimNumber
 			</nav>
 
 			<div class="panel-splitter">
@@ -48,13 +53,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_AuthNumber" id="fld_AuthNumber" /> 
+				<input type="text" maxlength="10" name="fld_ClaimNumber" id="fld_ClaimNumber" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthAmendment" >
+		<div class="panel-container" id="container_InvoiceID" >
 			<nav class="panel-left">
-				AuthAmendment
+				InvoiceID
 			</nav>
 
 			<div class="panel-splitter">
@@ -62,13 +67,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_AuthAmendment" id="fld_AuthAmendment" /> 
+				<input type="number" name="fld_InvoiceID" id="fld_InvoiceID" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MemberID" >
+		<div class="panel-container" id="container_AuthorizationID" >
 			<nav class="panel-left">
-				MemberID
+				AuthorizationID
 			</nav>
 
 			<div class="panel-splitter">
@@ -76,7 +81,63 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_MemberID" id="fld_MemberID" /> 
+				<input type="number" name="fld_AuthorizationID" id="fld_AuthorizationID" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_AuthorizationNumber" >
+			<nav class="panel-left">
+				AuthorizationNumber
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_AuthorizationNumber" id="fld_AuthorizationNumber" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_AuthServiceLineID" >
+			<nav class="panel-left">
+				AuthServiceLineID
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_AuthServiceLineID" id="fld_AuthServiceLineID" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_ContractHeaderID" >
+			<nav class="panel-left">
+				ContractHeaderID
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_ContractHeaderID" id="fld_ContractHeaderID" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_ContractServiceLineID" >
+			<nav class="panel-left">
+				ContractServiceLineID
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_ContractServiceLineID" id="fld_ContractServiceLineID" /> 
 			</div>
 
 		</div>
@@ -94,9 +155,9 @@
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ProviderNumber" >
+		<div class="panel-container" id="container_ProviderLocationID" >
 			<nav class="panel-left">
-				ProviderNumber
+				ProviderLocationID
 			</nav>
 
 			<div class="panel-splitter">
@@ -104,13 +165,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="20" name="fld_ProviderNumber" id="fld_ProviderNumber" /> 
+				<input type="number" name="fld_ProviderLocationID" id="fld_ProviderLocationID" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ProviderMANumber" >
+		<div class="panel-container" id="container_MemberID" >
 			<nav class="panel-left">
-				ProviderMANumber
+				MemberID
 			</nav>
 
 			<div class="panel-splitter">
@@ -118,13 +179,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="20" name="fld_ProviderMANumber" id="fld_ProviderMANumber" /> 
+				<input type="number" name="fld_MemberID" id="fld_MemberID" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ProviderContractNumber" >
+		<div class="panel-container" id="container_Units" >
 			<nav class="panel-left">
-				ProviderContractNumber
+				Units
 			</nav>
 
 			<div class="panel-splitter">
@@ -132,13 +193,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="20" name="fld_ProviderContractNumber" id="fld_ProviderContractNumber" /> 
+				<input type="number" name="fld_Units" id="fld_Units" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ProviderContractAmendment" >
+		<div class="panel-container" id="container_UnitDescription" >
 			<nav class="panel-left">
-				ProviderContractAmendment
+				UnitDescription
 			</nav>
 
 			<div class="panel-splitter">
@@ -146,13 +207,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="3" name="fld_ProviderContractAmendment" id="fld_ProviderContractAmendment" /> 
+				<input type="text" maxlength="100" name="fld_UnitDescription" id="fld_UnitDescription" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ProviderLocation" >
+		<div class="panel-container" id="container_UnitFee" >
 			<nav class="panel-left">
-				ProviderLocation
+				UnitFee
 			</nav>
 
 			<div class="panel-splitter">
@@ -160,13 +221,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_ProviderLocation" id="fld_ProviderLocation" /> 
+				<input type="number" name="fld_UnitFee" id="fld_UnitFee" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_StartDate" >
+		<div class="panel-container" id="container_UnitType" >
 			<nav class="panel-left">
-				StartDate
+				UnitType
 			</nav>
 
 			<div class="panel-splitter">
@@ -174,7 +235,133 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_StartDate" id="fld_StartDate" /> 
+				<input type="text" maxlength="20" name="fld_UnitType" id="fld_UnitType" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_ChargedAmt" >
+			<nav class="panel-left">
+				ChargedAmt
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_ChargedAmt" id="fld_ChargedAmt" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_OtherPaidAmt" >
+			<nav class="panel-left">
+				OtherPaidAmt
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_OtherPaidAmt" id="fld_OtherPaidAmt" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_OtherPaidReasonCode" >
+			<nav class="panel-left">
+				OtherPaidReasonCode
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="10" name="fld_OtherPaidReasonCode" id="fld_OtherPaidReasonCode" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_PatientPaidAmt" >
+			<nav class="panel-left">
+				PatientPaidAmt
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_PatientPaidAmt" id="fld_PatientPaidAmt" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_PatientPaidReasonCode" >
+			<nav class="panel-left">
+				PatientPaidReasonCode
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="10" name="fld_PatientPaidReasonCode" id="fld_PatientPaidReasonCode" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_PaidAmt" >
+			<nav class="panel-left">
+				PaidAmt
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_PaidAmt" id="fld_PaidAmt" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_PaidReasonCode" >
+			<nav class="panel-left">
+				PaidReasonCode
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="10" name="fld_PaidReasonCode" id="fld_PaidReasonCode" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_PaidDate" >
+			<nav class="panel-left">
+				PaidDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_PaidDate" id="fld_PaidDate" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_BeginDate" >
+			<nav class="panel-left">
+				BeginDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_BeginDate" id="fld_BeginDate" /> 
 			</div>
 
 		</div>
@@ -192,9 +379,9 @@
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MaxDollars" >
+		<div class="panel-container" id="container_ReceivedDate" >
 			<nav class="panel-left">
-				MaxDollars
+				ReceivedDate
 			</nav>
 
 			<div class="panel-splitter">
@@ -202,13 +389,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_MaxDollars" id="fld_MaxDollars" /> 
+				<input type="text" name="fld_ReceivedDate" id="fld_ReceivedDate" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MaxUnits" >
+		<div class="panel-container" id="container_DIAG1" >
 			<nav class="panel-left">
-				MaxUnits
+				DIAG1
 			</nav>
 
 			<div class="panel-splitter">
@@ -216,13 +403,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_MaxUnits" id="fld_MaxUnits" /> 
+				<input type="text" maxlength="10" name="fld_DIAG1" id="fld_DIAG1" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_MaxVisits" >
+		<div class="panel-container" id="container_DIAG2" >
 			<nav class="panel-left">
-				MaxVisits
+				DIAG2
 			</nav>
 
 			<div class="panel-splitter">
@@ -230,13 +417,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_MaxVisits" id="fld_MaxVisits" /> 
+				<input type="text" maxlength="10" name="fld_DIAG2" id="fld_DIAG2" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthType" >
+		<div class="panel-container" id="container_DIAG3" >
 			<nav class="panel-left">
-				AuthType
+				DIAG3
 			</nav>
 
 			<div class="panel-splitter">
@@ -244,13 +431,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="5" name="fld_AuthType" id="fld_AuthType" /> 
+				<input type="text" maxlength="10" name="fld_DIAG3" id="fld_DIAG3" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthTypeDesc" >
+		<div class="panel-container" id="container_DIAG4" >
 			<nav class="panel-left">
-				AuthTypeDesc
+				DIAG4
 			</nav>
 
 			<div class="panel-splitter">
@@ -258,13 +445,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="30" name="fld_AuthTypeDesc" id="fld_AuthTypeDesc" /> 
+				<input type="text" maxlength="10" name="fld_DIAG4" id="fld_DIAG4" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthProgramDesc" >
+		<div class="panel-container" id="container_FUNDUSAGE" >
 			<nav class="panel-left">
-				AuthProgramDesc
+				FUNDUSAGE
 			</nav>
 
 			<div class="panel-splitter">
@@ -272,14 +459,13 @@
 			</div>
 
 			<div class="panel-right">
-				<textarea rows="4" cols="50" name="fld_AuthProgramDesc" id="fld_AuthProgramDesc"> 
-				</textarea>
+				<input type="text" maxlength="50" name="fld_FUNDUSAGE" id="fld_FUNDUSAGE" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthGuarantor" >
+		<div class="panel-container" id="container_Status" >
 			<nav class="panel-left">
-				AuthGuarantor
+				Status
 			</nav>
 
 			<div class="panel-splitter">
@@ -287,13 +473,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_AuthGuarantor" id="fld_AuthGuarantor" /> 
+				<input type="number" name="fld_Status" id="fld_Status" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthGuarantorPhy" >
+		<div class="panel-container" id="container_StatusID" >
 			<nav class="panel-left">
-				AuthGuarantorPhy
+				StatusID
 			</nav>
 
 			<div class="panel-splitter">
@@ -301,13 +487,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="50" name="fld_AuthGuarantorPhy" id="fld_AuthGuarantorPhy" /> 
+				<input type="number" name="fld_StatusID" id="fld_StatusID" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ContactDate" >
+		<div class="panel-container" id="container_ContractUnitFee" >
 			<nav class="panel-left">
-				ContactDate
+				ContractUnitFee
 			</nav>
 
 			<div class="panel-splitter">
@@ -315,13 +501,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_ContactDate" id="fld_ContactDate" /> 
+				<input type="number" name="fld_ContractUnitFee" id="fld_ContractUnitFee" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ContactNotes" >
+		<div class="panel-container" id="container_AuthContractMod1" >
 			<nav class="panel-left">
-				ContactNotes
+				AuthContractMod1
 			</nav>
 
 			<div class="panel-splitter">
@@ -329,14 +515,13 @@
 			</div>
 
 			<div class="panel-right">
-				<textarea rows="4" cols="50" name="fld_ContactNotes" id="fld_ContactNotes"> 
-				</textarea>
+				<input type="text" maxlength="2" name="fld_AuthContractMod1" id="fld_AuthContractMod1" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthReviewDate" >
+		<div class="panel-container" id="container_AuthContractMod2" >
 			<nav class="panel-left">
-				AuthReviewDate
+				AuthContractMod2
 			</nav>
 
 			<div class="panel-splitter">
@@ -344,13 +529,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_AuthReviewDate" id="fld_AuthReviewDate" /> 
+				<input type="text" maxlength="2" name="fld_AuthContractMod2" id="fld_AuthContractMod2" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AuthReviewNotes" >
+		<div class="panel-container" id="container_AuthContractMod3" >
 			<nav class="panel-left">
-				AuthReviewNotes
+				AuthContractMod3
 			</nav>
 
 			<div class="panel-splitter">
@@ -358,14 +543,13 @@
 			</div>
 
 			<div class="panel-right">
-				<textarea rows="4" cols="50" name="fld_AuthReviewNotes" id="fld_AuthReviewNotes"> 
-				</textarea>
+				<input type="text" maxlength="2" name="fld_AuthContractMod3" id="fld_AuthContractMod3" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_DataEntryDate" >
+		<div class="panel-container" id="container_AuthContractMod4" >
 			<nav class="panel-left">
-				DataEntryDate
+				AuthContractMod4
 			</nav>
 
 			<div class="panel-splitter">
@@ -373,13 +557,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_DataEntryDate" id="fld_DataEntryDate" /> 
+				<input type="text" maxlength="2" name="fld_AuthContractMod4" id="fld_AuthContractMod4" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ApprovalStatus" >
+		<div class="panel-container" id="container_AuthContractMod5" >
 			<nav class="panel-left">
-				ApprovalStatus
+				AuthContractMod5
 			</nav>
 
 			<div class="panel-splitter">
@@ -387,13 +571,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="30" name="fld_ApprovalStatus" id="fld_ApprovalStatus" /> 
+				<input type="text" maxlength="2" name="fld_AuthContractMod5" id="fld_AuthContractMod5" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ApprovalDate" >
+		<div class="panel-container" id="container_ProviderType" >
 			<nav class="panel-left">
-				ApprovalDate
+				ProviderType
 			</nav>
 
 			<div class="panel-splitter">
@@ -401,13 +585,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_ApprovalDate" id="fld_ApprovalDate" /> 
+				<input type="text" maxlength="3" name="fld_ProviderType" id="fld_ProviderType" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ApprovedBy" >
+		<div class="panel-container" id="container_ProviderSpecialtyCode" >
 			<nav class="panel-left">
-				ApprovedBy
+				ProviderSpecialtyCode
 			</nav>
 
 			<div class="panel-splitter">
@@ -415,13 +599,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="20" name="fld_ApprovedBy" id="fld_ApprovedBy" /> 
+				<input type="text" maxlength="3" name="fld_ProviderSpecialtyCode" id="fld_ProviderSpecialtyCode" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_PrintRequired" >
+		<div class="panel-container" id="container_PlaceOfService" >
 			<nav class="panel-left">
-				PrintRequired
+				PlaceOfService
 			</nav>
 
 			<div class="panel-splitter">
@@ -429,13 +613,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="checkbox" name="fld_PrintRequired" id="fld_PrintRequired" /> 
+				<input type="text" maxlength="2" name="fld_PlaceOfService" id="fld_PlaceOfService" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_LastPrintedDate" >
+		<div class="panel-container" id="container_ContractNumber" >
 			<nav class="panel-left">
-				LastPrintedDate
+				ContractNumber
 			</nav>
 
 			<div class="panel-splitter">
@@ -443,13 +627,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_LastPrintedDate" id="fld_LastPrintedDate" /> 
+				<input type="text" maxlength="20" name="fld_ContractNumber" id="fld_ContractNumber" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_RejectReason" >
+		<div class="panel-container" id="container_CostCenterActivity" >
 			<nav class="panel-left">
-				RejectReason
+				CostCenterActivity
 			</nav>
 
 			<div class="panel-splitter">
@@ -457,14 +641,13 @@
 			</div>
 
 			<div class="panel-right">
-				<textarea rows="4" cols="50" name="fld_RejectReason" id="fld_RejectReason"> 
-				</textarea>
+				<input type="text" maxlength="3" name="fld_CostCenterActivity" id="fld_CostCenterActivity" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_RoomAndBoardLiability" >
+		<div class="panel-container" id="container_CostCenterGroup" >
 			<nav class="panel-left">
-				RoomAndBoardLiability
+				CostCenterGroup
 			</nav>
 
 			<div class="panel-splitter">
@@ -472,13 +655,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_RoomAndBoardLiability" id="fld_RoomAndBoardLiability" /> 
+				<input type="text" maxlength="4" name="fld_CostCenterGroup" id="fld_CostCenterGroup" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_Division" >
+		<div class="panel-container" id="container_ProcedureCode" >
 			<nav class="panel-left">
-				Division
+				ProcedureCode
 			</nav>
 
 			<div class="panel-splitter">
@@ -486,13 +669,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="4" name="fld_Division" id="fld_Division" /> 
+				<input type="text" maxlength="15" name="fld_ProcedureCode" id="fld_ProcedureCode" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_SpansFiscalYear" >
+		<div class="panel-container" id="container_ProcedureStartDate" >
 			<nav class="panel-left">
-				SpansFiscalYear
+				ProcedureStartDate
 			</nav>
 
 			<div class="panel-splitter">
@@ -500,7 +683,21 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="checkbox" name="fld_SpansFiscalYear" id="fld_SpansFiscalYear" /> 
+				<input type="text" name="fld_ProcedureStartDate" id="fld_ProcedureStartDate" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_ProcedureEndDate" >
+			<nav class="panel-left">
+				ProcedureEndDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_ProcedureEndDate" id="fld_ProcedureEndDate" /> 
 			</div>
 
 		</div>
@@ -518,20 +715,6 @@
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_CreatedDate" >
-			<nav class="panel-left">
-				CreatedDate
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_CreatedDate" id="fld_CreatedDate" /> 
-			</div>
-
-		</div>
 		<div class="panel-container" id="container_CreatedFrom" >
 			<nav class="panel-left">
 				CreatedFrom
@@ -543,6 +726,20 @@
 
 			<div class="panel-right">
 				<input type="text" maxlength="20" name="fld_CreatedFrom" id="fld_CreatedFrom" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_CreatedDate" >
+			<nav class="panel-left">
+				CreatedDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_CreatedDate" id="fld_CreatedDate" /> 
 			</div>
 
 		</div>
@@ -560,20 +757,6 @@
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_UpdatedDate" >
-			<nav class="panel-left">
-				UpdatedDate
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="text" name="fld_UpdatedDate" id="fld_UpdatedDate" /> 
-			</div>
-
-		</div>
 		<div class="panel-container" id="container_UpdatedFrom" >
 			<nav class="panel-left">
 				UpdatedFrom
@@ -588,9 +771,9 @@
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_CCBHAuthNumber" >
+		<div class="panel-container" id="container_UpdatedDate" >
 			<nav class="panel-left">
-				CCBHAuthNumber
+				UpdatedDate
 			</nav>
 
 			<div class="panel-splitter">
@@ -598,13 +781,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="30" name="fld_CCBHAuthNumber" id="fld_CCBHAuthNumber" /> 
+				<input type="text" name="fld_UpdatedDate" id="fld_UpdatedDate" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_AdjustmentReason" >
+		<div class="panel-container" id="container_UploadRequired" >
 			<nav class="panel-left">
-				AdjustmentReason
+				UploadRequired
 			</nav>
 
 			<div class="panel-splitter">
@@ -612,14 +795,350 @@
 			</div>
 
 			<div class="panel-right">
-				<textarea rows="4" cols="50" name="fld_AdjustmentReason" id="fld_AdjustmentReason"> 
+				<input type="checkbox" name="fld_UploadRequired" id="fld_UploadRequired" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_CurrentStatus" >
+			<nav class="panel-left">
+				CurrentStatus
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="30" name="fld_CurrentStatus" id="fld_CurrentStatus" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_ClaimReferenceNumber" >
+			<nav class="panel-left">
+				ClaimReferenceNumber
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="20" name="fld_ClaimReferenceNumber" id="fld_ClaimReferenceNumber" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_FFS" >
+			<nav class="panel-left">
+				FFS
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="checkbox" name="fld_FFS" id="fld_FFS" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_ProviderCategory" >
+			<nav class="panel-left">
+				ProviderCategory
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="1" name="fld_ProviderCategory" id="fld_ProviderCategory" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_ProgramFunded" >
+			<nav class="panel-left">
+				ProgramFunded
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="checkbox" name="fld_ProgramFunded" id="fld_ProgramFunded" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_CountyCode" >
+			<nav class="panel-left">
+				CountyCode
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="2" name="fld_CountyCode" id="fld_CountyCode" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_Division" >
+			<nav class="panel-left">
+				Division
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="10" name="fld_Division" id="fld_Division" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_Destination" >
+			<nav class="panel-left">
+				Destination
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_Destination" id="fld_Destination" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_837SubmissionDate" >
+			<nav class="panel-left">
+				837SubmissionDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_837SubmissionDate" id="fld_837SubmissionDate" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_OriginalClaimID" >
+			<nav class="panel-left">
+				OriginalClaimID
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_OriginalClaimID" id="fld_OriginalClaimID" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_837Status" >
+			<nav class="panel-left">
+				837Status
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="50" name="fld_837Status" id="fld_837Status" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_EncounterSubmittedDate" >
+			<nav class="panel-left">
+				EncounterSubmittedDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_EncounterSubmittedDate" id="fld_EncounterSubmittedDate" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_FiscalInvoiceNumber" >
+			<nav class="panel-left">
+				FiscalInvoiceNumber
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="50" name="fld_FiscalInvoiceNumber" id="fld_FiscalInvoiceNumber" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_FiscalInvoicePaidDate" >
+			<nav class="panel-left">
+				FiscalInvoicePaidDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_FiscalInvoicePaidDate" id="fld_FiscalInvoicePaidDate" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_FiscalInvoiceCheckNumber" >
+			<nav class="panel-left">
+				FiscalInvoiceCheckNumber
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="20" name="fld_FiscalInvoiceCheckNumber" id="fld_FiscalInvoiceCheckNumber" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_PeopleSoftSubmitted" >
+			<nav class="panel-left">
+				PeopleSoftSubmitted
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="checkbox" name="fld_PeopleSoftSubmitted" id="fld_PeopleSoftSubmitted" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_PeopleSoftSubmittedDate" >
+			<nav class="panel-left">
+				PeopleSoftSubmittedDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_PeopleSoftSubmittedDate" id="fld_PeopleSoftSubmittedDate" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_UsualChargeAmt" >
+			<nav class="panel-left">
+				UsualChargeAmt
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_UsualChargeAmt" id="fld_UsualChargeAmt" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_Invoice" >
+			<nav class="panel-left">
+				Invoice
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="20" name="fld_Invoice" id="fld_Invoice" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_LiabilityID" >
+			<nav class="panel-left">
+				LiabilityID
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_LiabilityID" id="fld_LiabilityID" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_OffsetAdvanceID" >
+			<nav class="panel-left">
+				OffsetAdvanceID
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_OffsetAdvanceID" id="fld_OffsetAdvanceID" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_837CBHNPSubmissionDate" >
+			<nav class="panel-left">
+				837CBHNPSubmissionDate
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" name="fld_837CBHNPSubmissionDate" id="fld_837CBHNPSubmissionDate" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_837CBHNPStatus" >
+			<nav class="panel-left">
+				837CBHNPStatus
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="text" maxlength="50" name="fld_837CBHNPStatus" id="fld_837CBHNPStatus" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_Remarks" >
+			<nav class="panel-left">
+				Remarks
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<textarea rows="4" cols="50" name="fld_Remarks" id="fld_Remarks"> 
 				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_RejectReasonNote" >
+		<div class="panel-container" id="container_PaymentDetail" >
 			<nav class="panel-left">
-				RejectReasonNote
+				PaymentDetail
 			</nav>
 
 			<div class="panel-splitter">
@@ -627,14 +1146,14 @@
 			</div>
 
 			<div class="panel-right">
-				<textarea rows="4" cols="50" name="fld_RejectReasonNote" id="fld_RejectReasonNote"> 
+				<textarea rows="4" cols="50" name="fld_PaymentDetail" id="fld_PaymentDetail"> 
 				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_PlacementID" >
+		<div class="panel-container" id="container_InvoiceDate" >
 			<nav class="panel-left">
-				PlacementID
+				InvoiceDate
 			</nav>
 
 			<div class="panel-splitter">
@@ -642,13 +1161,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_PlacementID" id="fld_PlacementID" /> 
+				<input type="text" name="fld_InvoiceDate" id="fld_InvoiceDate" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_OutOfState" >
+		<div class="panel-container" id="container_PlaceOfServiceSubclass" >
 			<nav class="panel-left">
-				OutOfState
+				PlaceOfServiceSubclass
 			</nav>
 
 			<div class="panel-splitter">
@@ -656,13 +1175,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="checkbox" name="fld_OutOfState" id="fld_OutOfState" /> 
+				<input type="text" maxlength="2" name="fld_PlaceOfServiceSubclass" id="fld_PlaceOfServiceSubclass" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_IsAdoption" >
+		<div class="panel-container" id="container_UseCOVIDModifier" >
 			<nav class="panel-left">
-				IsAdoption
+				UseCOVIDModifier
 			</nav>
 
 			<div class="panel-splitter">
@@ -670,13 +1189,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="checkbox" name="fld_IsAdoption" id="fld_IsAdoption" /> 
+				<input type="checkbox" name="fld_UseCOVIDModifier" id="fld_UseCOVIDModifier" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_Respite" >
+		<div class="panel-container" id="container_WebClaim" >
 			<nav class="panel-left">
-				Respite
+				WebClaim
 			</nav>
 
 			<div class="panel-splitter">
@@ -684,63 +1203,7 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="checkbox" name="fld_Respite" id="fld_Respite" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_IncludeAfcars" >
-			<nav class="panel-left">
-				IncludeAfcars
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="checkbox" name="fld_IncludeAfcars" id="fld_IncludeAfcars" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_AdoptionID" >
-			<nav class="panel-left">
-				AdoptionID
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="number" name="fld_AdoptionID" id="fld_AdoptionID" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_IsDisruption" >
-			<nav class="panel-left">
-				IsDisruption
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="checkbox" name="fld_IsDisruption" id="fld_IsDisruption" /> 
-			</div>
-
-		</div>
-		<div class="panel-container" id="container_WebAuth" >
-			<nav class="panel-left">
-				WebAuth
-			</nav>
-
-			<div class="panel-splitter">
-				 | 
-			</div>
-
-			<div class="panel-right">
-				<input type="checkbox" name="fld_WebAuth" id="fld_WebAuth" /> 
+				<input type="checkbox" name="fld_WebClaim" id="fld_WebClaim" /> 
 			</div>
 
 		</div>

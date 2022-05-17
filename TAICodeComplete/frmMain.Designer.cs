@@ -122,6 +122,13 @@
             this.chkStringifyLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnSQLPRETTY = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCRAPPYSQLCODE = new System.Windows.Forms.TextBox();
+            this.SQLCODEPRETTY = new ScintillaNET.Scintilla();
+            this.chkSQLCODEPRETTYFOLDING = new System.Windows.Forms.CheckBox();
+            this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -137,6 +144,7 @@
             this.tabPage5.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage14.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -210,6 +218,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage14);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1119,7 +1128,7 @@
             // 
             // chkPad
             // 
-            this.chkPad.Location = new System.Drawing.Point(0, 0);
+            this.chkPad.Location = new System.Drawing.Point(7, 123);
             this.chkPad.Name = "chkPad";
             this.chkPad.Size = new System.Drawing.Size(104, 24);
             this.chkPad.TabIndex = 0;
@@ -1197,6 +1206,87 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.Thistle;
+            this.tabPage6.Controls.Add(this.btnSQLPRETTY);
+            this.tabPage6.Controls.Add(this.textBox2);
+            this.tabPage6.Controls.Add(this.txtCRAPPYSQLCODE);
+            this.tabPage6.Controls.Add(this.SQLCODEPRETTY);
+            this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYFOLDING);
+            this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYLINENUMBERS);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1137, 519);
+            this.tabPage6.TabIndex = 14;
+            this.tabPage6.Text = "SQL Beautiful";
+            // 
+            // btnSQLPRETTY
+            // 
+            this.btnSQLPRETTY.Location = new System.Drawing.Point(60, 73);
+            this.btnSQLPRETTY.Name = "btnSQLPRETTY";
+            this.btnSQLPRETTY.Size = new System.Drawing.Size(147, 23);
+            this.btnSQLPRETTY.TabIndex = 16;
+            this.btnSQLPRETTY.Text = "Make It Pretty";
+            this.btnSQLPRETTY.UseVisualStyleBackColor = true;
+            this.btnSQLPRETTY.Click += new System.EventHandler(this.btnSQLPRETTY_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(60, 7);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(147, 60);
+            this.textBox2.TabIndex = 15;
+            this.textBox2.Text = "Paste the UGLY SQL Code into the text box on the right and click Make It Pretty t" +
+    "o format it in a more readable manner";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCRAPPYSQLCODE
+            // 
+            this.txtCRAPPYSQLCODE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCRAPPYSQLCODE.Location = new System.Drawing.Point(227, 7);
+            this.txtCRAPPYSQLCODE.Multiline = true;
+            this.txtCRAPPYSQLCODE.Name = "txtCRAPPYSQLCODE";
+            this.txtCRAPPYSQLCODE.Size = new System.Drawing.Size(904, 185);
+            this.txtCRAPPYSQLCODE.TabIndex = 14;
+            // 
+            // SQLCODEPRETTY
+            // 
+            this.SQLCODEPRETTY.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SQLCODEPRETTY.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
+            this.SQLCODEPRETTY.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SQLCODEPRETTY.Lexer = ScintillaNET.Lexer.Cpp;
+            this.SQLCODEPRETTY.Location = new System.Drawing.Point(5, 197);
+            this.SQLCODEPRETTY.Name = "SQLCODEPRETTY";
+            this.SQLCODEPRETTY.Size = new System.Drawing.Size(1125, 314);
+            this.SQLCODEPRETTY.TabIndex = 13;
+            // 
+            // chkSQLCODEPRETTYFOLDING
+            // 
+            this.chkSQLCODEPRETTYFOLDING.AutoSize = true;
+            this.chkSQLCODEPRETTYFOLDING.Location = new System.Drawing.Point(103, 181);
+            this.chkSQLCODEPRETTYFOLDING.Name = "chkSQLCODEPRETTYFOLDING";
+            this.chkSQLCODEPRETTYFOLDING.Size = new System.Drawing.Size(118, 17);
+            this.chkSQLCODEPRETTYFOLDING.TabIndex = 12;
+            this.chkSQLCODEPRETTYFOLDING.Text = "Show Code Folding";
+            this.chkSQLCODEPRETTYFOLDING.UseVisualStyleBackColor = true;
+            // 
+            // chkSQLCODEPRETTYLINENUMBERS
+            // 
+            this.chkSQLCODEPRETTYLINENUMBERS.AutoSize = true;
+            this.chkSQLCODEPRETTYLINENUMBERS.Location = new System.Drawing.Point(6, 181);
+            this.chkSQLCODEPRETTYLINENUMBERS.Name = "chkSQLCODEPRETTYLINENUMBERS";
+            this.chkSQLCODEPRETTYLINENUMBERS.Size = new System.Drawing.Size(91, 17);
+            this.chkSQLCODEPRETTYLINENUMBERS.TabIndex = 11;
+            this.chkSQLCODEPRETTYLINENUMBERS.Text = "Line Numbers";
+            this.chkSQLCODEPRETTYLINENUMBERS.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1233,6 +1323,8 @@
             this.tabPage8.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1337,6 +1429,13 @@
         private System.Windows.Forms.CheckBox chkStringifyLineNumbers;
         private System.Windows.Forms.Button btnEnumerateLocalSQLServers;
         private System.Windows.Forms.CheckBox chkPad;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button btnSQLPRETTY;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCRAPPYSQLCODE;
+        private ScintillaNET.Scintilla SQLCODEPRETTY;
+        private System.Windows.Forms.CheckBox chkSQLCODEPRETTYFOLDING;
+        private System.Windows.Forms.CheckBox chkSQLCODEPRETTYLINENUMBERS;
     }
 }
 

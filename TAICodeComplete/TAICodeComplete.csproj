@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TAICodeComplete</RootNamespace>
     <AssemblyName>TAICodeComplete</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
     </SccProjectName>
@@ -69,6 +69,10 @@
     </Reference>
     <Reference Include="ScintillaNET">
       <HintPath>ScintellaSupportStuff\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="SQL_Formatter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SupportDLLs\SQL_Formatter.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -175,6 +179,8 @@
     <None Include="Images\Binoculors.bmp" />
     <None Include="bin\Debug\CodeComplete.ini" />
     <Content Include="SupportDLLs\Microsoft.VisualBasic.PowerPacks.Vs.dll" />
+    <Content Include="SupportDLLs\SQL_Formatter.dll" />
+    <Content Include="SupportDLLs\SQL_Formatter.pdb" />
     <Content Include="SupportDLLs\TAIGridControl2.dll" />
     <Content Include="SupportDLLs\TAIGridControl2.pdb" />
     <Content Include="SupportDLLs\TAIGridControl2.xml" />
