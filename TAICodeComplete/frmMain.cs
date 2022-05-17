@@ -102,6 +102,15 @@ namespace TAICodeComplete
             sciSQLCode.Styles[Style.Sql.Operator].ForeColor = Color.Black;
             sciSQLCode.Styles[Style.Sql.Identifier].ForeColor = Color.Purple;
             sciSQLCode.Styles[Style.Sql.CommentDoc].ForeColor = Color.Green;
+            sciSQLCode.Styles[Style.Sql.User3].ForeColor = Color.Green;
+            sciSQLCode.Styles[Style.Sql.User4].ForeColor = Color.Green;
+            sciSQLCode.Styles[Style.Sql.Operator].ForeColor = Color.Green;
+            sciSQLCode.Styles[Style.Sql.Operator].Bold = true; // = Color.Green;
+            sciSQLCode.Styles[Style.Sql.QOperator].ForeColor = Color.Green;
+            sciSQLCode.Styles[Style.Sql.QOperator].Bold = true; // = Color.Green;
+            sciSQLCode.Styles[Style.Sql.SqlPlus].ForeColor = Color.Green;
+
+
 
             SQLCODEPRETTY.Styles[Style.LineNumber].ForeColor = Color.FromArgb(255, 128, 128, 128);  //Dark Gray
             SQLCODEPRETTY.Styles[Style.LineNumber].BackColor = Color.FromArgb(255, 190, 190, 190);  //Light Gray
@@ -141,6 +150,10 @@ namespace TAICodeComplete
             sciSQLCode.SetKeywords(4, @"all and any between cross exists in inner is join left like not null or outer pivot right some unpivot ( ) * ");
             // User2 = 5
             sciSQLCode.SetKeywords(5, @"sys objects sysobjects ");
+
+            sciSQLCode.SetKeywords(3, @"all and any between cross exists in inner is join left like not null or outer pivot right some unpivot ( ) * ");
+
+
 
             // Word = 0
             SQLCODEPRETTY.SetKeywords(0, @"add alter as authorization backup begin bigint binary bit break browse bulk by cascade case catch check checkpoint close clustered column commit compute constraint containstable continue create current cursor cursor database date datetime datetime2 datetimeoffset dbcc deallocate decimal declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor float for foreign freetext freetexttable from full function goto grant group having hierarchyid holdlock identity identity_insert identitycol if image index insert int intersect into key kill lineno load merge money national nchar nocheck nocount nolock nonclustered ntext numeric nvarchar of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext real reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select set setuser shutdown smalldatetime smallint smallmoney sql_variant statistics table table tablesample text textsize then time timestamp tinyint to top tran transaction trigger truncate try union unique uniqueidentifier update updatetext use user values varbinary varchar varying view waitfor when where while with writetext xml go ");
