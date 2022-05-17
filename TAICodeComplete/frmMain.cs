@@ -66,12 +66,12 @@ namespace TAICodeComplete
             // Reset the styles
             sciSQLCode.StyleResetDefault();
             sciSQLCode.Styles[Style.Default].Font = "Courier New";
-            sciSQLCode.Styles[Style.Default].Size = 10;
+            sciSQLCode.Styles[Style.Default].Size = 12;
             sciSQLCode.StyleClearAll();
 
             SQLCODEPRETTY.StyleResetDefault();
             SQLCODEPRETTY.Styles[Style.Default].Font = "Courier New";
-            SQLCODEPRETTY.Styles[Style.Default].Size = 10;
+            SQLCODEPRETTY.Styles[Style.Default].Size = 12;
             SQLCODEPRETTY.StyleClearAll();
 
             
@@ -88,34 +88,49 @@ namespace TAICodeComplete
 
             // Set the Styles
             sciSQLCode.Styles[Style.LineNumber].ForeColor = Color.FromArgb(255, 128, 128, 128);  //Dark Gray
-            sciSQLCode.Styles[Style.LineNumber].BackColor = Color.FromArgb(255, 228, 228, 228);  //Light Gray
+            sciSQLCode.Styles[Style.LineNumber].BackColor = Color.FromArgb(255, 190, 190, 190);  //Light Gray
             sciSQLCode.Styles[Style.Sql.Comment].ForeColor = Color.Green;
             sciSQLCode.Styles[Style.Sql.CommentLine].ForeColor = Color.Green;
             sciSQLCode.Styles[Style.Sql.CommentLineDoc].ForeColor = Color.Green;
             sciSQLCode.Styles[Style.Sql.Number].ForeColor = Color.Maroon;
             sciSQLCode.Styles[Style.Sql.Word].ForeColor = Color.Blue;
             sciSQLCode.Styles[Style.Sql.Word2].ForeColor = Color.Fuchsia;
-            sciSQLCode.Styles[Style.Sql.User1].ForeColor = Color.Gray;
+            sciSQLCode.Styles[Style.Sql.User1].ForeColor = Color.DarkGray;
             sciSQLCode.Styles[Style.Sql.User2].ForeColor = Color.FromArgb(255, 00, 128, 192);    //Medium Blue-Green
             sciSQLCode.Styles[Style.Sql.String].ForeColor = Color.Red;
             sciSQLCode.Styles[Style.Sql.Character].ForeColor = Color.Red;
             sciSQLCode.Styles[Style.Sql.Operator].ForeColor = Color.Black;
-            sciSQLCode.Styles[Style.Sql.Identifier].ForeColor = Color.Coral;
+            sciSQLCode.Styles[Style.Sql.Identifier].ForeColor = Color.Purple;
+            sciSQLCode.Styles[Style.Sql.CommentDoc].ForeColor = Color.Green;
 
             SQLCODEPRETTY.Styles[Style.LineNumber].ForeColor = Color.FromArgb(255, 128, 128, 128);  //Dark Gray
-            SQLCODEPRETTY.Styles[Style.LineNumber].BackColor = Color.FromArgb(255, 228, 228, 228);  //Light Gray
+            SQLCODEPRETTY.Styles[Style.LineNumber].BackColor = Color.FromArgb(255, 190, 190, 190);  //Light Gray
             SQLCODEPRETTY.Styles[Style.Sql.Comment].ForeColor = Color.Green;
             SQLCODEPRETTY.Styles[Style.Sql.CommentLine].ForeColor = Color.Green;
             SQLCODEPRETTY.Styles[Style.Sql.CommentLineDoc].ForeColor = Color.Green;
             SQLCODEPRETTY.Styles[Style.Sql.Number].ForeColor = Color.Maroon;
             SQLCODEPRETTY.Styles[Style.Sql.Word].ForeColor = Color.Blue;
+            SQLCODEPRETTY.Styles[Style.Sql.Word].Bold = true;// = Color.Blue;
+
             SQLCODEPRETTY.Styles[Style.Sql.Word2].ForeColor = Color.Plum;
-            SQLCODEPRETTY.Styles[Style.Sql.User1].ForeColor = Color.Gray;
+            SQLCODEPRETTY.Styles[Style.Sql.User1].ForeColor = Color.DarkGray;
+            SQLCODEPRETTY.Styles[Style.Sql.User1].Bold = true; // = Color.DarkGray;
             SQLCODEPRETTY.Styles[Style.Sql.User2].ForeColor = Color.FromArgb(255, 00, 128, 192);    //Medium Blue-Green
             SQLCODEPRETTY.Styles[Style.Sql.String].ForeColor = Color.Red;
             SQLCODEPRETTY.Styles[Style.Sql.Character].ForeColor = Color.Red;
             SQLCODEPRETTY.Styles[Style.Sql.Operator].ForeColor = Color.Black;
             SQLCODEPRETTY.Styles[Style.Sql.Identifier].ForeColor = Color.Purple;
+            SQLCODEPRETTY.Styles[Style.Sql.CommentDoc].ForeColor = Color.Green;
+            SQLCODEPRETTY.Styles[Style.Sql.User3].ForeColor = Color.Green;
+            SQLCODEPRETTY.Styles[Style.Sql.User4].ForeColor = Color.Green;
+            SQLCODEPRETTY.Styles[Style.Sql.Operator].ForeColor = Color.Green;
+            SQLCODEPRETTY.Styles[Style.Sql.Operator].Bold = true; // = Color.Green;
+            SQLCODEPRETTY.Styles[Style.Sql.QOperator].ForeColor = Color.Green;
+            SQLCODEPRETTY.Styles[Style.Sql.QOperator].Bold = true; // = Color.Green;
+            SQLCODEPRETTY.Styles[Style.Sql.SqlPlus].ForeColor = Color.Green;
+
+
+
 
             // Set keyword lists
             // Word = 0
@@ -127,6 +142,7 @@ namespace TAICodeComplete
             // User2 = 5
             sciSQLCode.SetKeywords(5, @"sys objects sysobjects ");
 
+            // Word = 0
             SQLCODEPRETTY.SetKeywords(0, @"add alter as authorization backup begin bigint binary bit break browse bulk by cascade case catch check checkpoint close clustered column commit compute constraint containstable continue create current cursor cursor database date datetime datetime2 datetimeoffset dbcc deallocate decimal declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor float for foreign freetext freetexttable from full function goto grant group having hierarchyid holdlock identity identity_insert identitycol if image index insert int intersect into key kill lineno load merge money national nchar nocheck nocount nolock nonclustered ntext numeric nvarchar of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext real reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select set setuser shutdown smalldatetime smallint smallmoney sql_variant statistics table table tablesample text textsize then time timestamp tinyint to top tran transaction trigger truncate try union unique uniqueidentifier update updatetext use user values varbinary varchar varying view waitfor when where while with writetext xml go ");
             // Word2 = 1
             SQLCODEPRETTY.SetKeywords(1, @"ascii cast char charindex ceiling coalesce collate contains convert current_date current_time current_timestamp current_user floor isnull max min nullif object_id session_user substring system_user tsequal ");
@@ -134,6 +150,8 @@ namespace TAICodeComplete
             SQLCODEPRETTY.SetKeywords(4, @"all and any between cross exists in inner is join left like not null or outer pivot right some unpivot ( ) * ");
             // User2 = 5
             SQLCODEPRETTY.SetKeywords(5, @"sys objects sysobjects ");
+
+            SQLCODEPRETTY.SetKeywords(3, @"all and any between cross exists in inner is join left like not null or outer pivot right some unpivot ( ) * ");
 
 
 
