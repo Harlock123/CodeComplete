@@ -746,9 +746,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaWEBAPICode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaWEBAPICode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scintillaWEBAPICode.Location = new System.Drawing.Point(1, 30);
+            this.scintillaWEBAPICode.Location = new System.Drawing.Point(6, 30);
             this.scintillaWEBAPICode.Name = "scintillaWEBAPICode";
-            this.scintillaWEBAPICode.Size = new System.Drawing.Size(996, 485);
+            this.scintillaWEBAPICode.Size = new System.Drawing.Size(991, 485);
             this.scintillaWEBAPICode.TabIndex = 11;
             // 
             // btnSaveWEBAPI
@@ -1341,9 +1341,9 @@
             | ScintillaNET.AutomaticFold.Change)));
             this.SQLCODEPRETTY.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SQLCODEPRETTY.Lexer = ScintillaNET.Lexer.Cpp;
-            this.SQLCODEPRETTY.Location = new System.Drawing.Point(15, 198);
+            this.SQLCODEPRETTY.Location = new System.Drawing.Point(6, 198);
             this.SQLCODEPRETTY.Name = "SQLCODEPRETTY";
-            this.SQLCODEPRETTY.Size = new System.Drawing.Size(982, 314);
+            this.SQLCODEPRETTY.Size = new System.Drawing.Size(991, 314);
             this.SQLCODEPRETTY.TabIndex = 13;
             // 
             // chkSQLCODEPRETTYFOLDING
