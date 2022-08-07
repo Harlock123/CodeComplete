@@ -131,6 +131,11 @@
             this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.scintillaWEBAPICode = new ScintillaNET.Scintilla();
+            this.btnSaveWEBAPI = new System.Windows.Forms.Button();
+            this.chkCodeFoldWEBAPI = new System.Windows.Forms.CheckBox();
+            this.chkLineNumsWEBAPI = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -147,6 +152,7 @@
             this.tabPage8.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -212,6 +218,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage13);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage11);
@@ -683,7 +690,7 @@
             this.scintillaWebMethodCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWebMethodCode.Location = new System.Drawing.Point(3, 29);
             this.scintillaWebMethodCode.Name = "scintillaWebMethodCode";
-            this.scintillaWebMethodCode.Size = new System.Drawing.Size(1000, 485);
+            this.scintillaWebMethodCode.Size = new System.Drawing.Size(996, 485);
             this.scintillaWebMethodCode.TabIndex = 7;
             // 
             // btnSaveWebMethodsToFile
@@ -1311,6 +1318,61 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
+            // tabPage7
+            // 
+            this.tabPage7.BackColor = System.Drawing.Color.LemonChiffon;
+            this.tabPage7.Controls.Add(this.scintillaWEBAPICode);
+            this.tabPage7.Controls.Add(this.btnSaveWEBAPI);
+            this.tabPage7.Controls.Add(this.chkCodeFoldWEBAPI);
+            this.tabPage7.Controls.Add(this.chkLineNumsWEBAPI);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1002, 519);
+            this.tabPage7.TabIndex = 15;
+            this.tabPage7.Text = "WebAPI";
+            // 
+            // scintillaWEBAPICode
+            // 
+            this.scintillaWEBAPICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaWEBAPICode.BackColor = System.Drawing.SystemColors.Info;
+            this.scintillaWEBAPICode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scintillaWEBAPICode.Location = new System.Drawing.Point(1, 30);
+            this.scintillaWEBAPICode.Name = "scintillaWEBAPICode";
+            this.scintillaWEBAPICode.Size = new System.Drawing.Size(996, 485);
+            this.scintillaWEBAPICode.TabIndex = 11;
+            // 
+            // btnSaveWEBAPI
+            // 
+            this.btnSaveWEBAPI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveWEBAPI.Location = new System.Drawing.Point(926, 4);
+            this.btnSaveWEBAPI.Name = "btnSaveWEBAPI";
+            this.btnSaveWEBAPI.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveWEBAPI.TabIndex = 10;
+            this.btnSaveWEBAPI.Text = "Save To File";
+            this.btnSaveWEBAPI.UseVisualStyleBackColor = true;
+            // 
+            // chkCodeFoldWEBAPI
+            // 
+            this.chkCodeFoldWEBAPI.AutoSize = true;
+            this.chkCodeFoldWEBAPI.Location = new System.Drawing.Point(103, 7);
+            this.chkCodeFoldWEBAPI.Name = "chkCodeFoldWEBAPI";
+            this.chkCodeFoldWEBAPI.Size = new System.Drawing.Size(118, 17);
+            this.chkCodeFoldWEBAPI.TabIndex = 9;
+            this.chkCodeFoldWEBAPI.Text = "Show Code Folding";
+            this.chkCodeFoldWEBAPI.UseVisualStyleBackColor = true;
+            // 
+            // chkLineNumsWEBAPI
+            // 
+            this.chkLineNumsWEBAPI.AutoSize = true;
+            this.chkLineNumsWEBAPI.Location = new System.Drawing.Point(6, 7);
+            this.chkLineNumsWEBAPI.Name = "chkLineNumsWEBAPI";
+            this.chkLineNumsWEBAPI.Size = new System.Drawing.Size(91, 17);
+            this.chkLineNumsWEBAPI.TabIndex = 8;
+            this.chkLineNumsWEBAPI.Text = "Line Numbers";
+            this.chkLineNumsWEBAPI.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1349,6 +1411,8 @@
             this.tabPage14.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1462,6 +1526,11 @@
         private System.Windows.Forms.CheckBox chkSQLCODEPRETTYLINENUMBERS;
         private System.Windows.Forms.Button btnShowConnectionString;
         private System.Windows.Forms.TextBox txtDerivedConnectionString;
+        private System.Windows.Forms.TabPage tabPage7;
+        private ScintillaNET.Scintilla scintillaWEBAPICode;
+        private System.Windows.Forms.Button btnSaveWEBAPI;
+        private System.Windows.Forms.CheckBox chkCodeFoldWEBAPI;
+        private System.Windows.Forms.CheckBox chkLineNumsWEBAPI;
     }
 }
 

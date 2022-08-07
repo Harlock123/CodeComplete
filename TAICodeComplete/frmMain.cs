@@ -59,6 +59,7 @@ namespace TAICodeComplete
             ConfigureScintillaControlForCPP(sciBaseTableTSCode);
             ConfigureScintillaControlForCPP(scintillaJSCode);
             ConfigureScintillaControlForCPP(scintillaWebMethodCode);
+            ConfigureScintillaControlForCPP(scintillaWEBAPICode);
             ConfigureScintillaControlForCPP(scintillaRestCode);
             ConfigureScintillaControlForCPP(scintillaWFCode);
 
@@ -294,8 +295,7 @@ namespace TAICodeComplete
             scintillaCSSCode.Styles[Style.Css.Tag].ForeColor = Color.CadetBlue;
             scintillaCSSCode.Styles[Style.Css.Value].ForeColor = Color.Green;
             scintillaCSSCode.Styles[Style.Css.Variable].ForeColor = Color.DarkGray;
-
-            
+                     
 
         }
 
