@@ -5956,6 +5956,12 @@ namespace TAICodeComplete
 
 
         }
+
+        private void btnShowConnectionString_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(DSN);
+            txtDerivedConnectionString.Text = DSN;
+        }
     }
 
     public class DOCDEFCAT

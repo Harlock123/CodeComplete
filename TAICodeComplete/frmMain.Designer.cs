@@ -46,6 +46,8 @@
             this.txtPASSWORD = new System.Windows.Forms.TextBox();
             this.txtUSER = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDerivedConnectionString = new System.Windows.Forms.TextBox();
+            this.btnShowConnectionString = new System.Windows.Forms.Button();
             this.chkGenerateInsertStatements = new System.Windows.Forms.CheckBox();
             this.chkDOJAVASCRIPTUI = new System.Windows.Forms.CheckBox();
             this.chkXAMLFromOrUserControl = new System.Windows.Forms.CheckBox();
@@ -346,6 +348,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel1.Controls.Add(this.txtDerivedConnectionString);
+            this.panel1.Controls.Add(this.btnShowConnectionString);
             this.panel1.Controls.Add(this.chkGenerateInsertStatements);
             this.panel1.Controls.Add(this.chkDOJAVASCRIPTUI);
             this.panel1.Controls.Add(this.chkXAMLFromOrUserControl);
@@ -358,8 +362,27 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(445, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 154);
+            this.panel1.Size = new System.Drawing.Size(551, 165);
             this.panel1.TabIndex = 11;
+            // 
+            // txtDerivedConnectionString
+            // 
+            this.txtDerivedConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDerivedConnectionString.Location = new System.Drawing.Point(6, 134);
+            this.txtDerivedConnectionString.Name = "txtDerivedConnectionString";
+            this.txtDerivedConnectionString.Size = new System.Drawing.Size(541, 20);
+            this.txtDerivedConnectionString.TabIndex = 20;
+            // 
+            // btnShowConnectionString
+            // 
+            this.btnShowConnectionString.Location = new System.Drawing.Point(6, 111);
+            this.btnShowConnectionString.Name = "btnShowConnectionString";
+            this.btnShowConnectionString.Size = new System.Drawing.Size(180, 23);
+            this.btnShowConnectionString.TabIndex = 19;
+            this.btnShowConnectionString.Text = "Show Derived Connection String";
+            this.btnShowConnectionString.UseVisualStyleBackColor = true;
+            this.btnShowConnectionString.Click += new System.EventHandler(this.btnShowConnectionString_Click);
             // 
             // chkGenerateInsertStatements
             // 
@@ -528,7 +551,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage2.Size = new System.Drawing.Size(1002, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -589,7 +612,7 @@
             this.tabPage13.Controls.Add(this.chkBaseTableTSLineNumbers);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage13.Size = new System.Drawing.Size(1002, 519);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Base Code ts";
             // 
@@ -647,7 +670,7 @@
             this.tabPage3.Controls.Add(this.chkWebMethodLineNumbers);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage3.Size = new System.Drawing.Size(1002, 519);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Web Method";
             // 
@@ -705,7 +728,7 @@
             this.tabPage10.Controls.Add(this.chkJSLineNumbers);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage10.Size = new System.Drawing.Size(1002, 519);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "JavaScript";
             // 
@@ -819,7 +842,7 @@
             this.tabPage11.Controls.Add(this.chkHTMLLineNumbers);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage11.Size = new System.Drawing.Size(1002, 519);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "HTML";
             // 
@@ -888,7 +911,7 @@
             this.tabPage12.Controls.Add(this.chkCSSLineNumbers);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage12.Size = new System.Drawing.Size(1002, 519);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "CSS";
             // 
@@ -946,7 +969,7 @@
             this.tabPage4.Controls.Add(this.chkLineNumbersXAML);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage4.Size = new System.Drawing.Size(1002, 519);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "XAML";
             // 
@@ -1003,7 +1026,7 @@
             this.tabPage5.Controls.Add(this.chkWFLineNumbers);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage5.Size = new System.Drawing.Size(1002, 519);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "WinForms";
             // 
@@ -1059,7 +1082,7 @@
             this.tabPage8.Controls.Add(this.chkSQLLineNumber);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage8.Size = new System.Drawing.Size(1002, 519);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "SQL Code";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1122,7 +1145,7 @@
             this.tabPage14.Controls.Add(this.chkStringifyLineNumbers);
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage14.Size = new System.Drawing.Size(1002, 519);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "Stringify";
             // 
@@ -1213,7 +1236,7 @@
             this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYLINENUMBERS);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1008, 519);
+            this.tabPage6.Size = new System.Drawing.Size(1002, 519);
             this.tabPage6.TabIndex = 14;
             this.tabPage6.Text = "SQL Beautiful";
             // 
@@ -1437,6 +1460,8 @@
         private ScintillaNET.Scintilla SQLCODEPRETTY;
         private System.Windows.Forms.CheckBox chkSQLCODEPRETTYFOLDING;
         private System.Windows.Forms.CheckBox chkSQLCODEPRETTYLINENUMBERS;
+        private System.Windows.Forms.Button btnShowConnectionString;
+        private System.Windows.Forms.TextBox txtDerivedConnectionString;
     }
 }
 
