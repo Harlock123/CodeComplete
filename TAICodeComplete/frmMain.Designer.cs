@@ -78,6 +78,11 @@
             this.btnSaveWebMethodsToFile = new System.Windows.Forms.Button();
             this.chkWebMethodCodeFolding = new System.Windows.Forms.CheckBox();
             this.chkWebMethodLineNumbers = new System.Windows.Forms.CheckBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.scintillaWEBAPICode = new ScintillaNET.Scintilla();
+            this.btnSaveWEBAPI = new System.Windows.Forms.Button();
+            this.chkCodeFoldWEBAPI = new System.Windows.Forms.CheckBox();
+            this.chkLineNumsWEBAPI = new System.Windows.Forms.CheckBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.scintillaJSCode = new ScintillaNET.Scintilla();
             this.btnSaveJSToFile = new System.Windows.Forms.Button();
@@ -131,11 +136,6 @@
             this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.scintillaWEBAPICode = new ScintillaNET.Scintilla();
-            this.btnSaveWEBAPI = new System.Windows.Forms.Button();
-            this.chkCodeFoldWEBAPI = new System.Windows.Forms.CheckBox();
-            this.chkLineNumsWEBAPI = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -143,6 +143,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage11.SuspendLayout();
@@ -152,7 +153,6 @@
             this.tabPage8.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -551,6 +551,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.LavenderBlush;
             this.tabPage2.Controls.Add(this.sciBaseTableCode);
             this.tabPage2.Controls.Add(this.btnSaveBaseCodeTableToFile);
             this.tabPage2.Controls.Add(this.chkBaseTableCodeFolding);
@@ -561,7 +562,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1002, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // sciBaseTableCode
             // 
@@ -574,7 +574,7 @@
             this.sciBaseTableCode.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciBaseTableCode.Location = new System.Drawing.Point(10, 32);
             this.sciBaseTableCode.Name = "sciBaseTableCode";
-            this.sciBaseTableCode.Size = new System.Drawing.Size(992, 481);
+            this.sciBaseTableCode.Size = new System.Drawing.Size(987, 481);
             this.sciBaseTableCode.TabIndex = 4;
             // 
             // btnSaveBaseCodeTableToFile
@@ -632,7 +632,7 @@
             this.sciBaseTableTSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciBaseTableTSCode.Location = new System.Drawing.Point(7, 30);
             this.sciBaseTableTSCode.Name = "sciBaseTableTSCode";
-            this.sciBaseTableTSCode.Size = new System.Drawing.Size(996, 484);
+            this.sciBaseTableTSCode.Size = new System.Drawing.Size(990, 484);
             this.sciBaseTableTSCode.TabIndex = 8;
             // 
             // btnSaveTSCode
@@ -690,7 +690,7 @@
             this.scintillaWebMethodCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWebMethodCode.Location = new System.Drawing.Point(3, 29);
             this.scintillaWebMethodCode.Name = "scintillaWebMethodCode";
-            this.scintillaWebMethodCode.Size = new System.Drawing.Size(996, 485);
+            this.scintillaWebMethodCode.Size = new System.Drawing.Size(994, 485);
             this.scintillaWebMethodCode.TabIndex = 7;
             // 
             // btnSaveWebMethodsToFile
@@ -726,6 +726,61 @@
             this.chkWebMethodLineNumbers.UseVisualStyleBackColor = true;
             this.chkWebMethodLineNumbers.CheckedChanged += new System.EventHandler(this.HandleWebMethodLineNumberCheckChanged);
             // 
+            // tabPage7
+            // 
+            this.tabPage7.BackColor = System.Drawing.Color.LemonChiffon;
+            this.tabPage7.Controls.Add(this.scintillaWEBAPICode);
+            this.tabPage7.Controls.Add(this.btnSaveWEBAPI);
+            this.tabPage7.Controls.Add(this.chkCodeFoldWEBAPI);
+            this.tabPage7.Controls.Add(this.chkLineNumsWEBAPI);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1002, 519);
+            this.tabPage7.TabIndex = 15;
+            this.tabPage7.Text = "WebAPI";
+            // 
+            // scintillaWEBAPICode
+            // 
+            this.scintillaWEBAPICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaWEBAPICode.BackColor = System.Drawing.SystemColors.Info;
+            this.scintillaWEBAPICode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scintillaWEBAPICode.Location = new System.Drawing.Point(1, 30);
+            this.scintillaWEBAPICode.Name = "scintillaWEBAPICode";
+            this.scintillaWEBAPICode.Size = new System.Drawing.Size(996, 485);
+            this.scintillaWEBAPICode.TabIndex = 11;
+            // 
+            // btnSaveWEBAPI
+            // 
+            this.btnSaveWEBAPI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveWEBAPI.Location = new System.Drawing.Point(926, 4);
+            this.btnSaveWEBAPI.Name = "btnSaveWEBAPI";
+            this.btnSaveWEBAPI.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveWEBAPI.TabIndex = 10;
+            this.btnSaveWEBAPI.Text = "Save To File";
+            this.btnSaveWEBAPI.UseVisualStyleBackColor = true;
+            // 
+            // chkCodeFoldWEBAPI
+            // 
+            this.chkCodeFoldWEBAPI.AutoSize = true;
+            this.chkCodeFoldWEBAPI.Location = new System.Drawing.Point(103, 7);
+            this.chkCodeFoldWEBAPI.Name = "chkCodeFoldWEBAPI";
+            this.chkCodeFoldWEBAPI.Size = new System.Drawing.Size(118, 17);
+            this.chkCodeFoldWEBAPI.TabIndex = 9;
+            this.chkCodeFoldWEBAPI.Text = "Show Code Folding";
+            this.chkCodeFoldWEBAPI.UseVisualStyleBackColor = true;
+            // 
+            // chkLineNumsWEBAPI
+            // 
+            this.chkLineNumsWEBAPI.AutoSize = true;
+            this.chkLineNumsWEBAPI.Location = new System.Drawing.Point(6, 7);
+            this.chkLineNumsWEBAPI.Name = "chkLineNumsWEBAPI";
+            this.chkLineNumsWEBAPI.Size = new System.Drawing.Size(91, 17);
+            this.chkLineNumsWEBAPI.TabIndex = 8;
+            this.chkLineNumsWEBAPI.Text = "Line Numbers";
+            this.chkLineNumsWEBAPI.UseVisualStyleBackColor = true;
+            // 
             // tabPage10
             // 
             this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -748,7 +803,7 @@
             this.scintillaJSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaJSCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaJSCode.Name = "scintillaJSCode";
-            this.scintillaJSCode.Size = new System.Drawing.Size(998, 485);
+            this.scintillaJSCode.Size = new System.Drawing.Size(994, 485);
             this.scintillaJSCode.TabIndex = 11;
             // 
             // btnSaveJSToFile
@@ -873,7 +928,7 @@
             this.scintillaHTMLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaHTMLCode.Location = new System.Drawing.Point(3, 28);
             this.scintillaHTMLCode.Name = "scintillaHTMLCode";
-            this.scintillaHTMLCode.Size = new System.Drawing.Size(1000, 485);
+            this.scintillaHTMLCode.Size = new System.Drawing.Size(996, 485);
             this.scintillaHTMLCode.TabIndex = 15;
             // 
             // btnSaveHTML
@@ -931,7 +986,7 @@
             this.scintillaCSSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaCSSCode.Location = new System.Drawing.Point(5, 30);
             this.scintillaCSSCode.Name = "scintillaCSSCode";
-            this.scintillaCSSCode.Size = new System.Drawing.Size(998, 485);
+            this.scintillaCSSCode.Size = new System.Drawing.Size(992, 485);
             this.scintillaCSSCode.TabIndex = 19;
             // 
             // btnsaveCSS
@@ -988,7 +1043,7 @@
             this.scintillaXAML.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaXAML.Location = new System.Drawing.Point(7, 30);
             this.scintillaXAML.Name = "scintillaXAML";
-            this.scintillaXAML.Size = new System.Drawing.Size(996, 483);
+            this.scintillaXAML.Size = new System.Drawing.Size(990, 483);
             this.scintillaXAML.TabIndex = 12;
             // 
             // btnSaveXaml
@@ -1045,7 +1100,7 @@
             this.scintillaWFCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWFCode.Location = new System.Drawing.Point(9, 29);
             this.scintillaWFCode.Name = "scintillaWFCode";
-            this.scintillaWFCode.Size = new System.Drawing.Size(994, 484);
+            this.scintillaWFCode.Size = new System.Drawing.Size(988, 484);
             this.scintillaWFCode.TabIndex = 8;
             // 
             // btnWFSaveToFile
@@ -1083,6 +1138,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabPage8.Controls.Add(this.sciSQLCode);
             this.tabPage8.Controls.Add(this.dtnSaveSQLToFile);
             this.tabPage8.Controls.Add(this.chkSQLCodeFolding);
@@ -1092,7 +1148,6 @@
             this.tabPage8.Size = new System.Drawing.Size(1002, 519);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "SQL Code";
-            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // sciSQLCode
             // 
@@ -1102,7 +1157,7 @@
             this.sciSQLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciSQLCode.Location = new System.Drawing.Point(7, 30);
             this.sciSQLCode.Name = "sciSQLCode";
-            this.sciSQLCode.Size = new System.Drawing.Size(996, 483);
+            this.sciSQLCode.Size = new System.Drawing.Size(990, 483);
             this.sciSQLCode.TabIndex = 8;
             // 
             // dtnSaveSQLToFile
@@ -1130,8 +1185,6 @@
             // chkSQLLineNumber
             // 
             this.chkSQLLineNumber.AutoSize = true;
-            this.chkSQLLineNumber.Checked = true;
-            this.chkSQLLineNumber.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkSQLLineNumber.Location = new System.Drawing.Point(7, 7);
             this.chkSQLLineNumber.Name = "chkSQLLineNumber";
             this.chkSQLLineNumber.Size = new System.Drawing.Size(91, 17);
@@ -1193,7 +1246,7 @@
             this.txtStringIfy.Location = new System.Drawing.Point(270, 9);
             this.txtStringIfy.Multiline = true;
             this.txtStringIfy.Name = "txtStringIfy";
-            this.txtStringIfy.Size = new System.Drawing.Size(733, 185);
+            this.txtStringIfy.Size = new System.Drawing.Size(727, 185);
             this.txtStringIfy.TabIndex = 8;
             // 
             // sciStringify
@@ -1207,7 +1260,7 @@
             this.sciStringify.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciStringify.Location = new System.Drawing.Point(6, 199);
             this.sciStringify.Name = "sciStringify";
-            this.sciStringify.Size = new System.Drawing.Size(996, 314);
+            this.sciStringify.Size = new System.Drawing.Size(993, 314);
             this.sciStringify.TabIndex = 7;
             // 
             // chkStringifyCodeFolding
@@ -1276,7 +1329,7 @@
             this.txtCRAPPYSQLCODE.Location = new System.Drawing.Point(227, 7);
             this.txtCRAPPYSQLCODE.Multiline = true;
             this.txtCRAPPYSQLCODE.Name = "txtCRAPPYSQLCODE";
-            this.txtCRAPPYSQLCODE.Size = new System.Drawing.Size(775, 185);
+            this.txtCRAPPYSQLCODE.Size = new System.Drawing.Size(770, 185);
             this.txtCRAPPYSQLCODE.TabIndex = 14;
             // 
             // SQLCODEPRETTY
@@ -1288,9 +1341,9 @@
             | ScintillaNET.AutomaticFold.Change)));
             this.SQLCODEPRETTY.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SQLCODEPRETTY.Lexer = ScintillaNET.Lexer.Cpp;
-            this.SQLCODEPRETTY.Location = new System.Drawing.Point(5, 197);
+            this.SQLCODEPRETTY.Location = new System.Drawing.Point(15, 198);
             this.SQLCODEPRETTY.Name = "SQLCODEPRETTY";
-            this.SQLCODEPRETTY.Size = new System.Drawing.Size(996, 314);
+            this.SQLCODEPRETTY.Size = new System.Drawing.Size(982, 314);
             this.SQLCODEPRETTY.TabIndex = 13;
             // 
             // chkSQLCODEPRETTYFOLDING
@@ -1318,61 +1371,6 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // tabPage7
-            // 
-            this.tabPage7.BackColor = System.Drawing.Color.LemonChiffon;
-            this.tabPage7.Controls.Add(this.scintillaWEBAPICode);
-            this.tabPage7.Controls.Add(this.btnSaveWEBAPI);
-            this.tabPage7.Controls.Add(this.chkCodeFoldWEBAPI);
-            this.tabPage7.Controls.Add(this.chkLineNumsWEBAPI);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1002, 519);
-            this.tabPage7.TabIndex = 15;
-            this.tabPage7.Text = "WebAPI";
-            // 
-            // scintillaWEBAPICode
-            // 
-            this.scintillaWEBAPICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.scintillaWEBAPICode.BackColor = System.Drawing.SystemColors.Info;
-            this.scintillaWEBAPICode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scintillaWEBAPICode.Location = new System.Drawing.Point(1, 30);
-            this.scintillaWEBAPICode.Name = "scintillaWEBAPICode";
-            this.scintillaWEBAPICode.Size = new System.Drawing.Size(996, 485);
-            this.scintillaWEBAPICode.TabIndex = 11;
-            // 
-            // btnSaveWEBAPI
-            // 
-            this.btnSaveWEBAPI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveWEBAPI.Location = new System.Drawing.Point(926, 4);
-            this.btnSaveWEBAPI.Name = "btnSaveWEBAPI";
-            this.btnSaveWEBAPI.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveWEBAPI.TabIndex = 10;
-            this.btnSaveWEBAPI.Text = "Save To File";
-            this.btnSaveWEBAPI.UseVisualStyleBackColor = true;
-            // 
-            // chkCodeFoldWEBAPI
-            // 
-            this.chkCodeFoldWEBAPI.AutoSize = true;
-            this.chkCodeFoldWEBAPI.Location = new System.Drawing.Point(103, 7);
-            this.chkCodeFoldWEBAPI.Name = "chkCodeFoldWEBAPI";
-            this.chkCodeFoldWEBAPI.Size = new System.Drawing.Size(118, 17);
-            this.chkCodeFoldWEBAPI.TabIndex = 9;
-            this.chkCodeFoldWEBAPI.Text = "Show Code Folding";
-            this.chkCodeFoldWEBAPI.UseVisualStyleBackColor = true;
-            // 
-            // chkLineNumsWEBAPI
-            // 
-            this.chkLineNumsWEBAPI.AutoSize = true;
-            this.chkLineNumsWEBAPI.Location = new System.Drawing.Point(6, 7);
-            this.chkLineNumsWEBAPI.Name = "chkLineNumsWEBAPI";
-            this.chkLineNumsWEBAPI.Size = new System.Drawing.Size(91, 17);
-            this.chkLineNumsWEBAPI.TabIndex = 8;
-            this.chkLineNumsWEBAPI.Text = "Line Numbers";
-            this.chkLineNumsWEBAPI.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1393,6 +1391,8 @@
             this.tabPage13.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             this.tabPage9.ResumeLayout(false);
@@ -1411,8 +1411,6 @@
             this.tabPage14.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
 
         }
