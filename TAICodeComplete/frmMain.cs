@@ -27,6 +27,9 @@ namespace TAICodeComplete
         private string TableName = "";
         private List<Field> TheFields = null;
 
+        private string INTERFACEFIELD = "";
+        private string INTERFACEFIELDTYPE = "";
+
         private bool AUTONUMBER = true;
 
         public frmMain()
@@ -693,6 +696,7 @@ namespace TAICodeComplete
                         sciBaseTableTSCode.Text = "";
                         scintillaWFCode.Text = "";
                         scintillaWebMethodCode.Text = "";
+                        scintillaWEBAPICode.Text = "";
                         scintillaXAML.Text = "";
                         sciSQLCode.Text = "";
                         scintillaRestCode.Text = "";
@@ -767,6 +771,11 @@ namespace TAICodeComplete
 
                             scintillaRestCode.InsertText(0,
                                 DoTheIndentation(GenerateRESTFULPage_Load()));
+
+                            scintillaWEBAPICode.InsertText(0,
+                                DoTheIndentation(GenerateLDObject() + 
+                                GenerateWEBApiGet()));
+
 
                         }
                     }
@@ -3790,6 +3799,221 @@ namespace TAICodeComplete
             return s;
         }
 
+        private string GenerateWEBApiGet()
+        {
+            string s = "";
+
+            string pfix = txtInterfaceOBJPrefix.Text;
+
+            List<string> flds = new List<string>();
+
+            foreach (Field f in TheFields)
+            {
+                flds.Add(f.FieldName);
+            }
+
+            //frmFieldSelect frm = new frmFieldSelect(flds);
+
+            //frm.ShowDialog();
+
+            //string INTERFACEFIELD = frm.SELECTEDFIELD;
+            //string INTERFACEFIELDTYPE = "";
+
+
+            //frm.Close();
+
+            //frm.Dispose();
+
+            foreach (Field f in TheFields)
+            {
+                if (f.FieldName == INTERFACEFIELD)
+                {
+
+                    if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                        f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                        f.FieldType == "SYSNAME")
+                    {
+                        INTERFACEFIELDTYPE = "string";
+                    }
+
+                    if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT")
+                    {
+                        INTERFACEFIELDTYPE = "int";
+                    }
+
+                    if (f.FieldType == "BIGINT")
+                    {
+                        INTERFACEFIELDTYPE = "long";
+                    }
+
+                    if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT")
+                    {
+                        INTERFACEFIELDTYPE = "double";
+                    }
+
+                    if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                    {
+                        INTERFACEFIELDTYPE = "DateTime";
+                    }
+
+                    if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                    {
+                        INTERFACEFIELDTYPE = "bool";
+                    }
+
+                    break;
+                }
+            }
+
+            //s += "// This is the exposer for the web service call\n";
+            //s += "[HttpGet(Name = " + TableName + ")]\n";
+            //s += "public IEnumerable<" + pfix + TableName + "> GetListOf" + TableName + "(" + INTERFACEFIELDTYPE + " " + INTERFACEFIELD + ");\n\n";
+
+
+            s += "// This is the actual web service call\n";
+            s += "[HttpGet(Name = " + TableName + ")]\n";
+            s += "public IEnumerable<" + pfix + TableName + "> GetListOf" + TableName + "(" + INTERFACEFIELDTYPE + " " + INTERFACEFIELD + ")\n";
+            s += "{\n";
+            s += "List<" + pfix + TableName + "> result = new List<" + pfix + TableName + ">();\n";
+            s += "try\n";
+            s += "{\n";
+            s += "string sql = \"SELECT * FROM " + TableName + " WHERE " + INTERFACEFIELD + " = @" + INTERFACEFIELD + "\";\n";
+            s += "SqlConnection cn = new SqlConnection(DBCON());\n";
+            s += "cn.Open();\n";
+            s += "SqlCommand cmd = new SqlCommand(sql, cn);\n";
+
+            //System.Data.SqlDbType.
+            switch (INTERFACEFIELDTYPE)
+            {
+                case "string":
+                    s += "cmd.Parameters.Add(\"@" + INTERFACEFIELD + "\",System.Data.SqlDbType.VarChar).Value = " + INTERFACEFIELD + ";\n";
+                    break;
+
+                case "int":
+                    s += "cmd.Parameters.Add(\"@" + INTERFACEFIELD + "\",System.Data.SqlDbType.Int).Value = " + INTERFACEFIELD + ";\n";
+                    break;
+
+                case "long":
+                    s += "cmd.Parameters.Add(\"@" + INTERFACEFIELD + "\",System.Data.SqlDbType.BigInt).Value = " + INTERFACEFIELD + ";\n";
+                    break;
+
+                case "double":
+                    s += "cmd.Parameters.Add(\"@" + INTERFACEFIELD + "\",System.Data.SqlDbType.Money).Value = " + INTERFACEFIELD + ";\n";
+                    break;
+
+                case "DateTime":
+                    s += "cmd.Parameters.Add(\"@" + INTERFACEFIELD + "\",System.Data.SqlDbType.DateTime).Value = " + INTERFACEFIELD + ";\n";
+                    break;
+
+                case "bool":
+                    s += "cmd.Parameters.Add(\"@" + INTERFACEFIELD + "\",System.Data.SqlDbType.Bit).Value = " + INTERFACEFIELD + ";\n";
+                    break;
+            }
+
+
+            s += "SqlDataReader r = cmd.ExecuteReader();\n";
+            s += "while (r.Read())\n";
+            s += "{\n";
+            s += pfix + TableName + " a = new " + pfix + TableName + "();\n";
+
+            foreach (Field f in TheFields)
+            {
+                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                    f.FieldType == "SYSNAME")
+                {
+                    s += "a." + f.FieldNameConverted + " = r[\"" + f.FieldName + "\"] + \"\";\n";
+                }
+
+                if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT")
+                {
+                    s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = Convert.ToInt32(r[\"" + f.FieldName + "\"]);\n";
+                    s += "}\n";
+                    s += "else\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = 0;\n";
+                    s += "}\n";
+                }
+
+                if (f.FieldType == "BIGINT")
+                {
+                    s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = Convert.ToInt64(r[\"" + f.FieldName + "\"]);\n";
+                    s += "}\n";
+                    s += "else\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = 0;\n";
+                    s += "}\n";
+                }
+
+                if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT")
+                {
+                    s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = Convert.ToDouble(r[\"" + f.FieldName + "\"]);\n";
+                    s += "}\n";
+                    s += "else\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = 0.0;\n";
+                    s += "}\n";
+                }
+
+                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                {
+                    s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = Convert.ToDateTime(r[\"" + f.FieldName + "\"]);\n";
+                    s += "}\n";
+                    s += "else\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = Convert.ToDateTime(null);\n";
+                    s += "}\n";
+
+
+                }
+
+                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                {
+                    s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = Convert.ToBoolean(r[\"" + f.FieldName + "\"]);\n";
+                    s += "}\n";
+                    s += "else\n";
+                    s += "{\n";
+                    s += "a." + f.FieldNameConverted + " = false;\n";
+                    s += "}\n";
+                }
+            }
+
+            if (chkPostProcessWSresultlist.Checked)
+            {
+                s += "result.Add(PostProcess_" + pfix + TableName + "(a));\n";
+            }
+            else
+            {
+                s += "result.Add(a);\n";
+            }
+
+            s += "}\n";
+            s += "r.Close();\n";
+            s += "cmd.Cancel();\n";
+            s += "cmd.Dispose();\n";
+            s += "cn.Close();\n";
+            s += "cn.Dispose();\n";
+            s += "}\n";
+            s += "catch (Exception ex)\n";
+            s += "{\n";
+            s += "throw(new Exception(\"" + TableName + ".GetListOf" + TableName + "\" +  ex.ToString()));\n";
+            s += "}\n";
+            s += "return result;\n";
+            s += "}\n\n";
+
+            return s;
+        }
+
         private string GenerateGETLISTOFX()
         {
             string s = "";
@@ -3807,9 +4031,8 @@ namespace TAICodeComplete
 
             frm.ShowDialog();
 
-            string INTERFACEFIELD = frm.SELECTEDFIELD;
-            string INTERFACEFIELDTYPE = "";
-
+            INTERFACEFIELD = frm.SELECTEDFIELD;
+            INTERFACEFIELDTYPE = "";
 
             frm.Close();
 
