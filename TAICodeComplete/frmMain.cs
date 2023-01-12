@@ -723,6 +723,7 @@ namespace TAICodeComplete
                             GenerateWinFormsInitializeComponent() +
                             GeneratePacker() +
                             GenerateUnPacker() +
+                            GenerateButtonHandlers() +
                             GenerateSupportRoutines()
                             ));
 
@@ -4769,6 +4770,139 @@ namespace TAICodeComplete
             return s;
         }
 
+        private string GenerateButtonHandlers()
+        {
+            string s = "";
+
+            s += "private void btnEnableAll_Click(object sender, EventArgs e)\n";
+            s += "{\n";
+
+            foreach (Field f in TheFields)
+            {
+
+                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                    f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
+                    f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
+                    f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
+                    f.FieldType == "FLOAT")
+                {
+                    s += "this.txt" + f.FieldNameConverted + ".Enabled = true;\n";
+
+                }
+
+                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                {
+                    s += "this.dtp" + f.FieldNameConverted + ".Enabled = true;\n";
+                }
+
+                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                {
+                    s += "this.chk" + f.FieldNameConverted + ".Enabled = true;\n";
+                }
+
+            }
+
+            s += "}\n\n";
+            
+            
+            s += "private void btnDisableAll_Click(object sender, EventArgs e)\n";
+            s += "{\n";
+
+            foreach (Field f in TheFields)
+            {
+
+                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                    f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
+                    f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
+                    f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
+                    f.FieldType == "FLOAT")
+                {
+                    s += "this.txt" + f.FieldNameConverted + ".Enabled = false;\n";
+
+                }
+
+                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                {
+                    s += "this.dtp" + f.FieldNameConverted + ".Enabled = false;\n";
+                }
+
+                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                {
+                    s += "this.chk" + f.FieldNameConverted + ".Enabled = false;\n";
+                }
+
+            }
+
+            s += "}\n\n";
+
+            s += "private void btnHideAll_Click(object sender, EventArgs e)\n";
+            s += "{\n";
+
+            foreach (Field f in TheFields)
+            {
+
+                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                    f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
+                    f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
+                    f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
+                    f.FieldType == "FLOAT")
+                {
+                    s += "this.txt" + f.FieldNameConverted + ".Visible = false;\n";
+
+                }
+
+                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                {
+                    s += "this.dtp" + f.FieldNameConverted + ".Visible = false;\n";
+                }
+
+                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                {
+                    s += "this.chk" + f.FieldNameConverted + ".Visible = false;\n";
+                }
+
+            }
+
+            s += "}\n\n";
+
+            s += "private void btnShowAll_Click(object sender, EventArgs e)\n";
+            s += "{\n";
+
+            foreach (Field f in TheFields)
+            {
+
+                if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
+                    f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                    f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
+                    f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
+                    f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
+                    f.FieldType == "FLOAT")
+                {
+                    s += "this.txt" + f.FieldNameConverted + ".Visible = true;\n";
+
+                }
+
+                if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                {
+                    s += "this.dtp" + f.FieldNameConverted + ".Visible = true;\n";
+                }
+
+                if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                {
+                    s += "this.chk" + f.FieldNameConverted + ".Visible = true;\n";
+                }
+
+            }
+
+            s += "}\n\n";
+            
+            return s;
+        }
+        
+
         private string GenerateWinFormsInitializeComponent()
         {
 
@@ -4825,6 +4959,11 @@ namespace TAICodeComplete
                     s += "this.lbl" + f.FieldNameConverted + "  = new System.Windows.Forms.Label();\n";
                 }
             }
+
+            s += "this.btnHideAll = new System.Windows.Forms.Button();\n";
+            s += "this.btnShowAll = new System.Windows.Forms.Button();\n";
+            s += "this.btnDisableAll = new System.Windows.Forms.Button();\n";
+            s += "this.btnEnableAll = new System.Windows.Forms.Button();\n";
 
             s += "this.SuspendLayout();\n";
 
@@ -4902,6 +5041,8 @@ namespace TAICodeComplete
                 }
             }
 
+           
+
             ctlnum = 0;
             colnum = 0;
             CTRLnum = 0;
@@ -4945,9 +5086,58 @@ namespace TAICodeComplete
                 }
             }
 
+            // Add the 4 Buttons At the Bottom of the Interface
+
+            var thestring = "";
+            thestring += "// \n";
+            thestring += "// btnHideAll\n";
+            thestring += "// \n";
+            thestring += "this.btnHideAll.Location = new System.Drawing.Point(14, 770);\n";
+            thestring += "this.btnHideAll.Name = \"btnHideAll\";\n";
+            thestring += "this.btnHideAll.Size = new System.Drawing.Size(111, 27);\n";
+            thestring += "this.btnHideAll.TabIndex = 61;\n";
+            thestring += "this.btnHideAll.Text = \"Hide All\";\n";
+            thestring += "this.btnHideAll.UseVisualStyleBackColor = true;\n";
+            thestring += "// \n";
+            thestring += "// btnShowAll\n";
+            thestring += "// \n";
+            thestring += "this.btnShowAll.Location = new System.Drawing.Point(131, 770);\n";
+            thestring += "this.btnShowAll.Name = \"btnShowAll\";\n";
+            thestring += "this.btnShowAll.Size = new System.Drawing.Size(111, 27);\n";
+            thestring += "this.btnShowAll.TabIndex = 62;\n";
+            thestring += "this.btnShowAll.Text = \"Show All\";\n";
+            thestring += "this.btnShowAll.UseVisualStyleBackColor = true;\n";
+            thestring += "// \n";
+            thestring += "// btnDisableAll\n";
+            thestring += "// \n";
+            thestring += "this.btnDisableAll.Location = new System.Drawing.Point(248, 770);\n";
+            thestring += "this.btnDisableAll.Name = \"btnDisableAll\";\n";
+            thestring += "this.btnDisableAll.Size = new System.Drawing.Size(111, 27);\n";
+            thestring += "this.btnDisableAll.TabIndex = 63;\n";
+            thestring += "this.btnDisableAll.Text = \"Disable All\";\n";
+            thestring += "this.btnDisableAll.UseVisualStyleBackColor = true;\n";
+            thestring += "// \n";
+            thestring += "// btnEnableAll\n";
+            thestring += "// \n";
+            thestring += "this.btnEnableAll.Location = new System.Drawing.Point(365, 770);\n";
+            thestring += "this.btnEnableAll.Name = \"btnEnableAll\";\n";
+            thestring += "this.btnEnableAll.Size = new System.Drawing.Size(111, 27);\n";
+            thestring += "this.btnEnableAll.TabIndex = 64;\n";
+            thestring += "this.btnEnableAll.Text = \"Enable All\";\n";
+            thestring += "this.btnEnableAll.UseVisualStyleBackColor = true;\n\n";
+
+            s += thestring;
+
+
             s += "this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);\n";
             s += "this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;\n";
-            s += "this.ClientSize = new System.Drawing.Size(1339, 821);\n";
+            s += "this.ClientSize = new System.Drawing.Size(1339, 821);\n\n";
+
+
+            s += "this.Controls.Add(this.btnEnableAll);\n";
+            s += "this.Controls.Add(this.btnDisableAll);\n";
+            s += "this.Controls.Add(this.btnShowAll);\n";
+            s += "this.Controls.Add(this.btnHideAll);\n";
 
             foreach (Field f in TheFields)
             {
@@ -5055,7 +5245,11 @@ namespace TAICodeComplete
 
             }
 
-
+            s += "private System.Windows.Forms.Button btnHideAll;\n";
+            s += "private System.Windows.Forms.Button btnShowAll;\n";
+            s += "private System.Windows.Forms.Button btnDisableAll;\n";
+            s += "private System.Windows.Forms.Button btnEnableAll;\n";
+            
             return s;
         }
 
@@ -6216,6 +6410,18 @@ namespace TAICodeComplete
         {
             //MessageBox.Show(DSN);
             txtDerivedConnectionString.Text = DSN;
+        }
+
+        private void btnShowTestForm_Click(object sender, EventArgs e)
+        {
+            TestForm1 tf = new TestForm1();
+
+            tf.ShowDialog();
+
+            tf.Hide();
+            
+            tf.Dispose();
+            ;
         }
     }
 
