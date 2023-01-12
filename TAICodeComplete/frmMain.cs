@@ -4829,9 +4829,19 @@ namespace TAICodeComplete
             s += "this.SuspendLayout();\n";
 
             int ctlnum = 0;
+            int colnum = 0;
+            int CTRLnum = 0;
+            int ctrlX = 0;
+
 
             foreach (Field f in TheFields)
             {
+
+                colnum = ctlnum / (int)20;
+
+                ctrlX = (colnum * 320) + 160;
+                
+                
                 if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
                     f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
@@ -4843,7 +4853,7 @@ namespace TAICodeComplete
                     s += "// txt" + f.FieldNameConverted + "\n";
                     s += "//\n";
 
-                    s += "this.txt" + f.FieldNameConverted + ".Location = new System.Drawing.Point(160, " + ((ctlnum * 36) + 12).ToString() + ");\n";
+                    s += "this.txt" + f.FieldNameConverted + ".Location = new System.Drawing.Point(" + ctrlX + ", " + ((CTRLnum * 36) + 12).ToString() + ");\n";
                     s += "this.txt" + f.FieldNameConverted + ".Margin = new System.Windows.Forms.Padding(4);\n";
                     s += "this.txt" + f.FieldNameConverted + ".Name = \"txt" + f.FieldNameConverted + "\";\n";
                     s += "this.txt" + f.FieldNameConverted + ".ReadOnly = false;\n";
@@ -4858,9 +4868,12 @@ namespace TAICodeComplete
                     s += "// dtp" + f.FieldNameConverted + "\n";
                     s += "//\n";
 
-                    s += "this.dtp" + f.FieldNameConverted + ".Location = new System.Drawing.Point(160, " + ((ctlnum * 36) + 12).ToString() + ");\n";
+                    s += "this.dtp" + f.FieldNameConverted + ".Format = System.Windows.Forms.DateTimePickerFormat.Short;";
+
+
+                    s += "this.dtp" + f.FieldNameConverted + ".Location = new System.Drawing.Point(" + ctrlX + ", " + ((CTRLnum * 36) + 12).ToString() + ");\n";
                     s += "this.dtp" + f.FieldNameConverted + ".Name = \"dtp" + f.FieldNameConverted + "\";\n";
-                    s += "this.dtp" + f.FieldNameConverted + ".Size = new System.Drawing.Size(200, 22);\n";
+                    s += "this.dtp" + f.FieldNameConverted + ".Size = new System.Drawing.Size(120, 22);\n";
                     s += "this.dtp" + f.FieldNameConverted + ".TabIndex = " + ctlnum.ToString() + ";\n";
                 }
 
@@ -4870,7 +4883,7 @@ namespace TAICodeComplete
                     s += "// chk" + f.FieldNameConverted + "\n";
                     s += "//\n";
 
-                    s += "this.chk" + f.FieldNameConverted + ".Location = new System.Drawing.Point(160, " + ((ctlnum * 36) + 12).ToString() + ");\n";
+                    s += "this.chk" + f.FieldNameConverted + ".Location = new System.Drawing.Point(" + ctrlX + ", " + ((CTRLnum * 36) + 12).ToString() + ");\n";
                     s += "this.chk" + f.FieldNameConverted + ".AutoSize = true\n";
                     s += "this.chk" + f.FieldNameConverted + ".Name = \"chk" + f.FieldNameConverted + "\";\n";
                     s += "this.chk" + f.FieldNameConverted + ".Text = \"" + f.FieldNameConverted + "\";\n";
@@ -4881,12 +4894,25 @@ namespace TAICodeComplete
                 }
 
                 ctlnum += 1;
+                CTRLnum += 1;
+
+                if (CTRLnum == 20)
+                {
+                    CTRLnum = 0;
+                }
             }
 
             ctlnum = 0;
+            colnum = 0;
+            CTRLnum = 0;
+            ctrlX = 0;
 
             foreach (Field f in TheFields)
             {
+                colnum = ctlnum / (int)20;
+
+                ctrlX = (colnum * 320) + 16;
+
                 if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
                     f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
@@ -4900,7 +4926,7 @@ namespace TAICodeComplete
                     s += "// lbl" + f.FieldNameConverted + "\n";
                     s += "//\n";
 
-                    s += "this.lbl" + f.FieldNameConverted + ".Location = new System.Drawing.Point(16, " + ((ctlnum * 36) + 12).ToString() + ");\n";
+                    s += "this.lbl" + f.FieldNameConverted + ".Location = new System.Drawing.Point(" + ctrlX + ", " + ((CTRLnum * 36) + 12).ToString() + ");\n";
                     s += "this.lbl" + f.FieldNameConverted + ".Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);\n";
                     s += "this.lbl" + f.FieldNameConverted + ".Name = \"lbl" + f.FieldNameConverted + "\";\n";
                     s += "this.lbl" + f.FieldNameConverted + ".AutoSize = true;\n";
@@ -4911,6 +4937,12 @@ namespace TAICodeComplete
 
 
                 ctlnum += 1;
+                CTRLnum += 1;
+
+                if (CTRLnum == 20)
+                {
+                    CTRLnum = 0;
+                }
             }
 
             s += "this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);\n";

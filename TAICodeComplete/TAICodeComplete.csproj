@@ -126,6 +126,12 @@
     <Compile Include="tblDocDefTemplateUI.Designer.cs">
       <DependentUpon>tblDocDefTemplateUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm1.Designer.cs">
+      <DependentUpon>TestForm1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmFieldSelect.resx">
       <DependentUpon>frmFieldSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="tblDocDefTemplateUI.resx">
       <DependentUpon>tblDocDefTemplateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm1.resx">
+      <DependentUpon>TestForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
