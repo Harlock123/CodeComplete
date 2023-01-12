@@ -1470,7 +1470,7 @@
         private System.Windows.Forms.TextBox txtPASSWORD;
         private System.Windows.Forms.TextBox txtUSER;
         private System.Windows.Forms.Label label10;
-        private TAIGridControl2.TAIGridControl TAIGridDocDef;
+        //private TAIGridControl2.TAIGridControl TAIGridDocDef;
         private ScintillaNET.Scintilla scintillaWFCode;
         private System.Windows.Forms.Button btnWFSaveToFile;
         private System.Windows.Forms.CheckBox chkWFCodeFolding;
@@ -1480,7 +1480,7 @@
         private System.Windows.Forms.CheckBox chkXAMLCodeFoldingXaml;
         private System.Windows.Forms.CheckBox chkLineNumbersXAML;
         private System.Windows.Forms.CheckBox chkXAMLFromOrUserControl;
-        private TAIGridControl2.TAIGridControl taigLookupListGrid;
+        //private TAIGridControl2.TAIGridControl taigLookupListGrid;
         private System.Windows.Forms.TabPage tabPage8;
         private ScintillaNET.Scintilla sciSQLCode;
         private System.Windows.Forms.Button dtnSaveSQLToFile;

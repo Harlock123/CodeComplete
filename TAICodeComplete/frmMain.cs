@@ -808,7 +808,7 @@ namespace TAICodeComplete
 
                 }
             }
-            catch (Exception ex)
+            catch //(Exception ex)
             {
                 // Something went horribly wrong
             }
@@ -4864,6 +4864,8 @@ namespace TAICodeComplete
                     s += "this.chk" + f.FieldNameConverted + ".Visible = false;\n";
                 }
 
+                s += "this.lbl" + f.FieldNameConverted + ".Visible = false;\n";
+
             }
 
             s += "}\n\n";
@@ -4894,6 +4896,8 @@ namespace TAICodeComplete
                 {
                     s += "this.chk" + f.FieldNameConverted + ".Visible = true;\n";
                 }
+
+                s += "this.lbl" + f.FieldNameConverted + ".Visible = true;\n";
 
             }
 
