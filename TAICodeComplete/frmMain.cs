@@ -4905,8 +4905,7 @@ namespace TAICodeComplete
             
             return s;
         }
-        
-
+ 
         private string GenerateWinFormsInitializeComponent()
         {
 
@@ -5011,7 +5010,7 @@ namespace TAICodeComplete
                     s += "// dtp" + f.FieldNameConverted + "\n";
                     s += "//\n";
 
-                    s += "this.dtp" + f.FieldNameConverted + ".Format = System.Windows.Forms.DateTimePickerFormat.Short;";
+                    s += "this.dtp" + f.FieldNameConverted + ".Format = System.Windows.Forms.DateTimePickerFormat.Short;\n";
 
 
                     s += "this.dtp" + f.FieldNameConverted + ".Location = new System.Drawing.Point(" + ctrlX + ", " + ((CTRLnum * 36) + 12).ToString() + ");\n";
