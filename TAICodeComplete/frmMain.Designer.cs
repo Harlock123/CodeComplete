@@ -377,7 +377,7 @@
             // 
             this.txtDerivedConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDerivedConnectionString.Location = new System.Drawing.Point(6, 134);
+            this.txtDerivedConnectionString.Location = new System.Drawing.Point(6, 137);
             this.txtDerivedConnectionString.Name = "txtDerivedConnectionString";
             this.txtDerivedConnectionString.Size = new System.Drawing.Size(541, 20);
             this.txtDerivedConnectionString.TabIndex = 20;
