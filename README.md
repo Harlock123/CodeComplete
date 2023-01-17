@@ -10,3 +10,8 @@ In one of three ways you point the tool at a sql server database and a specific 
 * *Methods to write back the class to a specific ID (UPDATE)*
 * *Methods to Insert a completely new entity into the selected database (CREATE)*
 * *Methods to Delete a chosen entity from the database. (DELETE)*
+
+Some Screenshots
+Main Screen Interface
+
+![Screenshot](TaiCodeComplete/images/Screenshot1.jpg)
