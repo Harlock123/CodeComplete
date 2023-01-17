@@ -5026,12 +5026,12 @@ namespace TAICodeComplete
                     s += "//\n";
 
                     s += "this.chk" + f.FieldNameConverted + ".Location = new System.Drawing.Point(" + ctrlX + ", " + ((CTRLnum * 36) + 12).ToString() + ");\n";
-                    s += "this.chk" + f.FieldNameConverted + ".AutoSize = true\n";
+                    s += "this.chk" + f.FieldNameConverted + ".AutoSize = true;\n";
                     s += "this.chk" + f.FieldNameConverted + ".Name = \"chk" + f.FieldNameConverted + "\";\n";
                     s += "this.chk" + f.FieldNameConverted + ".Text = \"" + f.FieldNameConverted + "\";\n";
                     s += "this.chk" + f.FieldNameConverted + ".Size = new System.Drawing.Size(100, 22);\n";
                     s += "this.chk" + f.FieldNameConverted + ".TabIndex = " + ctlnum.ToString() + ";\n";
-                    s += "this.chk" + f.FieldNameConverted + ".UseVisualStyleBackColor = true\n";
+                    s += "this.chk" + f.FieldNameConverted + ".UseVisualStyleBackColor = true;\n";
 
                 }
 
