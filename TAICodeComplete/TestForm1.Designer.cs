@@ -274,7 +274,7 @@
             // 
             this.dtpEvalRequested.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvalRequested.Location = new System.Drawing.Point(120, 156);
-            this.dtpEvalRequested.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvalRequested.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvalRequested.Name = "dtpEvalRequested";
             this.dtpEvalRequested.Size = new System.Drawing.Size(91, 20);
             this.dtpEvalRequested.TabIndex = 5;
@@ -283,7 +283,7 @@
             // 
             this.dtpEvalSent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvalSent.Location = new System.Drawing.Point(120, 185);
-            this.dtpEvalSent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvalSent.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvalSent.Name = "dtpEvalSent";
             this.dtpEvalSent.Size = new System.Drawing.Size(91, 20);
             this.dtpEvalSent.TabIndex = 6;
@@ -292,7 +292,7 @@
             // 
             this.dtpEvalReceived.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvalReceived.Location = new System.Drawing.Point(120, 214);
-            this.dtpEvalReceived.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvalReceived.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvalReceived.Name = "dtpEvalReceived";
             this.dtpEvalReceived.Size = new System.Drawing.Size(91, 20);
             this.dtpEvalReceived.TabIndex = 7;
@@ -301,7 +301,7 @@
             // 
             this.dtpEvalCompleted.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvalCompleted.Location = new System.Drawing.Point(120, 244);
-            this.dtpEvalCompleted.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvalCompleted.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvalCompleted.Name = "dtpEvalCompleted";
             this.dtpEvalCompleted.Size = new System.Drawing.Size(91, 20);
             this.dtpEvalCompleted.TabIndex = 8;
@@ -310,7 +310,7 @@
             // 
             this.dtpEvalReportSent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvalReportSent.Location = new System.Drawing.Point(120, 273);
-            this.dtpEvalReportSent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvalReportSent.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvalReportSent.Name = "dtpEvalReportSent";
             this.dtpEvalReportSent.Size = new System.Drawing.Size(91, 20);
             this.dtpEvalReportSent.TabIndex = 9;
@@ -403,7 +403,7 @@
             // 
             this.dtpPhysicalExamDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPhysicalExamDate.Location = new System.Drawing.Point(360, 68);
-            this.dtpPhysicalExamDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpPhysicalExamDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpPhysicalExamDate.Name = "dtpPhysicalExamDate";
             this.dtpPhysicalExamDate.Size = new System.Drawing.Size(91, 20);
             this.dtpPhysicalExamDate.TabIndex = 22;
@@ -426,7 +426,7 @@
             // 
             this.dtpHearingExamDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHearingExamDate.Location = new System.Drawing.Point(360, 156);
-            this.dtpHearingExamDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpHearingExamDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpHearingExamDate.Name = "dtpHearingExamDate";
             this.dtpHearingExamDate.Size = new System.Drawing.Size(91, 20);
             this.dtpHearingExamDate.TabIndex = 25;
@@ -456,7 +456,7 @@
             // 
             this.dtpVisionExamDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVisionExamDate.Location = new System.Drawing.Point(360, 273);
-            this.dtpVisionExamDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpVisionExamDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpVisionExamDate.Name = "dtpVisionExamDate";
             this.dtpVisionExamDate.Size = new System.Drawing.Size(91, 20);
             this.dtpVisionExamDate.TabIndex = 29;
@@ -528,7 +528,7 @@
             // 
             this.dtpEvaluationDate1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvaluationDate1.Location = new System.Drawing.Point(360, 566);
-            this.dtpEvaluationDate1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvaluationDate1.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvaluationDate1.Name = "dtpEvaluationDate1";
             this.dtpEvaluationDate1.Size = new System.Drawing.Size(91, 20);
             this.dtpEvaluationDate1.TabIndex = 39;
@@ -565,7 +565,7 @@
             // 
             this.dtpEvaluationDate2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvaluationDate2.Location = new System.Drawing.Point(600, 127);
-            this.dtpEvaluationDate2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvaluationDate2.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvaluationDate2.Name = "dtpEvaluationDate2";
             this.dtpEvaluationDate2.Size = new System.Drawing.Size(91, 20);
             this.dtpEvaluationDate2.TabIndex = 44;
@@ -602,7 +602,7 @@
             // 
             this.dtpEvaluationDate3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvaluationDate3.Location = new System.Drawing.Point(600, 273);
-            this.dtpEvaluationDate3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvaluationDate3.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvaluationDate3.Name = "dtpEvaluationDate3";
             this.dtpEvaluationDate3.Size = new System.Drawing.Size(91, 20);
             this.dtpEvaluationDate3.TabIndex = 49;
@@ -639,7 +639,7 @@
             // 
             this.dtpEvaluationDate4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvaluationDate4.Location = new System.Drawing.Point(600, 419);
-            this.dtpEvaluationDate4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvaluationDate4.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvaluationDate4.Name = "dtpEvaluationDate4";
             this.dtpEvaluationDate4.Size = new System.Drawing.Size(91, 20);
             this.dtpEvaluationDate4.TabIndex = 54;
@@ -676,7 +676,7 @@
             // 
             this.dtpEvaluationDate5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEvaluationDate5.Location = new System.Drawing.Point(600, 566);
-            this.dtpEvaluationDate5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEvaluationDate5.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEvaluationDate5.Name = "dtpEvaluationDate5";
             this.dtpEvaluationDate5.Size = new System.Drawing.Size(91, 20);
             this.dtpEvaluationDate5.TabIndex = 59;
@@ -769,7 +769,7 @@
             // 
             this.dtpCreatedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCreatedDate.Location = new System.Drawing.Point(840, 361);
-            this.dtpCreatedDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpCreatedDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCreatedDate.Name = "dtpCreatedDate";
             this.dtpCreatedDate.Size = new System.Drawing.Size(91, 20);
             this.dtpCreatedDate.TabIndex = 72;
@@ -792,7 +792,7 @@
             // 
             this.dtpUpdatedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpUpdatedDate.Location = new System.Drawing.Point(840, 448);
-            this.dtpUpdatedDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpUpdatedDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpUpdatedDate.Name = "dtpUpdatedDate";
             this.dtpUpdatedDate.Size = new System.Drawing.Size(91, 20);
             this.dtpUpdatedDate.TabIndex = 75;
@@ -850,7 +850,7 @@
             // 
             this.dtpProcessInitiated.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpProcessInitiated.Location = new System.Drawing.Point(1080, 98);
-            this.dtpProcessInitiated.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpProcessInitiated.Margin = new System.Windows.Forms.Padding(2);
             this.dtpProcessInitiated.Name = "dtpProcessInitiated";
             this.dtpProcessInitiated.Size = new System.Drawing.Size(91, 20);
             this.dtpProcessInitiated.TabIndex = 83;
@@ -859,7 +859,7 @@
             // 
             this.dtpWaiverApproval.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpWaiverApproval.Location = new System.Drawing.Point(1080, 127);
-            this.dtpWaiverApproval.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpWaiverApproval.Margin = new System.Windows.Forms.Padding(2);
             this.dtpWaiverApproval.Name = "dtpWaiverApproval";
             this.dtpWaiverApproval.Size = new System.Drawing.Size(91, 20);
             this.dtpWaiverApproval.TabIndex = 84;
@@ -868,7 +868,7 @@
             // 
             this.dtpReevaluation.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpReevaluation.Location = new System.Drawing.Point(1080, 156);
-            this.dtpReevaluation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpReevaluation.Margin = new System.Windows.Forms.Padding(2);
             this.dtpReevaluation.Name = "dtpReevaluation";
             this.dtpReevaluation.Size = new System.Drawing.Size(91, 20);
             this.dtpReevaluation.TabIndex = 85;
@@ -877,7 +877,7 @@
             // 
             this.dtpRecertification.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpRecertification.Location = new System.Drawing.Point(1080, 185);
-            this.dtpRecertification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpRecertification.Margin = new System.Windows.Forms.Padding(2);
             this.dtpRecertification.Name = "dtpRecertification";
             this.dtpRecertification.Size = new System.Drawing.Size(91, 20);
             this.dtpRecertification.TabIndex = 86;
@@ -886,7 +886,7 @@
             // 
             this.chkMAEligible.AutoSize = true;
             this.chkMAEligible.Location = new System.Drawing.Point(1080, 214);
-            this.chkMAEligible.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkMAEligible.Margin = new System.Windows.Forms.Padding(2);
             this.chkMAEligible.Name = "chkMAEligible";
             this.chkMAEligible.Size = new System.Drawing.Size(75, 17);
             this.chkMAEligible.TabIndex = 87;
@@ -911,7 +911,7 @@
             // 
             this.chkMAWAnomeetingdate.AutoSize = true;
             this.chkMAWAnomeetingdate.Location = new System.Drawing.Point(1080, 302);
-            this.chkMAWAnomeetingdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkMAWAnomeetingdate.Margin = new System.Windows.Forms.Padding(2);
             this.chkMAWAnomeetingdate.Name = "chkMAWAnomeetingdate";
             this.chkMAWAnomeetingdate.Size = new System.Drawing.Size(130, 17);
             this.chkMAWAnomeetingdate.TabIndex = 90;
@@ -922,7 +922,7 @@
             // 
             this.chkMAWArefusedtransition.AutoSize = true;
             this.chkMAWArefusedtransition.Location = new System.Drawing.Point(1080, 332);
-            this.chkMAWArefusedtransition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkMAWArefusedtransition.Margin = new System.Windows.Forms.Padding(2);
             this.chkMAWArefusedtransition.Name = "chkMAWArefusedtransition";
             this.chkMAWArefusedtransition.Size = new System.Drawing.Size(137, 17);
             this.chkMAWArefusedtransition.TabIndex = 91;
@@ -933,7 +933,7 @@
             // 
             this.dtpMAWAletterdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpMAWAletterdate.Location = new System.Drawing.Point(1080, 361);
-            this.dtpMAWAletterdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpMAWAletterdate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpMAWAletterdate.Name = "dtpMAWAletterdate";
             this.dtpMAWAletterdate.Size = new System.Drawing.Size(91, 20);
             this.dtpMAWAletterdate.TabIndex = 92;
@@ -942,7 +942,7 @@
             // 
             this.dtpMAWAmeetingdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpMAWAmeetingdate.Location = new System.Drawing.Point(1080, 390);
-            this.dtpMAWAmeetingdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpMAWAmeetingdate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpMAWAmeetingdate.Name = "dtpMAWAmeetingdate";
             this.dtpMAWAmeetingdate.Size = new System.Drawing.Size(91, 20);
             this.dtpMAWAmeetingdate.TabIndex = 93;
@@ -958,7 +958,7 @@
             // 
             this.dtpTerminationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTerminationDate.Location = new System.Drawing.Point(1080, 448);
-            this.dtpTerminationDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpTerminationDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTerminationDate.Name = "dtpTerminationDate";
             this.dtpTerminationDate.Size = new System.Drawing.Size(91, 20);
             this.dtpTerminationDate.TabIndex = 95;
@@ -1009,7 +1009,7 @@
             // 
             this.dtpMDEExamdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpMDEExamdate.Location = new System.Drawing.Point(1320, 68);
-            this.dtpMDEExamdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpMDEExamdate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpMDEExamdate.Name = "dtpMDEExamdate";
             this.dtpMDEExamdate.Size = new System.Drawing.Size(91, 20);
             this.dtpMDEExamdate.TabIndex = 102;
@@ -1944,48 +1944,52 @@
             // btnHideAll
             // 
             this.btnHideAll.Location = new System.Drawing.Point(10, 626);
-            this.btnHideAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHideAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnHideAll.Name = "btnHideAll";
             this.btnHideAll.Size = new System.Drawing.Size(83, 22);
             this.btnHideAll.TabIndex = 61;
             this.btnHideAll.Text = "Hide All";
             this.btnHideAll.UseVisualStyleBackColor = true;
+            this.btnHideAll.Click += new System.EventHandler(this.btnHideAll_Click);
             // 
             // btnShowAll
             // 
             this.btnShowAll.Location = new System.Drawing.Point(98, 626);
-            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(83, 22);
             this.btnShowAll.TabIndex = 62;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // btnDisableAll
             // 
             this.btnDisableAll.Location = new System.Drawing.Point(186, 626);
-            this.btnDisableAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDisableAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnDisableAll.Name = "btnDisableAll";
             this.btnDisableAll.Size = new System.Drawing.Size(83, 22);
             this.btnDisableAll.TabIndex = 63;
             this.btnDisableAll.Text = "Disable All";
             this.btnDisableAll.UseVisualStyleBackColor = true;
+            this.btnDisableAll.Click += new System.EventHandler(this.btnDisableAll_Click);
             // 
             // btnEnableAll
             // 
             this.btnEnableAll.Location = new System.Drawing.Point(274, 626);
-            this.btnEnableAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnableAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnableAll.Name = "btnEnableAll";
             this.btnEnableAll.Size = new System.Drawing.Size(83, 22);
             this.btnEnableAll.TabIndex = 64;
             this.btnEnableAll.Text = "Enable All";
             this.btnEnableAll.UseVisualStyleBackColor = true;
+            this.btnEnableAll.Click += new System.EventHandler(this.btnEnableAll_Click);
             // 
             // TestForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 664);
+            this.ClientSize = new System.Drawing.Size(1697, 664);
             this.Controls.Add(this.btnEnableAll);
             this.Controls.Add(this.btnDisableAll);
             this.Controls.Add(this.btnShowAll);
