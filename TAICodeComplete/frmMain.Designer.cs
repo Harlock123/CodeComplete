@@ -110,6 +110,7 @@
             this.chkXAMLCodeFoldingXaml = new System.Windows.Forms.CheckBox();
             this.chkLineNumbersXAML = new System.Windows.Forms.CheckBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnShowTestForm = new System.Windows.Forms.Button();
             this.scintillaWFCode = new ScintillaNET.Scintilla();
             this.btnWFSaveToFile = new System.Windows.Forms.Button();
             this.chkWFCodeFolding = new System.Windows.Forms.CheckBox();
@@ -136,7 +137,6 @@
             this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.btnShowTestForm = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -581,7 +581,7 @@
             // btnSaveBaseCodeTableToFile
             // 
             this.btnSaveBaseCodeTableToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(927, 3);
+            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(920, 3);
             this.btnSaveBaseCodeTableToFile.Name = "btnSaveBaseCodeTableToFile";
             this.btnSaveBaseCodeTableToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBaseCodeTableToFile.TabIndex = 3;
@@ -639,7 +639,7 @@
             // btnSaveTSCode
             // 
             this.btnSaveTSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveTSCode.Location = new System.Drawing.Point(928, 3);
+            this.btnSaveTSCode.Location = new System.Drawing.Point(921, 3);
             this.btnSaveTSCode.Name = "btnSaveTSCode";
             this.btnSaveTSCode.Size = new System.Drawing.Size(75, 23);
             this.btnSaveTSCode.TabIndex = 7;
@@ -697,7 +697,7 @@
             // btnSaveWebMethodsToFile
             // 
             this.btnSaveWebMethodsToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveWebMethodsToFile.Location = new System.Drawing.Point(928, 3);
+            this.btnSaveWebMethodsToFile.Location = new System.Drawing.Point(922, 3);
             this.btnSaveWebMethodsToFile.Name = "btnSaveWebMethodsToFile";
             this.btnSaveWebMethodsToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveWebMethodsToFile.TabIndex = 6;
@@ -755,7 +755,7 @@
             // btnSaveWEBAPI
             // 
             this.btnSaveWEBAPI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveWEBAPI.Location = new System.Drawing.Point(926, 4);
+            this.btnSaveWEBAPI.Location = new System.Drawing.Point(921, 4);
             this.btnSaveWEBAPI.Name = "btnSaveWEBAPI";
             this.btnSaveWEBAPI.Size = new System.Drawing.Size(75, 23);
             this.btnSaveWEBAPI.TabIndex = 10;
@@ -810,7 +810,7 @@
             // btnSaveJSToFile
             // 
             this.btnSaveJSToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveJSToFile.Location = new System.Drawing.Point(928, 3);
+            this.btnSaveJSToFile.Location = new System.Drawing.Point(923, 3);
             this.btnSaveJSToFile.Name = "btnSaveJSToFile";
             this.btnSaveJSToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveJSToFile.TabIndex = 10;
@@ -912,7 +912,7 @@
             // btnFiddleIt
             // 
             this.btnFiddleIt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiddleIt.Location = new System.Drawing.Point(847, 3);
+            this.btnFiddleIt.Location = new System.Drawing.Point(841, 3);
             this.btnFiddleIt.Name = "btnFiddleIt";
             this.btnFiddleIt.Size = new System.Drawing.Size(75, 23);
             this.btnFiddleIt.TabIndex = 16;
@@ -935,7 +935,7 @@
             // btnSaveHTML
             // 
             this.btnSaveHTML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveHTML.Location = new System.Drawing.Point(928, 3);
+            this.btnSaveHTML.Location = new System.Drawing.Point(922, 3);
             this.btnSaveHTML.Name = "btnSaveHTML";
             this.btnSaveHTML.Size = new System.Drawing.Size(75, 23);
             this.btnSaveHTML.TabIndex = 14;
@@ -993,7 +993,7 @@
             // btnsaveCSS
             // 
             this.btnsaveCSS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsaveCSS.Location = new System.Drawing.Point(930, 4);
+            this.btnsaveCSS.Location = new System.Drawing.Point(922, 4);
             this.btnsaveCSS.Name = "btnsaveCSS";
             this.btnsaveCSS.Size = new System.Drawing.Size(75, 23);
             this.btnsaveCSS.TabIndex = 18;
@@ -1050,7 +1050,7 @@
             // btnSaveXaml
             // 
             this.btnSaveXaml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveXaml.Location = new System.Drawing.Point(926, 4);
+            this.btnSaveXaml.Location = new System.Drawing.Point(921, 4);
             this.btnSaveXaml.Name = "btnSaveXaml";
             this.btnSaveXaml.Size = new System.Drawing.Size(75, 23);
             this.btnSaveXaml.TabIndex = 11;
@@ -1094,6 +1094,17 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "WinForms";
             // 
+            // btnShowTestForm
+            // 
+            this.btnShowTestForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowTestForm.Location = new System.Drawing.Point(804, 3);
+            this.btnShowTestForm.Name = "btnShowTestForm";
+            this.btnShowTestForm.Size = new System.Drawing.Size(110, 23);
+            this.btnShowTestForm.TabIndex = 9;
+            this.btnShowTestForm.Text = "Show Test Form";
+            this.btnShowTestForm.UseVisualStyleBackColor = true;
+            this.btnShowTestForm.Click += new System.EventHandler(this.btnShowTestForm_Click);
+            // 
             // scintillaWFCode
             // 
             this.scintillaWFCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1108,7 +1119,7 @@
             // btnWFSaveToFile
             // 
             this.btnWFSaveToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWFSaveToFile.Location = new System.Drawing.Point(924, 3);
+            this.btnWFSaveToFile.Location = new System.Drawing.Point(920, 3);
             this.btnWFSaveToFile.Name = "btnWFSaveToFile";
             this.btnWFSaveToFile.Size = new System.Drawing.Size(75, 23);
             this.btnWFSaveToFile.TabIndex = 7;
@@ -1165,7 +1176,7 @@
             // dtnSaveSQLToFile
             // 
             this.dtnSaveSQLToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtnSaveSQLToFile.Location = new System.Drawing.Point(928, 3);
+            this.dtnSaveSQLToFile.Location = new System.Drawing.Point(921, 3);
             this.dtnSaveSQLToFile.Name = "dtnSaveSQLToFile";
             this.dtnSaveSQLToFile.Size = new System.Drawing.Size(75, 23);
             this.dtnSaveSQLToFile.TabIndex = 7;
@@ -1372,17 +1383,6 @@
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
-            // 
-            // btnShowTestForm
-            // 
-            this.btnShowTestForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowTestForm.Location = new System.Drawing.Point(808, 3);
-            this.btnShowTestForm.Name = "btnShowTestForm";
-            this.btnShowTestForm.Size = new System.Drawing.Size(110, 23);
-            this.btnShowTestForm.TabIndex = 9;
-            this.btnShowTestForm.Text = "Show Test Form";
-            this.btnShowTestForm.UseVisualStyleBackColor = true;
-            this.btnShowTestForm.Click += new System.EventHandler(this.btnShowTestForm_Click);
             // 
             // frmMain
             // 
