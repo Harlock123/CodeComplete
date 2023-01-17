@@ -14,4 +14,4 @@ In one of three ways you point the tool at a sql server database and a specific 
 Some Screenshots
 Main Screen Interface
 
-![Screenshot](https://raw.github.com/harlock123/codecomplete/TaiCodeComplete/images/Screenshot1.jpg)
+![Screenshot](https://github.com/Harlock123/CodeComplete/blob/master/TAICodeComplete/Images/Screenshot1.jpg)
