@@ -12,6 +12,13 @@ In one of three ways you point the tool at a sql server database and a specific 
 * *Methods to Delete a chosen entity from the database. (DELETE)*
 
 Some Screenshots
+
 Main Screen Interface
 
 ![Screenshot](https://github.com/Harlock123/CodeComplete/blob/master/TAICodeComplete/Images/Screenshot1.jpg)
+
+The Database abstraction Class generated after selection of the database server/ actual database served/ then the particular database entity to script for.
+
+![Screenshot](https://github.com/Harlock123/CodeComplete/blob/master/TAICodeComplete/Images/Screenshot3.jpg)
+
+
