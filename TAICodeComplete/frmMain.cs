@@ -2040,6 +2040,8 @@ namespace TAICodeComplete
         #endregion
 
         #region Code generation Bits
+
+        #region Generate Main DATABASE abstraction Class 
         private void btnSaveWebMethodsToFile_Click(object sender, EventArgs e)
         {
             if (scintillaWebMethodCode.Text != "")
@@ -3753,6 +3755,8 @@ namespace TAICodeComplete
 
             return s;
         }
+
+        #endregion
 
         private string INDENT(int indent)
         {
@@ -6428,48 +6432,48 @@ namespace TAICodeComplete
         }
     }
 
-    public class DOCDEFCAT
-    {
-        public string DocDefCat_Id = "";
-        public string DocDefCatCode = "";
-        public string DocDefCatDesc = "";
-        public string isActive = "";
+    //public class DOCDEFCAT
+    //{
+    //    public string DocDefCat_Id = "";
+    //    public string DocDefCatCode = "";
+    //    public string DocDefCatDesc = "";
+    //    public string isActive = "";
 
-        public override string ToString()
-        {
-            return DocDefCatDesc + "";
-        }
-    }
+    //    public override string ToString()
+    //    {
+    //        return DocDefCatDesc + "";
+    //    }
+    //}
 
-    public class DOCDEFTYPE
-    {
-        public string DocDefType_Id = "";
-        public string DocDefCat_Id = "";
-        public string DocDefTypeCode = "";
-        public string DocDefTypeDesc = "";
-        public string isActive = "";
-        public string Forms = "";
+    //public class DOCDEFTYPE
+    //{
+    //    public string DocDefType_Id = "";
+    //    public string DocDefCat_Id = "";
+    //    public string DocDefTypeCode = "";
+    //    public string DocDefTypeDesc = "";
+    //    public string isActive = "";
+    //    public string Forms = "";
 
-        public override string ToString()
-        {
-            return DocDefTypeDesc + "";
-        }
-    }
+    //    public override string ToString()
+    //    {
+    //        return DocDefTypeDesc + "";
+    //    }
+    //}
 
-    public class DOCDEFSUBTYPE
-    {
-        public string DocDefTypeSub_Id = "";
-        public string DocDefType_Id = "";
-        public string DocDefTypeSubCode = "";
-        public string DocDefTypeSubDesc = "";
-        public string DocDefTypeSubOrder = "";
-        public string isActive = "";
+    //public class DOCDEFSUBTYPE
+    //{
+    //    public string DocDefTypeSub_Id = "";
+    //    public string DocDefType_Id = "";
+    //    public string DocDefTypeSubCode = "";
+    //    public string DocDefTypeSubDesc = "";
+    //    public string DocDefTypeSubOrder = "";
+    //    public string isActive = "";
 
-        public override string ToString()
-        {
-            return DocDefTypeSubDesc;
-        }
+    //    public override string ToString()
+    //    {
+    //        return DocDefTypeSubDesc;
+    //    }
 
-    }
+    //}
    
 }
