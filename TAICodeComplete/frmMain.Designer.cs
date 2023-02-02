@@ -259,10 +259,10 @@
             this.tabPage1.Controls.Add(this.cmboTables);
             this.tabPage1.Controls.Add(this.cmboDatabases);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage1.Size = new System.Drawing.Size(1002, 511);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
             // 
@@ -557,10 +557,10 @@
             this.tabPage2.Controls.Add(this.btnSaveBaseCodeTableToFile);
             this.tabPage2.Controls.Add(this.chkBaseTableCodeFolding);
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage2.Size = new System.Drawing.Size(1002, 511);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
             // 
@@ -618,9 +618,9 @@
             this.tabPage13.Controls.Add(this.btnSaveTSCode);
             this.tabPage13.Controls.Add(this.chkBaseTableTSCodeFolding);
             this.tabPage13.Controls.Add(this.chkBaseTableTSLineNumbers);
-            this.tabPage13.Location = new System.Drawing.Point(4, 24);
+            this.tabPage13.Location = new System.Drawing.Point(4, 30);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage13.Size = new System.Drawing.Size(1002, 511);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Base Code ts";
             // 
@@ -676,9 +676,9 @@
             this.tabPage3.Controls.Add(this.btnSaveWebMethodsToFile);
             this.tabPage3.Controls.Add(this.chkWebMethodCodeFolding);
             this.tabPage3.Controls.Add(this.chkWebMethodLineNumbers);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage3.Size = new System.Drawing.Size(1002, 511);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Web Method";
             // 
@@ -734,9 +734,9 @@
             this.tabPage7.Controls.Add(this.btnSaveWEBAPI);
             this.tabPage7.Controls.Add(this.chkCodeFoldWEBAPI);
             this.tabPage7.Controls.Add(this.chkLineNumsWEBAPI);
-            this.tabPage7.Location = new System.Drawing.Point(4, 24);
+            this.tabPage7.Location = new System.Drawing.Point(4, 30);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage7.Size = new System.Drawing.Size(1002, 511);
             this.tabPage7.TabIndex = 15;
             this.tabPage7.Text = "WebAPI";
             // 
@@ -789,9 +789,9 @@
             this.tabPage10.Controls.Add(this.btnSaveJSToFile);
             this.tabPage10.Controls.Add(this.chkJSCodeFolding);
             this.tabPage10.Controls.Add(this.chkJSLineNumbers);
-            this.tabPage10.Location = new System.Drawing.Point(4, 24);
+            this.tabPage10.Location = new System.Drawing.Point(4, 30);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage10.Size = new System.Drawing.Size(1002, 511);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "JavaScript";
             // 
@@ -844,9 +844,9 @@
             this.tabPage9.Controls.Add(this.btnRestSaveToFile);
             this.tabPage9.Controls.Add(this.chkRestCodeFolding);
             this.tabPage9.Controls.Add(this.chkRestLineNumbers);
-            this.tabPage9.Location = new System.Drawing.Point(4, 24);
+            this.tabPage9.Location = new System.Drawing.Point(4, 30);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage9.Size = new System.Drawing.Size(1002, 511);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "REST";
             // 
@@ -903,9 +903,9 @@
             this.tabPage11.Controls.Add(this.btnSaveHTML);
             this.tabPage11.Controls.Add(this.chkHTMLCodeFolding);
             this.tabPage11.Controls.Add(this.chkHTMLLineNumbers);
-            this.tabPage11.Location = new System.Drawing.Point(4, 24);
+            this.tabPage11.Location = new System.Drawing.Point(4, 30);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage11.Size = new System.Drawing.Size(1002, 511);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "HTML";
             // 
@@ -972,9 +972,9 @@
             this.tabPage12.Controls.Add(this.btnsaveCSS);
             this.tabPage12.Controls.Add(this.chkCSSCodeFolding);
             this.tabPage12.Controls.Add(this.chkCSSLineNumbers);
-            this.tabPage12.Location = new System.Drawing.Point(4, 24);
+            this.tabPage12.Location = new System.Drawing.Point(4, 30);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage12.Size = new System.Drawing.Size(1002, 511);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "CSS";
             // 
@@ -1030,9 +1030,9 @@
             this.tabPage4.Controls.Add(this.btnSaveXaml);
             this.tabPage4.Controls.Add(this.chkXAMLCodeFoldingXaml);
             this.tabPage4.Controls.Add(this.chkLineNumbersXAML);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage4.Size = new System.Drawing.Size(1002, 511);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "XAML";
             // 
@@ -1088,9 +1088,9 @@
             this.tabPage5.Controls.Add(this.btnWFSaveToFile);
             this.tabPage5.Controls.Add(this.chkWFCodeFolding);
             this.tabPage5.Controls.Add(this.chkWFLineNumbers);
-            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage5.Size = new System.Drawing.Size(1002, 511);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "WinForms";
             // 
@@ -1156,9 +1156,9 @@
             this.tabPage8.Controls.Add(this.dtnSaveSQLToFile);
             this.tabPage8.Controls.Add(this.chkSQLCodeFolding);
             this.tabPage8.Controls.Add(this.chkSQLLineNumber);
-            this.tabPage8.Location = new System.Drawing.Point(4, 24);
+            this.tabPage8.Location = new System.Drawing.Point(4, 30);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage8.Size = new System.Drawing.Size(1002, 511);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "SQL Code";
             // 
@@ -1216,19 +1216,19 @@
             this.tabPage14.Controls.Add(this.sciStringify);
             this.tabPage14.Controls.Add(this.chkStringifyCodeFolding);
             this.tabPage14.Controls.Add(this.chkStringifyLineNumbers);
-            this.tabPage14.Location = new System.Drawing.Point(4, 24);
+            this.tabPage14.Location = new System.Drawing.Point(4, 30);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage14.Size = new System.Drawing.Size(1002, 511);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "Stringify";
             // 
             // chkPad
             // 
-            this.chkPad.Location = new System.Drawing.Point(7, 123);
+            this.chkPad.Location = new System.Drawing.Point(7, 122);
             this.chkPad.Name = "chkPad";
-            this.chkPad.Size = new System.Drawing.Size(104, 24);
+            this.chkPad.Size = new System.Drawing.Size(162, 24);
             this.chkPad.TabIndex = 0;
-            this.chkPad.Visible = false;
+            this.chkPad.Text = "Pad The Produced Strings";
             // 
             // btnStringify
             // 
@@ -1307,9 +1307,9 @@
             this.tabPage6.Controls.Add(this.SQLCODEPRETTY);
             this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYFOLDING);
             this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYLINENUMBERS);
-            this.tabPage6.Location = new System.Drawing.Point(4, 24);
+            this.tabPage6.Location = new System.Drawing.Point(4, 30);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1002, 517);
+            this.tabPage6.Size = new System.Drawing.Size(1002, 511);
             this.tabPage6.TabIndex = 14;
             this.tabPage6.Text = "SQL Beautiful";
             // 
