@@ -1378,6 +1378,7 @@
             this.chkSQLCODEPRETTYLINENUMBERS.TabIndex = 11;
             this.chkSQLCODEPRETTYLINENUMBERS.Text = "Line Numbers";
             this.chkSQLCODEPRETTYLINENUMBERS.UseVisualStyleBackColor = true;
+            this.chkSQLCODEPRETTYLINENUMBERS.CheckedChanged += new System.EventHandler(this.HandleSQLCodePrettyLineNumbersCheckChanged);
             // 
             // backgroundworkerThread
             // 

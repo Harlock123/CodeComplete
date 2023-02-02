@@ -6430,6 +6430,22 @@ namespace TAICodeComplete
             tf.Dispose();
             ;
         }
+
+        private void HandleSQLCodePrettyLineNumbersCheckChanged(object sender, EventArgs e)
+        {
+            int marginwidth = 0;
+
+            if (chkSQLCODEPRETTYLINENUMBERS.Checked)
+            {
+                marginwidth = 60;
+            }
+            else
+            {
+                marginwidth = 0;
+            }
+
+            SQLCODEPRETTY.Margins[0].Width = marginwidth;
+        }
     }
 
     //public class DOCDEFCAT
