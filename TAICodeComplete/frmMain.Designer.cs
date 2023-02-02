@@ -232,7 +232,7 @@
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1010, 545);
+            this.tabControl1.Size = new System.Drawing.Size(1126, 545);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
@@ -1218,7 +1218,7 @@
             this.tabPage14.Controls.Add(this.chkStringifyLineNumbers);
             this.tabPage14.Location = new System.Drawing.Point(4, 30);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(1002, 511);
+            this.tabPage14.Size = new System.Drawing.Size(1118, 511);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "Stringify";
             // 
@@ -1259,7 +1259,7 @@
             this.txtStringIfy.Location = new System.Drawing.Point(270, 9);
             this.txtStringIfy.Multiline = true;
             this.txtStringIfy.Name = "txtStringIfy";
-            this.txtStringIfy.Size = new System.Drawing.Size(727, 185);
+            this.txtStringIfy.Size = new System.Drawing.Size(843, 185);
             this.txtStringIfy.TabIndex = 8;
             // 
             // sciStringify
@@ -1273,7 +1273,7 @@
             this.sciStringify.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciStringify.Location = new System.Drawing.Point(6, 199);
             this.sciStringify.Name = "sciStringify";
-            this.sciStringify.Size = new System.Drawing.Size(993, 314);
+            this.sciStringify.Size = new System.Drawing.Size(1109, 314);
             this.sciStringify.TabIndex = 7;
             // 
             // chkStringifyCodeFolding
@@ -1309,7 +1309,7 @@
             this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYLINENUMBERS);
             this.tabPage6.Location = new System.Drawing.Point(4, 30);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1002, 511);
+            this.tabPage6.Size = new System.Drawing.Size(1118, 511);
             this.tabPage6.TabIndex = 14;
             this.tabPage6.Text = "SQL Beautiful";
             // 
@@ -1342,7 +1342,7 @@
             this.txtCRAPPYSQLCODE.Location = new System.Drawing.Point(227, 7);
             this.txtCRAPPYSQLCODE.Multiline = true;
             this.txtCRAPPYSQLCODE.Name = "txtCRAPPYSQLCODE";
-            this.txtCRAPPYSQLCODE.Size = new System.Drawing.Size(770, 185);
+            this.txtCRAPPYSQLCODE.Size = new System.Drawing.Size(886, 185);
             this.txtCRAPPYSQLCODE.TabIndex = 14;
             // 
             // SQLCODEPRETTY
@@ -1353,10 +1353,10 @@
             this.SQLCODEPRETTY.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
             | ScintillaNET.AutomaticFold.Change)));
             this.SQLCODEPRETTY.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SQLCODEPRETTY.Lexer = ScintillaNET.Lexer.Cpp;
+            this.SQLCODEPRETTY.Lexer = ScintillaNET.Lexer.Sql;
             this.SQLCODEPRETTY.Location = new System.Drawing.Point(6, 198);
             this.SQLCODEPRETTY.Name = "SQLCODEPRETTY";
-            this.SQLCODEPRETTY.Size = new System.Drawing.Size(991, 314);
+            this.SQLCODEPRETTY.Size = new System.Drawing.Size(1107, 314);
             this.SQLCODEPRETTY.TabIndex = 13;
             // 
             // chkSQLCODEPRETTYFOLDING
@@ -1389,7 +1389,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 552);
+            this.ClientSize = new System.Drawing.Size(1131, 552);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMain";
             this.Text = "TAI Code Complete (automated code generator and support Toolset)";
