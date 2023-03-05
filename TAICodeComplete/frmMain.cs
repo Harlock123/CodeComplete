@@ -2207,10 +2207,15 @@ namespace TAICodeComplete
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Money).Value = this._" + f.FieldNameConverted + ";\n";
                     }
-
+                    
                     if (f.FieldType == "DECIMAL" )
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Decimal).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "REAL" )
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Real).Value = this._" + f.FieldNameConverted + ";\n";
                     }
 
                     if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
@@ -2384,6 +2389,11 @@ namespace TAICodeComplete
                     if (f.FieldType == "DECIMAL")
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Decimal).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "REAL" )
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Real).Value = this._" + f.FieldNameConverted + ";\n";
                     }
 
                     if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
@@ -2617,6 +2627,11 @@ namespace TAICodeComplete
                     s += "double _" + f.FieldNameConverted + " = 0.0;\n";
                 }
 
+                if (f.FieldType == "REAL")
+                {
+                    s += "float _" + f.FieldNameConverted + " = 0.0;\n";
+                }
+
                 if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
                 {
                     s += "DateTime _" + f.FieldNameConverted + " = Convert.ToDateTime(null);\n";
@@ -2765,6 +2780,24 @@ namespace TAICodeComplete
                     }
                 }
 
+                if (f.FieldType == "REAL")
+                {
+                    if (chkINotifyCrap.Checked)
+                    {
+
+                        s += "public float " + f.FieldNameConverted + "\n{\n" +
+                             "get{ return _" + f.FieldNameConverted + ";}\n" +
+                             "set{ _" + f.FieldNameConverted + " = value;\n" +
+                             "RaisePropertyChanged(\"" + f.FieldNameConverted + "\");}\n}\n\n";
+                    }
+                    else
+                    {
+                        s += "public float " + f.FieldNameConverted + "\n{\n" +
+                             "get{ return _" + f.FieldNameConverted + ";}\n" +
+                             "set{ _" + f.FieldNameConverted + " = value;}\n}\n\n";
+                    }
+                }
+
                 if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
                 {
 
@@ -2892,7 +2925,7 @@ namespace TAICodeComplete
                     s += "}\n";
                 }
 
-                if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT")
+                if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT" || f.FieldType == "REAL")
                 {
                     s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
                     s += "{\n";
@@ -3011,7 +3044,7 @@ namespace TAICodeComplete
                     s += "_" + f.FieldNameConverted + " = 0;\n";
                 }
 
-                if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT")
+                if (f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || f.FieldType == "FLOAT" || f.FieldType == "REAL")
                 {
                     s += "_" + f.FieldNameConverted + " = 0.0;\n";
                 }
@@ -3666,6 +3699,11 @@ namespace TAICodeComplete
                     if (f.FieldType == "DECIMAL")
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Decimal).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+
+                    if (f.FieldType == "REAL" )
+                    {
+                        s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Real).Value = this._" + f.FieldNameConverted + ";\n";
                     }
 
                     if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
