@@ -32,6 +32,16 @@ namespace TAICodeComplete
 
         private bool AUTONUMBER = true;
 
+        private string CSharpReservedWords =
+            "abstract,as,base,bool,break,byte,case,catch,char,checked,class," +
+            "const,continue,decimal,default,delegate,do,double,else,enum,event," +
+            "explicit,extern,false,finally,fixed,float,for,foreach,goto,if," +
+            "implicit,in,int,interface,internal,is,lock,long,namespace,new," +
+            "null,object,operator,out,override,params,private,protected,public," +
+            "readonly,ref,return,sbyte,sealed,short,sizeof,stackalloc,static," +
+            "string,struct,switch,this,throw,true,try,typeof,uint,ulong," +
+            "unchecked,unsafe,ushort,using,virtual,void,volatile,while"; 
+
         public frmMain()
         {
 
@@ -374,6 +384,15 @@ namespace TAICodeComplete
                     }
 
                     Field f = new Field(n, t, w, nul, id,p,s);
+
+                    // Check to make sure te field name is not a reserved word in c#
+                    // That way the field name can be used as a Property name in the generated code
+                    // Its backing variable will also be renamed from _FieldName to _Field_FieldName
+
+                    if (CSharpReservedWords.Contains(f.FieldNameConverted))
+                        f.FieldNameConverted = "Field_" + f.FieldNameConverted;
+
+                    // End of stupidity check
 
                     TheFields.Add(f);
 
