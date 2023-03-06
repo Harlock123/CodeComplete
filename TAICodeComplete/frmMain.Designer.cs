@@ -137,6 +137,9 @@
             this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.txtClassName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnRegenerateBaseClass = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -551,6 +554,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tabPage2.Controls.Add(this.btnRegenerateBaseClass);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.txtClassName);
             this.tabPage2.Controls.Add(this.sciBaseTableCode);
             this.tabPage2.Controls.Add(this.btnSaveBaseCodeTableToFile);
             this.tabPage2.Controls.Add(this.chkBaseTableCodeFolding);
@@ -579,7 +585,7 @@
             // btnSaveBaseCodeTableToFile
             // 
             this.btnSaveBaseCodeTableToFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(1037, 6);
+            this.btnSaveBaseCodeTableToFile.Location = new System.Drawing.Point(1037, 5);
             this.btnSaveBaseCodeTableToFile.Name = "btnSaveBaseCodeTableToFile";
             this.btnSaveBaseCodeTableToFile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveBaseCodeTableToFile.TabIndex = 3;
@@ -1383,6 +1389,35 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
+            // txtClassName
+            // 
+            this.txtClassName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClassName.Location = new System.Drawing.Point(604, 6);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(156, 20);
+            this.txtClassName.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(471, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "The Class Will Be Named";
+            // 
+            // btnRegenerateBaseClass
+            // 
+            this.btnRegenerateBaseClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegenerateBaseClass.Location = new System.Drawing.Point(767, 6);
+            this.btnRegenerateBaseClass.Name = "btnRegenerateBaseClass";
+            this.btnRegenerateBaseClass.Size = new System.Drawing.Size(121, 23);
+            this.btnRegenerateBaseClass.TabIndex = 7;
+            this.btnRegenerateBaseClass.Text = "Regenerate Class";
+            this.btnRegenerateBaseClass.UseVisualStyleBackColor = true;
+            this.btnRegenerateBaseClass.Click += new System.EventHandler(this.btnRegenerateBaseClass_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1542,6 +1577,9 @@
         private System.Windows.Forms.CheckBox chkCodeFoldWEBAPI;
         private System.Windows.Forms.CheckBox chkLineNumsWEBAPI;
         private System.Windows.Forms.Button btnShowTestForm;
+        private System.Windows.Forms.Button btnRegenerateBaseClass;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtClassName;
     }
 }
 

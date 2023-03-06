@@ -665,6 +665,7 @@ namespace TAICodeComplete
                 if (cmboTables.SelectedItem.ToString() != "")
                 {
                     TableName = cmboTables.SelectedItem.ToString();
+                    txtClassName.Text = TableName;
                     IDFIELDNAME = "";
                     AUTONUMBER = true;
 
@@ -2127,6 +2128,11 @@ namespace TAICodeComplete
         {
             string s = "";
 
+            var TNAME = TableName;
+
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
+
             s += "public void Add()\n";
 
             s += "{\n";
@@ -2292,7 +2298,7 @@ namespace TAICodeComplete
             s += "}\n";
             s += "catch (Exception ex)\n";
             s += "{\n";
-            s += "throw(new Exception(\"" + TableName + ".Add \" +  ex.ToString()));\n";
+            s += "throw(new Exception(\"" + TNAME + ".Add \" +  ex.ToString()));\n";
             s += "}\n";
             s += "}\n\n";
 
@@ -2304,6 +2310,11 @@ namespace TAICodeComplete
         private string GenerateFastAddMethod()
         {
             string s = "";
+
+            var TNAME = TableName;
+
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
 
             s += "public void FastAdd()\n";
 
@@ -2470,7 +2481,7 @@ namespace TAICodeComplete
             s += "}\n";
             s += "catch (Exception ex)\n";
             s += "{\n";
-            s += "throw(new Exception(\"" + TableName + ".Add \" +  ex.ToString()));\n";
+            s += "throw(new Exception(\"" + TNAME + ".FastAdd \" +  ex.ToString()));\n";
             s += "}\n";
             s += "}\n\n";
 
@@ -2482,6 +2493,11 @@ namespace TAICodeComplete
         private string GenerateRecExistsMethod()
         {
             string s = "";
+
+            var TNAME = TableName;
+
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
 
             if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
             {
@@ -2560,7 +2576,7 @@ namespace TAICodeComplete
             s += "}\n";
             s += "catch (Exception ex)\n";
             s += "{\n";
-            s += "throw(new Exception(\"" + TableName + ".RecExists \" +  ex.ToString()));\n";
+            s += "throw(new Exception(\"" + TNAME + ".RecExists \" +  ex.ToString()));\n";
             s += "}\n\n";
             s += "return Result;\n";
             s += "}\n\n";
@@ -2573,10 +2589,14 @@ namespace TAICodeComplete
         {
             string s = "";
 
+            var TNAME = TableName;
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
+
             if (chkINotifyCrap.Checked)
             {
 
-                s = "public partial class " + TableName + " : INotifyPropertyChanged\n" +
+                s = "public partial class " + TNAME + " : INotifyPropertyChanged\n" +
                     "{\n\n" +
                     "#region Declarations\n" +
                     "string _classDatabaseConnectionString = \"\";\n" +
@@ -2587,7 +2607,7 @@ namespace TAICodeComplete
             }
             else
             {
-                s = "public partial class " + TableName + "\n" +
+                s = "public partial class " + TNAME + "\n" +
                    "{\n\n" +
                    "#region Declarations\n" +
                    "string _classDatabaseConnectionString = \"\";\n" +
@@ -2871,13 +2891,19 @@ namespace TAICodeComplete
         {
             string s = "";
 
+            var TNAME = TableName;
+
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
+
+
             s = "#region Constructor\n\n" +
-                "public " + TableName + "()\n" +
+                "public " + TNAME + "()\n" +
                 "{\n" +
                 "// Constructor code goes here.\n" +
                 "Initialize();\n" +
                 "}\n\n" +
-                "public " + TableName + "(string DSN)\n" +
+                "public " + TNAME + "(string DSN)\n" +
                 "{\n" +
                 "// Constructor code goes here.\n" +
                 "Initialize();\n" +
@@ -2891,6 +2917,11 @@ namespace TAICodeComplete
         private string GenerateCopyFieldsMethod()
         {
             string s = "";
+
+            var TNAME = TableName;
+
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
 
             s += "public void CopyFields(SqlDataReader r)\n";
             s += "{\n";
@@ -2953,7 +2984,7 @@ namespace TAICodeComplete
             s += "}\n";
             s += "catch (Exception ex)\n";
             s += "{\n";
-            s += "throw(new Exception(\"" + TableName + ".CopyFields \" +  ex.ToString()));\n";
+            s += "throw(new Exception(\"" + TNAME + ".CopyFields \" +  ex.ToString()));\n";
             s += "}\n";
             s += "}\n\n";
 
@@ -2963,6 +2994,11 @@ namespace TAICodeComplete
         private string GenerateDeleteMethod()
         {
             string s = "";
+
+            var TNAME = TableName;
+
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
 
             s += "public void Delete()\n";
             s += "{\n";
@@ -3011,7 +3047,7 @@ namespace TAICodeComplete
             s += "}\n";
             s += "catch (Exception ex)\n";
             s += "{\n";
-            s += "throw(new Exception(\"" + TableName + ".Delete \" +  ex.ToString()));\n";
+            s += "throw(new Exception(\"" + TNAME + ".Delete \" +  ex.ToString()));\n";
             s += "}\n";
             s += "}\n\n";
 
@@ -3021,6 +3057,11 @@ namespace TAICodeComplete
         private string GenerateInitializeMethod()
         {
             string s = "";
+
+            var TNAME = TableName;
+
+            if (TableName != txtClassName.Text)
+                TNAME = txtClassName.Text;
 
             s += "public void Initialize()\n";
             s += "{\n";
@@ -6502,6 +6543,36 @@ namespace TAICodeComplete
             }
 
             SQLCODEPRETTY.Margins[0].Width = marginwidth;
+        }
+
+        private void btnRegenerateBaseClass_Click(object sender, EventArgs e)
+        {
+
+            sciBaseTableCode.Text = "";
+
+            sciBaseTableCode.InsertText(0,
+                DoTheIndentation(GenerateUsingBlock() +
+                                 GenerateClassHeader() +
+                                 GenerateConstructor() +
+
+                                 "#region Public Methods\n\n" +
+
+                                 GenerateInitializeMethod() +
+                                 GenerateCopyFieldsMethod() +
+                                 GenerateRecExistsMethod() +
+                                 GenerateAddMethod() +
+                                 GenerateFastAddMethod() +
+                                 GenerateUpdateMethod() +
+                                 GenerateDeleteMethod() +
+                                 GenerateReadMethod() +
+                                 GenerateReadAsDataSetMethod() +
+
+                                 "#endregion\n\n" +
+
+                                 GeneratePrivateMethods() +
+                                 GenerateClasssTrailer()));
+
+
         }
     }
 
