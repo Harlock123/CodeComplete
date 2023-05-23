@@ -64,6 +64,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dgrid = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnRegenerateBaseClass = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtClassName = new System.Windows.Forms.TextBox();
             this.sciBaseTableCode = new ScintillaNET.Scintilla();
             this.btnSaveBaseCodeTableToFile = new System.Windows.Forms.Button();
             this.chkBaseTableCodeFolding = new System.Windows.Forms.CheckBox();
@@ -137,9 +140,11 @@
             this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.txtClassName = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnRegenerateBaseClass = new System.Windows.Forms.Button();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.btnDoBase64Encode = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBase64 = new System.Windows.Forms.TextBox();
+            this.SCINTILLABASE64 = new ScintillaNET.Scintilla();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -157,6 +162,7 @@
             this.tabPage8.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage15.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -232,6 +238,7 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage14);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage15);
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -262,10 +269,10 @@
             this.tabPage1.Controls.Add(this.cmboTables);
             this.tabPage1.Controls.Add(this.cmboDatabases);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage1.Size = new System.Drawing.Size(1118, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
             // 
@@ -561,12 +568,41 @@
             this.tabPage2.Controls.Add(this.btnSaveBaseCodeTableToFile);
             this.tabPage2.Controls.Add(this.chkBaseTableCodeFolding);
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage2.Size = new System.Drawing.Size(1118, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
+            // 
+            // btnRegenerateBaseClass
+            // 
+            this.btnRegenerateBaseClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegenerateBaseClass.Location = new System.Drawing.Point(767, 6);
+            this.btnRegenerateBaseClass.Name = "btnRegenerateBaseClass";
+            this.btnRegenerateBaseClass.Size = new System.Drawing.Size(121, 23);
+            this.btnRegenerateBaseClass.TabIndex = 7;
+            this.btnRegenerateBaseClass.Text = "Regenerate Class";
+            this.btnRegenerateBaseClass.UseVisualStyleBackColor = true;
+            this.btnRegenerateBaseClass.Click += new System.EventHandler(this.btnRegenerateBaseClass_Click);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(471, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "The Class Will Be Named";
+            // 
+            // txtClassName
+            // 
+            this.txtClassName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClassName.Location = new System.Drawing.Point(604, 6);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(156, 20);
+            this.txtClassName.TabIndex = 5;
             // 
             // sciBaseTableCode
             // 
@@ -622,9 +658,9 @@
             this.tabPage13.Controls.Add(this.btnSaveTSCode);
             this.tabPage13.Controls.Add(this.chkBaseTableTSCodeFolding);
             this.tabPage13.Controls.Add(this.chkBaseTableTSLineNumbers);
-            this.tabPage13.Location = new System.Drawing.Point(4, 30);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage13.Size = new System.Drawing.Size(1118, 519);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Base Code ts";
             // 
@@ -680,9 +716,9 @@
             this.tabPage3.Controls.Add(this.btnSaveWebMethodsToFile);
             this.tabPage3.Controls.Add(this.chkWebMethodCodeFolding);
             this.tabPage3.Controls.Add(this.chkWebMethodLineNumbers);
-            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage3.Size = new System.Drawing.Size(1118, 519);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Web Method";
             // 
@@ -738,9 +774,9 @@
             this.tabPage7.Controls.Add(this.btnSaveWEBAPI);
             this.tabPage7.Controls.Add(this.chkCodeFoldWEBAPI);
             this.tabPage7.Controls.Add(this.chkLineNumsWEBAPI);
-            this.tabPage7.Location = new System.Drawing.Point(4, 30);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage7.Size = new System.Drawing.Size(1118, 519);
             this.tabPage7.TabIndex = 15;
             this.tabPage7.Text = "WebAPI";
             // 
@@ -793,9 +829,9 @@
             this.tabPage10.Controls.Add(this.btnSaveJSToFile);
             this.tabPage10.Controls.Add(this.chkJSCodeFolding);
             this.tabPage10.Controls.Add(this.chkJSLineNumbers);
-            this.tabPage10.Location = new System.Drawing.Point(4, 30);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage10.Size = new System.Drawing.Size(1118, 519);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "JavaScript";
             // 
@@ -848,9 +884,9 @@
             this.tabPage9.Controls.Add(this.btnRestSaveToFile);
             this.tabPage9.Controls.Add(this.chkRestCodeFolding);
             this.tabPage9.Controls.Add(this.chkRestLineNumbers);
-            this.tabPage9.Location = new System.Drawing.Point(4, 30);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage9.Size = new System.Drawing.Size(1118, 519);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "REST";
             // 
@@ -907,9 +943,9 @@
             this.tabPage11.Controls.Add(this.btnSaveHTML);
             this.tabPage11.Controls.Add(this.chkHTMLCodeFolding);
             this.tabPage11.Controls.Add(this.chkHTMLLineNumbers);
-            this.tabPage11.Location = new System.Drawing.Point(4, 30);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage11.Size = new System.Drawing.Size(1118, 519);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "HTML";
             // 
@@ -976,9 +1012,9 @@
             this.tabPage12.Controls.Add(this.btnsaveCSS);
             this.tabPage12.Controls.Add(this.chkCSSCodeFolding);
             this.tabPage12.Controls.Add(this.chkCSSLineNumbers);
-            this.tabPage12.Location = new System.Drawing.Point(4, 30);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage12.Size = new System.Drawing.Size(1118, 519);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "CSS";
             // 
@@ -1034,9 +1070,9 @@
             this.tabPage4.Controls.Add(this.btnSaveXaml);
             this.tabPage4.Controls.Add(this.chkXAMLCodeFoldingXaml);
             this.tabPage4.Controls.Add(this.chkLineNumbersXAML);
-            this.tabPage4.Location = new System.Drawing.Point(4, 30);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage4.Size = new System.Drawing.Size(1118, 519);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "XAML";
             // 
@@ -1092,9 +1128,9 @@
             this.tabPage5.Controls.Add(this.btnWFSaveToFile);
             this.tabPage5.Controls.Add(this.chkWFCodeFolding);
             this.tabPage5.Controls.Add(this.chkWFLineNumbers);
-            this.tabPage5.Location = new System.Drawing.Point(4, 30);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage5.Size = new System.Drawing.Size(1118, 519);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "WinForms";
             // 
@@ -1160,9 +1196,9 @@
             this.tabPage8.Controls.Add(this.dtnSaveSQLToFile);
             this.tabPage8.Controls.Add(this.chkSQLCodeFolding);
             this.tabPage8.Controls.Add(this.chkSQLLineNumber);
-            this.tabPage8.Location = new System.Drawing.Point(4, 30);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage8.Size = new System.Drawing.Size(1118, 519);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "SQL Code";
             // 
@@ -1220,9 +1256,9 @@
             this.tabPage14.Controls.Add(this.sciStringify);
             this.tabPage14.Controls.Add(this.chkStringifyCodeFolding);
             this.tabPage14.Controls.Add(this.chkStringifyLineNumbers);
-            this.tabPage14.Location = new System.Drawing.Point(4, 30);
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage14.Size = new System.Drawing.Size(1118, 519);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "Stringify";
             // 
@@ -1311,9 +1347,9 @@
             this.tabPage6.Controls.Add(this.SQLCODEPRETTY);
             this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYFOLDING);
             this.tabPage6.Controls.Add(this.chkSQLCODEPRETTYLINENUMBERS);
-            this.tabPage6.Location = new System.Drawing.Point(4, 30);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1118, 511);
+            this.tabPage6.Size = new System.Drawing.Size(1118, 519);
             this.tabPage6.TabIndex = 14;
             this.tabPage6.Text = "SQL Beautiful";
             // 
@@ -1389,34 +1425,64 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // txtClassName
+            // tabPage15
             // 
-            this.txtClassName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClassName.Location = new System.Drawing.Point(604, 6);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(156, 20);
-            this.txtClassName.TabIndex = 5;
+            this.tabPage15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tabPage15.Controls.Add(this.btnDoBase64Encode);
+            this.tabPage15.Controls.Add(this.textBox3);
+            this.tabPage15.Controls.Add(this.txtBase64);
+            this.tabPage15.Controls.Add(this.SCINTILLABASE64);
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Size = new System.Drawing.Size(1118, 519);
+            this.tabPage15.TabIndex = 16;
+            this.tabPage15.Text = "BASE64Encode";
             // 
-            // label11
+            // btnDoBase64Encode
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(471, 11);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(127, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "The Class Will Be Named";
+            this.btnDoBase64Encode.Location = new System.Drawing.Point(60, 73);
+            this.btnDoBase64Encode.Name = "btnDoBase64Encode";
+            this.btnDoBase64Encode.Size = new System.Drawing.Size(147, 23);
+            this.btnDoBase64Encode.TabIndex = 20;
+            this.btnDoBase64Encode.Text = "Do The Job";
+            this.btnDoBase64Encode.UseVisualStyleBackColor = true;
+            this.btnDoBase64Encode.Click += new System.EventHandler(this.btnDoBase64Encode_Click);
             // 
-            // btnRegenerateBaseClass
+            // textBox3
             // 
-            this.btnRegenerateBaseClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegenerateBaseClass.Location = new System.Drawing.Point(767, 6);
-            this.btnRegenerateBaseClass.Name = "btnRegenerateBaseClass";
-            this.btnRegenerateBaseClass.Size = new System.Drawing.Size(121, 23);
-            this.btnRegenerateBaseClass.TabIndex = 7;
-            this.btnRegenerateBaseClass.Text = "Regenerate Class";
-            this.btnRegenerateBaseClass.UseVisualStyleBackColor = true;
-            this.btnRegenerateBaseClass.Click += new System.EventHandler(this.btnRegenerateBaseClass_Click);
+            this.textBox3.Location = new System.Drawing.Point(60, 7);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(147, 60);
+            this.textBox3.TabIndex = 19;
+            this.textBox3.Text = "Paste the UGLY BASE64 String into the text box on the right and click Do The Job " +
+    "to format it in a more readable manner";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBase64
+            // 
+            this.txtBase64.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBase64.Location = new System.Drawing.Point(227, 7);
+            this.txtBase64.Multiline = true;
+            this.txtBase64.Name = "txtBase64";
+            this.txtBase64.Size = new System.Drawing.Size(886, 185);
+            this.txtBase64.TabIndex = 18;
+            // 
+            // SCINTILLABASE64
+            // 
+            this.SCINTILLABASE64.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SCINTILLABASE64.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
+            this.SCINTILLABASE64.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SCINTILLABASE64.Lexer = ScintillaNET.Lexer.Cpp;
+            this.SCINTILLABASE64.Location = new System.Drawing.Point(6, 198);
+            this.SCINTILLABASE64.Name = "SCINTILLABASE64";
+            this.SCINTILLABASE64.Size = new System.Drawing.Size(1107, 314);
+            this.SCINTILLABASE64.TabIndex = 17;
             // 
             // frmMain
             // 
@@ -1458,6 +1524,8 @@
             this.tabPage14.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1580,6 +1648,11 @@
         private System.Windows.Forms.Button btnRegenerateBaseClass;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtClassName;
+        private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.Button btnDoBase64Encode;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBase64;
+        private ScintillaNET.Scintilla SCINTILLABASE64;
     }
 }
 

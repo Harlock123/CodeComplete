@@ -6574,6 +6574,37 @@ namespace TAICodeComplete
 
 
         }
+
+        private void btnDoBase64Encode_Click(object sender, EventArgs e)
+        {
+            string LONGSTRING = txtBase64.Text;
+
+            string PRETTYRESULT = "string PBASE64 = @\"" + System.Environment.NewLine;
+
+            List<string> Chunks = SplitBase64String(LONGSTRING, 80);
+
+            foreach (string s in Chunks)
+            {
+                PRETTYRESULT += "+ @\"" + s + "\"" + System.Environment.NewLine;
+            }
+
+            SCINTILLABASE64.Text = PRETTYRESULT;
+        
+        
+        }
+
+        public static List<string> SplitBase64String(string base64, int chunkSize)
+        {
+            List<string> base64Chunks = new List<string>();
+
+            for (int i = 0; i < base64.Length; i += chunkSize)
+            {
+                if (i + chunkSize > base64.Length) chunkSize = base64.Length - i;
+                base64Chunks.Add(base64.Substring(i, chunkSize));
+            }
+
+            return base64Chunks;
+        }
     }
 
     //public class DOCDEFCAT
