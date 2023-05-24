@@ -6579,17 +6579,16 @@ namespace TAICodeComplete
         {
             string LONGSTRING = txtBase64.Text;
 
-            string PRETTYRESULT = "string PBASE64 = @\"" + System.Environment.NewLine;
+            string PRETTYRESULT = "string PBASE64 = @\"\""; // + System.Environment.NewLine;
 
             List<string> Chunks = SplitBase64String(LONGSTRING, 80);
 
             foreach (string s in Chunks)
             {
-                PRETTYRESULT += "+ @\"" + s + "\"" + System.Environment.NewLine;
+                PRETTYRESULT += System.Environment.NewLine + "+ @\"" + s + "\"";
             }
 
-            SCINTILLABASE64.Text = PRETTYRESULT;
-        
+            SCINTILLABASE64.Text = PRETTYRESULT + ";" + System.Environment.NewLine;
         
         }
 
