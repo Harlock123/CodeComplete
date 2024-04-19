@@ -6604,6 +6604,63 @@ namespace TAICodeComplete
 
             return base64Chunks;
         }
+
+        private void btnProcessMethodNames_Click(object sender, EventArgs e)
+        {
+            if (txtMethodNames.Text.Trim() != "")
+            {
+                string[] lines = txtMethodNames.Text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+                string result = "";
+
+                foreach (string s in lines)
+                {
+                    result += "public void " + s + "(" + txtObjectTypeAndName.Text.Trim() + ")\n" +
+                        "           {\n" +
+                        "               // Do something with " + txtObjectTypeAndName.Text.Trim() + " \n" +
+                        "           }\n\n";
+                }
+
+                scintillaMMakerCode.Text = result;
+            }
+        }
+
+        private void HandlecbMMakerLineNumbersCheckedChanged(object sender, EventArgs e)
+        {
+            int marginwidth = 0;
+
+            if (cbMMakerLineNumbers.Checked)
+            {
+                marginwidth = 40;
+            }
+            else
+            {
+                marginwidth = 0;
+            }
+
+            scintillaMMakerCode.Margins[0].Width = marginwidth;
+        }
+
+        private void btnMakeDispatchCase_Click(object sender, EventArgs e)
+        {
+            if (txtMethodNames.Text.Trim() != "")
+            {
+                string[] lines = txtMethodNames.Text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+                string result = "switch (SomeVariableString)\n{\n";
+
+                foreach (string s in lines)
+                {
+                    result += "case \"" + s + "\":\n" +
+                        "    " + s + "(SomeObject);\n" +
+                        "    break;\n";
+                }
+                    
+                result += "}\n";
+
+                scintillaMMakerCode.Text = result;
+            }
+        }
     }
 
     //public class DOCDEFCAT

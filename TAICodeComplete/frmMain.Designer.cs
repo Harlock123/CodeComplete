@@ -138,13 +138,23 @@
             this.SQLCODEPRETTY = new ScintillaNET.Scintilla();
             this.chkSQLCODEPRETTYFOLDING = new System.Windows.Forms.CheckBox();
             this.chkSQLCODEPRETTYLINENUMBERS = new System.Windows.Forms.CheckBox();
-            this.sfd = new System.Windows.Forms.SaveFileDialog();
-            this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.btnDoBase64Encode = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.txtBase64 = new System.Windows.Forms.TextBox();
             this.SCINTILLABASE64 = new ScintillaNET.Scintilla();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtObjectTypeAndName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnProcessMethodNames = new System.Windows.Forms.Button();
+            this.txtMethodNames = new System.Windows.Forms.TextBox();
+            this.scintillaMMakerCode = new ScintillaNET.Scintilla();
+            this.cbMMakerCodeFold = new System.Windows.Forms.CheckBox();
+            this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.btnMakeDispatchCase = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -163,6 +173,7 @@
             this.tabPage14.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage15.SuspendLayout();
+            this.tabPage16.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -239,6 +250,7 @@
             this.tabControl1.Controls.Add(this.tabPage14);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage15);
+            this.tabControl1.Controls.Add(this.tabPage16);
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -271,7 +283,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(1118, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
@@ -307,7 +319,7 @@
             // btnSSPI
             // 
             this.btnSSPI.Location = new System.Drawing.Point(386, 73);
-            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSSPI.Name = "btnSSPI";
             this.btnSSPI.Size = new System.Drawing.Size(52, 22);
             this.btnSSPI.TabIndex = 17;
@@ -570,7 +582,7 @@
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(1118, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
@@ -1420,11 +1432,6 @@
             this.chkSQLCODEPRETTYLINENUMBERS.UseVisualStyleBackColor = true;
             this.chkSQLCODEPRETTYLINENUMBERS.CheckedChanged += new System.EventHandler(this.HandleSQLCodePrettyLineNumbersCheckChanged);
             // 
-            // backgroundworkerThread
-            // 
-            this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
-            this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
-            // 
             // tabPage15
             // 
             this.tabPage15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -1484,6 +1491,122 @@
             this.SCINTILLABASE64.Size = new System.Drawing.Size(1107, 314);
             this.SCINTILLABASE64.TabIndex = 17;
             // 
+            // tabPage16
+            // 
+            this.tabPage16.BackColor = System.Drawing.Color.Turquoise;
+            this.tabPage16.Controls.Add(this.btnMakeDispatchCase);
+            this.tabPage16.Controls.Add(this.label13);
+            this.tabPage16.Controls.Add(this.txtObjectTypeAndName);
+            this.tabPage16.Controls.Add(this.label12);
+            this.tabPage16.Controls.Add(this.btnProcessMethodNames);
+            this.tabPage16.Controls.Add(this.txtMethodNames);
+            this.tabPage16.Controls.Add(this.scintillaMMakerCode);
+            this.tabPage16.Controls.Add(this.cbMMakerCodeFold);
+            this.tabPage16.Controls.Add(this.cbMMakerLineNumbers);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Size = new System.Drawing.Size(1118, 519);
+            this.tabPage16.TabIndex = 17;
+            this.tabPage16.Text = "Method Maker";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(628, 54);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(222, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Object Type and Name to hand into metrhods";
+            // 
+            // txtObjectTypeAndName
+            // 
+            this.txtObjectTypeAndName.Location = new System.Drawing.Point(631, 70);
+            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtObjectTypeAndName.Name = "txtObjectTypeAndName";
+            this.txtObjectTypeAndName.Size = new System.Drawing.Size(335, 20);
+            this.txtObjectTypeAndName.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(14, 3);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(229, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Method Names to Make Each on their own line";
+            // 
+            // btnProcessMethodNames
+            // 
+            this.btnProcessMethodNames.Location = new System.Drawing.Point(575, 18);
+            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProcessMethodNames.Name = "btnProcessMethodNames";
+            this.btnProcessMethodNames.Size = new System.Drawing.Size(106, 34);
+            this.btnProcessMethodNames.TabIndex = 13;
+            this.btnProcessMethodNames.Text = "Make Methods";
+            this.btnProcessMethodNames.UseVisualStyleBackColor = true;
+            this.btnProcessMethodNames.Click += new System.EventHandler(this.btnProcessMethodNames_Click);
+            // 
+            // txtMethodNames
+            // 
+            this.txtMethodNames.Location = new System.Drawing.Point(14, 18);
+            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMethodNames.Multiline = true;
+            this.txtMethodNames.Name = "txtMethodNames";
+            this.txtMethodNames.Size = new System.Drawing.Size(558, 123);
+            this.txtMethodNames.TabIndex = 12;
+            // 
+            // scintillaMMakerCode
+            // 
+            this.scintillaMMakerCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaMMakerCode.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.scintillaMMakerCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scintillaMMakerCode.Location = new System.Drawing.Point(7, 165);
+            this.scintillaMMakerCode.Name = "scintillaMMakerCode";
+            this.scintillaMMakerCode.Size = new System.Drawing.Size(1106, 352);
+            this.scintillaMMakerCode.TabIndex = 11;
+            // 
+            // cbMMakerCodeFold
+            // 
+            this.cbMMakerCodeFold.AutoSize = true;
+            this.cbMMakerCodeFold.Location = new System.Drawing.Point(105, 145);
+            this.cbMMakerCodeFold.Name = "cbMMakerCodeFold";
+            this.cbMMakerCodeFold.Size = new System.Drawing.Size(118, 17);
+            this.cbMMakerCodeFold.TabIndex = 10;
+            this.cbMMakerCodeFold.Text = "Show Code Folding";
+            this.cbMMakerCodeFold.UseVisualStyleBackColor = true;
+            // 
+            // cbMMakerLineNumbers
+            // 
+            this.cbMMakerLineNumbers.AutoSize = true;
+            this.cbMMakerLineNumbers.Location = new System.Drawing.Point(8, 145);
+            this.cbMMakerLineNumbers.Name = "cbMMakerLineNumbers";
+            this.cbMMakerLineNumbers.Size = new System.Drawing.Size(91, 17);
+            this.cbMMakerLineNumbers.TabIndex = 9;
+            this.cbMMakerLineNumbers.Text = "Line Numbers";
+            this.cbMMakerLineNumbers.UseVisualStyleBackColor = true;
+            this.cbMMakerLineNumbers.CheckedChanged += new System.EventHandler(this.HandlecbMMakerLineNumbersCheckedChanged);
+            // 
+            // backgroundworkerThread
+            // 
+            this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
+            this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
+            // 
+            // btnMakeDispatchCase
+            // 
+            this.btnMakeDispatchCase.Location = new System.Drawing.Point(685, 18);
+            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMakeDispatchCase.Name = "btnMakeDispatchCase";
+            this.btnMakeDispatchCase.Size = new System.Drawing.Size(128, 34);
+            this.btnMakeDispatchCase.TabIndex = 17;
+            this.btnMakeDispatchCase.Text = "Make Dispatch Case";
+            this.btnMakeDispatchCase.UseVisualStyleBackColor = true;
+            this.btnMakeDispatchCase.Click += new System.EventHandler(this.btnMakeDispatchCase_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1526,6 +1649,8 @@
             this.tabPage6.PerformLayout();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
+            this.tabPage16.ResumeLayout(false);
+            this.tabPage16.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1653,6 +1778,16 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox txtBase64;
         private ScintillaNET.Scintilla SCINTILLABASE64;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.TextBox txtMethodNames;
+        private ScintillaNET.Scintilla scintillaMMakerCode;
+        private System.Windows.Forms.CheckBox cbMMakerCodeFold;
+        private System.Windows.Forms.CheckBox cbMMakerLineNumbers;
+        private System.Windows.Forms.Button btnProcessMethodNames;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtObjectTypeAndName;
+        private System.Windows.Forms.Button btnMakeDispatchCase;
     }
 }
 
