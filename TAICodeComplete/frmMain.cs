@@ -6647,15 +6647,16 @@ namespace TAICodeComplete
             {
                 string[] lines = txtMethodNames.Text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
 
-                string result = "switch (SomeVariableString)\n{\n";
+                string result = "switch (SomeVariableString.ToUpper())\n{\n";
 
                 foreach (string s in lines)
                 {
-                    result += "case \"" + s + "\":\n" +
-                        "    " + s + "(SomeObject);\n" +
-                        "    break;\n";
+                    result += "case \"" + s.ToUpper() + "\":\n" +
+                    "    " + s + "(SomeObject);\n" +
+                    "    break;\n";
                 }
-                    
+
+
                 result += "}\n";
 
                 scintillaMMakerCode.Text = result;
