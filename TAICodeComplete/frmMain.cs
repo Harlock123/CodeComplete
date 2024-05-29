@@ -6652,42 +6652,13 @@ namespace TAICodeComplete
                 foreach (string s in lines)
                 {
                     result += "case \"" + s.ToUpper() + "\":\n" +
-                    "    " + s + "(SomeObject);\n" +
-                    "    break;\n";
+                        "    " + s + "(SomeObject);\n" +
+                        "    break;\n";
                 }
-
-
+                    
                 result += "}\n";
 
                 scintillaMMakerCode.Text = result;
-            }
-        }
-
-        private void btnDoTheSplit_Click(object sender, EventArgs e)
-        {
-            if (txt837UglyInput.Text.Trim() != "")
-            {
-                if (txtCharSplit.Text.Trim() != "")
-                {
-                    string[] arr = txt837UglyInput.Text.Split(txtCharSplit.Text.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-
-                    StringBuilder b = new StringBuilder();
-
-                    foreach(string s in arr)
-                    {
-                        b.Append(s + "\r\n" + txtCharSplit.Text);
-                    }
-
-                    txt837PrettyOutput.Text = b.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("You have to enter something to split on");
-                }
-            }
-            else
-            {
-                MessageBox.Show("You have to paste something for me to work on into the Ugly Assed text box");
             }
         }
     }

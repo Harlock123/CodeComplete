@@ -144,7 +144,6 @@
             this.txtBase64 = new System.Windows.Forms.TextBox();
             this.SCINTILLABASE64 = new ScintillaNET.Scintilla();
             this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.btnMakeDispatchCase = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtObjectTypeAndName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -155,14 +154,7 @@
             this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.txt837UglyInput = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt837PrettyOutput = new System.Windows.Forms.TextBox();
-            this.txtCharSplit = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnDoTheSplit = new System.Windows.Forms.Button();
+            this.btnMakeDispatchCase = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -182,7 +174,6 @@
             this.tabPage6.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
-            this.tabPage17.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -260,7 +251,6 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage15);
             this.tabControl1.Controls.Add(this.tabPage16);
-            this.tabControl1.Controls.Add(this.tabPage17);
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -293,7 +283,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(1118, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
@@ -329,7 +319,7 @@
             // btnSSPI
             // 
             this.btnSSPI.Location = new System.Drawing.Point(386, 73);
-            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSSPI.Name = "btnSSPI";
             this.btnSSPI.Size = new System.Drawing.Size(52, 22);
             this.btnSSPI.TabIndex = 17;
@@ -592,7 +582,7 @@
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(1118, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
@@ -1514,22 +1504,11 @@
             this.tabPage16.Controls.Add(this.cbMMakerCodeFold);
             this.tabPage16.Controls.Add(this.cbMMakerLineNumbers);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
-            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Size = new System.Drawing.Size(1118, 519);
             this.tabPage16.TabIndex = 17;
             this.tabPage16.Text = "Method Maker";
-            // 
-            // btnMakeDispatchCase
-            // 
-            this.btnMakeDispatchCase.Location = new System.Drawing.Point(685, 18);
-            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMakeDispatchCase.Name = "btnMakeDispatchCase";
-            this.btnMakeDispatchCase.Size = new System.Drawing.Size(128, 34);
-            this.btnMakeDispatchCase.TabIndex = 17;
-            this.btnMakeDispatchCase.Text = "Make Dispatch Case";
-            this.btnMakeDispatchCase.UseVisualStyleBackColor = true;
-            this.btnMakeDispatchCase.Click += new System.EventHandler(this.btnMakeDispatchCase_Click);
             // 
             // label13
             // 
@@ -1544,7 +1523,7 @@
             // txtObjectTypeAndName
             // 
             this.txtObjectTypeAndName.Location = new System.Drawing.Point(631, 70);
-            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtObjectTypeAndName.Name = "txtObjectTypeAndName";
             this.txtObjectTypeAndName.Size = new System.Drawing.Size(335, 20);
             this.txtObjectTypeAndName.TabIndex = 15;
@@ -1562,7 +1541,7 @@
             // btnProcessMethodNames
             // 
             this.btnProcessMethodNames.Location = new System.Drawing.Point(575, 18);
-            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProcessMethodNames.Name = "btnProcessMethodNames";
             this.btnProcessMethodNames.Size = new System.Drawing.Size(106, 34);
             this.btnProcessMethodNames.TabIndex = 13;
@@ -1573,7 +1552,7 @@
             // txtMethodNames
             // 
             this.txtMethodNames.Location = new System.Drawing.Point(14, 18);
-            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMethodNames.Multiline = true;
             this.txtMethodNames.Name = "txtMethodNames";
             this.txtMethodNames.Size = new System.Drawing.Size(558, 123);
@@ -1617,84 +1596,16 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // tabPage17
+            // btnMakeDispatchCase
             // 
-            this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.tabPage17.Controls.Add(this.btnDoTheSplit);
-            this.tabPage17.Controls.Add(this.label16);
-            this.tabPage17.Controls.Add(this.label15);
-            this.tabPage17.Controls.Add(this.txtCharSplit);
-            this.tabPage17.Controls.Add(this.txt837PrettyOutput);
-            this.tabPage17.Controls.Add(this.label14);
-            this.tabPage17.Controls.Add(this.txt837UglyInput);
-            this.tabPage17.Location = new System.Drawing.Point(4, 22);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(1118, 519);
-            this.tabPage17.TabIndex = 18;
-            this.tabPage17.Text = "837Cleanup";
-            // 
-            // txt837UglyInput
-            // 
-            this.txt837UglyInput.Location = new System.Drawing.Point(23, 27);
-            this.txt837UglyInput.Multiline = true;
-            this.txt837UglyInput.Name = "txt837UglyInput";
-            this.txt837UglyInput.Size = new System.Drawing.Size(822, 91);
-            this.txt837UglyInput.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(23, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(178, 13);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Paste Ugly assed 837 crap into here";
-            // 
-            // txt837PrettyOutput
-            // 
-            this.txt837PrettyOutput.Location = new System.Drawing.Point(23, 150);
-            this.txt837PrettyOutput.Multiline = true;
-            this.txt837PrettyOutput.Name = "txt837PrettyOutput";
-            this.txt837PrettyOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt837PrettyOutput.Size = new System.Drawing.Size(1077, 363);
-            this.txt837PrettyOutput.TabIndex = 2;
-            // 
-            // txtCharSplit
-            // 
-            this.txtCharSplit.Location = new System.Drawing.Point(861, 27);
-            this.txtCharSplit.Name = "txtCharSplit";
-            this.txtCharSplit.Size = new System.Drawing.Size(76, 20);
-            this.txtCharSplit.TabIndex = 3;
-            this.txtCharSplit.Text = "~";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(23, 134);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(159, 13);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "837 MultiLined output goes here";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(858, 11);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 13);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Char to Split on";
-            // 
-            // btnDoTheSplit
-            // 
-            this.btnDoTheSplit.Location = new System.Drawing.Point(861, 54);
-            this.btnDoTheSplit.Name = "btnDoTheSplit";
-            this.btnDoTheSplit.Size = new System.Drawing.Size(75, 23);
-            this.btnDoTheSplit.TabIndex = 6;
-            this.btnDoTheSplit.Text = "Split On ^";
-            this.btnDoTheSplit.UseVisualStyleBackColor = true;
-            this.btnDoTheSplit.Click += new System.EventHandler(this.btnDoTheSplit_Click);
+            this.btnMakeDispatchCase.Location = new System.Drawing.Point(685, 18);
+            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMakeDispatchCase.Name = "btnMakeDispatchCase";
+            this.btnMakeDispatchCase.Size = new System.Drawing.Size(128, 34);
+            this.btnMakeDispatchCase.TabIndex = 17;
+            this.btnMakeDispatchCase.Text = "Make Dispatch Case";
+            this.btnMakeDispatchCase.UseVisualStyleBackColor = true;
+            this.btnMakeDispatchCase.Click += new System.EventHandler(this.btnMakeDispatchCase_Click);
             // 
             // frmMain
             // 
@@ -1740,8 +1651,6 @@
             this.tabPage15.PerformLayout();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
-            this.tabPage17.ResumeLayout(false);
-            this.tabPage17.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1879,14 +1788,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtObjectTypeAndName;
         private System.Windows.Forms.Button btnMakeDispatchCase;
-        private System.Windows.Forms.TabPage tabPage17;
-        private System.Windows.Forms.Button btnDoTheSplit;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtCharSplit;
-        private System.Windows.Forms.TextBox txt837PrettyOutput;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt837UglyInput;
     }
 }
 
