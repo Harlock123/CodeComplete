@@ -425,7 +425,7 @@ namespace TAICodeComplete
 
             try
             {
-                string sql = "select OBJECT_ID from sys.tables WHERE NAME = @NAME";
+                string sql = "select OBJECT_ID from sys.tables WHERE NAME = @NAME AND SCHEMA_ID = 1";
 
                 SqlConnection cn = new SqlConnection(DSN);
                 cn.Open();
@@ -475,7 +475,7 @@ namespace TAICodeComplete
                     s += "" + f.FieldNameConverted + ": 0,\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "" + f.FieldNameConverted + ": 0,\n";
                 }
@@ -524,7 +524,7 @@ namespace TAICodeComplete
 
                 if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT" || f.FieldType == "BIGINT" ||
                     f.FieldType == "DECIMAL" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" || 
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "" + f.FieldNameConverted + ": number = 0;\n";
                 }
@@ -582,7 +582,7 @@ namespace TAICodeComplete
 
                 try
                 {
-                    string sql = "select NAME from sys.tables ORDER BY NAME";
+                    string sql = "select NAME from sys.tables WHERE SCHEMA_ID = 1 ORDER BY NAME";
 
                     SqlConnection cn = new SqlConnection(DSN);
                     cn.Open();
@@ -2204,7 +2204,7 @@ namespace TAICodeComplete
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.TinyInt).Value = this._" + f.FieldNameConverted + ";\n";
                     }
 
-                    if (f.FieldType == "BIGINT")
+                    if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.BigInt).Value = this._" + f.FieldNameConverted + ";\n";
                     }
@@ -2387,7 +2387,7 @@ namespace TAICodeComplete
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.TinyInt).Value = this._" + f.FieldNameConverted + ";\n";
                     }
 
-                    if (f.FieldType == "BIGINT")
+                    if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.BigInt).Value = this._" + f.FieldNameConverted + ";\n";
                     }
@@ -2632,7 +2632,7 @@ namespace TAICodeComplete
                     s += "int _" + f.FieldNameConverted + " = 0;\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "long _" + f.FieldNameConverted + " = 0;\n";
                 }
@@ -2763,7 +2763,7 @@ namespace TAICodeComplete
                     }
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
 
                     if (chkINotifyCrap.Checked)
@@ -2948,7 +2948,7 @@ namespace TAICodeComplete
                     s += "}\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
                     s += "{\n";
@@ -3080,7 +3080,7 @@ namespace TAICodeComplete
                     s += "_" + f.FieldNameConverted + " = 0;\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "_" + f.FieldNameConverted + " = 0;\n";
                 }
@@ -3727,7 +3727,7 @@ namespace TAICodeComplete
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.TinyInt).Value = this._" + f.FieldNameConverted + ";\n";
                     }
 
-                    if (f.FieldType == "BIGINT")
+                    if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.BigInt).Value = this._" + f.FieldNameConverted + ";\n";
                     }
@@ -3944,7 +3944,7 @@ namespace TAICodeComplete
                         INTERFACEFIELDTYPE = "int";
                     }
 
-                    if (f.FieldType == "BIGINT")
+                    if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                     {
                         INTERFACEFIELDTYPE = "long";
                     }
@@ -4040,7 +4040,7 @@ namespace TAICodeComplete
                     s += "}\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
                     s += "{\n";
@@ -4158,7 +4158,7 @@ namespace TAICodeComplete
                         INTERFACEFIELDTYPE = "int";
                     }
 
-                    if (f.FieldType == "BIGINT")
+                    if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                     {
                         INTERFACEFIELDTYPE = "long";
                     }
@@ -4253,7 +4253,7 @@ namespace TAICodeComplete
                     s += "}\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
                     s += "{\n";
@@ -4390,7 +4390,7 @@ namespace TAICodeComplete
 
                 if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT" ||
                     f.FieldType == "BIGINT" || f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "DECIMAL" ||
-                    f.FieldType == "CURRENCY" || f.FieldType == "FLOAT" || f.FieldType == "BOOL" || f.FieldType == "BIT")
+                    f.FieldType == "CURRENCY" || f.FieldType == "FLOAT" || f.FieldType == "BOOL" || f.FieldType == "BIT" || f.FieldType == "NUMERIC")
                 {
                     // Null Numbers are OK
                     s += "if (TheTableClass." + f.FieldNameConverted + " != null)\n";
@@ -4457,7 +4457,7 @@ namespace TAICodeComplete
                     s += "public int " + f.FieldNameConverted + " {get; set;} \n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "public long " + f.FieldNameConverted + " {get; set;} \n";
                 }
@@ -4499,7 +4499,7 @@ namespace TAICodeComplete
                     s += f.FieldNameConverted + " = 0;\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += f.FieldNameConverted + " = 0;\n";
                 }
@@ -4621,7 +4621,7 @@ namespace TAICodeComplete
 
                     }
 
-                    if (f.FieldType == "BIGINT")
+                    if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                     {
                         // Null Numbers are OK
                         s += "if (param." + f.FieldNameConverted + " != null)\n";
@@ -4774,7 +4774,7 @@ namespace TAICodeComplete
                 if (f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                    f.FieldType == "TINYINT" || f.FieldType == "BIGINT" ||
                    f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                   f.FieldType == "FLOAT")
+                   f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "txt" + f.FieldNameConverted + ".Text = thing." + f.FieldNameConverted + ".ToString() + \"\";\n";
                 }
@@ -4829,7 +4829,7 @@ namespace TAICodeComplete
                 }
 
                 if (f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
-                    f.FieldType == "TINYINT" || f.FieldType == "BIGINT")
+                    f.FieldType == "TINYINT" )
                 {
                     s += "thing." + f.FieldNameConverted + " = GetAsInteger(txt" + f.FieldNameConverted + ".Text);\n";
                 }
@@ -4840,7 +4840,7 @@ namespace TAICodeComplete
                     s += "thing." + f.FieldNameConverted + " = GetAsDouble(txt" + f.FieldNameConverted + ".Text);\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "thing." + f.FieldNameConverted + " = GetAsLong(txt" + f.FieldNameConverted + ".Text);\n";
                 }
@@ -4887,7 +4887,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.txt" + f.FieldNameConverted + ".Enabled = true;\n";
 
@@ -4919,7 +4919,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.txt" + f.FieldNameConverted + ".Enabled = false;\n";
 
@@ -4950,7 +4950,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.txt" + f.FieldNameConverted + ".Visible = false;\n";
 
@@ -4983,7 +4983,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.txt" + f.FieldNameConverted + ".Visible = true;\n";
 
@@ -5026,7 +5026,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.txt" + f.FieldNameConverted + "  = new System.Windows.Forms.TextBox();\n";
                 }
@@ -5049,7 +5049,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.lbl" + f.FieldNameConverted + "  = new System.Windows.Forms.Label();\n";
                 }
@@ -5091,7 +5091,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "//\n";
                     s += "// txt" + f.FieldNameConverted + "\n";
@@ -5166,7 +5166,7 @@ namespace TAICodeComplete
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
                     f.FieldType == "FLOAT" || f.FieldType == "BOOL" || f.FieldType == "BIT" ||
                     f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" ||
-                    f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                    f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME" || f.FieldType == "NUMERIC")
                 {
                     s += "//\n";
                     s += "// lbl" + f.FieldNameConverted + "\n";
@@ -5251,7 +5251,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.Controls.Add(this.txt" + f.FieldNameConverted + ");\n";
                 }
@@ -5275,7 +5275,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "this.Controls.Add(this.lbl" + f.FieldNameConverted + ");\n";
                 }
@@ -5309,7 +5309,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "private System.Windows.Forms.TextBox txt" + f.FieldNameConverted + ";\n";
                 }
@@ -5333,7 +5333,7 @@ namespace TAICodeComplete
                     f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                     f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                     f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                    f.FieldType == "FLOAT")
+                    f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "private System.Windows.Forms.Label lbl" + f.FieldNameConverted + ";\n";
                 }
@@ -5383,7 +5383,7 @@ namespace TAICodeComplete
                         f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                         f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                         f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                        f.FieldType == "FLOAT")
+                        f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                     {
                         if (f.MaxLength > 100)
                         {
@@ -5419,7 +5419,7 @@ namespace TAICodeComplete
                         f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                         f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                         f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                        f.FieldType == "FLOAT")
+                        f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                     {
                         //s += "this.txt" + f.FieldNameConverted + "  = new System.Windows.Forms.TextBox();\n";
 
@@ -5486,7 +5486,7 @@ namespace TAICodeComplete
                         f.FieldType == "SYSNAME" || f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                         f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                         f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                        f.FieldType == "FLOAT")
+                        f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                     {
                         //s += "this.txt" + f.FieldNameConverted + "  = new System.Windows.Forms.TextBox();\n";
 
@@ -5573,7 +5573,7 @@ namespace TAICodeComplete
                 }
 
                 if (f.FieldType == "BIGINT" || f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT" ||
-                    f.FieldType == "FLOAT" || f.FieldType == "MONEY" || f.FieldType == "REAL" || 
+                    f.FieldType == "FLOAT" || f.FieldType == "MONEY" || f.FieldType == "REAL" || f.FieldType == "NUMERIC" || 
                     f.FieldType == "BIT" || f.FieldType == "DATE" || f.FieldType == "DATETIME" || f.FieldType == "SMALLDATETIME" ||
                     f.FieldType == "SMALLMONEY" || f.FieldType == "TEXT" || f.FieldType == "TIMESTAMP" || f.FieldType == "XML")
                 {
@@ -5726,7 +5726,7 @@ namespace TAICodeComplete
                                     }
 
                                     if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT"
-                                        || f.FieldType == "BIGINT")
+                                        || f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                                     {
                                         sb.Append("" + r[fnum].ToString() + "");
                                     }
@@ -5991,7 +5991,7 @@ namespace TAICodeComplete
                 if (f.FieldType == "INT" || f.FieldType == "SMALLINT" ||
                    f.FieldType == "TINYINT" || f.FieldType == "BIGINT" || f.FieldType == "DECIMAL" ||
                    f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY" ||
-                   f.FieldType == "FLOAT")
+                   f.FieldType == "FLOAT" || f.FieldType == "NUMERIC")
                 {
                     s += "\t\t\t<nav class=\"panel-left\">\n";
                     s += "\t\t\t\t" + f.FieldName + "\n";
@@ -6411,7 +6411,7 @@ namespace TAICodeComplete
                     s += "cls." + f.FieldName + " = int" + f.FieldName + ";\n\n";
                 }
 
-                if (f.FieldType == "BIGINT")
+                if (f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
                 {
                     s += "long long" + f.FieldName + " = 0;\n";
                     s += "long.TryParse(c.Request[\"" + "" + f.FieldName + "\"],out long" + f.FieldName + ");\n";
