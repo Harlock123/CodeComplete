@@ -1938,6 +1938,20 @@ namespace TAICodeComplete
 
                 DSN = txtManualConnectionString.Text.Trim();
 
+                //string[] theSplits = DSN.Split(';');
+
+                //bool someasksweremade = false;
+
+                //foreach (string theelement in theSplits)
+                //{
+                //    if (theelement.Trim().ToUpper().EndsWith("{ASK!}"))
+                //    {
+
+
+                //    }
+                //}
+
+
                 var eles = DSN.Split(";".ToCharArray()); // split the DSN on the ; characters so we can determine the server component
 
                 foreach (string s in eles)

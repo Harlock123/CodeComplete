@@ -144,6 +144,7 @@
             this.txtBase64 = new System.Windows.Forms.TextBox();
             this.SCINTILLABASE64 = new ScintillaNET.Scintilla();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.btnMakeDispatchCase = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtObjectTypeAndName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -154,7 +155,8 @@
             this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.btnMakeDispatchCase = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -260,6 +262,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.btnEnumerateLocalSQLServers);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.txtManualConnectionString);
@@ -283,7 +287,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1118, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
@@ -318,10 +322,10 @@
             // 
             // btnSSPI
             // 
-            this.btnSSPI.Location = new System.Drawing.Point(386, 73);
-            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSSPI.Location = new System.Drawing.Point(390, 73);
+            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2);
             this.btnSSPI.Name = "btnSSPI";
-            this.btnSSPI.Size = new System.Drawing.Size(52, 22);
+            this.btnSSPI.Size = new System.Drawing.Size(48, 22);
             this.btnSSPI.TabIndex = 17;
             this.btnSSPI.Text = "SSPI";
             this.btnSSPI.UseVisualStyleBackColor = true;
@@ -341,7 +345,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(229, 140);
+            this.label10.Location = new System.Drawing.Point(229, 153);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(195, 13);
             this.label10.TabIndex = 15;
@@ -350,7 +354,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(229, 126);
+            this.label9.Location = new System.Drawing.Point(229, 139);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(207, 13);
             this.label9.TabIndex = 14;
@@ -358,7 +362,7 @@
             // 
             // txtPASSWORD
             // 
-            this.txtPASSWORD.Location = new System.Drawing.Point(306, 103);
+            this.txtPASSWORD.Location = new System.Drawing.Point(306, 116);
             this.txtPASSWORD.Name = "txtPASSWORD";
             this.txtPASSWORD.PasswordChar = '*';
             this.txtPASSWORD.Size = new System.Drawing.Size(132, 20);
@@ -367,7 +371,7 @@
             // 
             // txtUSER
             // 
-            this.txtUSER.Location = new System.Drawing.Point(232, 103);
+            this.txtUSER.Location = new System.Drawing.Point(232, 116);
             this.txtUSER.Name = "txtUSER";
             this.txtUSER.Size = new System.Drawing.Size(70, 20);
             this.txtUSER.TabIndex = 12;
@@ -530,11 +534,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(228, 76);
+            this.label5.Location = new System.Drawing.Point(228, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 13);
+            this.label5.Size = new System.Drawing.Size(157, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Type server name and hit enter";
+            this.label5.Text = "Type server name and hit enter ";
             // 
             // txtManualServerName
             // 
@@ -582,7 +586,7 @@
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1118, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
@@ -1504,11 +1508,22 @@
             this.tabPage16.Controls.Add(this.cbMMakerCodeFold);
             this.tabPage16.Controls.Add(this.cbMMakerLineNumbers);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
-            this.tabPage16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Size = new System.Drawing.Size(1118, 519);
             this.tabPage16.TabIndex = 17;
             this.tabPage16.Text = "Method Maker";
+            // 
+            // btnMakeDispatchCase
+            // 
+            this.btnMakeDispatchCase.Location = new System.Drawing.Point(685, 18);
+            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMakeDispatchCase.Name = "btnMakeDispatchCase";
+            this.btnMakeDispatchCase.Size = new System.Drawing.Size(128, 34);
+            this.btnMakeDispatchCase.TabIndex = 17;
+            this.btnMakeDispatchCase.Text = "Make Dispatch Case";
+            this.btnMakeDispatchCase.UseVisualStyleBackColor = true;
+            this.btnMakeDispatchCase.Click += new System.EventHandler(this.btnMakeDispatchCase_Click);
             // 
             // label13
             // 
@@ -1523,7 +1538,7 @@
             // txtObjectTypeAndName
             // 
             this.txtObjectTypeAndName.Location = new System.Drawing.Point(631, 70);
-            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2);
             this.txtObjectTypeAndName.Name = "txtObjectTypeAndName";
             this.txtObjectTypeAndName.Size = new System.Drawing.Size(335, 20);
             this.txtObjectTypeAndName.TabIndex = 15;
@@ -1541,7 +1556,7 @@
             // btnProcessMethodNames
             // 
             this.btnProcessMethodNames.Location = new System.Drawing.Point(575, 18);
-            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcessMethodNames.Name = "btnProcessMethodNames";
             this.btnProcessMethodNames.Size = new System.Drawing.Size(106, 34);
             this.btnProcessMethodNames.TabIndex = 13;
@@ -1552,7 +1567,7 @@
             // txtMethodNames
             // 
             this.txtMethodNames.Location = new System.Drawing.Point(14, 18);
-            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2);
             this.txtMethodNames.Multiline = true;
             this.txtMethodNames.Name = "txtMethodNames";
             this.txtMethodNames.Size = new System.Drawing.Size(558, 123);
@@ -1596,16 +1611,23 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // btnMakeDispatchCase
+            // label14
             // 
-            this.btnMakeDispatchCase.Location = new System.Drawing.Point(685, 18);
-            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMakeDispatchCase.Name = "btnMakeDispatchCase";
-            this.btnMakeDispatchCase.Size = new System.Drawing.Size(128, 34);
-            this.btnMakeDispatchCase.TabIndex = 17;
-            this.btnMakeDispatchCase.Text = "Make Dispatch Case";
-            this.btnMakeDispatchCase.UseVisualStyleBackColor = true;
-            this.btnMakeDispatchCase.Click += new System.EventHandler(this.btnMakeDispatchCase_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(230, 86);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(159, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "to use credentials below or Click";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(229, 101);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(136, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "SSPI to use windows logon";
             // 
             // frmMain
             // 
@@ -1788,6 +1810,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtObjectTypeAndName;
         private System.Windows.Forms.Button btnMakeDispatchCase;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
 
