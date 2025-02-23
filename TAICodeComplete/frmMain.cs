@@ -327,6 +327,9 @@ namespace TAICodeComplete
                 SqlConnection cn = new SqlConnection(DSN);
 
                 SqlCommand command = new SqlCommand(sqlCommand, cn);
+
+                command.CommandTimeout = 600;
+
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
 
@@ -2173,6 +2176,14 @@ namespace TAICodeComplete
             s += "cn.Open();\n";
             s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
 
+            var outtim = 0;
+
+            if (txtCMDTimeout.Text.Trim() != "" && int.TryParse(txtCMDTimeout.Text.Trim(),out outtim))
+            {
+                s += "cmd.CommandTimeout = " + txtCMDTimeout.Text.Trim() + ";\n";
+            }
+
+
             foreach (Field f in TheFields)
             {
                 if (f.FieldName != IDFIELDNAME || (!AUTONUMBER && f.FieldName == IDFIELDNAME))
@@ -2355,6 +2366,14 @@ namespace TAICodeComplete
             s += "SqlConnection cn = new SqlConnection(_classDatabaseConnectionString);\n";
             s += "cn.Open();\n";
             s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
+
+            var outtim = 0;
+
+            if (txtCMDTimeout.Text.Trim() != "" && int.TryParse(txtCMDTimeout.Text.Trim(), out outtim))
+            {
+                s += "cmd.CommandTimeout = " + txtCMDTimeout.Text.Trim() + ";\n";
+            }
+
 
             foreach (Field f in TheFields)
             {
@@ -2547,6 +2566,14 @@ namespace TAICodeComplete
             s += "SqlConnection cn = new SqlConnection(_classDatabaseConnectionString);\n";
             s += "cn.Open();\n";
             s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
+
+            var outtim = 0;
+
+            if (txtCMDTimeout.Text.Trim() != "" && int.TryParse(txtCMDTimeout.Text.Trim(), out outtim))
+            {
+                s += "cmd.CommandTimeout = " + txtCMDTimeout.Text.Trim() + ";\n";
+            }
+
 
             if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
             {
@@ -3023,6 +3050,14 @@ namespace TAICodeComplete
             s += "SqlConnection cn = new SqlConnection(_classDatabaseConnectionString);\n";
             s += "cn.Open();\n";
             s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
+
+            var outtim = 0;
+
+            if (txtCMDTimeout.Text.Trim() != "" && int.TryParse(txtCMDTimeout.Text.Trim(), out outtim))
+            {
+                s += "cmd.CommandTimeout = " + txtCMDTimeout.Text.Trim() + ";\n";
+            }
+
 
             if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
             {
@@ -3545,6 +3580,14 @@ namespace TAICodeComplete
             s += "cn.Open();\n";
             s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
 
+            var outtim = 0;
+
+            if (txtCMDTimeout.Text.Trim() != "" && int.TryParse(txtCMDTimeout.Text.Trim(), out outtim))
+            {
+                s += "cmd.CommandTimeout = " + txtCMDTimeout.Text.Trim() + ";\n";
+            }
+
+
             if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
             {
                 s += "cmd.Parameters.Add(\"@ID\",System.Data.SqlDbType.BigInt).Value = idx;\n";
@@ -3630,6 +3673,14 @@ namespace TAICodeComplete
             s += "cn.Open();\n";
             s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
 
+            var outtim = 0;
+
+            if (txtCMDTimeout.Text.Trim() != "" && int.TryParse(txtCMDTimeout.Text.Trim(), out outtim))
+            {
+                s += "cmd.CommandTimeout = " + txtCMDTimeout.Text.Trim() + ";\n";
+            }
+
+
             if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
             {
                 s += "cmd.Parameters.Add(\"@ID\",System.Data.SqlDbType.BigInt).Value = idx;\n";
@@ -3695,6 +3746,14 @@ namespace TAICodeComplete
             s += "SqlConnection cn = new SqlConnection(_classDatabaseConnectionString);\n";
             s += "cn.Open();\n";
             s += "SqlCommand cmd = new SqlCommand(sql,cn);\n";
+
+            var outtim = 0;
+
+            if (txtCMDTimeout.Text.Trim() != "" && int.TryParse(txtCMDTimeout.Text.Trim(), out outtim))
+            {
+                s += "cmd.CommandTimeout = " + txtCMDTimeout.Text.Trim() + ";\n";
+            }
+
 
             foreach (Field f in TheFields)
             {

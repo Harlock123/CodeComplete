@@ -36,6 +36,8 @@
             this.cmboTables = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnEnumerateLocalSQLServers = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtManualConnectionString = new System.Windows.Forms.TextBox();
@@ -155,8 +157,8 @@
             this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtCMDTimeout = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -292,6 +294,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(229, 101);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(136, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "SSPI to use windows logon";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(230, 86);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(159, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "to use credentials below or Click";
+            // 
             // btnEnumerateLocalSQLServers
             // 
             this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
@@ -382,6 +402,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.txtCMDTimeout);
             this.panel1.Controls.Add(this.txtDerivedConnectionString);
             this.panel1.Controls.Add(this.btnShowConnectionString);
             this.panel1.Controls.Add(this.chkGenerateInsertStatements);
@@ -433,7 +455,7 @@
             this.chkDOJAVASCRIPTUI.AutoSize = true;
             this.chkDOJAVASCRIPTUI.Checked = true;
             this.chkDOJAVASCRIPTUI.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkDOJAVASCRIPTUI.Location = new System.Drawing.Point(386, 6);
+            this.chkDOJAVASCRIPTUI.Location = new System.Drawing.Point(502, 6);
             this.chkDOJAVASCRIPTUI.Name = "chkDOJAVASCRIPTUI";
             this.chkDOJAVASCRIPTUI.Size = new System.Drawing.Size(161, 17);
             this.chkDOJAVASCRIPTUI.TabIndex = 17;
@@ -499,7 +521,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(183, 24);
+            this.label8.Location = new System.Drawing.Point(183, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 13);
             this.label8.TabIndex = 11;
@@ -507,7 +529,7 @@
             // 
             // txtInterfaceOBJPrefix
             // 
-            this.txtInterfaceOBJPrefix.Location = new System.Drawing.Point(182, 3);
+            this.txtInterfaceOBJPrefix.Location = new System.Drawing.Point(182, 6);
             this.txtInterfaceOBJPrefix.Name = "txtInterfaceOBJPrefix";
             this.txtInterfaceOBJPrefix.Size = new System.Drawing.Size(123, 20);
             this.txtInterfaceOBJPrefix.TabIndex = 10;
@@ -1611,23 +1633,22 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // label14
+            // label16
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(230, 86);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(159, 13);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "to use credentials below or Click";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(308, 27);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(135, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Default Command Timeout ";
             // 
-            // label15
+            // txtCMDTimeout
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(229, 101);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(136, 13);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "SSPI to use windows logon";
+            this.txtCMDTimeout.Location = new System.Drawing.Point(345, 6);
+            this.txtCMDTimeout.Name = "txtCMDTimeout";
+            this.txtCMDTimeout.Size = new System.Drawing.Size(57, 20);
+            this.txtCMDTimeout.TabIndex = 21;
+            this.txtCMDTimeout.Text = "300";
             // 
             // frmMain
             // 
@@ -1812,6 +1833,8 @@
         private System.Windows.Forms.Button btnMakeDispatchCase;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtCMDTimeout;
     }
 }
 
