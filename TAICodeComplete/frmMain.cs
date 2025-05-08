@@ -4258,6 +4258,8 @@ namespace TAICodeComplete
             }
 
             frmFieldSelect frm = new frmFieldSelect(flds);
+            
+            frm.StartPosition = FormStartPosition.CenterParent;
 
             frm.ShowDialog();
 
