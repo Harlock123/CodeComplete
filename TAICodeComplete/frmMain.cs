@@ -2263,6 +2263,12 @@ namespace TAICodeComplete
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Bit).Value = this._" + f.FieldNameConverted + ";\n";
                     }
+                    
+                    if (f.FieldType == "IMAGE" || f.FieldType == "BINARY" || f.FieldType == "VARBINARY" || f.FieldType == "TIMESTAMP" )
+                    {
+                        s += "cmd.Parameters.Add( new SqlParameter(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.VarBinary, this._" + f.FieldNameConverted + ".Length, " + 
+                             "ParameterDirection.Input, false, 0, 0, null, DataRowVersion.Current, this._" + f.FieldNameConverted + "));\n";
+                    }
 
 
                     //System.Guid.Parse()
@@ -2453,6 +2459,12 @@ namespace TAICodeComplete
                     if (f.FieldType == "BIT")
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Bit).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+                    
+                    if (f.FieldType == "IMAGE" || f.FieldType == "BINARY" || f.FieldType == "VARBINARY" || f.FieldType == "TIMESTAMP" )
+                    {
+                        s += "cmd.Parameters.Add( new SqlParameter(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.VarBinary, this._" + f.FieldNameConverted + ".Length, " + 
+                             "ParameterDirection.Input, false, 0, 0, null, DataRowVersion.Current, this._" + f.FieldNameConverted + "));\n";
                     }
 
 
@@ -2702,6 +2714,11 @@ namespace TAICodeComplete
                 {
                     s += "bool _" + f.FieldNameConverted + " = false;\n";
                 }
+                
+                if (f.FieldType == "IMAGE" || f.FieldType == "VARBINARY" || f.FieldType == "BINARY" || f.FieldType == "TIMESTAMP")
+                {
+                    s += "byte[] _" + f.FieldNameConverted + " = new byte[0];\n";
+                }
             }
 
             s += "\n" +
@@ -2894,6 +2911,24 @@ namespace TAICodeComplete
                             "set{ _" + f.FieldNameConverted + " = value;}\n}\n\n";
                     }
                 }
+                
+                if (f.FieldType == "IMAGE" || f.FieldType == "VARBINARY" || f.FieldType == "BINARY" || f.FieldType == "TIMESTAMP")
+                {
+                    if (chkINotifyCrap.Checked)
+                    {
+
+                        s += "public byte[] " + f.FieldNameConverted + "\n{\n" +
+                             "get{ return _" + f.FieldNameConverted + ";}\n" +
+                             "set{ _" + f.FieldNameConverted + " = value;\n" +
+                             "RaisePropertyChanged(\"" + f.FieldNameConverted + "\");}\n}\n\n";
+                    }
+                    else
+                    {
+                        s += "public byte[] " + f.FieldNameConverted + "\n{\n" +
+                             "get{ return _" + f.FieldNameConverted + ";}\n" +
+                             "set{ _" + f.FieldNameConverted + " = value;}\n}\n\n";
+                    }
+                }
             }
 
 
@@ -3018,6 +3053,14 @@ namespace TAICodeComplete
                     s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
                     s += "{\n";
                     s += "_" + f.FieldNameConverted + " = Convert.ToBoolean(r[\"" + f.FieldName + "\"]);\n";
+                    s += "}\n";
+                }
+                
+                if (f.FieldType == "IMAGE" || f.FieldType == "VARBINARY" || f.FieldType == "BINARY" || f.FieldType == "TIMESTAMP")
+                {
+                    s += "if (!Convert.IsDBNull(r[\"" + f.FieldName + "\"]))\n";
+                    s += "{\n";
+                    s += "_" + f.FieldNameConverted + " = (byte[])r[\"" + f.FieldName + "\"];\n";
                     s += "}\n";
                 }
             }
@@ -3147,6 +3190,11 @@ namespace TAICodeComplete
                 if (f.FieldType == "BOOL" || f.FieldType == "BIT")
                 {
                     s += "_" + f.FieldNameConverted + " = false;\n";
+                }
+                
+                if (f.FieldType == "IMAGE" || f.FieldType == "VARBINARY" || f.FieldType == "BINARY" || f.FieldType == "TIMESTAMP")
+                {
+                    s += "_" + f.FieldNameConverted + " = new byte[0];\n";
                 }
             }
 
@@ -3828,6 +3876,12 @@ namespace TAICodeComplete
                     if (f.FieldType == "BOOL")
                     {
                         s += "cmd.Parameters.Add(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.Bool).Value = this._" + f.FieldNameConverted + ";\n";
+                    }
+                    
+                    if (f.FieldType == "IMAGE" || f.FieldType == "BINARY" || f.FieldType == "VARBINARY" || f.FieldType == "TIMESTAMP" )
+                    {
+                        s += "cmd.Parameters.Add( new SqlParameter(\"@" + f.FieldNameConverted + "\",System.Data.SqlDbType.VarBinary, this._" + f.FieldNameConverted + ".Length, " + 
+                             "ParameterDirection.Input, false, 0, 0, null, DataRowVersion.Current, this._" + f.FieldNameConverted + "));\n";
                     }
 
                     if (f.FieldType == "BIT")
