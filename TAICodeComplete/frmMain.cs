@@ -428,7 +428,8 @@ namespace TAICodeComplete
 
             try
             {
-                string sql = "select OBJECT_ID from sys.tables WHERE NAME = @NAME AND SCHEMA_ID = 1";
+                string sql = "select st.OBJECT_ID from sys.tables st WHERE " +
+                    "((select ss.name from sys.schemas ss where ss.schema_id = st.schema_id) + '.' + st.NAME) = @NAME ";
 
                 SqlConnection cn = new SqlConnection(DSN);
                 cn.Open();
@@ -585,7 +586,9 @@ namespace TAICodeComplete
 
                 try
                 {
-                    string sql = "select NAME from sys.tables WHERE SCHEMA_ID = 1 ORDER BY NAME";
+                    //string sql = "select NAME from sys.tables WHERE SCHEMA_ID = 1 ORDER BY NAME";
+
+                    string sql = "select (select ss.name from sys.schemas ss where ss.schema_id = st.schema_id) + '.' + st.NAME from sys.tables st ORDER BY st.schema_id";
 
                     SqlConnection cn = new SqlConnection(DSN);
                     cn.Open();
@@ -668,7 +671,7 @@ namespace TAICodeComplete
                 if (cmboTables.SelectedItem.ToString() != "")
                 {
                     TableName = cmboTables.SelectedItem.ToString();
-                    txtClassName.Text = TableName;
+                    txtClassName.Text = TableName.Replace(".","_");
                     IDFIELDNAME = "";
                     AUTONUMBER = true;
 
