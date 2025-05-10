@@ -48,6 +48,8 @@
             this.txtPASSWORD = new System.Windows.Forms.TextBox();
             this.txtUSER = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtCMDTimeout = new System.Windows.Forms.TextBox();
             this.txtDerivedConnectionString = new System.Windows.Forms.TextBox();
             this.btnShowConnectionString = new System.Windows.Forms.Button();
             this.chkGenerateInsertStatements = new System.Windows.Forms.CheckBox();
@@ -157,8 +159,6 @@
             this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCMDTimeout = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -420,6 +420,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(667, 165);
             this.panel1.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(308, 27);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(135, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Default Command Timeout ";
+            // 
+            // txtCMDTimeout
+            // 
+            this.txtCMDTimeout.Location = new System.Drawing.Point(345, 6);
+            this.txtCMDTimeout.Name = "txtCMDTimeout";
+            this.txtCMDTimeout.Size = new System.Drawing.Size(57, 20);
+            this.txtCMDTimeout.TabIndex = 21;
+            this.txtCMDTimeout.Text = "300";
             // 
             // txtDerivedConnectionString
             // 
@@ -1633,23 +1650,6 @@
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(308, 27);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(135, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Default Command Timeout ";
-            // 
-            // txtCMDTimeout
-            // 
-            this.txtCMDTimeout.Location = new System.Drawing.Point(345, 6);
-            this.txtCMDTimeout.Name = "txtCMDTimeout";
-            this.txtCMDTimeout.Size = new System.Drawing.Size(57, 20);
-            this.txtCMDTimeout.TabIndex = 21;
-            this.txtCMDTimeout.Text = "300";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1657,6 +1657,7 @@
             this.ClientSize = new System.Drawing.Size(1131, 552);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TAI Code Complete (automated code generator and support Toolset)";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
