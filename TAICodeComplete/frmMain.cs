@@ -1934,6 +1934,8 @@ namespace TAICodeComplete
         {
             txtUSER.Text = "";
             txtPASSWORD.Text = "";
+            
+            HandletxtManualServerNameKeyDown(sender,new KeyEventArgs(Keys.Enter));
         }
 
         private void HandleManualConnectionStringKeyDown(object sender, KeyEventArgs e)
