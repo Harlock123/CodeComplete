@@ -681,7 +681,7 @@ namespace TAICodeComplete
                                 "A.max_length as 'LENGTH',A.is_nullable as 'ALLOWNULLS',A.is_identity as 'IDENTITY'," +
                                 "A.is_computed as 'COMPUTED',COALESCE(a.collation_name,'') as 'COLLATIONTYPE',A.PRECISION,A.SCALE " +
                                 "FROM SYS.columns A " +
-                                "where A.object_id = " + obid + " ORDER BY A.COLUMN_ID";
+                                "where A.object_id = " + obid + " ORDER BY A.NAME ";
 
                     bsource.DataSource = GetData(sql);
                     dgrid.DataSource = bsource;
