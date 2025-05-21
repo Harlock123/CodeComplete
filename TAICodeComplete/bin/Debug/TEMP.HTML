@@ -9,19 +9,16 @@
 	<script language="JavaScript" src="JS\jquery-ui.min.js" ></script>
 	<script language="JavaScript">
 		$(document).ready(function() {
-			$( "#fld_EffectiveDate" ).datepicker();
-			$( "#fld_ExpirationDate" ).datepicker();
-			$( "#fld_SysEndTime" ).datepicker();
-			$( "#fld_SysStartTime" ).datepicker();
+			$( "#fld_RequestTime" ).datepicker();
 		});
 
 	</script>
 </head>
 <body>
 	<div class="panel-frame">
-		<div class="panel-container" id="container_EffectiveDate" >
+		<div class="panel-container" id="container_ID" >
 			<nav class="panel-left">
-				EffectiveDate
+				ID
 			</nav>
 
 			<div class="panel-splitter">
@@ -29,13 +26,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_EffectiveDate" id="fld_EffectiveDate" /> 
+				<input type="number" name="fld_ID" id="fld_ID" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ExpirationDate" >
+		<div class="panel-container" id="container_Method" >
 			<nav class="panel-left">
-				ExpirationDate
+				Method
 			</nav>
 
 			<div class="panel-splitter">
@@ -43,13 +40,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_ExpirationDate" id="fld_ExpirationDate" /> 
+				<textarea rows="4" cols="50" name="fld_Method" id="fld_Method"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_NPI" >
+		<div class="panel-container" id="container_Path" >
 			<nav class="panel-left">
-				NPI
+				Path
 			</nav>
 
 			<div class="panel-splitter">
@@ -57,13 +55,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" maxlength="10" name="fld_NPI" id="fld_NPI" /> 
+				<textarea rows="4" cols="50" name="fld_Path" id="fld_Path"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ProviderID" >
+		<div class="panel-container" id="container_RequestBody" >
 			<nav class="panel-left">
-				ProviderID
+				RequestBody
 			</nav>
 
 			<div class="panel-splitter">
@@ -71,13 +70,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_ProviderID" id="fld_ProviderID" /> 
+				<textarea rows="4" cols="50" name="fld_RequestBody" id="fld_RequestBody"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_ProviderNPIID" >
+		<div class="panel-container" id="container_RequestTime" >
 			<nav class="panel-left">
-				ProviderNPIID
+				RequestTime
 			</nav>
 
 			<div class="panel-splitter">
@@ -85,13 +85,13 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="number" name="fld_ProviderNPIID" id="fld_ProviderNPIID" /> 
+				<input type="text" name="fld_RequestTime" id="fld_RequestTime" /> 
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_SysEndTime" >
+		<div class="panel-container" id="container_ResponseBody" >
 			<nav class="panel-left">
-				SysEndTime
+				ResponseBody
 			</nav>
 
 			<div class="panel-splitter">
@@ -99,13 +99,14 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_SysEndTime" id="fld_SysEndTime" /> 
+				<textarea rows="4" cols="50" name="fld_ResponseBody" id="fld_ResponseBody"> 
+				</textarea>
 			</div>
 
 		</div>
-		<div class="panel-container" id="container_SysStartTime" >
+		<div class="panel-container" id="container_ResponseMilliSeconds" >
 			<nav class="panel-left">
-				SysStartTime
+				ResponseMilliSeconds
 			</nav>
 
 			<div class="panel-splitter">
@@ -113,7 +114,21 @@
 			</div>
 
 			<div class="panel-right">
-				<input type="text" name="fld_SysStartTime" id="fld_SysStartTime" /> 
+				<input type="number" name="fld_ResponseMilliSeconds" id="fld_ResponseMilliSeconds" /> 
+			</div>
+
+		</div>
+		<div class="panel-container" id="container_StatusCode" >
+			<nav class="panel-left">
+				StatusCode
+			</nav>
+
+			<div class="panel-splitter">
+				 | 
+			</div>
+
+			<div class="panel-right">
+				<input type="number" name="fld_StatusCode" id="fld_StatusCode" /> 
 			</div>
 
 		</div>

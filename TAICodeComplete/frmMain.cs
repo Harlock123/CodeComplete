@@ -1710,6 +1710,8 @@ namespace TAICodeComplete
         {
             string s = "";
 
+            if (!chkGenAdd.Checked) { return s; }
+
             var TNAME = TableName;
 
             if (TableName != txtClassName.Text)
@@ -1906,6 +1908,9 @@ namespace TAICodeComplete
         private string GenerateFastAddMethod()
         {
             string s = "";
+
+            if (!chkGenFastAdd.Checked)
+            { return s; }
 
             var TNAME = TableName;
 
@@ -2660,6 +2665,9 @@ namespace TAICodeComplete
         {
             string s = "";
 
+            if (!chkGenDelete.Checked)
+            { return s; }
+
             var TNAME = TableName;
 
             if (TableName != txtClassName.Text)
@@ -3175,6 +3183,11 @@ namespace TAICodeComplete
 
             string s = "";
 
+            if (!chkGenReadAsDataSet.Checked)
+            {
+                return s;
+            }
+
             if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
             {
                 s += "public DataSet ReadAsDataSet(System.Int64 idx)\n";
@@ -3268,6 +3281,9 @@ namespace TAICodeComplete
         {
             string s = "";
 
+            if (!chkGenRead.Checked)
+            { return s; }
+
             if (IDFIELDTYPE == "BIGINT" || IDFIELDTYPE == "LONG")
             {
                 s += "public void Read(System.Int64 idx)\n";
@@ -3360,6 +3376,9 @@ namespace TAICodeComplete
         {
 
             string s = "";
+
+            if (!chkGenUpdate.Checked)
+            { return s; }
 
             s += "public void Update()\n";
 
