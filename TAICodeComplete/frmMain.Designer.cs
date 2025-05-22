@@ -48,6 +48,12 @@
             this.txtPASSWORD = new System.Windows.Forms.TextBox();
             this.txtUSER = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkGenReadAsDataSet = new System.Windows.Forms.CheckBox();
+            this.chkGenUpdate = new System.Windows.Forms.CheckBox();
+            this.chkGenRead = new System.Windows.Forms.CheckBox();
+            this.chkGenDelete = new System.Windows.Forms.CheckBox();
+            this.chkGenFastAdd = new System.Windows.Forms.CheckBox();
+            this.chkGenAdd = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtCMDTimeout = new System.Windows.Forms.TextBox();
             this.txtDerivedConnectionString = new System.Windows.Forms.TextBox();
@@ -159,12 +165,6 @@
             this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.chkGenAdd = new System.Windows.Forms.CheckBox();
-            this.chkGenFastAdd = new System.Windows.Forms.CheckBox();
-            this.chkGenDelete = new System.Windows.Forms.CheckBox();
-            this.chkGenRead = new System.Windows.Forms.CheckBox();
-            this.chkGenUpdate = new System.Windows.Forms.CheckBox();
-            this.chkGenReadAsDataSet = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -295,7 +295,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1118, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
@@ -349,7 +349,7 @@
             // btnSSPI
             // 
             this.btnSSPI.Location = new System.Drawing.Point(390, 73);
-            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2);
             this.btnSSPI.Name = "btnSSPI";
             this.btnSSPI.Size = new System.Drawing.Size(48, 22);
             this.btnSSPI.TabIndex = 17;
@@ -393,7 +393,6 @@
             this.txtPASSWORD.PasswordChar = '*';
             this.txtPASSWORD.Size = new System.Drawing.Size(132, 20);
             this.txtPASSWORD.TabIndex = 13;
-            this.txtPASSWORD.Text = "P@ssw0rd";
             // 
             // txtUSER
             // 
@@ -401,7 +400,6 @@
             this.txtUSER.Name = "txtUSER";
             this.txtUSER.Size = new System.Drawing.Size(70, 20);
             this.txtUSER.TabIndex = 12;
-            this.txtUSER.Text = "SA";
             // 
             // panel1
             // 
@@ -432,6 +430,78 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(667, 165);
             this.panel1.TabIndex = 11;
+            // 
+            // chkGenReadAsDataSet
+            // 
+            this.chkGenReadAsDataSet.AutoSize = true;
+            this.chkGenReadAsDataSet.Checked = true;
+            this.chkGenReadAsDataSet.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkGenReadAsDataSet.Location = new System.Drawing.Point(360, 103);
+            this.chkGenReadAsDataSet.Name = "chkGenReadAsDataSet";
+            this.chkGenReadAsDataSet.Size = new System.Drawing.Size(188, 17);
+            this.chkGenReadAsDataSet.TabIndex = 28;
+            this.chkGenReadAsDataSet.Text = "Generate ReadasDataSet Method";
+            this.chkGenReadAsDataSet.UseVisualStyleBackColor = true;
+            // 
+            // chkGenUpdate
+            // 
+            this.chkGenUpdate.AutoSize = true;
+            this.chkGenUpdate.Checked = true;
+            this.chkGenUpdate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkGenUpdate.Location = new System.Drawing.Point(360, 118);
+            this.chkGenUpdate.Name = "chkGenUpdate";
+            this.chkGenUpdate.Size = new System.Drawing.Size(147, 17);
+            this.chkGenUpdate.TabIndex = 27;
+            this.chkGenUpdate.Text = "Generate Update Method";
+            this.chkGenUpdate.UseVisualStyleBackColor = true;
+            // 
+            // chkGenRead
+            // 
+            this.chkGenRead.AutoSize = true;
+            this.chkGenRead.Checked = true;
+            this.chkGenRead.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkGenRead.Location = new System.Drawing.Point(360, 88);
+            this.chkGenRead.Name = "chkGenRead";
+            this.chkGenRead.Size = new System.Drawing.Size(138, 17);
+            this.chkGenRead.TabIndex = 26;
+            this.chkGenRead.Text = "Generate Read Method";
+            this.chkGenRead.UseVisualStyleBackColor = true;
+            // 
+            // chkGenDelete
+            // 
+            this.chkGenDelete.AutoSize = true;
+            this.chkGenDelete.Checked = true;
+            this.chkGenDelete.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkGenDelete.Location = new System.Drawing.Point(360, 73);
+            this.chkGenDelete.Name = "chkGenDelete";
+            this.chkGenDelete.Size = new System.Drawing.Size(143, 17);
+            this.chkGenDelete.TabIndex = 25;
+            this.chkGenDelete.Text = "Generate Delete Method";
+            this.chkGenDelete.UseVisualStyleBackColor = true;
+            // 
+            // chkGenFastAdd
+            // 
+            this.chkGenFastAdd.AutoSize = true;
+            this.chkGenFastAdd.Checked = true;
+            this.chkGenFastAdd.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkGenFastAdd.Location = new System.Drawing.Point(360, 57);
+            this.chkGenFastAdd.Name = "chkGenFastAdd";
+            this.chkGenFastAdd.Size = new System.Drawing.Size(151, 17);
+            this.chkGenFastAdd.TabIndex = 24;
+            this.chkGenFastAdd.Text = "Generate FastAdd Method";
+            this.chkGenFastAdd.UseVisualStyleBackColor = true;
+            // 
+            // chkGenAdd
+            // 
+            this.chkGenAdd.AutoSize = true;
+            this.chkGenAdd.Checked = true;
+            this.chkGenAdd.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkGenAdd.Location = new System.Drawing.Point(360, 42);
+            this.chkGenAdd.Name = "chkGenAdd";
+            this.chkGenAdd.Size = new System.Drawing.Size(131, 17);
+            this.chkGenAdd.TabIndex = 23;
+            this.chkGenAdd.Text = "Generate Add Method";
+            this.chkGenAdd.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -637,7 +707,7 @@
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1118, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
@@ -1559,7 +1629,7 @@
             this.tabPage16.Controls.Add(this.cbMMakerCodeFold);
             this.tabPage16.Controls.Add(this.cbMMakerLineNumbers);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
-            this.tabPage16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Size = new System.Drawing.Size(1118, 519);
             this.tabPage16.TabIndex = 17;
@@ -1568,7 +1638,7 @@
             // btnMakeDispatchCase
             // 
             this.btnMakeDispatchCase.Location = new System.Drawing.Point(685, 18);
-            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2);
             this.btnMakeDispatchCase.Name = "btnMakeDispatchCase";
             this.btnMakeDispatchCase.Size = new System.Drawing.Size(128, 34);
             this.btnMakeDispatchCase.TabIndex = 17;
@@ -1589,7 +1659,7 @@
             // txtObjectTypeAndName
             // 
             this.txtObjectTypeAndName.Location = new System.Drawing.Point(631, 70);
-            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2);
             this.txtObjectTypeAndName.Name = "txtObjectTypeAndName";
             this.txtObjectTypeAndName.Size = new System.Drawing.Size(335, 20);
             this.txtObjectTypeAndName.TabIndex = 15;
@@ -1607,7 +1677,7 @@
             // btnProcessMethodNames
             // 
             this.btnProcessMethodNames.Location = new System.Drawing.Point(575, 18);
-            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcessMethodNames.Name = "btnProcessMethodNames";
             this.btnProcessMethodNames.Size = new System.Drawing.Size(106, 34);
             this.btnProcessMethodNames.TabIndex = 13;
@@ -1618,7 +1688,7 @@
             // txtMethodNames
             // 
             this.txtMethodNames.Location = new System.Drawing.Point(14, 18);
-            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2);
             this.txtMethodNames.Multiline = true;
             this.txtMethodNames.Name = "txtMethodNames";
             this.txtMethodNames.Size = new System.Drawing.Size(558, 123);
@@ -1661,78 +1731,6 @@
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
-            // 
-            // chkGenAdd
-            // 
-            this.chkGenAdd.AutoSize = true;
-            this.chkGenAdd.Checked = true;
-            this.chkGenAdd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkGenAdd.Location = new System.Drawing.Point(360, 42);
-            this.chkGenAdd.Name = "chkGenAdd";
-            this.chkGenAdd.Size = new System.Drawing.Size(131, 17);
-            this.chkGenAdd.TabIndex = 23;
-            this.chkGenAdd.Text = "Generate Add Method";
-            this.chkGenAdd.UseVisualStyleBackColor = true;
-            // 
-            // chkGenFastAdd
-            // 
-            this.chkGenFastAdd.AutoSize = true;
-            this.chkGenFastAdd.Checked = true;
-            this.chkGenFastAdd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkGenFastAdd.Location = new System.Drawing.Point(360, 57);
-            this.chkGenFastAdd.Name = "chkGenFastAdd";
-            this.chkGenFastAdd.Size = new System.Drawing.Size(151, 17);
-            this.chkGenFastAdd.TabIndex = 24;
-            this.chkGenFastAdd.Text = "Generate FastAdd Method";
-            this.chkGenFastAdd.UseVisualStyleBackColor = true;
-            // 
-            // chkGenDelete
-            // 
-            this.chkGenDelete.AutoSize = true;
-            this.chkGenDelete.Checked = true;
-            this.chkGenDelete.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkGenDelete.Location = new System.Drawing.Point(360, 73);
-            this.chkGenDelete.Name = "chkGenDelete";
-            this.chkGenDelete.Size = new System.Drawing.Size(143, 17);
-            this.chkGenDelete.TabIndex = 25;
-            this.chkGenDelete.Text = "Generate Delete Method";
-            this.chkGenDelete.UseVisualStyleBackColor = true;
-            // 
-            // chkGenRead
-            // 
-            this.chkGenRead.AutoSize = true;
-            this.chkGenRead.Checked = true;
-            this.chkGenRead.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkGenRead.Location = new System.Drawing.Point(360, 88);
-            this.chkGenRead.Name = "chkGenRead";
-            this.chkGenRead.Size = new System.Drawing.Size(138, 17);
-            this.chkGenRead.TabIndex = 26;
-            this.chkGenRead.Text = "Generate Read Method";
-            this.chkGenRead.UseVisualStyleBackColor = true;
-            // 
-            // chkGenUpdate
-            // 
-            this.chkGenUpdate.AutoSize = true;
-            this.chkGenUpdate.Checked = true;
-            this.chkGenUpdate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkGenUpdate.Location = new System.Drawing.Point(360, 118);
-            this.chkGenUpdate.Name = "chkGenUpdate";
-            this.chkGenUpdate.Size = new System.Drawing.Size(147, 17);
-            this.chkGenUpdate.TabIndex = 27;
-            this.chkGenUpdate.Text = "Generate Update Method";
-            this.chkGenUpdate.UseVisualStyleBackColor = true;
-            // 
-            // chkGenReadAsDataSet
-            // 
-            this.chkGenReadAsDataSet.AutoSize = true;
-            this.chkGenReadAsDataSet.Checked = true;
-            this.chkGenReadAsDataSet.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkGenReadAsDataSet.Location = new System.Drawing.Point(360, 103);
-            this.chkGenReadAsDataSet.Name = "chkGenReadAsDataSet";
-            this.chkGenReadAsDataSet.Size = new System.Drawing.Size(188, 17);
-            this.chkGenReadAsDataSet.TabIndex = 28;
-            this.chkGenReadAsDataSet.Text = "Generate ReadasDataSet Method";
-            this.chkGenReadAsDataSet.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
