@@ -1740,7 +1740,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TAI Code Complete (automated code generator and support Toolset)";
+            this.Text = "CodeComplete (automated code generator and support Toolset)";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
