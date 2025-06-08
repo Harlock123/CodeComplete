@@ -18,6 +18,8 @@ namespace TAICodeComplete
     public partial class frmMain : Form
     {
 
+        private LMStudioClient _lmStudioClient;
+
         private BindingSource bsource = new BindingSource();
         private string DBSERVERNAME = "";
         private string DSN = "";
@@ -75,7 +77,7 @@ namespace TAICodeComplete
             ConfigureScintillaControlForCPP(scintillaWEBAPICode);
             ConfigureScintillaControlForCPP(scintillaRestCode);
             ConfigureScintillaControlForCPP(scintillaWFCode);
-
+            ConfigureScintillaControlForCPP(sciAICode);
 
             // Reset the styles
             sciSQLCode.StyleResetDefault();
@@ -588,7 +590,7 @@ namespace TAICodeComplete
                 {
                     //string sql = "select NAME from sys.tables WHERE SCHEMA_ID = 1 ORDER BY NAME";
 
-                    string sql = "select (select ss.name from sys.schemas ss where ss.schema_id = st.schema_id) + '.' + st.NAME from sys.tables st ORDER BY st.schema_id";
+                    string sql = "select (select ss.name from sys.schemas ss where ss.schema_id = st.schema_id) + '.' + st.NAME from sys.tables st ORDER BY st.name";
 
                     SqlConnection cn = new SqlConnection(DSN);
                     cn.Open();
@@ -6410,7 +6412,72 @@ namespace TAICodeComplete
             }
         }
 
-        
+        private void btnConnectLMStudio_Click(object sender, EventArgs e)
+        {
+            _lmStudioClient = new LMStudioClient(txtLMSTUDIOAddress.Text);
+
+        }
+
+        private async void btnMakeBaseJava_Click(object sender, EventArgs e)
+        {
+            string prompt =
+                "I have the following class that does basic CRUD operations on a " +
+                "specific database table using C# and standard microsoft .net libraries " +
+                "like SQLDATACLIENT and what not. I want to create a JAVA version of " +
+                "this same class employing JAVA standards libraries. Do full implementation of " +
+                "the ADD/UPDATE/COPYFIELDS methods. Create the Java class a fully as possible ..." + "\n\n" +
+                sciBaseTableCode.Text + "\n\n";
+
+            lblworking.Visible = true;
+
+            Application.DoEvents();
+            
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt);
+
+            lblworking.Visible = false;
+
+
+
+            // Set the generated code to Scintilla
+            sciAICode.Text = generatedCode;
+
+        }
+
+        private void HandleAILineNumbersChanged(object sender, EventArgs e)
+        {
+            int marginwidth = 0;
+
+            if (chkCodeFoldingAI.Checked)
+            {
+                marginwidth = 40;
+            }
+            else
+            {
+                marginwidth = 0;
+            }
+
+            sciAICode.Margins[0].Width = marginwidth;
+        }
+
+        private void HandleAICodeFoldingCheckChanged(object sender, EventArgs e)
+        {
+            int marginwidth = 0;
+
+            if (chkCodeFoldingAI.Checked)
+            {
+                marginwidth = 20;
+                
+
+            }
+            else
+            {
+                marginwidth = 0;
+                
+            }
+
+            sciAICode.Margins[2].Width = marginwidth;
+
+        }
     }
 
     //public class DOCDEFCAT

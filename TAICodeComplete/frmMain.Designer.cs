@@ -163,8 +163,16 @@
             this.scintillaMMakerCode = new ScintillaNET.Scintilla();
             this.cbMMakerCodeFold = new System.Windows.Forms.CheckBox();
             this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.lblworking = new System.Windows.Forms.Label();
+            this.btnMakeBaseJava = new System.Windows.Forms.Button();
+            this.txtLMSTUDIOAddress = new System.Windows.Forms.TextBox();
+            this.btnConnectLMStudio = new System.Windows.Forms.Button();
+            this.sciAICode = new ScintillaNET.Scintilla();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
+            this.chkCodeFoldingAI = new System.Windows.Forms.CheckBox();
+            this.chkLineNumbersAI = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -184,6 +192,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
+            this.tabPage17.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmboServers
@@ -261,6 +270,7 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage15);
             this.tabControl1.Controls.Add(this.tabPage16);
+            this.tabControl1.Controls.Add(this.tabPage17);
             this.tabControl1.Location = new System.Drawing.Point(2, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1727,10 +1737,104 @@
             this.cbMMakerLineNumbers.UseVisualStyleBackColor = true;
             this.cbMMakerLineNumbers.CheckedChanged += new System.EventHandler(this.HandlecbMMakerLineNumbersCheckedChanged);
             // 
+            // tabPage17
+            // 
+            this.tabPage17.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tabPage17.Controls.Add(this.chkCodeFoldingAI);
+            this.tabPage17.Controls.Add(this.chkLineNumbersAI);
+            this.tabPage17.Controls.Add(this.lblworking);
+            this.tabPage17.Controls.Add(this.btnMakeBaseJava);
+            this.tabPage17.Controls.Add(this.txtLMSTUDIOAddress);
+            this.tabPage17.Controls.Add(this.btnConnectLMStudio);
+            this.tabPage17.Controls.Add(this.sciAICode);
+            this.tabPage17.Location = new System.Drawing.Point(4, 22);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(1118, 519);
+            this.tabPage17.TabIndex = 18;
+            this.tabPage17.Text = "AI";
+            // 
+            // lblworking
+            // 
+            this.lblworking.AutoSize = true;
+            this.lblworking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblworking.Location = new System.Drawing.Point(437, 13);
+            this.lblworking.Name = "lblworking";
+            this.lblworking.Size = new System.Drawing.Size(438, 20);
+            this.lblworking.TabIndex = 9;
+            this.lblworking.Text = "One moment talking to the AI layer this may take a bit";
+            this.lblworking.Visible = false;
+            // 
+            // btnMakeBaseJava
+            // 
+            this.btnMakeBaseJava.Location = new System.Drawing.Point(8, 37);
+            this.btnMakeBaseJava.Name = "btnMakeBaseJava";
+            this.btnMakeBaseJava.Size = new System.Drawing.Size(140, 23);
+            this.btnMakeBaseJava.TabIndex = 8;
+            this.btnMakeBaseJava.Text = "Make Base Java";
+            this.btnMakeBaseJava.UseVisualStyleBackColor = true;
+            this.btnMakeBaseJava.Click += new System.EventHandler(this.btnMakeBaseJava_Click);
+            // 
+            // txtLMSTUDIOAddress
+            // 
+            this.txtLMSTUDIOAddress.Location = new System.Drawing.Point(154, 10);
+            this.txtLMSTUDIOAddress.Name = "txtLMSTUDIOAddress";
+            this.txtLMSTUDIOAddress.Size = new System.Drawing.Size(266, 20);
+            this.txtLMSTUDIOAddress.TabIndex = 7;
+            this.txtLMSTUDIOAddress.Text = "http://127.0.0.1:1234";
+            // 
+            // btnConnectLMStudio
+            // 
+            this.btnConnectLMStudio.Location = new System.Drawing.Point(7, 7);
+            this.btnConnectLMStudio.Name = "btnConnectLMStudio";
+            this.btnConnectLMStudio.Size = new System.Drawing.Size(141, 23);
+            this.btnConnectLMStudio.TabIndex = 6;
+            this.btnConnectLMStudio.Text = "Connect LMSTUDIO";
+            this.btnConnectLMStudio.UseVisualStyleBackColor = true;
+            this.btnConnectLMStudio.Click += new System.EventHandler(this.btnConnectLMStudio_Click);
+            // 
+            // sciAICode
+            // 
+            this.sciAICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciAICode.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
+            this.sciAICode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sciAICode.Lexer = ScintillaNET.Lexer.Cpp;
+            this.sciAICode.Location = new System.Drawing.Point(132, 68);
+            this.sciAICode.Name = "sciAICode";
+            this.sciAICode.Size = new System.Drawing.Size(980, 448);
+            this.sciAICode.TabIndex = 5;
+            // 
             // backgroundworkerThread
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
+            // 
+            // chkCodeFoldingAI
+            // 
+            this.chkCodeFoldingAI.AutoSize = true;
+            this.chkCodeFoldingAI.Checked = true;
+            this.chkCodeFoldingAI.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCodeFoldingAI.Location = new System.Drawing.Point(9, 90);
+            this.chkCodeFoldingAI.Name = "chkCodeFoldingAI";
+            this.chkCodeFoldingAI.Size = new System.Drawing.Size(118, 17);
+            this.chkCodeFoldingAI.TabIndex = 11;
+            this.chkCodeFoldingAI.Text = "Show Code Folding";
+            this.chkCodeFoldingAI.UseVisualStyleBackColor = true;
+            this.chkCodeFoldingAI.CheckedChanged += new System.EventHandler(this.HandleAICodeFoldingCheckChanged);
+            // 
+            // chkLineNumbersAI
+            // 
+            this.chkLineNumbersAI.AutoSize = true;
+            this.chkLineNumbersAI.Location = new System.Drawing.Point(9, 67);
+            this.chkLineNumbersAI.Name = "chkLineNumbersAI";
+            this.chkLineNumbersAI.Size = new System.Drawing.Size(91, 17);
+            this.chkLineNumbersAI.TabIndex = 10;
+            this.chkLineNumbersAI.Text = "Line Numbers";
+            this.chkLineNumbersAI.UseVisualStyleBackColor = true;
+            this.chkLineNumbersAI.CheckedChanged += new System.EventHandler(this.HandleAILineNumbersChanged);
             // 
             // frmMain
             // 
@@ -1777,6 +1881,8 @@
             this.tabPage15.PerformLayout();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
+            this.tabPage17.ResumeLayout(false);
+            this.tabPage17.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1924,6 +2030,14 @@
         private System.Windows.Forms.CheckBox chkGenFastAdd;
         private System.Windows.Forms.CheckBox chkGenAdd;
         private System.Windows.Forms.CheckBox chkGenReadAsDataSet;
+        private System.Windows.Forms.TabPage tabPage17;
+        private ScintillaNET.Scintilla sciAICode;
+        private System.Windows.Forms.TextBox txtLMSTUDIOAddress;
+        private System.Windows.Forms.Button btnConnectLMStudio;
+        private System.Windows.Forms.Button btnMakeBaseJava;
+        private System.Windows.Forms.Label lblworking;
+        private System.Windows.Forms.CheckBox chkCodeFoldingAI;
+        private System.Windows.Forms.CheckBox chkLineNumbersAI;
     }
 }
 
