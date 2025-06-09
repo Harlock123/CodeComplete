@@ -173,6 +173,7 @@
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
             this.chkCodeFoldingAI = new System.Windows.Forms.CheckBox();
             this.chkLineNumbersAI = new System.Windows.Forms.CheckBox();
+            this.btnMakeBasePython = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1740,6 +1741,7 @@
             // tabPage17
             // 
             this.tabPage17.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tabPage17.Controls.Add(this.btnMakeBasePython);
             this.tabPage17.Controls.Add(this.chkCodeFoldingAI);
             this.tabPage17.Controls.Add(this.chkLineNumbersAI);
             this.tabPage17.Controls.Add(this.lblworking);
@@ -1835,6 +1837,16 @@
             this.chkLineNumbersAI.Text = "Line Numbers";
             this.chkLineNumbersAI.UseVisualStyleBackColor = true;
             this.chkLineNumbersAI.CheckedChanged += new System.EventHandler(this.HandleAILineNumbersChanged);
+            // 
+            // btnMakeBasePython
+            // 
+            this.btnMakeBasePython.Location = new System.Drawing.Point(154, 39);
+            this.btnMakeBasePython.Name = "btnMakeBasePython";
+            this.btnMakeBasePython.Size = new System.Drawing.Size(140, 23);
+            this.btnMakeBasePython.TabIndex = 12;
+            this.btnMakeBasePython.Text = "Make Base Python";
+            this.btnMakeBasePython.UseVisualStyleBackColor = true;
+            this.btnMakeBasePython.Click += new System.EventHandler(this.btnMakeBasePython_Click);
             // 
             // frmMain
             // 
@@ -2038,6 +2050,7 @@
         private System.Windows.Forms.Label lblworking;
         private System.Windows.Forms.CheckBox chkCodeFoldingAI;
         private System.Windows.Forms.CheckBox chkLineNumbersAI;
+        private System.Windows.Forms.Button btnMakeBasePython;
     }
 }
 

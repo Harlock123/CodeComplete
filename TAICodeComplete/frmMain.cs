@@ -6478,6 +6478,28 @@ namespace TAICodeComplete
             sciAICode.Margins[2].Width = marginwidth;
 
         }
+
+        private async void btnMakeBasePython_Click(object sender, EventArgs e)
+        {
+            string prompt =
+                "I have the following class that does basic CRUD operations on a " +
+                "specific database table using C# and standard microsoft .net libraries " +
+                "like SQLDATACLIENT and what not. I want to create a PYTHON version of " +
+                "this same class employing PYTHON standards libraries. Do full implementation of " +
+                "the ADD/UPDATE/COPYFIELDS methods. Create the PYTHON class a fully as possible ..." + "\n\n" +
+                sciBaseTableCode.Text + "\n\n";
+
+            lblworking.Visible = true;
+
+            Application.DoEvents();
+
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt);
+
+            lblworking.Visible = false;
+
+            // Set the generated code to Scintilla
+            sciAICode.Text = generatedCode;
+        }
     }
 
     //public class DOCDEFCAT
