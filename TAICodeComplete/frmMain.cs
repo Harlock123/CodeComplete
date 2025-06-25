@@ -6500,6 +6500,29 @@ namespace TAICodeComplete
             // Set the generated code to Scintilla
             sciAICode.Text = generatedCode;
         }
+
+        private async void btnMakeRestfulAPI_Click(object sender, EventArgs e)
+        {
+            string prompt =
+                "I have the following class that does basic CRUD operations on a " +
+                "specific database table using C# and standard microsoft .net libraries " +
+                "like SQLDATACLIENT and what not. I want to create a .NET RESTFUL API version of " +
+                "this same class as a series of API endpoints employing .NET 8.0 standards libraries running on a IIS webserver at " +
+                "https://WHATEVERADDRESS.COM/API/V1. Do full implementation of " +
+                "the ADD/UPDATE/READ/DELETE/COPYFIELDS methods. Create the API endpoints a fully as possible ..." + "\n\n" +
+                sciBaseTableCode.Text + "\n\n";
+
+            lblworking.Visible = true;
+
+            Application.DoEvents();
+
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt);
+
+            lblworking.Visible = false;
+
+            // Set the generated code to Scintilla
+            sciAICode.Text = generatedCode;
+        }
     }
 
     //public class DOCDEFCAT

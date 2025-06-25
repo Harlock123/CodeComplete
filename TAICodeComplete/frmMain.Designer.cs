@@ -164,6 +164,10 @@
             this.cbMMakerCodeFold = new System.Windows.Forms.CheckBox();
             this.cbMMakerLineNumbers = new System.Windows.Forms.CheckBox();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.btnMakeRestfulAPI = new System.Windows.Forms.Button();
+            this.btnMakeBasePython = new System.Windows.Forms.Button();
+            this.chkCodeFoldingAI = new System.Windows.Forms.CheckBox();
+            this.chkLineNumbersAI = new System.Windows.Forms.CheckBox();
             this.lblworking = new System.Windows.Forms.Label();
             this.btnMakeBaseJava = new System.Windows.Forms.Button();
             this.txtLMSTUDIOAddress = new System.Windows.Forms.TextBox();
@@ -171,9 +175,6 @@
             this.sciAICode = new ScintillaNET.Scintilla();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.backgroundworkerThread = new System.ComponentModel.BackgroundWorker();
-            this.chkCodeFoldingAI = new System.Windows.Forms.CheckBox();
-            this.chkLineNumbersAI = new System.Windows.Forms.CheckBox();
-            this.btnMakeBasePython = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -306,7 +307,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(1118, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connection Parameters";
@@ -360,7 +361,7 @@
             // btnSSPI
             // 
             this.btnSSPI.Location = new System.Drawing.Point(390, 73);
-            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSSPI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSSPI.Name = "btnSSPI";
             this.btnSSPI.Size = new System.Drawing.Size(48, 22);
             this.btnSSPI.TabIndex = 17;
@@ -718,7 +719,7 @@
             this.tabPage2.Controls.Add(this.chkBaseTableLineNumbers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(1118, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Base Code c#";
@@ -1640,7 +1641,7 @@
             this.tabPage16.Controls.Add(this.cbMMakerCodeFold);
             this.tabPage16.Controls.Add(this.cbMMakerLineNumbers);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
-            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Size = new System.Drawing.Size(1118, 519);
             this.tabPage16.TabIndex = 17;
@@ -1649,7 +1650,7 @@
             // btnMakeDispatchCase
             // 
             this.btnMakeDispatchCase.Location = new System.Drawing.Point(685, 18);
-            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMakeDispatchCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMakeDispatchCase.Name = "btnMakeDispatchCase";
             this.btnMakeDispatchCase.Size = new System.Drawing.Size(128, 34);
             this.btnMakeDispatchCase.TabIndex = 17;
@@ -1670,7 +1671,7 @@
             // txtObjectTypeAndName
             // 
             this.txtObjectTypeAndName.Location = new System.Drawing.Point(631, 70);
-            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtObjectTypeAndName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtObjectTypeAndName.Name = "txtObjectTypeAndName";
             this.txtObjectTypeAndName.Size = new System.Drawing.Size(335, 20);
             this.txtObjectTypeAndName.TabIndex = 15;
@@ -1688,7 +1689,7 @@
             // btnProcessMethodNames
             // 
             this.btnProcessMethodNames.Location = new System.Drawing.Point(575, 18);
-            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProcessMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProcessMethodNames.Name = "btnProcessMethodNames";
             this.btnProcessMethodNames.Size = new System.Drawing.Size(106, 34);
             this.btnProcessMethodNames.TabIndex = 13;
@@ -1699,7 +1700,7 @@
             // txtMethodNames
             // 
             this.txtMethodNames.Location = new System.Drawing.Point(14, 18);
-            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMethodNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMethodNames.Multiline = true;
             this.txtMethodNames.Name = "txtMethodNames";
             this.txtMethodNames.Size = new System.Drawing.Size(558, 123);
@@ -1741,6 +1742,7 @@
             // tabPage17
             // 
             this.tabPage17.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tabPage17.Controls.Add(this.btnMakeRestfulAPI);
             this.tabPage17.Controls.Add(this.btnMakeBasePython);
             this.tabPage17.Controls.Add(this.chkCodeFoldingAI);
             this.tabPage17.Controls.Add(this.chkLineNumbersAI);
@@ -1751,10 +1753,54 @@
             this.tabPage17.Controls.Add(this.sciAICode);
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage17.Size = new System.Drawing.Size(1118, 519);
             this.tabPage17.TabIndex = 18;
             this.tabPage17.Text = "AI";
+            // 
+            // btnMakeRestfulAPI
+            // 
+            this.btnMakeRestfulAPI.Location = new System.Drawing.Point(300, 39);
+            this.btnMakeRestfulAPI.Name = "btnMakeRestfulAPI";
+            this.btnMakeRestfulAPI.Size = new System.Drawing.Size(140, 23);
+            this.btnMakeRestfulAPI.TabIndex = 13;
+            this.btnMakeRestfulAPI.Text = "Make Restful API";
+            this.btnMakeRestfulAPI.UseVisualStyleBackColor = true;
+            this.btnMakeRestfulAPI.Click += new System.EventHandler(this.btnMakeRestfulAPI_Click);
+            // 
+            // btnMakeBasePython
+            // 
+            this.btnMakeBasePython.Location = new System.Drawing.Point(154, 39);
+            this.btnMakeBasePython.Name = "btnMakeBasePython";
+            this.btnMakeBasePython.Size = new System.Drawing.Size(140, 23);
+            this.btnMakeBasePython.TabIndex = 12;
+            this.btnMakeBasePython.Text = "Make Base Python";
+            this.btnMakeBasePython.UseVisualStyleBackColor = true;
+            this.btnMakeBasePython.Click += new System.EventHandler(this.btnMakeBasePython_Click);
+            // 
+            // chkCodeFoldingAI
+            // 
+            this.chkCodeFoldingAI.AutoSize = true;
+            this.chkCodeFoldingAI.Checked = true;
+            this.chkCodeFoldingAI.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCodeFoldingAI.Location = new System.Drawing.Point(9, 90);
+            this.chkCodeFoldingAI.Name = "chkCodeFoldingAI";
+            this.chkCodeFoldingAI.Size = new System.Drawing.Size(118, 17);
+            this.chkCodeFoldingAI.TabIndex = 11;
+            this.chkCodeFoldingAI.Text = "Show Code Folding";
+            this.chkCodeFoldingAI.UseVisualStyleBackColor = true;
+            this.chkCodeFoldingAI.CheckedChanged += new System.EventHandler(this.HandleAICodeFoldingCheckChanged);
+            // 
+            // chkLineNumbersAI
+            // 
+            this.chkLineNumbersAI.AutoSize = true;
+            this.chkLineNumbersAI.Location = new System.Drawing.Point(9, 67);
+            this.chkLineNumbersAI.Name = "chkLineNumbersAI";
+            this.chkLineNumbersAI.Size = new System.Drawing.Size(91, 17);
+            this.chkLineNumbersAI.TabIndex = 10;
+            this.chkLineNumbersAI.Text = "Line Numbers";
+            this.chkLineNumbersAI.UseVisualStyleBackColor = true;
+            this.chkLineNumbersAI.CheckedChanged += new System.EventHandler(this.HandleAILineNumbersChanged);
             // 
             // lblworking
             // 
@@ -1813,40 +1859,6 @@
             // 
             this.backgroundworkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.HandleBackgroundWorker_DoWork);
             this.backgroundworkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.HandleBackgroundWorker_Completed);
-            // 
-            // chkCodeFoldingAI
-            // 
-            this.chkCodeFoldingAI.AutoSize = true;
-            this.chkCodeFoldingAI.Checked = true;
-            this.chkCodeFoldingAI.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkCodeFoldingAI.Location = new System.Drawing.Point(9, 90);
-            this.chkCodeFoldingAI.Name = "chkCodeFoldingAI";
-            this.chkCodeFoldingAI.Size = new System.Drawing.Size(118, 17);
-            this.chkCodeFoldingAI.TabIndex = 11;
-            this.chkCodeFoldingAI.Text = "Show Code Folding";
-            this.chkCodeFoldingAI.UseVisualStyleBackColor = true;
-            this.chkCodeFoldingAI.CheckedChanged += new System.EventHandler(this.HandleAICodeFoldingCheckChanged);
-            // 
-            // chkLineNumbersAI
-            // 
-            this.chkLineNumbersAI.AutoSize = true;
-            this.chkLineNumbersAI.Location = new System.Drawing.Point(9, 67);
-            this.chkLineNumbersAI.Name = "chkLineNumbersAI";
-            this.chkLineNumbersAI.Size = new System.Drawing.Size(91, 17);
-            this.chkLineNumbersAI.TabIndex = 10;
-            this.chkLineNumbersAI.Text = "Line Numbers";
-            this.chkLineNumbersAI.UseVisualStyleBackColor = true;
-            this.chkLineNumbersAI.CheckedChanged += new System.EventHandler(this.HandleAILineNumbersChanged);
-            // 
-            // btnMakeBasePython
-            // 
-            this.btnMakeBasePython.Location = new System.Drawing.Point(154, 39);
-            this.btnMakeBasePython.Name = "btnMakeBasePython";
-            this.btnMakeBasePython.Size = new System.Drawing.Size(140, 23);
-            this.btnMakeBasePython.TabIndex = 12;
-            this.btnMakeBasePython.Text = "Make Base Python";
-            this.btnMakeBasePython.UseVisualStyleBackColor = true;
-            this.btnMakeBasePython.Click += new System.EventHandler(this.btnMakeBasePython_Click);
             // 
             // frmMain
             // 
@@ -2051,6 +2063,7 @@
         private System.Windows.Forms.CheckBox chkCodeFoldingAI;
         private System.Windows.Forms.CheckBox chkLineNumbersAI;
         private System.Windows.Forms.Button btnMakeBasePython;
+        private System.Windows.Forms.Button btnMakeRestfulAPI;
     }
 }
 
