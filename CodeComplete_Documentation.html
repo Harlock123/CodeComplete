@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeComplete - Comprehensive User Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-left: 5px solid #3498db;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 20px;
+        }
+        .tab-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature-list {
+            background-color: #fff8dc;
+            padding: 15px;
+            border-left: 4px solid #f39c12;
+            margin: 10px 0;
+        }
+        .checkbox-item {
+            background-color: #e8f5e9;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+        .control-group {
+            background-color: #e3f2fd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .important {
+            background-color: #ffebee;
+            padding: 10px;
+            border-left: 4px solid #e74c3c;
+            margin: 10px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .toc {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+        .toc a:hover {
+            color: #5dade2;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        .button-desc {
+            background-color: #fff3cd;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 3px;
+            border-left: 3px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <h1>CodeComplete - Comprehensive User Documentation</h1>
+
+    <div class="toc">
+        <h2 style="color: white; border: none; background: transparent; padding: 0;">Table of Contents</h2>
+        <a href="#overview">Overview</a>
+        <a href="#tab1">Tab 1: Connection Parameters</a>
+        <a href="#tab2">Tab 2: Base Code C#</a>
+        <a href="#tab3">Tab 3: Base Code TypeScript</a>
+        <a href="#tab4">Tab 4: Web Method</a>
+        <a href="#tab5">Tab 5: WebAPI</a>
+        <a href="#tab6">Tab 6: JavaScript</a>
+        <a href="#tab7">Tab 7: REST</a>
+        <a href="#tab8">Tab 8: HTML</a>
+        <a href="#tab9">Tab 9: CSS</a>
+        <a href="#tab10">Tab 10: XAML</a>
+        <a href="#tab11">Tab 11: WinForms</a>
+        <a href="#tab12">Tab 12: SQL Code</a>
+        <a href="#tab13">Tab 13: Stringify</a>
+        <a href="#tab14">Tab 14: SQL Beautiful</a>
+        <a href="#tab15">Tab 15: BASE64 Encode</a>
+        <a href="#tab16">Tab 16: Method Maker</a>
+        <a href="#tab17">Tab 17: AI</a>
+    </div>
+
+    <div id="overview" class="tab-section">
+        <h2>Overview</h2>
+        <p><strong>CodeComplete</strong> is a powerful code generation tool designed to automatically create Data Abstraction Layer (DAL) classes and various code artifacts from SQL Server database schemas. The tool can generate code in multiple languages and formats, making it an invaluable asset for rapid application development.</p>
+
+        <div class="feature-list">
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Automatic generation of full CRUD (Create, Read, Update, Delete) operations</li>
+                <li>Support for multiple output formats: C#, TypeScript, JavaScript, Python, Java</li>
+                <li>Web service generation (Web Methods, WebAPI, REST)</li>
+                <li>UI generation (WinForms, XAML, HTML/CSS)</li>
+                <li>AI-assisted code generation via LM Studio integration</li>
+                <li>Utility tools for string manipulation, SQL formatting, and Base64 encoding</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab1" class="tab-section">
+        <h2>Tab 1: Connection Parameters</h2>
+        <p>This is the primary configuration screen where you establish database connectivity and configure code generation options.</p>
+
+        <h3>Database Connection Section</h3>
+        <div class="control-group">
+            <h4>Connection Methods:</h4>
+            <ul>
+                <li><strong>Manual Connection String</strong> - Paste a complete connection string and press Enter</li>
+                <li><strong>Server Enumeration</strong> - Click the binoculars button to discover available SQL Servers on the network</li>
+                <li><strong>Manual Server Name</strong> - Type in a specific server name</li>
+            </ul>
+        </div>
+
+        <div class="control-group">
+            <h4>Dropdown Controls:</h4>
+            <ul>
+                <li><strong>Servers Dropdown</strong> - Select from enumerated SQL Server instances</li>
+                <li><strong>Databases Dropdown</strong> - Choose a database from the selected server</li>
+                <li><strong>Tables Dropdown</strong> - Pick a table or view for code generation</li>
+            </ul>
+        </div>
+
+        <h3>Authentication</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>User Textbox</strong> - SQL Server login ID</li>
+                <li><strong>Password Textbox</strong> - SQL Server password (masked)</li>
+                <li><strong>SSPI Button</strong> - Use Windows Authentication instead of SQL credentials</li>
+            </ul>
+        </div>
+
+        <h3>Code Generation Options Panel</h3>
+        <p>A comprehensive set of checkboxes that control what code gets generated:</p>
+
+        <div class="checkbox-item">
+            <strong>Generate Add Method</strong> - Creates INSERT functionality
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate FastAdd Method</strong> - Creates optimized INSERT with fewer parameters
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate Delete Method</strong> - Creates DELETE functionality
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate Read Method</strong> - Creates SELECT by ID functionality
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate ReadAsDataSet Method</strong> - Creates method returning DataSet
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate Update Method</strong> - Creates UPDATE functionality
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate Web Methods</strong> - Creates SOAP web service methods
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate Deactivate Method</strong> - Creates soft delete functionality
+        </div>
+        <div class="checkbox-item">
+            <strong>INotifyPropertyChanged</strong> - Implements property change notification
+        </div>
+        <div class="checkbox-item">
+            <strong>Post Process WS Result List</strong> - Additional processing for web service results
+        </div>
+        <div class="checkbox-item">
+            <strong>XAML Form or UserControl</strong> - Controls XAML output type
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate JavaScript UI</strong> - Creates JavaScript-based user interface
+        </div>
+        <div class="checkbox-item">
+            <strong>Generate Insert Statements</strong> - Creates SQL INSERT scripts
+        </div>
+
+        <h3>Additional Configuration</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Interface Object Prefix</strong> - Prefix for interface/lookup field names</li>
+                <li><strong>CMD Timeout</strong> - SQL command timeout value in seconds</li>
+                <li><strong>Show Connection String Button</strong> - Displays the derived connection string</li>
+                <li><strong>Derived Connection String Display</strong> - Shows the constructed connection string</li>
+            </ul>
+        </div>
+
+        <h3>Data Grid</h3>
+        <p>Displays the table schema including column names, data types, and properties for the selected table.</p>
+    </div>
+
+    <div id="tab2" class="tab-section">
+        <h2>Tab 2: Base Code C#</h2>
+        <p>Generates a complete C# Data Abstraction Layer class for the selected database table.</p>
+
+        <h3>Generated Code Includes:</h3>
+        <ul>
+            <li>Class definition with properties for each table column</li>
+            <li>Multiple constructors (default, parameterized, from DataRow, from SqlDataReader)</li>
+            <li>CRUD methods:
+                <ul>
+                    <li><code>Read(id)</code> - Retrieve single record by ID</li>
+                    <li><code>ReadAsDataSet(criteria)</code> - Query returning DataSet</li>
+                    <li><code>Add()</code> - Insert new record</li>
+                    <li><code>FastAdd()</code> - Optimized insert</li>
+                    <li><code>Update()</code> - Update existing record</li>
+                    <li><code>Delete(id)</code> - Remove record</li>
+                </ul>
+            </li>
+            <li>Property validation and type conversion</li>
+            <li>Database connection management</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Class Name Textbox</strong> - Override the default generated class name</li>
+                <li><strong>Regenerate Base Class Button</strong> - Regenerate code with current settings</li>
+                <li><strong>Line Numbers Checkbox</strong> - Toggle line number display in editor</li>
+                <li><strong>Code Folding Checkbox</strong> - Enable/disable code folding regions</li>
+                <li><strong>Save to File Button</strong> - Export generated C# code to .cs file</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>Note:</strong> The generated code uses ADO.NET with SqlClient for database operations and includes proper error handling and connection disposal.
+        </div>
+    </div>
+
+    <div id="tab3" class="tab-section">
+        <h2>Tab 3: Base Code TypeScript</h2>
+        <p>Generates TypeScript class definitions and data structures for the selected table.</p>
+
+        <h3>Generated TypeScript Features:</h3>
+        <ul>
+            <li>TypeScript interface definitions for type safety</li>
+            <li>Class with typed properties matching database columns</li>
+            <li>Type conversions between database types and TypeScript types</li>
+            <li>Constructor with optional parameter object</li>
+            <li>JSON serialization/deserialization helpers</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong> - Show/hide line numbers</li>
+                <li><strong>Code Folding Checkbox</strong> - Enable code folding</li>
+                <li><strong>Save TS Code Button</strong> - Export to .ts file</li>
+            </ul>
+        </div>
+
+        <p>The TypeScript output is ideal for Angular, React, or Vue.js applications that need strongly-typed data models.</p>
+    </div>
+
+    <div id="tab4" class="tab-section">
+        <h2>Tab 4: Web Method</h2>
+        <p>Generates SOAP web service methods (ASMX-style) for exposing database operations via web services.</p>
+
+        <h3>Generated Web Methods:</h3>
+        <ul>
+            <li><code>[WebMethod] Read(id)</code> - Returns serialized object</li>
+            <li><code>[WebMethod] ReadList(criteria)</code> - Returns list of objects</li>
+            <li><code>[WebMethod] Add(object)</code> - Inserts record via web service</li>
+            <li><code>[WebMethod] Update(object)</code> - Updates record via web service</li>
+            <li><code>[WebMethod] Delete(id)</code> - Deletes record via web service</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save Web Methods Button</strong></li>
+            </ul>
+        </div>
+
+        <p>These methods are ready to be inserted into an ASP.NET Web Service (.asmx) file.</p>
+    </div>
+
+    <div id="tab5" class="tab-section">
+        <h2>Tab 5: WebAPI</h2>
+        <p>Generates ASP.NET Web API controllers with RESTful endpoints.</p>
+
+        <h3>Generated API Controller:</h3>
+        <ul>
+            <li><code>GET api/[controller]/{id}</code> - Retrieve single entity</li>
+            <li><code>GET api/[controller]</code> - Retrieve list with optional filtering</li>
+            <li><code>POST api/[controller]</code> - Create new entity</li>
+            <li><code>PUT api/[controller]/{id}</code> - Update existing entity</li>
+            <li><code>DELETE api/[controller]/{id}</code> - Delete entity</li>
+        </ul>
+
+        <h3>Features:</h3>
+        <ul>
+            <li>ApiController base class inheritance</li>
+            <li>Route attribute decoration</li>
+            <li>HTTP verb attributes (HttpGet, HttpPost, etc.)</li>
+            <li>Proper status code returns (200, 201, 404, 500)</li>
+            <li>JSON serialization support</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save WebAPI Button</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab6" class="tab-section">
+        <h2>Tab 6: JavaScript</h2>
+        <p>Generates JavaScript code for client-side data manipulation and AJAX calls.</p>
+
+        <h3>Generated JavaScript:</h3>
+        <ul>
+            <li>JavaScript class/object constructor</li>
+            <li>Property getters and setters</li>
+            <li>AJAX methods for CRUD operations using jQuery or fetch API</li>
+            <li>JSON serialization functions</li>
+            <li>Validation functions</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save JS Button</strong></li>
+            </ul>
+        </div>
+
+        <p>The generated JavaScript can be used directly in web applications for client-side data handling.</p>
+    </div>
+
+    <div id="tab7" class="tab-section">
+        <h2>Tab 7: REST</h2>
+        <p>Generates RESTful service implementations with clean REST architecture.</p>
+
+        <h3>REST Implementation:</h3>
+        <ul>
+            <li>Resource-based URL structure</li>
+            <li>Proper HTTP method usage (GET, POST, PUT, DELETE)</li>
+            <li>Status code handling</li>
+            <li>Content negotiation (JSON/XML)</li>
+            <li>Error response formatting</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save REST Code Button</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab8" class="tab-section">
+        <h2>Tab 8: HTML</h2>
+        <p>Generates HTML forms and tables for displaying and editing database records.</p>
+
+        <h3>Generated HTML:</h3>
+        <ul>
+            <li>Input forms with fields for each table column</li>
+            <li>Proper input types (text, number, date, checkbox, etc.)</li>
+            <li>HTML5 validation attributes</li>
+            <li>Data tables for displaying record lists</li>
+            <li>Bootstrap-compatible markup (if configured)</li>
+            <li>Form submission handlers</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save HTML Button</strong></li>
+                <li><strong>Fiddle It Button</strong> - Open code in JSFiddle for testing</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab9" class="tab-section">
+        <h2>Tab 9: CSS</h2>
+        <p>Generates CSS stylesheets to complement the HTML forms and tables.</p>
+
+        <h3>Generated CSS:</h3>
+        <ul>
+            <li>Form styling (inputs, labels, buttons)</li>
+            <li>Table styling (headers, rows, alternating colors)</li>
+            <li>Responsive design rules</li>
+            <li>Validation state styles (error, success)</li>
+            <li>Layout classes</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save CSS Button</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab10" class="tab-section">
+        <h2>Tab 10: XAML</h2>
+        <p>Generates XAML markup for WPF or UWP applications.</p>
+
+        <h3>Generated XAML:</h3>
+        <ul>
+            <li>Window or UserControl definitions</li>
+            <li>Grid-based layouts with proper row/column definitions</li>
+            <li>Input controls (TextBox, DatePicker, ComboBox, CheckBox)</li>
+            <li>Data binding expressions to ViewModel properties</li>
+            <li>Button commands for CRUD operations</li>
+            <li>DataGrid for displaying lists</li>
+            <li>Styles and templates</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save XAML Button</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab11" class="tab-section">
+        <h2>Tab 11: WinForms</h2>
+        <p>Generates Windows Forms code for desktop applications.</p>
+
+        <h3>Generated WinForms Code:</h3>
+        <ul>
+            <li>Form class with controls for each field</li>
+            <li>Labels, TextBoxes, DateTimePickers, CheckBoxes, ComboBoxes</li>
+            <li>Button event handlers (Save, Delete, New, Cancel)</li>
+            <li>DataGridView for displaying lists</li>
+            <li>Data binding code</li>
+            <li>Validation logic</li>
+            <li>Load/Save methods</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save WinForms Code Button</strong></li>
+                <li><strong>Show Test Form Button</strong> - Preview the generated form</li>
+            </ul>
+        </div>
+
+        <p>The generated form can be added directly to a Windows Forms project.</p>
+    </div>
+
+    <div id="tab12" class="tab-section">
+        <h2>Tab 12: SQL Code</h2>
+        <p>Generates raw SQL statements and stored procedures.</p>
+
+        <h3>Generated SQL:</h3>
+        <ul>
+            <li>CREATE TABLE statement</li>
+            <li>INSERT stored procedure</li>
+            <li>UPDATE stored procedure</li>
+            <li>DELETE stored procedure</li>
+            <li>SELECT stored procedures (by ID, by criteria)</li>
+            <li>Index creation scripts</li>
+            <li>Parameter declarations</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+                <li><strong>Save SQL Button</strong></li>
+            </ul>
+        </div>
+
+        <p>SQL code includes proper syntax highlighting with the SQL lexer.</p>
+    </div>
+
+    <div id="tab13" class="tab-section">
+        <h2>Tab 13: Stringify</h2>
+        <p>Utility tab for converting text to string literals suitable for code.</p>
+
+        <h3>Functionality:</h3>
+        <ul>
+            <li>Converts multi-line text to escaped string literals</li>
+            <li>Adds proper quote escaping</li>
+            <li>Handles special characters</li>
+            <li>Useful for embedding SQL, HTML, or other text in code</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Input Textbox</strong> - Paste raw text here</li>
+                <li><strong>Stringify Button</strong> - Convert to escaped string</li>
+                <li><strong>Pad Checkbox</strong> - Add spacing/indentation</li>
+                <li><strong>Output Editor</strong> - Shows stringified result</li>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>Use Case:</strong> When you need to embed long SQL queries or HTML templates as string constants in your code.
+        </div>
+    </div>
+
+    <div id="tab14" class="tab-section">
+        <h2>Tab 14: SQL Beautiful</h2>
+        <p>SQL formatting and beautification tool for making SQL code more readable.</p>
+
+        <h3>Features:</h3>
+        <ul>
+            <li>Formats messy/compressed SQL into readable code</li>
+            <li>Proper indentation of nested queries</li>
+            <li>Keyword capitalization</li>
+            <li>Alignment of clauses (SELECT, FROM, WHERE, etc.)</li>
+            <li>Line breaking for improved readability</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Input Textbox</strong> - Paste unformatted SQL</li>
+                <li><strong>Beautify Button</strong> - Format the SQL</li>
+                <li><strong>Output Editor</strong> - Shows formatted result</li>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+            </ul>
+        </div>
+
+        <p>Perfect for cleaning up SQL extracted from logs or generated by ORMs.</p>
+    </div>
+
+    <div id="tab15" class="tab-section">
+        <h2>Tab 15: BASE64 Encode</h2>
+        <p>Utility for encoding text or data to Base64 format.</p>
+
+        <h3>Functionality:</h3>
+        <ul>
+            <li>Encodes text to Base64</li>
+            <li>Useful for embedding binary data in text formats</li>
+            <li>Handles UTF-8 text encoding</li>
+            <li>Common use: embedding images in HTML/CSS</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Input Textbox</strong> - Enter text to encode</li>
+                <li><strong>Encode Button</strong> - Convert to Base64</li>
+                <li><strong>Output Editor</strong> - Shows Base64 result</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab16" class="tab-section">
+        <h2>Tab 16: Method Maker</h2>
+        <p>Code generation tool for creating boilerplate method implementations.</p>
+
+        <h3>Features:</h3>
+        <ul>
+            <li>Generates method signatures from names list</li>
+            <li>Creates dispatch/switch case statements</li>
+            <li>Useful for creating API routers or command handlers</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>Method Names Textbox</strong> - Enter method names (one per line)</li>
+                <li><strong>Object Type and Name</strong> - Specify the class/object context</li>
+                <li><strong>Process Method Names Button</strong> - Generate method stubs</li>
+                <li><strong>Make Dispatch Case Button</strong> - Generate switch/case dispatcher</li>
+                <li><strong>Output Editor</strong> - Shows generated code</li>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>Example Use:</strong> Quickly create a set of empty methods or a dispatcher for handling different command types.
+        </div>
+    </div>
+
+    <div id="tab17" class="tab-section">
+        <h2>Tab 17: AI</h2>
+        <p>AI-assisted code generation using LM Studio integration for advanced code generation in multiple languages.</p>
+
+        <h3>Supported AI Code Generation:</h3>
+        <ul>
+            <li><strong>Python</strong> - Generate Python data classes and database access code</li>
+            <li><strong>Java</strong> - Generate Java entity classes and DAO patterns</li>
+            <li><strong>RESTful API</strong> - AI-generated REST endpoint implementations</li>
+        </ul>
+
+        <h3>Controls:</h3>
+        <div class="control-group">
+            <ul>
+                <li><strong>LM Studio Address Textbox</strong> - URL of your LM Studio instance (e.g., http://localhost:1234)</li>
+                <li><strong>Connect to LM Studio Button</strong> - Establish connection to AI service</li>
+                <li><strong>Make Base Python Button</strong> - Generate Python data access classes</li>
+                <li><strong>Make Base Java Button</strong> - Generate Java entity and DAO classes</li>
+                <li><strong>Make Restful API Button</strong> - Generate AI-powered REST endpoints</li>
+                <li><strong>Working Label</strong> - Shows status during AI generation</li>
+                <li><strong>Output Editor</strong> - Displays AI-generated code</li>
+                <li><strong>Line Numbers Checkbox</strong></li>
+                <li><strong>Code Folding Checkbox</strong></li>
+            </ul>
+        </div>
+
+        <h3>How AI Generation Works:</h3>
+        <ol>
+            <li>Connect to LM Studio running locally or on network</li>
+            <li>Select a table from the Connection Parameters tab</li>
+            <li>Choose the desired output language/format</li>
+            <li>Click the generation button</li>
+            <li>The AI analyzes the table schema and generates appropriate code</li>
+        </ol>
+
+        <div class="important">
+            <strong>Requirements:</strong> LM Studio must be running and accessible. The AI uses the table schema from your currently selected database table to generate contextually appropriate code.
+        </div>
+
+        <div class="feature-list">
+            <h4>AI Generation Advantages:</h4>
+            <ul>
+                <li>More intelligent naming conventions</li>
+                <li>Context-aware code patterns</li>
+                <li>Modern framework integration (Flask, Spring Boot, etc.)</li>
+                <li>Best practices implementation</li>
+                <li>Comments and documentation generation</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-section">
+        <h2>General Workflow</h2>
+        <ol>
+            <li><strong>Connect to Database</strong> - Use Tab 1 to establish connection</li>
+            <li><strong>Select Table</strong> - Choose the database table for code generation</li>
+            <li><strong>Configure Options</strong> - Set checkboxes for desired methods and features</li>
+            <li><strong>Generate Code</strong> - Navigate to desired tab to view generated code</li>
+            <li><strong>Customize</strong> - Edit generated code in the syntax-highlighted editor if needed</li>
+            <li><strong>Save</strong> - Use the Save button to export code to files</li>
+            <li><strong>Integrate</strong> - Add generated files to your project</li>
+        </ol>
+    </div>
+
+    <div class="tab-section">
+        <h2>Common Editor Features</h2>
+        <p>Most code display tabs use the Scintilla editor component with these features:</p>
+        <ul>
+            <li><strong>Syntax Highlighting</strong> - Language-specific color coding</li>
+            <li><strong>Line Numbers</strong> - Toggle via checkbox</li>
+            <li><strong>Code Folding</strong> - Collapse/expand code regions</li>
+            <li><strong>Search/Replace</strong> - Standard text editing capabilities</li>
+            <li><strong>Copy/Paste</strong> - Easy code extraction</li>
+        </ul>
+    </div>
+
+    <div class="tab-section">
+        <h2>Tips and Best Practices</h2>
+        <div class="feature-list">
+            <ul>
+                <li><strong>Test Connection First</strong> - Always verify database connectivity before attempting code generation</li>
+                <li><strong>Review Generated Code</strong> - While the tool generates functional code, always review for your specific requirements</li>
+                <li><strong>Save Connection Strings</strong> - Store frequently used connection strings for quick access</li>
+                <li><strong>Use Class Name Override</strong> - Customize class names to match your project's naming conventions</li>
+                <li><strong>Leverage Multiple Tabs</strong> - Generate both frontend and backend code simultaneously</li>
+                <li><strong>AI for Complex Scenarios</strong> - Use AI generation for more sophisticated patterns</li>
+                <li><strong>Stringify for Embedding</strong> - Use the Stringify tab when embedding large text blocks in code</li>
+                <li><strong>SQL Beautifier</strong> - Clean up generated or logged SQL before using in stored procedures</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-section">
+        <h2>Version Information</h2>
+        <p>The application version is displayed in the main window title bar. Recent enhancements include:</p>
+        <ul>
+            <li>LM Studio AI integration for Python and Java code generation</li>
+            <li>RESTful API endpoint generation</li>
+            <li>Enhanced TypeScript support</li>
+            <li>Improved XAML generation</li>
+        </ul>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #ddd; text-align: center; color: #7f8c8d;">
+        <p>CodeComplete - Database-Driven Code Generation Tool</p>
+        <p>For additional help, refer to the source code comments or contact the development team.</p>
+    </footer>
+</body>
+</html>
