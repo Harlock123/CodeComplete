@@ -5383,8 +5383,6 @@ namespace TAICodeComplete
         
         private string GenerateInsertStatement()
         {
-            string result = "";
-
             StringBuilder sb = new StringBuilder();
 
             if (chkGenerateInsertStatements.Checked)
@@ -5393,36 +5391,44 @@ namespace TAICodeComplete
                 if (IDFIELDNAME != "")
                 {
 
-                    #region Use the CommandBuilder Object to make the Insert
+                    #region Build column list sorted alphabetically to match TheFields order
 
-                    SqlConnection cn = new SqlConnection(DSN);
-                    cn.Open();
+                    StringBuilder colList = new StringBuilder();
+                    bool firstCol = true;
+                    foreach (Field fld in TheFields)
+                    {
+                        if (!fld.IsIdentity)
+                        {
+                            if (!firstCol) colList.Append(", ");
+                            colList.Append("[" + fld.FieldName + "]");
+                            firstCol = false;
+                        }
+                    }
 
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM " + TableName, cn);
-
-                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
-                    builder.QuotePrefix = "[";
-                    builder.QuoteSuffix = "]";
-
-                    result = builder.GetInsertCommand().CommandText;
-
-                    string InsertCommand = result.Substring(0, result.IndexOf(" VALUES (@p1"));
-                    string ValuesCommand = result.Substring(result.IndexOf(" VALUES (@p1"));
+                    string InsertCommand = "INSERT INTO " + TableName + " (" + colList.ToString() + ")";
 
                     sb.Append(InsertCommand);
                     sb.Append("\n");
 
-                    builder.Dispose();
-                    adapter.Dispose();
-                    cn.Close();
-                    cn.Dispose();
-
                     #endregion
+
+                    #region Build SELECT with columns in same alphabetical order
+
+                    StringBuilder selectColList = new StringBuilder();
+                    firstCol = true;
+                    foreach (Field fld in TheFields)
+                    {
+                        if (!firstCol) selectColList.Append(", ");
+                        selectColList.Append("[" + fld.FieldName + "]");
+                        firstCol = false;
+                    }
 
                     SqlConnection cn1 = new SqlConnection(DSN);
                     cn1.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM " + TableName + " ORDER BY " + IDFIELDNAME, cn1);
+                    SqlCommand cmd = new SqlCommand("SELECT " + selectColList.ToString() + " FROM " + TableName + " ORDER BY " + IDFIELDNAME, cn1);
+
+                    #endregion
 
                     SqlDataReader r = cmd.ExecuteReader();
 
@@ -5466,35 +5472,40 @@ namespace TAICodeComplete
                                     #region Do the Field Decode
 
                                     if (f.FieldType == "VARCHAR" || f.FieldType == "CHAR" || f.FieldType == "NVARCHAR" ||
-                                            f.FieldType == "TEXT" || f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
+                                            f.FieldType == "TEXT" || f.FieldType == "NTEXT" || f.FieldType == "XML" ||
+                                            f.FieldType == "UNIQUEIDENTIFIER" || f.FieldType == "GUID" ||
                                             f.FieldType == "SYSNAME")
                                     {
-
                                         string temp = r[fnum].ToString().Replace("'", "''");
-
                                         sb.Append("N'" + temp + "'");
                                     }
-
-                                    if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT"
-                                        || f.FieldType == "BIGINT" || f.FieldType == "NUMERIC")
+                                    else if (f.FieldType == "INT" || f.FieldType == "SMALLINT" || f.FieldType == "TINYINT"
+                                        || f.FieldType == "BIGINT")
                                     {
-                                        sb.Append("" + r[fnum].ToString() + "");
+                                        sb.Append(r[fnum].ToString());
                                     }
-
-                                    if (f.FieldType == "DOUBLE" || f.FieldType == "MONEY" || f.FieldType == "CURRENCY"
-                                        || f.FieldType == "FLOAT" || f.FieldType == "NUMERIC" || f.FieldType == "DECIMAL")
+                                    else if (f.FieldType == "NUMERIC" || f.FieldType == "DECIMAL" || f.FieldType == "MONEY"
+                                        || f.FieldType == "SMALLMONEY" || f.FieldType == "FLOAT" || f.FieldType == "REAL"
+                                        || f.FieldType == "DOUBLE" || f.FieldType == "CURRENCY")
                                     {
-                                        sb.Append("" + r[fnum].ToString() + "");
+                                        sb.Append(r[fnum].ToString());
                                     }
-
-                                    if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2" || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME")
+                                    else if (f.FieldType == "DATETIME" || f.FieldType == "DATE" || f.FieldType == "DATETIME2"
+                                        || f.FieldType == "SMALLDATE" || f.FieldType == "SMALLDATETIME"
+                                        || f.FieldType == "DATETIMEOFFSET" || f.FieldType == "TIME")
                                     {
                                         sb.Append("'" + r[fnum].ToString() + "'");
                                     }
-
-                                    if (f.FieldType == "BOOL" || f.FieldType == "BIT")
+                                    else if (f.FieldType == "BIT")
                                     {
-                                        sb.Append("'" + r[fnum].ToString() + "'");
+                                        bool val = Convert.ToBoolean(r[fnum]);
+                                        sb.Append(val ? "1" : "0");
+                                    }
+                                    else
+                                    {
+                                        // Fallback: treat unrecognized types as a quoted string
+                                        string temp = r[fnum].ToString().Replace("'", "''");
+                                        sb.Append("N'" + temp + "'");
                                     }
 
                                     #endregion
