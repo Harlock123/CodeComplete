@@ -98,7 +98,7 @@ namespace TAICodeComplete
         public async Task<string> GetCSharpCodeAsync(string prompt)
         {
             var request = new RestRequest("/v1/chat/completions", Method.Post);
-            request.Timeout = TimeSpan.FromSeconds(100); // Set timeout to 100 seconds
+            request.Timeout = TimeSpan.FromMinutes(10); // LLM inference can take several minutes
 
             var chatRequest = new ChatRequest
             {
