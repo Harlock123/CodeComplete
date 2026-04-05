@@ -6261,6 +6261,74 @@ namespace TAICodeComplete
             backgroundworkerThread.RunWorkerAsync();
         }
 
+        private async void btnScanSubnetSQL_Click(object sender, EventArgs e)
+        {
+            btnScanSubnetSQL.Enabled = false;
+            btnScanSubnetSQL.Text = "Scanning...";
+            lblOneMoment.Text = "Scanning subnet for SQL Servers...";
+            lblOneMoment.Visible = true;
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                var progress = new Progress<string>(msg =>
+                {
+                    lblOneMoment.Text = msg;
+                    Application.DoEvents();
+                });
+
+                var servers = await NetworkScanner.ScanForSQLServersAsync(1433, progress);
+
+                lblOneMoment.Visible = false;
+                lblOneMoment.Text = "One Moment Enumerating Servers";
+
+                if (servers.Count == 0)
+                {
+                    MessageBox.Show("No SQL Servers found on the subnet (port 1433).",
+                        "Scan Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Add discovered servers to the combo box
+                    foreach (var server in servers)
+                    {
+                        string entry = server.IPAddress;
+                        // Don't add duplicates
+                        bool exists = false;
+                        foreach (var item in cmboServers.Items)
+                        {
+                            if (item.ToString().Equals(entry, StringComparison.OrdinalIgnoreCase))
+                            {
+                                exists = true;
+                                break;
+                            }
+                        }
+                        if (!exists)
+                        {
+                            cmboServers.Items.Add(entry);
+                            cmboServers.Enabled = true;
+                        }
+                    }
+
+                    MessageBox.Show($"Found {servers.Count} SQL Server(s) on the subnet.\nAdded to the server list.",
+                        "Scan Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                lblOneMoment.Visible = false;
+                lblOneMoment.Text = "One Moment Enumerating Servers";
+                MessageBox.Show($"Error during scan: {ex.Message}", "Scan Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                btnScanSubnetSQL.Enabled = true;
+                btnScanSubnetSQL.Text = "Scan Subnet for SQL Servers";
+                Cursor = Cursors.Default;
+            }
+        }
+
         private void btnSQLPRETTY_Click(object sender, EventArgs e)
         {
             SQL_Formatter.Formatter formatter = new SQL_Formatter.Formatter();

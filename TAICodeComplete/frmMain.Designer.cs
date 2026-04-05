@@ -38,6 +38,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnScanSubnetSQL = new System.Windows.Forms.Button();
             this.btnEnumerateLocalSQLServers = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtManualConnectionString = new System.Windows.Forms.TextBox();
@@ -172,9 +173,9 @@
             this.btnMakeBaseJava = new System.Windows.Forms.Button();
             this.txtScanPort = new System.Windows.Forms.TextBox();
             this.btnScanSubnet = new System.Windows.Forms.Button();
-            this.cboModels = new System.Windows.Forms.ComboBox();
-            this.btnLoadModel = new System.Windows.Forms.Button();
             this.btnUnloadModel = new System.Windows.Forms.Button();
+            this.btnLoadModel = new System.Windows.Forms.Button();
+            this.cboModels = new System.Windows.Forms.ComboBox();
             this.txtLMSTUDIOAddress = new System.Windows.Forms.TextBox();
             this.btnConnectLMStudio = new System.Windows.Forms.Button();
             this.sciAICode = new ScintillaNET.Scintilla();
@@ -207,7 +208,7 @@
             this.cmboServers.FormattingEnabled = true;
             this.cmboServers.Location = new System.Drawing.Point(6, 52);
             this.cmboServers.Name = "cmboServers";
-            this.cmboServers.Size = new System.Drawing.Size(167, 21);
+            this.cmboServers.Size = new System.Drawing.Size(197, 21);
             this.cmboServers.TabIndex = 0;
             this.cmboServers.SelectedIndexChanged += new System.EventHandler(this.HandleServerSelection);
             // 
@@ -223,7 +224,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 116);
+            this.label2.Location = new System.Drawing.Point(3, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 13);
             this.label2.TabIndex = 3;
@@ -232,7 +233,7 @@
             // cmboDatabases
             // 
             this.cmboDatabases.FormattingEnabled = true;
-            this.cmboDatabases.Location = new System.Drawing.Point(6, 92);
+            this.cmboDatabases.Location = new System.Drawing.Point(6, 96);
             this.cmboDatabases.Name = "cmboDatabases";
             this.cmboDatabases.Size = new System.Drawing.Size(197, 21);
             this.cmboDatabases.TabIndex = 2;
@@ -241,7 +242,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 156);
+            this.label3.Location = new System.Drawing.Point(3, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 13);
             this.label3.TabIndex = 5;
@@ -250,7 +251,7 @@
             // cmboTables
             // 
             this.cmboTables.FormattingEnabled = true;
-            this.cmboTables.Location = new System.Drawing.Point(6, 132);
+            this.cmboTables.Location = new System.Drawing.Point(6, 136);
             this.cmboTables.Name = "cmboTables";
             this.cmboTables.Size = new System.Drawing.Size(197, 21);
             this.cmboTables.TabIndex = 4;
@@ -289,6 +290,7 @@
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.btnScanSubnetSQL);
             this.tabPage1.Controls.Add(this.btnEnumerateLocalSQLServers);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.txtManualConnectionString);
@@ -335,14 +337,25 @@
             this.label14.TabIndex = 21;
             this.label14.Text = "to use credentials below or Click";
             // 
+            // btnScanSubnetSQL
+            // 
+            this.btnScanSubnetSQL.Location = new System.Drawing.Point(152, 73);
+            this.btnScanSubnetSQL.Name = "btnScanSubnetSQL";
+            this.btnScanSubnetSQL.Size = new System.Drawing.Size(51, 23);
+            this.btnScanSubnetSQL.TabIndex = 22;
+            this.btnScanSubnetSQL.Text = "Scan";
+            this.btnScanSubnetSQL.UseVisualStyleBackColor = true;
+            this.btnScanSubnetSQL.Click += new System.EventHandler(this.btnScanSubnetSQL_Click);
+            // 
             // btnEnumerateLocalSQLServers
             // 
             this.btnEnumerateLocalSQLServers.Image = global::TAICodeComplete.Properties.Resources.Binoculors;
-            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(176, 49);
+            this.btnEnumerateLocalSQLServers.Location = new System.Drawing.Point(404, 26);
             this.btnEnumerateLocalSQLServers.Name = "btnEnumerateLocalSQLServers";
             this.btnEnumerateLocalSQLServers.Size = new System.Drawing.Size(28, 26);
             this.btnEnumerateLocalSQLServers.TabIndex = 20;
             this.btnEnumerateLocalSQLServers.UseVisualStyleBackColor = true;
+            this.btnEnumerateLocalSQLServers.Visible = false;
             this.btnEnumerateLocalSQLServers.Click += new System.EventHandler(this.btnEnumerateLocalSQLServers_Click);
             // 
             // label17
@@ -1850,35 +1863,35 @@
             this.btnScanSubnet.Text = "Scan for LMStudio";
             this.btnScanSubnet.UseVisualStyleBackColor = true;
             this.btnScanSubnet.Click += new System.EventHandler(this.btnScanSubnet_Click);
-            //
-            // cboModels
-            //
-            this.cboModels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboModels.Location = new System.Drawing.Point(356, 35);
-            this.cboModels.Name = "cboModels";
-            this.cboModels.Size = new System.Drawing.Size(350, 21);
-            this.cboModels.TabIndex = 16;
-            //
-            // btnLoadModel
-            //
-            this.btnLoadModel.Location = new System.Drawing.Point(712, 33);
-            this.btnLoadModel.Name = "btnLoadModel";
-            this.btnLoadModel.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadModel.TabIndex = 17;
-            this.btnLoadModel.Text = "Load";
-            this.btnLoadModel.UseVisualStyleBackColor = true;
-            this.btnLoadModel.Enabled = false;
-            //
+            // 
             // btnUnloadModel
-            //
+            // 
+            this.btnUnloadModel.Enabled = false;
             this.btnUnloadModel.Location = new System.Drawing.Point(793, 33);
             this.btnUnloadModel.Name = "btnUnloadModel";
             this.btnUnloadModel.Size = new System.Drawing.Size(75, 23);
             this.btnUnloadModel.TabIndex = 18;
             this.btnUnloadModel.Text = "Unload";
             this.btnUnloadModel.UseVisualStyleBackColor = true;
-            this.btnUnloadModel.Enabled = false;
-            //
+            // 
+            // btnLoadModel
+            // 
+            this.btnLoadModel.Enabled = false;
+            this.btnLoadModel.Location = new System.Drawing.Point(712, 33);
+            this.btnLoadModel.Name = "btnLoadModel";
+            this.btnLoadModel.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadModel.TabIndex = 17;
+            this.btnLoadModel.Text = "Load";
+            this.btnLoadModel.UseVisualStyleBackColor = true;
+            // 
+            // cboModels
+            // 
+            this.cboModels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModels.Location = new System.Drawing.Point(356, 35);
+            this.cboModels.Name = "cboModels";
+            this.cboModels.Size = new System.Drawing.Size(350, 21);
+            this.cboModels.TabIndex = 16;
+            // 
             // txtLMSTUDIOAddress
             // 
             this.txtLMSTUDIOAddress.Location = new System.Drawing.Point(154, 10);
@@ -2066,6 +2079,7 @@
         private System.Windows.Forms.CheckBox chkStringifyCodeFolding;
         private System.Windows.Forms.CheckBox chkStringifyLineNumbers;
         private System.Windows.Forms.Button btnEnumerateLocalSQLServers;
+        private System.Windows.Forms.Button btnScanSubnetSQL;
         private System.Windows.Forms.CheckBox chkPad;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnSQLPRETTY;
