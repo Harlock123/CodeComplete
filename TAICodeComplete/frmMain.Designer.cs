@@ -170,6 +170,11 @@
             this.chkLineNumbersAI = new System.Windows.Forms.CheckBox();
             this.lblworking = new System.Windows.Forms.Label();
             this.btnMakeBaseJava = new System.Windows.Forms.Button();
+            this.txtScanPort = new System.Windows.Forms.TextBox();
+            this.btnScanSubnet = new System.Windows.Forms.Button();
+            this.cboModels = new System.Windows.Forms.ComboBox();
+            this.btnLoadModel = new System.Windows.Forms.Button();
+            this.btnUnloadModel = new System.Windows.Forms.Button();
             this.txtLMSTUDIOAddress = new System.Windows.Forms.TextBox();
             this.btnConnectLMStudio = new System.Windows.Forms.Button();
             this.sciAICode = new ScintillaNET.Scintilla();
@@ -253,7 +258,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage13);
@@ -345,7 +352,8 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(392, 13);
             this.label17.TabIndex = 19;
-            this.label17.Text = "Type in  or Paste a manual connection string here if thats available pressing ent" + "er ";
+            this.label17.Text = "Type in  or Paste a manual connection string here if thats available pressing ent" +
+    "er ";
             // 
             // txtManualConnectionString
             // 
@@ -412,7 +420,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel1.Controls.Add(this.chkGenReadAsDataSet);
             this.panel1.Controls.Add(this.chkGenUpdate);
@@ -446,7 +455,7 @@
             this.chkGenReadAsDataSet.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenReadAsDataSet.Location = new System.Drawing.Point(360, 103);
             this.chkGenReadAsDataSet.Name = "chkGenReadAsDataSet";
-            this.chkGenReadAsDataSet.Size = new System.Drawing.Size(195, 21);
+            this.chkGenReadAsDataSet.Size = new System.Drawing.Size(188, 17);
             this.chkGenReadAsDataSet.TabIndex = 28;
             this.chkGenReadAsDataSet.Text = "Generate ReadasDataSet Method";
             this.chkGenReadAsDataSet.UseVisualStyleBackColor = true;
@@ -458,7 +467,7 @@
             this.chkGenUpdate.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenUpdate.Location = new System.Drawing.Point(360, 118);
             this.chkGenUpdate.Name = "chkGenUpdate";
-            this.chkGenUpdate.Size = new System.Drawing.Size(154, 21);
+            this.chkGenUpdate.Size = new System.Drawing.Size(147, 17);
             this.chkGenUpdate.TabIndex = 27;
             this.chkGenUpdate.Text = "Generate Update Method";
             this.chkGenUpdate.UseVisualStyleBackColor = true;
@@ -470,7 +479,7 @@
             this.chkGenRead.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenRead.Location = new System.Drawing.Point(360, 88);
             this.chkGenRead.Name = "chkGenRead";
-            this.chkGenRead.Size = new System.Drawing.Size(145, 21);
+            this.chkGenRead.Size = new System.Drawing.Size(138, 17);
             this.chkGenRead.TabIndex = 26;
             this.chkGenRead.Text = "Generate Read Method";
             this.chkGenRead.UseVisualStyleBackColor = true;
@@ -482,7 +491,7 @@
             this.chkGenDelete.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenDelete.Location = new System.Drawing.Point(360, 73);
             this.chkGenDelete.Name = "chkGenDelete";
-            this.chkGenDelete.Size = new System.Drawing.Size(150, 21);
+            this.chkGenDelete.Size = new System.Drawing.Size(143, 17);
             this.chkGenDelete.TabIndex = 25;
             this.chkGenDelete.Text = "Generate Delete Method";
             this.chkGenDelete.UseVisualStyleBackColor = true;
@@ -494,7 +503,7 @@
             this.chkGenFastAdd.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenFastAdd.Location = new System.Drawing.Point(360, 57);
             this.chkGenFastAdd.Name = "chkGenFastAdd";
-            this.chkGenFastAdd.Size = new System.Drawing.Size(158, 21);
+            this.chkGenFastAdd.Size = new System.Drawing.Size(151, 17);
             this.chkGenFastAdd.TabIndex = 24;
             this.chkGenFastAdd.Text = "Generate FastAdd Method";
             this.chkGenFastAdd.UseVisualStyleBackColor = true;
@@ -506,7 +515,7 @@
             this.chkGenAdd.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenAdd.Location = new System.Drawing.Point(360, 42);
             this.chkGenAdd.Name = "chkGenAdd";
-            this.chkGenAdd.Size = new System.Drawing.Size(138, 21);
+            this.chkGenAdd.Size = new System.Drawing.Size(131, 17);
             this.chkGenAdd.TabIndex = 23;
             this.chkGenAdd.Text = "Generate Add Method";
             this.chkGenAdd.UseVisualStyleBackColor = true;
@@ -530,7 +539,8 @@
             // 
             // txtDerivedConnectionString
             // 
-            this.txtDerivedConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDerivedConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDerivedConnectionString.Location = new System.Drawing.Point(6, 137);
             this.txtDerivedConnectionString.Name = "txtDerivedConnectionString";
             this.txtDerivedConnectionString.Size = new System.Drawing.Size(657, 20);
@@ -551,7 +561,7 @@
             this.chkGenerateInsertStatements.AutoSize = true;
             this.chkGenerateInsertStatements.Location = new System.Drawing.Point(166, 91);
             this.chkGenerateInsertStatements.Name = "chkGenerateInsertStatements";
-            this.chkGenerateInsertStatements.Size = new System.Drawing.Size(162, 21);
+            this.chkGenerateInsertStatements.Size = new System.Drawing.Size(155, 17);
             this.chkGenerateInsertStatements.TabIndex = 18;
             this.chkGenerateInsertStatements.Text = "Generate Insert Statements";
             this.chkGenerateInsertStatements.UseVisualStyleBackColor = true;
@@ -563,7 +573,7 @@
             this.chkDOJAVASCRIPTUI.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkDOJAVASCRIPTUI.Location = new System.Drawing.Point(493, 6);
             this.chkDOJAVASCRIPTUI.Name = "chkDOJAVASCRIPTUI";
-            this.chkDOJAVASCRIPTUI.Size = new System.Drawing.Size(168, 21);
+            this.chkDOJAVASCRIPTUI.Size = new System.Drawing.Size(161, 17);
             this.chkDOJAVASCRIPTUI.TabIndex = 17;
             this.chkDOJAVASCRIPTUI.Text = "Use JQ UI controls w/HTML";
             this.chkDOJAVASCRIPTUI.UseVisualStyleBackColor = true;
@@ -575,7 +585,7 @@
             this.chkXAMLFromOrUserControl.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkXAMLFromOrUserControl.Location = new System.Drawing.Point(6, 91);
             this.chkXAMLFromOrUserControl.Name = "chkXAMLFromOrUserControl";
-            this.chkXAMLFromOrUserControl.Size = new System.Drawing.Size(161, 21);
+            this.chkXAMLFromOrUserControl.Size = new System.Drawing.Size(154, 17);
             this.chkXAMLFromOrUserControl.TabIndex = 16;
             this.chkXAMLFromOrUserControl.Text = "GenerateXAMLUserControl";
             this.chkXAMLFromOrUserControl.UseVisualStyleBackColor = true;
@@ -587,7 +597,7 @@
             this.chkPostProcessWSresultlist.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkPostProcessWSresultlist.Location = new System.Drawing.Point(85, 68);
             this.chkPostProcessWSresultlist.Name = "chkPostProcessWSresultlist";
-            this.chkPostProcessWSresultlist.Size = new System.Drawing.Size(275, 21);
+            this.chkPostProcessWSresultlist.Size = new System.Drawing.Size(268, 17);
             this.chkPostProcessWSresultlist.TabIndex = 15;
             this.chkPostProcessWSresultlist.Text = "Generate PostProcess Method On Web Service list";
             this.chkPostProcessWSresultlist.UseVisualStyleBackColor = true;
@@ -597,7 +607,7 @@
             this.chkINotifyCrap.AutoSize = true;
             this.chkINotifyCrap.Location = new System.Drawing.Point(6, 68);
             this.chkINotifyCrap.Name = "chkINotifyCrap";
-            this.chkINotifyCrap.Size = new System.Drawing.Size(80, 21);
+            this.chkINotifyCrap.Size = new System.Drawing.Size(73, 17);
             this.chkINotifyCrap.TabIndex = 14;
             this.chkINotifyCrap.Text = "Do INotify";
             this.chkINotifyCrap.UseVisualStyleBackColor = true;
@@ -607,7 +617,7 @@
             this.chkGenerateDeacivateOn.AutoSize = true;
             this.chkGenerateDeacivateOn.Location = new System.Drawing.Point(22, 44);
             this.chkGenerateDeacivateOn.Name = "chkGenerateDeacivateOn";
-            this.chkGenerateDeacivateOn.Size = new System.Drawing.Size(171, 21);
+            this.chkGenerateDeacivateOn.Size = new System.Drawing.Size(164, 17);
             this.chkGenerateDeacivateOn.TabIndex = 13;
             this.chkGenerateDeacivateOn.Text = "Generate Deactivate OnField";
             this.chkGenerateDeacivateOn.UseVisualStyleBackColor = true;
@@ -619,7 +629,7 @@
             this.chkGenerateWebMethods.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenerateWebMethods.Location = new System.Drawing.Point(6, 24);
             this.chkGenerateWebMethods.Name = "chkGenerateWebMethods";
-            this.chkGenerateWebMethods.Size = new System.Drawing.Size(147, 21);
+            this.chkGenerateWebMethods.Size = new System.Drawing.Size(140, 17);
             this.chkGenerateWebMethods.TabIndex = 12;
             this.chkGenerateWebMethods.Text = "Generate Web Methods";
             this.chkGenerateWebMethods.UseVisualStyleBackColor = true;
@@ -690,7 +700,9 @@
             // 
             this.dgrid.AllowUserToAddRows = false;
             this.dgrid.AllowUserToDeleteRows = false;
-            this.dgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid.Location = new System.Drawing.Point(7, 177);
             this.dgrid.Name = "dgrid";
@@ -748,8 +760,11 @@
             // 
             // sciBaseTableCode
             // 
-            this.sciBaseTableCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.sciBaseTableCode.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) | ScintillaNET.AutomaticFold.Change)));
+            this.sciBaseTableCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciBaseTableCode.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
             this.sciBaseTableCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciBaseTableCode.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciBaseTableCode.Location = new System.Drawing.Point(10, 32);
@@ -773,7 +788,7 @@
             this.chkBaseTableCodeFolding.AutoSize = true;
             this.chkBaseTableCodeFolding.Location = new System.Drawing.Point(103, 6);
             this.chkBaseTableCodeFolding.Name = "chkBaseTableCodeFolding";
-            this.chkBaseTableCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkBaseTableCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkBaseTableCodeFolding.TabIndex = 2;
             this.chkBaseTableCodeFolding.Text = "Show Code Folding";
             this.chkBaseTableCodeFolding.UseVisualStyleBackColor = true;
@@ -784,7 +799,7 @@
             this.chkBaseTableLineNumbers.AutoSize = true;
             this.chkBaseTableLineNumbers.Location = new System.Drawing.Point(6, 6);
             this.chkBaseTableLineNumbers.Name = "chkBaseTableLineNumbers";
-            this.chkBaseTableLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkBaseTableLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkBaseTableLineNumbers.TabIndex = 1;
             this.chkBaseTableLineNumbers.Text = "Line Numbers";
             this.chkBaseTableLineNumbers.UseVisualStyleBackColor = true;
@@ -805,7 +820,9 @@
             // 
             // sciBaseTableTSCode
             // 
-            this.sciBaseTableTSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciBaseTableTSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.sciBaseTableTSCode.BackColor = System.Drawing.Color.LightSteelBlue;
             this.sciBaseTableTSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciBaseTableTSCode.Location = new System.Drawing.Point(7, 30);
@@ -829,7 +846,7 @@
             this.chkBaseTableTSCodeFolding.AutoSize = true;
             this.chkBaseTableTSCodeFolding.Location = new System.Drawing.Point(104, 7);
             this.chkBaseTableTSCodeFolding.Name = "chkBaseTableTSCodeFolding";
-            this.chkBaseTableTSCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkBaseTableTSCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkBaseTableTSCodeFolding.TabIndex = 6;
             this.chkBaseTableTSCodeFolding.Text = "Show Code Folding";
             this.chkBaseTableTSCodeFolding.UseVisualStyleBackColor = true;
@@ -840,7 +857,7 @@
             this.chkBaseTableTSLineNumbers.AutoSize = true;
             this.chkBaseTableTSLineNumbers.Location = new System.Drawing.Point(7, 7);
             this.chkBaseTableTSLineNumbers.Name = "chkBaseTableTSLineNumbers";
-            this.chkBaseTableTSLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkBaseTableTSLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkBaseTableTSLineNumbers.TabIndex = 5;
             this.chkBaseTableTSLineNumbers.Text = "Line Numbers";
             this.chkBaseTableTSLineNumbers.UseVisualStyleBackColor = true;
@@ -861,7 +878,9 @@
             // 
             // scintillaWebMethodCode
             // 
-            this.scintillaWebMethodCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaWebMethodCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaWebMethodCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaWebMethodCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWebMethodCode.Location = new System.Drawing.Point(3, 29);
@@ -885,7 +904,7 @@
             this.chkWebMethodCodeFolding.AutoSize = true;
             this.chkWebMethodCodeFolding.Location = new System.Drawing.Point(105, 6);
             this.chkWebMethodCodeFolding.Name = "chkWebMethodCodeFolding";
-            this.chkWebMethodCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkWebMethodCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkWebMethodCodeFolding.TabIndex = 5;
             this.chkWebMethodCodeFolding.Text = "Show Code Folding";
             this.chkWebMethodCodeFolding.UseVisualStyleBackColor = true;
@@ -896,7 +915,7 @@
             this.chkWebMethodLineNumbers.AutoSize = true;
             this.chkWebMethodLineNumbers.Location = new System.Drawing.Point(8, 6);
             this.chkWebMethodLineNumbers.Name = "chkWebMethodLineNumbers";
-            this.chkWebMethodLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkWebMethodLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkWebMethodLineNumbers.TabIndex = 4;
             this.chkWebMethodLineNumbers.Text = "Line Numbers";
             this.chkWebMethodLineNumbers.UseVisualStyleBackColor = true;
@@ -917,7 +936,9 @@
             // 
             // scintillaWEBAPICode
             // 
-            this.scintillaWEBAPICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaWEBAPICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaWEBAPICode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaWEBAPICode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWEBAPICode.Location = new System.Drawing.Point(6, 30);
@@ -940,7 +961,7 @@
             this.chkCodeFoldWEBAPI.AutoSize = true;
             this.chkCodeFoldWEBAPI.Location = new System.Drawing.Point(103, 7);
             this.chkCodeFoldWEBAPI.Name = "chkCodeFoldWEBAPI";
-            this.chkCodeFoldWEBAPI.Size = new System.Drawing.Size(125, 21);
+            this.chkCodeFoldWEBAPI.Size = new System.Drawing.Size(118, 17);
             this.chkCodeFoldWEBAPI.TabIndex = 9;
             this.chkCodeFoldWEBAPI.Text = "Show Code Folding";
             this.chkCodeFoldWEBAPI.UseVisualStyleBackColor = true;
@@ -950,7 +971,7 @@
             this.chkLineNumsWEBAPI.AutoSize = true;
             this.chkLineNumsWEBAPI.Location = new System.Drawing.Point(6, 7);
             this.chkLineNumsWEBAPI.Name = "chkLineNumsWEBAPI";
-            this.chkLineNumsWEBAPI.Size = new System.Drawing.Size(98, 21);
+            this.chkLineNumsWEBAPI.Size = new System.Drawing.Size(91, 17);
             this.chkLineNumsWEBAPI.TabIndex = 8;
             this.chkLineNumsWEBAPI.Text = "Line Numbers";
             this.chkLineNumsWEBAPI.UseVisualStyleBackColor = true;
@@ -970,7 +991,9 @@
             // 
             // scintillaJSCode
             // 
-            this.scintillaJSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaJSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaJSCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaJSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaJSCode.Location = new System.Drawing.Point(5, 30);
@@ -993,7 +1016,7 @@
             this.chkJSCodeFolding.AutoSize = true;
             this.chkJSCodeFolding.Location = new System.Drawing.Point(107, 7);
             this.chkJSCodeFolding.Name = "chkJSCodeFolding";
-            this.chkJSCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkJSCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkJSCodeFolding.TabIndex = 9;
             this.chkJSCodeFolding.Text = "Show Code Folding";
             this.chkJSCodeFolding.UseVisualStyleBackColor = true;
@@ -1003,7 +1026,7 @@
             this.chkJSLineNumbers.AutoSize = true;
             this.chkJSLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkJSLineNumbers.Name = "chkJSLineNumbers";
-            this.chkJSLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkJSLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkJSLineNumbers.TabIndex = 8;
             this.chkJSLineNumbers.Text = "Line Numbers";
             this.chkJSLineNumbers.UseVisualStyleBackColor = true;
@@ -1023,7 +1046,9 @@
             // 
             // scintillaRestCode
             // 
-            this.scintillaRestCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaRestCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaRestCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaRestCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaRestCode.Location = new System.Drawing.Point(6, 28);
@@ -1047,7 +1072,7 @@
             this.chkRestCodeFolding.AutoSize = true;
             this.chkRestCodeFolding.Location = new System.Drawing.Point(107, 7);
             this.chkRestCodeFolding.Name = "chkRestCodeFolding";
-            this.chkRestCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkRestCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkRestCodeFolding.TabIndex = 9;
             this.chkRestCodeFolding.Text = "Show Code Folding";
             this.chkRestCodeFolding.UseVisualStyleBackColor = true;
@@ -1058,7 +1083,7 @@
             this.chkRestLineNumbers.AutoSize = true;
             this.chkRestLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkRestLineNumbers.Name = "chkRestLineNumbers";
-            this.chkRestLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkRestLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkRestLineNumbers.TabIndex = 8;
             this.chkRestLineNumbers.Text = "Line Numbers";
             this.chkRestLineNumbers.UseVisualStyleBackColor = true;
@@ -1091,7 +1116,9 @@
             // 
             // scintillaHTMLCode
             // 
-            this.scintillaHTMLCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaHTMLCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaHTMLCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaHTMLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaHTMLCode.Location = new System.Drawing.Point(3, 28);
@@ -1115,7 +1142,7 @@
             this.chkHTMLCodeFolding.AutoSize = true;
             this.chkHTMLCodeFolding.Location = new System.Drawing.Point(107, 7);
             this.chkHTMLCodeFolding.Name = "chkHTMLCodeFolding";
-            this.chkHTMLCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkHTMLCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkHTMLCodeFolding.TabIndex = 13;
             this.chkHTMLCodeFolding.Text = "Show Code Folding";
             this.chkHTMLCodeFolding.UseVisualStyleBackColor = true;
@@ -1126,7 +1153,7 @@
             this.chkHTMLLineNumbers.AutoSize = true;
             this.chkHTMLLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkHTMLLineNumbers.Name = "chkHTMLLineNumbers";
-            this.chkHTMLLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkHTMLLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkHTMLLineNumbers.TabIndex = 12;
             this.chkHTMLLineNumbers.Text = "Line Numbers";
             this.chkHTMLLineNumbers.UseVisualStyleBackColor = true;
@@ -1147,7 +1174,9 @@
             // 
             // scintillaCSSCode
             // 
-            this.scintillaCSSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaCSSCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaCSSCode.BackColor = System.Drawing.SystemColors.Info;
             this.scintillaCSSCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaCSSCode.Location = new System.Drawing.Point(5, 30);
@@ -1171,7 +1200,7 @@
             this.chkCSSCodeFolding.AutoSize = true;
             this.chkCSSCodeFolding.Location = new System.Drawing.Point(107, 7);
             this.chkCSSCodeFolding.Name = "chkCSSCodeFolding";
-            this.chkCSSCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkCSSCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkCSSCodeFolding.TabIndex = 17;
             this.chkCSSCodeFolding.Text = "Show Code Folding";
             this.chkCSSCodeFolding.UseVisualStyleBackColor = true;
@@ -1182,7 +1211,7 @@
             this.chkCSSLineNumbers.AutoSize = true;
             this.chkCSSLineNumbers.Location = new System.Drawing.Point(10, 7);
             this.chkCSSLineNumbers.Name = "chkCSSLineNumbers";
-            this.chkCSSLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkCSSLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkCSSLineNumbers.TabIndex = 16;
             this.chkCSSLineNumbers.Text = "Line Numbers";
             this.chkCSSLineNumbers.UseVisualStyleBackColor = true;
@@ -1203,7 +1232,9 @@
             // 
             // scintillaXAML
             // 
-            this.scintillaXAML.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaXAML.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaXAML.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaXAML.Location = new System.Drawing.Point(7, 30);
             this.scintillaXAML.Name = "scintillaXAML";
@@ -1226,7 +1257,7 @@
             this.chkXAMLCodeFoldingXaml.AutoSize = true;
             this.chkXAMLCodeFoldingXaml.Location = new System.Drawing.Point(104, 6);
             this.chkXAMLCodeFoldingXaml.Name = "chkXAMLCodeFoldingXaml";
-            this.chkXAMLCodeFoldingXaml.Size = new System.Drawing.Size(125, 21);
+            this.chkXAMLCodeFoldingXaml.Size = new System.Drawing.Size(118, 17);
             this.chkXAMLCodeFoldingXaml.TabIndex = 10;
             this.chkXAMLCodeFoldingXaml.Text = "Show Code Folding";
             this.chkXAMLCodeFoldingXaml.UseVisualStyleBackColor = true;
@@ -1237,7 +1268,7 @@
             this.chkLineNumbersXAML.AutoSize = true;
             this.chkLineNumbersXAML.Location = new System.Drawing.Point(7, 6);
             this.chkLineNumbersXAML.Name = "chkLineNumbersXAML";
-            this.chkLineNumbersXAML.Size = new System.Drawing.Size(98, 21);
+            this.chkLineNumbersXAML.Size = new System.Drawing.Size(91, 17);
             this.chkLineNumbersXAML.TabIndex = 9;
             this.chkLineNumbersXAML.Text = "Line Numbers";
             this.chkLineNumbersXAML.UseVisualStyleBackColor = true;
@@ -1270,7 +1301,9 @@
             // 
             // scintillaWFCode
             // 
-            this.scintillaWFCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaWFCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaWFCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaWFCode.Location = new System.Drawing.Point(6, 29);
             this.scintillaWFCode.Name = "scintillaWFCode";
@@ -1293,7 +1326,7 @@
             this.chkWFCodeFolding.AutoSize = true;
             this.chkWFCodeFolding.Location = new System.Drawing.Point(106, 8);
             this.chkWFCodeFolding.Name = "chkWFCodeFolding";
-            this.chkWFCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkWFCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkWFCodeFolding.TabIndex = 6;
             this.chkWFCodeFolding.Text = "Show Code Folding";
             this.chkWFCodeFolding.UseVisualStyleBackColor = true;
@@ -1304,7 +1337,7 @@
             this.chkWFLineNumbers.AutoSize = true;
             this.chkWFLineNumbers.Location = new System.Drawing.Point(9, 8);
             this.chkWFLineNumbers.Name = "chkWFLineNumbers";
-            this.chkWFLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkWFLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkWFLineNumbers.TabIndex = 5;
             this.chkWFLineNumbers.Text = "Line Numbers";
             this.chkWFLineNumbers.UseVisualStyleBackColor = true;
@@ -1325,7 +1358,9 @@
             // 
             // sciSQLCode
             // 
-            this.sciSQLCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciSQLCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.sciSQLCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciSQLCode.Location = new System.Drawing.Point(7, 30);
             this.sciSQLCode.Name = "sciSQLCode";
@@ -1348,7 +1383,7 @@
             this.chkSQLCodeFolding.AutoSize = true;
             this.chkSQLCodeFolding.Location = new System.Drawing.Point(104, 7);
             this.chkSQLCodeFolding.Name = "chkSQLCodeFolding";
-            this.chkSQLCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkSQLCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkSQLCodeFolding.TabIndex = 6;
             this.chkSQLCodeFolding.Text = "Show Code Folding";
             this.chkSQLCodeFolding.UseVisualStyleBackColor = true;
@@ -1359,7 +1394,7 @@
             this.chkSQLLineNumber.AutoSize = true;
             this.chkSQLLineNumber.Location = new System.Drawing.Point(7, 7);
             this.chkSQLLineNumber.Name = "chkSQLLineNumber";
-            this.chkSQLLineNumber.Size = new System.Drawing.Size(98, 21);
+            this.chkSQLLineNumber.Size = new System.Drawing.Size(91, 17);
             this.chkSQLLineNumber.TabIndex = 5;
             this.chkSQLLineNumber.Text = "Line Numbers";
             this.chkSQLLineNumber.UseVisualStyleBackColor = true;
@@ -1407,12 +1442,14 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(147, 60);
             this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Paste the desired long piece of text into the box on the right. Then click the ST" + "RINGIFY button below";
+            this.textBox1.Text = "Paste the desired long piece of text into the box on the right. Then click the ST" +
+    "RINGIFY button below";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtStringIfy
             // 
-            this.txtStringIfy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStringIfy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStringIfy.Location = new System.Drawing.Point(270, 9);
             this.txtStringIfy.Multiline = true;
             this.txtStringIfy.Name = "txtStringIfy";
@@ -1421,8 +1458,11 @@
             // 
             // sciStringify
             // 
-            this.sciStringify.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.sciStringify.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) | ScintillaNET.AutomaticFold.Change)));
+            this.sciStringify.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciStringify.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
             this.sciStringify.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciStringify.Lexer = ScintillaNET.Lexer.Cpp;
             this.sciStringify.Location = new System.Drawing.Point(6, 199);
@@ -1435,7 +1475,7 @@
             this.chkStringifyCodeFolding.AutoSize = true;
             this.chkStringifyCodeFolding.Location = new System.Drawing.Point(104, 183);
             this.chkStringifyCodeFolding.Name = "chkStringifyCodeFolding";
-            this.chkStringifyCodeFolding.Size = new System.Drawing.Size(125, 21);
+            this.chkStringifyCodeFolding.Size = new System.Drawing.Size(118, 17);
             this.chkStringifyCodeFolding.TabIndex = 6;
             this.chkStringifyCodeFolding.Text = "Show Code Folding";
             this.chkStringifyCodeFolding.UseVisualStyleBackColor = true;
@@ -1446,7 +1486,7 @@
             this.chkStringifyLineNumbers.AutoSize = true;
             this.chkStringifyLineNumbers.Location = new System.Drawing.Point(7, 183);
             this.chkStringifyLineNumbers.Name = "chkStringifyLineNumbers";
-            this.chkStringifyLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.chkStringifyLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.chkStringifyLineNumbers.TabIndex = 5;
             this.chkStringifyLineNumbers.Text = "Line Numbers";
             this.chkStringifyLineNumbers.UseVisualStyleBackColor = true;
@@ -1485,12 +1525,14 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(147, 60);
             this.textBox2.TabIndex = 15;
-            this.textBox2.Text = "Paste the UGLY SQL Code into the text box on the right and click Make It Pretty t" + "o format it in a more readable manner";
+            this.textBox2.Text = "Paste the UGLY SQL Code into the text box on the right and click Make It Pretty t" +
+    "o format it in a more readable manner";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCRAPPYSQLCODE
             // 
-            this.txtCRAPPYSQLCODE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCRAPPYSQLCODE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCRAPPYSQLCODE.Location = new System.Drawing.Point(227, 7);
             this.txtCRAPPYSQLCODE.Multiline = true;
             this.txtCRAPPYSQLCODE.Name = "txtCRAPPYSQLCODE";
@@ -1499,8 +1541,11 @@
             // 
             // SQLCODEPRETTY
             // 
-            this.SQLCODEPRETTY.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.SQLCODEPRETTY.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) | ScintillaNET.AutomaticFold.Change)));
+            this.SQLCODEPRETTY.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SQLCODEPRETTY.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
             this.SQLCODEPRETTY.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SQLCODEPRETTY.Lexer = ScintillaNET.Lexer.Sql;
             this.SQLCODEPRETTY.Location = new System.Drawing.Point(6, 198);
@@ -1513,7 +1558,7 @@
             this.chkSQLCODEPRETTYFOLDING.AutoSize = true;
             this.chkSQLCODEPRETTYFOLDING.Location = new System.Drawing.Point(103, 181);
             this.chkSQLCODEPRETTYFOLDING.Name = "chkSQLCODEPRETTYFOLDING";
-            this.chkSQLCODEPRETTYFOLDING.Size = new System.Drawing.Size(125, 21);
+            this.chkSQLCODEPRETTYFOLDING.Size = new System.Drawing.Size(118, 17);
             this.chkSQLCODEPRETTYFOLDING.TabIndex = 12;
             this.chkSQLCODEPRETTYFOLDING.Text = "Show Code Folding";
             this.chkSQLCODEPRETTYFOLDING.UseVisualStyleBackColor = true;
@@ -1523,7 +1568,7 @@
             this.chkSQLCODEPRETTYLINENUMBERS.AutoSize = true;
             this.chkSQLCODEPRETTYLINENUMBERS.Location = new System.Drawing.Point(6, 181);
             this.chkSQLCODEPRETTYLINENUMBERS.Name = "chkSQLCODEPRETTYLINENUMBERS";
-            this.chkSQLCODEPRETTYLINENUMBERS.Size = new System.Drawing.Size(98, 21);
+            this.chkSQLCODEPRETTYLINENUMBERS.Size = new System.Drawing.Size(91, 17);
             this.chkSQLCODEPRETTYLINENUMBERS.TabIndex = 11;
             this.chkSQLCODEPRETTYLINENUMBERS.Text = "Line Numbers";
             this.chkSQLCODEPRETTYLINENUMBERS.UseVisualStyleBackColor = true;
@@ -1560,12 +1605,14 @@
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(147, 60);
             this.textBox3.TabIndex = 19;
-            this.textBox3.Text = "Paste the UGLY BASE64 String into the text box on the right and click Do The Job " + "to format it in a more readable manner";
+            this.textBox3.Text = "Paste the UGLY BASE64 String into the text box on the right and click Do The Job " +
+    "to format it in a more readable manner";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtBase64
             // 
-            this.txtBase64.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBase64.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBase64.Location = new System.Drawing.Point(227, 7);
             this.txtBase64.Multiline = true;
             this.txtBase64.Name = "txtBase64";
@@ -1574,8 +1621,11 @@
             // 
             // SCINTILLABASE64
             // 
-            this.SCINTILLABASE64.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.SCINTILLABASE64.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) | ScintillaNET.AutomaticFold.Change)));
+            this.SCINTILLABASE64.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SCINTILLABASE64.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
             this.SCINTILLABASE64.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SCINTILLABASE64.Lexer = ScintillaNET.Lexer.Cpp;
             this.SCINTILLABASE64.Location = new System.Drawing.Point(6, 198);
@@ -1663,7 +1713,9 @@
             // 
             // scintillaMMakerCode
             // 
-            this.scintillaMMakerCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintillaMMakerCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scintillaMMakerCode.BackColor = System.Drawing.Color.LightSteelBlue;
             this.scintillaMMakerCode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scintillaMMakerCode.Location = new System.Drawing.Point(7, 165);
@@ -1676,7 +1728,7 @@
             this.cbMMakerCodeFold.AutoSize = true;
             this.cbMMakerCodeFold.Location = new System.Drawing.Point(105, 145);
             this.cbMMakerCodeFold.Name = "cbMMakerCodeFold";
-            this.cbMMakerCodeFold.Size = new System.Drawing.Size(125, 21);
+            this.cbMMakerCodeFold.Size = new System.Drawing.Size(118, 17);
             this.cbMMakerCodeFold.TabIndex = 10;
             this.cbMMakerCodeFold.Text = "Show Code Folding";
             this.cbMMakerCodeFold.UseVisualStyleBackColor = true;
@@ -1686,7 +1738,7 @@
             this.cbMMakerLineNumbers.AutoSize = true;
             this.cbMMakerLineNumbers.Location = new System.Drawing.Point(8, 145);
             this.cbMMakerLineNumbers.Name = "cbMMakerLineNumbers";
-            this.cbMMakerLineNumbers.Size = new System.Drawing.Size(98, 21);
+            this.cbMMakerLineNumbers.Size = new System.Drawing.Size(91, 17);
             this.cbMMakerLineNumbers.TabIndex = 9;
             this.cbMMakerLineNumbers.Text = "Line Numbers";
             this.cbMMakerLineNumbers.UseVisualStyleBackColor = true;
@@ -1701,6 +1753,11 @@
             this.tabPage17.Controls.Add(this.chkLineNumbersAI);
             this.tabPage17.Controls.Add(this.lblworking);
             this.tabPage17.Controls.Add(this.btnMakeBaseJava);
+            this.tabPage17.Controls.Add(this.txtScanPort);
+            this.tabPage17.Controls.Add(this.btnScanSubnet);
+            this.tabPage17.Controls.Add(this.btnUnloadModel);
+            this.tabPage17.Controls.Add(this.btnLoadModel);
+            this.tabPage17.Controls.Add(this.cboModels);
             this.tabPage17.Controls.Add(this.txtLMSTUDIOAddress);
             this.tabPage17.Controls.Add(this.btnConnectLMStudio);
             this.tabPage17.Controls.Add(this.sciAICode);
@@ -1713,7 +1770,7 @@
             // 
             // btnMakeRestfulAPI
             // 
-            this.btnMakeRestfulAPI.Location = new System.Drawing.Point(300, 39);
+            this.btnMakeRestfulAPI.Location = new System.Drawing.Point(300, 78);
             this.btnMakeRestfulAPI.Name = "btnMakeRestfulAPI";
             this.btnMakeRestfulAPI.Size = new System.Drawing.Size(140, 23);
             this.btnMakeRestfulAPI.TabIndex = 13;
@@ -1723,7 +1780,7 @@
             // 
             // btnMakeBasePython
             // 
-            this.btnMakeBasePython.Location = new System.Drawing.Point(154, 39);
+            this.btnMakeBasePython.Location = new System.Drawing.Point(154, 78);
             this.btnMakeBasePython.Name = "btnMakeBasePython";
             this.btnMakeBasePython.Size = new System.Drawing.Size(140, 23);
             this.btnMakeBasePython.TabIndex = 12;
@@ -1736,9 +1793,9 @@
             this.chkCodeFoldingAI.AutoSize = true;
             this.chkCodeFoldingAI.Checked = true;
             this.chkCodeFoldingAI.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkCodeFoldingAI.Location = new System.Drawing.Point(9, 90);
+            this.chkCodeFoldingAI.Location = new System.Drawing.Point(9, 129);
             this.chkCodeFoldingAI.Name = "chkCodeFoldingAI";
-            this.chkCodeFoldingAI.Size = new System.Drawing.Size(125, 21);
+            this.chkCodeFoldingAI.Size = new System.Drawing.Size(118, 17);
             this.chkCodeFoldingAI.TabIndex = 11;
             this.chkCodeFoldingAI.Text = "Show Code Folding";
             this.chkCodeFoldingAI.UseVisualStyleBackColor = true;
@@ -1747,9 +1804,9 @@
             // chkLineNumbersAI
             // 
             this.chkLineNumbersAI.AutoSize = true;
-            this.chkLineNumbersAI.Location = new System.Drawing.Point(9, 67);
+            this.chkLineNumbersAI.Location = new System.Drawing.Point(9, 106);
             this.chkLineNumbersAI.Name = "chkLineNumbersAI";
-            this.chkLineNumbersAI.Size = new System.Drawing.Size(98, 21);
+            this.chkLineNumbersAI.Size = new System.Drawing.Size(91, 17);
             this.chkLineNumbersAI.TabIndex = 10;
             this.chkLineNumbersAI.Text = "Line Numbers";
             this.chkLineNumbersAI.UseVisualStyleBackColor = true;
@@ -1761,14 +1818,14 @@
             this.lblworking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblworking.Location = new System.Drawing.Point(437, 13);
             this.lblworking.Name = "lblworking";
-            this.lblworking.Size = new System.Drawing.Size(627, 29);
+            this.lblworking.Size = new System.Drawing.Size(438, 20);
             this.lblworking.TabIndex = 9;
             this.lblworking.Text = "One moment talking to the AI layer this may take a bit";
             this.lblworking.Visible = false;
             // 
             // btnMakeBaseJava
             // 
-            this.btnMakeBaseJava.Location = new System.Drawing.Point(8, 37);
+            this.btnMakeBaseJava.Location = new System.Drawing.Point(8, 76);
             this.btnMakeBaseJava.Name = "btnMakeBaseJava";
             this.btnMakeBaseJava.Size = new System.Drawing.Size(140, 23);
             this.btnMakeBaseJava.TabIndex = 8;
@@ -1776,6 +1833,52 @@
             this.btnMakeBaseJava.UseVisualStyleBackColor = true;
             this.btnMakeBaseJava.Click += new System.EventHandler(this.btnMakeBaseJava_Click);
             // 
+            // txtScanPort
+            // 
+            this.txtScanPort.Location = new System.Drawing.Point(154, 37);
+            this.txtScanPort.Name = "txtScanPort";
+            this.txtScanPort.Size = new System.Drawing.Size(50, 20);
+            this.txtScanPort.TabIndex = 15;
+            this.txtScanPort.Text = "1234";
+            // 
+            // btnScanSubnet
+            // 
+            this.btnScanSubnet.Location = new System.Drawing.Point(210, 33);
+            this.btnScanSubnet.Name = "btnScanSubnet";
+            this.btnScanSubnet.Size = new System.Drawing.Size(140, 23);
+            this.btnScanSubnet.TabIndex = 14;
+            this.btnScanSubnet.Text = "Scan for LMStudio";
+            this.btnScanSubnet.UseVisualStyleBackColor = true;
+            this.btnScanSubnet.Click += new System.EventHandler(this.btnScanSubnet_Click);
+            //
+            // cboModels
+            //
+            this.cboModels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboModels.Location = new System.Drawing.Point(356, 35);
+            this.cboModels.Name = "cboModels";
+            this.cboModels.Size = new System.Drawing.Size(350, 21);
+            this.cboModels.TabIndex = 16;
+            //
+            // btnLoadModel
+            //
+            this.btnLoadModel.Location = new System.Drawing.Point(712, 33);
+            this.btnLoadModel.Name = "btnLoadModel";
+            this.btnLoadModel.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadModel.TabIndex = 17;
+            this.btnLoadModel.Text = "Load";
+            this.btnLoadModel.UseVisualStyleBackColor = true;
+            this.btnLoadModel.Enabled = false;
+            //
+            // btnUnloadModel
+            //
+            this.btnUnloadModel.Location = new System.Drawing.Point(793, 33);
+            this.btnUnloadModel.Name = "btnUnloadModel";
+            this.btnUnloadModel.Size = new System.Drawing.Size(75, 23);
+            this.btnUnloadModel.TabIndex = 18;
+            this.btnUnloadModel.Text = "Unload";
+            this.btnUnloadModel.UseVisualStyleBackColor = true;
+            this.btnUnloadModel.Enabled = false;
+            //
             // txtLMSTUDIOAddress
             // 
             this.txtLMSTUDIOAddress.Location = new System.Drawing.Point(154, 10);
@@ -1796,13 +1899,16 @@
             // 
             // sciAICode
             // 
-            this.sciAICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.sciAICode.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) | ScintillaNET.AutomaticFold.Change)));
+            this.sciAICode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sciAICode.AutomaticFold = ((ScintillaNET.AutomaticFold)(((ScintillaNET.AutomaticFold.Show | ScintillaNET.AutomaticFold.Click) 
+            | ScintillaNET.AutomaticFold.Change)));
             this.sciAICode.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sciAICode.Lexer = ScintillaNET.Lexer.Cpp;
-            this.sciAICode.Location = new System.Drawing.Point(132, 68);
+            this.sciAICode.Location = new System.Drawing.Point(132, 106);
             this.sciAICode.Name = "sciAICode";
-            this.sciAICode.Size = new System.Drawing.Size(980, 448);
+            this.sciAICode.Size = new System.Drawing.Size(980, 407);
             this.sciAICode.TabIndex = 5;
             // 
             // backgroundworkerThread
@@ -1858,6 +1964,7 @@
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -2013,6 +2120,11 @@
         private System.Windows.Forms.CheckBox chkLineNumbersAI;
         private System.Windows.Forms.Button btnMakeBasePython;
         private System.Windows.Forms.Button btnMakeRestfulAPI;
+        private System.Windows.Forms.Button btnScanSubnet;
+        private System.Windows.Forms.TextBox txtScanPort;
+        private System.Windows.Forms.ComboBox cboModels;
+        private System.Windows.Forms.Button btnLoadModel;
+        private System.Windows.Forms.Button btnUnloadModel;
     }
 }
 

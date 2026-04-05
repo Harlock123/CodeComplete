@@ -156,6 +156,7 @@
       <DependentUpon>frmTblLookupUI.cs</DependentUpon>
     </Compile>
     <Compile Include="LMStudioClient.cs" />
+    <Compile Include="NetworkScanner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SourceFormat.cs" />

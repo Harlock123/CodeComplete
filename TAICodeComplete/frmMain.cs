@@ -6423,10 +6423,285 @@ namespace TAICodeComplete
             }
         }
 
-        private void btnConnectLMStudio_Click(object sender, EventArgs e)
+        private async void btnConnectLMStudio_Click(object sender, EventArgs e)
         {
             _lmStudioClient = new LMStudioClient(txtLMSTUDIOAddress.Text);
+            await LoadModelsAsync();
+        }
 
+        private async System.Threading.Tasks.Task LoadModelsAsync()
+        {
+            // Remember what was selected so we can re-select it after refresh
+            string previousKey = null;
+            var previousSelection = cboModels.SelectedItem as LMStudioClient.ModelInfo;
+            if (previousSelection != null)
+                previousKey = previousSelection.Key;
+
+            cboModels.Items.Clear();
+            cboModels.Text = "";
+
+            if (_lmStudioClient == null)
+                return;
+
+            try
+            {
+                lblworking.Text = "Loading models...";
+                lblworking.Visible = true;
+                Application.DoEvents();
+
+                var models = await _lmStudioClient.ListModelsAsync();
+
+                lblworking.Visible = false;
+                lblworking.Text = "One moment talking to the AI layer this may take a bit";
+
+                if (models != null && models.Count > 0)
+                {
+                    int selectIndex = 0;
+                    for (int i = 0; i < models.Count; i++)
+                    {
+                        cboModels.Items.Add(models[i]);
+                        // Re-select the previously selected model
+                        if (previousKey != null && models[i].Key == previousKey)
+                            selectIndex = i;
+                    }
+                    cboModels.SelectedIndex = selectIndex;
+                }
+                else
+                {
+                    MessageBox.Show("Connected but no models were found on the server.",
+                        "No Models", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                lblworking.Visible = false;
+                lblworking.Text = "One moment talking to the AI layer this may take a bit";
+                MessageBox.Show($"Failed to retrieve models: {ex.Message}",
+                    "Model List Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private string GetSelectedModel()
+        {
+            var selected = cboModels.SelectedItem as LMStudioClient.ModelInfo;
+            return selected?.Key;
+        }
+
+        private async void btnLoadModel_Click(object sender, EventArgs e)
+        {
+            var selected = cboModels.SelectedItem as LMStudioClient.ModelInfo;
+            if (selected == null)
+            {
+                MessageBox.Show("Please select a model from the dropdown first.",
+                    "No Model Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (_lmStudioClient == null)
+            {
+                MessageBox.Show("Please connect to an LMStudio server first.",
+                    "Not Connected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (selected.IsLoaded)
+            {
+                var result = MessageBox.Show(
+                    $"{selected.DisplayName} appears to be already loaded.\nLoad it again anyway?",
+                    "Already Loaded", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result != DialogResult.Yes)
+                    return;
+            }
+
+            btnLoadModel.Enabled = false;
+            btnUnloadModel.Enabled = false;
+            lblworking.Text = $"Loading {selected.DisplayName}... this may take a moment";
+            lblworking.Visible = true;
+            Cursor = Cursors.WaitCursor;
+            Application.DoEvents();
+
+            try
+            {
+                var loadResponse = await _lmStudioClient.LoadModelAsync(selected.Key, selected.Publisher);
+                lblworking.Visible = false;
+                lblworking.Text = "One moment talking to the AI layer this may take a bit";
+                MessageBox.Show($"{selected.DisplayName} loaded successfully.\n\nServer response: {loadResponse}",
+                    "Model Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refresh the model list to update loaded status
+                await LoadModelsAsync();
+            }
+            catch (Exception ex)
+            {
+                lblworking.Visible = false;
+                lblworking.Text = "One moment talking to the AI layer this may take a bit";
+                MessageBox.Show($"Failed to load model: {ex.Message}",
+                    "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                btnLoadModel.Enabled = true;
+                btnUnloadModel.Enabled = true;
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private async void btnUnloadModel_Click(object sender, EventArgs e)
+        {
+            var selected = cboModels.SelectedItem as LMStudioClient.ModelInfo;
+            if (selected == null)
+            {
+                MessageBox.Show("Please select a model from the dropdown first.",
+                    "No Model Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (_lmStudioClient == null)
+            {
+                MessageBox.Show("Please connect to an LMStudio server first.",
+                    "Not Connected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string loadedWarning = selected.IsLoaded ? "" : "\n\n(Note: this model does not appear loaded — attempt unload anyway?)";
+            var confirm = MessageBox.Show(
+                $"Unload {selected.DisplayName}?\nThis will free the memory used by this model.{loadedWarning}",
+                "Confirm Unload", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
+            btnLoadModel.Enabled = false;
+            btnUnloadModel.Enabled = false;
+            lblworking.Text = $"Unloading {selected.DisplayName}...";
+            lblworking.Visible = true;
+            Cursor = Cursors.WaitCursor;
+            Application.DoEvents();
+
+            try
+            {
+                var unloadResponse = await _lmStudioClient.UnloadModelAsync(selected.Key, selected.Publisher);
+                lblworking.Visible = false;
+                lblworking.Text = "One moment talking to the AI layer this may take a bit";
+                MessageBox.Show($"{selected.DisplayName} unloaded successfully.\n\nServer response: {unloadResponse}",
+                    "Model Unloaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refresh the model list to update loaded status
+                await LoadModelsAsync();
+            }
+            catch (Exception ex)
+            {
+                lblworking.Visible = false;
+                lblworking.Text = "One moment talking to the AI layer this may take a bit";
+                MessageBox.Show($"Failed to unload model: {ex.Message}",
+                    "Unload Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                btnLoadModel.Enabled = true;
+                btnUnloadModel.Enabled = true;
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private async void btnScanSubnet_Click(object sender, EventArgs e)
+        {
+            int port;
+            if (!int.TryParse(txtScanPort.Text, out port) || port < 1 || port > 65535)
+            {
+                MessageBox.Show("Please enter a valid port number (1-65535).", "Invalid Port",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            btnScanSubnet.Enabled = false;
+            btnScanSubnet.Text = "Scanning...";
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                var progress = new Progress<string>(msg =>
+                {
+                    // Update the working label with scan progress
+                    lblworking.Text = msg;
+                    lblworking.Visible = true;
+                    Application.DoEvents();
+                });
+
+                var servers = await NetworkScanner.ScanForLMStudioServersAsync(port, progress);
+
+                lblworking.Visible = false;
+                lblworking.Text = "One moment talking to the AI layer this may take a bit";
+
+                if (servers.Count == 0)
+                {
+                    MessageBox.Show($"No LMStudio servers found on port {port}.",
+                        "Scan Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (servers.Count == 1)
+                {
+                    // Single server found — auto-populate and connect
+                    txtLMSTUDIOAddress.Text = servers[0].Url;
+                    _lmStudioClient = new LMStudioClient(txtLMSTUDIOAddress.Text);
+                    await LoadModelsAsync();
+                    MessageBox.Show($"Found LMStudio server at {servers[0].DisplayText}\nConnected automatically.",
+                        "Scan Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Multiple servers — let the user pick
+                    using (var picker = new Form())
+                    {
+                        picker.Text = "Select LMStudio Server";
+                        picker.Size = new System.Drawing.Size(420, 300);
+                        picker.StartPosition = FormStartPosition.CenterParent;
+                        picker.FormBorderStyle = FormBorderStyle.FixedDialog;
+                        picker.MaximizeBox = false;
+                        picker.MinimizeBox = false;
+
+                        var listBox = new ListBox();
+                        listBox.Dock = DockStyle.Fill;
+                        listBox.Font = new System.Drawing.Font("Consolas", 10);
+                        foreach (var server in servers)
+                        {
+                            listBox.Items.Add(server);
+                        }
+                        listBox.SelectedIndex = 0;
+
+                        var btnSelect = new Button();
+                        btnSelect.Text = "Connect";
+                        btnSelect.Dock = DockStyle.Bottom;
+                        btnSelect.Height = 35;
+                        btnSelect.DialogResult = DialogResult.OK;
+
+                        picker.Controls.Add(listBox);
+                        picker.Controls.Add(btnSelect);
+                        picker.AcceptButton = btnSelect;
+
+                        listBox.DoubleClick += (s, args) => { picker.DialogResult = DialogResult.OK; picker.Close(); };
+
+                        if (picker.ShowDialog(this) == DialogResult.OK && listBox.SelectedItem != null)
+                        {
+                            var selected = (NetworkScanner.DiscoveredServer)listBox.SelectedItem;
+                            txtLMSTUDIOAddress.Text = selected.Url;
+                            _lmStudioClient = new LMStudioClient(txtLMSTUDIOAddress.Text);
+                            await LoadModelsAsync();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblworking.Visible = false;
+                MessageBox.Show($"Error during scan: {ex.Message}", "Scan Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                btnScanSubnet.Enabled = true;
+                btnScanSubnet.Text = "Scan for LMStudio";
+                Cursor = Cursors.Default;
+            }
         }
 
         private async void btnMakeBaseJava_Click(object sender, EventArgs e)
@@ -6436,14 +6711,15 @@ namespace TAICodeComplete
                 "specific database table using C# and standard microsoft .net libraries " +
                 "like SQLDATACLIENT and what not. I want to create a JAVA version of " +
                 "this same class employing JAVA standards libraries. Do full implementation of " +
-                "the ADD/UPDATE/COPYFIELDS methods. Create the Java class a fully as possible ..." + "\n\n" +
+                "the ADD/UPDATE/COPYFIELDS methods. BY FULL implementation I mean a LINE by LINE recreation of the source C# code " +
+                " into JAVA. Do not shortcut the result by saying something like ... Implement Rest of the content. Create the Java class a fully as possible ..." + "\n\n" +
                 sciBaseTableCode.Text + "\n\n";
 
             lblworking.Visible = true;
 
             Application.DoEvents();
             
-            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt);
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel());
 
             lblworking.Visible = false;
 
@@ -6497,14 +6773,15 @@ namespace TAICodeComplete
                 "specific database table using C# and standard microsoft .net libraries " +
                 "like SQLDATACLIENT and what not. I want to create a PYTHON version of " +
                 "this same class employing PYTHON standards libraries. Do full implementation of " +
-                "the ADD/UPDATE/COPYFIELDS methods. Create the PYTHON class a fully as possible ..." + "\n\n" +
+                "the ADD/UPDATE/COPYFIELDS methods BY FULL implementation I mean a LINE by LINE recreation of the source C# code " +
+                " into Python. Do not shortcut the result by saying something like ... Implement Rest of the content.. Create the PYTHON class a fully as possible ..." + "\n\n" +
                 sciBaseTableCode.Text + "\n\n";
 
             lblworking.Visible = true;
 
             Application.DoEvents();
 
-            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt);
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel());
 
             lblworking.Visible = false;
 
@@ -6520,14 +6797,15 @@ namespace TAICodeComplete
                 "like SQLDATACLIENT and what not. I want to create a .NET RESTFUL API version of " +
                 "this same class as a series of API endpoints employing .NET 8.0 standards libraries running on a IIS webserver at " +
                 "https://WHATEVERADDRESS.COM/API/V1. Do full implementation of " +
-                "the ADD/UPDATE/READ/DELETE/COPYFIELDS methods. Create the API endpoints a fully as possible ..." + "\n\n" +
+                "the ADD/UPDATE/READ/DELETE/COPYFIELDS methods. BY FULL implementation I mean a LINE by LINE recreation of the source C# code " +
+                " into C# endpoint. Do not shortcut the result by saying something like ... Implement Rest of the content. Create the API endpoints a fully as possible ..." + "\n\n" +
                 sciBaseTableCode.Text + "\n\n";
 
             lblworking.Visible = true;
 
             Application.DoEvents();
 
-            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt);
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel());
 
             lblworking.Visible = false;
 
