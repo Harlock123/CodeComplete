@@ -176,6 +176,8 @@
             this.btnUnloadModel = new System.Windows.Forms.Button();
             this.btnLoadModel = new System.Windows.Forms.Button();
             this.cboModels = new System.Windows.Forms.ComboBox();
+            this.lblTimeout = new System.Windows.Forms.Label();
+            this.txtTimeoutMinutes = new System.Windows.Forms.TextBox();
             this.txtLMSTUDIOAddress = new System.Windows.Forms.TextBox();
             this.btnConnectLMStudio = new System.Windows.Forms.Button();
             this.sciAICode = new ScintillaNET.Scintilla();
@@ -1768,6 +1770,8 @@
             this.tabPage17.Controls.Add(this.btnMakeBaseJava);
             this.tabPage17.Controls.Add(this.txtScanPort);
             this.tabPage17.Controls.Add(this.btnScanSubnet);
+            this.tabPage17.Controls.Add(this.txtTimeoutMinutes);
+            this.tabPage17.Controls.Add(this.lblTimeout);
             this.tabPage17.Controls.Add(this.btnUnloadModel);
             this.tabPage17.Controls.Add(this.btnLoadModel);
             this.tabPage17.Controls.Add(this.cboModels);
@@ -1873,7 +1877,25 @@
             this.btnUnloadModel.TabIndex = 18;
             this.btnUnloadModel.Text = "Unload";
             this.btnUnloadModel.UseVisualStyleBackColor = true;
-            // 
+            //
+            // lblTimeout
+            //
+            this.lblTimeout.AutoSize = true;
+            this.lblTimeout.Location = new System.Drawing.Point(878, 39);
+            this.lblTimeout.Name = "lblTimeout";
+            this.lblTimeout.Size = new System.Drawing.Size(75, 13);
+            this.lblTimeout.TabIndex = 19;
+            this.lblTimeout.Text = "Timeout (min):";
+            //
+            // txtTimeoutMinutes
+            //
+            this.txtTimeoutMinutes.Location = new System.Drawing.Point(956, 36);
+            this.txtTimeoutMinutes.Name = "txtTimeoutMinutes";
+            this.txtTimeoutMinutes.Size = new System.Drawing.Size(40, 20);
+            this.txtTimeoutMinutes.TabIndex = 20;
+            this.txtTimeoutMinutes.Text = "10";
+            this.txtTimeoutMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            //
             // btnLoadModel
             // 
             this.btnLoadModel.Enabled = false;
@@ -2139,6 +2161,8 @@
         private System.Windows.Forms.ComboBox cboModels;
         private System.Windows.Forms.Button btnLoadModel;
         private System.Windows.Forms.Button btnUnloadModel;
+        private System.Windows.Forms.Label lblTimeout;
+        private System.Windows.Forms.TextBox txtTimeoutMinutes;
     }
 }
 

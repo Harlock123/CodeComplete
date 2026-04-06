@@ -286,10 +286,10 @@ namespace TAICodeComplete
                 string.Join("\n", attempts));
         }
 
-        public async Task<string> GetCSharpCodeAsync(string prompt, string model = null)
+        public async Task<string> GetCSharpCodeAsync(string prompt, string model = null, int timeoutMinutes = 10)
         {
             var request = new RestRequest("/v1/chat/completions", Method.Post);
-            request.Timeout = TimeSpan.FromMinutes(10); // LLM inference can take several minutes
+            request.Timeout = TimeSpan.FromMinutes(timeoutMinutes);
 
             var chatRequest = new ChatRequest
             {

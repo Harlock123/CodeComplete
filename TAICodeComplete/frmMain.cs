@@ -6555,6 +6555,14 @@ namespace TAICodeComplete
             return selected?.Key;
         }
 
+        private int GetTimeoutMinutes()
+        {
+            int minutes;
+            if (int.TryParse(txtTimeoutMinutes.Text, out minutes) && minutes > 0)
+                return minutes;
+            return 10;
+        }
+
         private async void btnLoadModel_Click(object sender, EventArgs e)
         {
             var selected = cboModels.SelectedItem as LMStudioClient.ModelInfo;
@@ -6780,14 +6788,15 @@ namespace TAICodeComplete
                 "like SQLDATACLIENT and what not. I want to create a JAVA version of " +
                 "this same class employing JAVA standards libraries. Do full implementation of " +
                 "the ADD/UPDATE/COPYFIELDS methods. BY FULL implementation I mean a LINE by LINE recreation of the source C# code " +
-                " into JAVA. Do not shortcut the result by saying something like ... Implement Rest of the content. Create the Java class a fully as possible ..." + "\n\n" +
+                " into JAVA. Do not shortcut the result by saying something like ... // Repeat for all other fields...  " +
+                "Implement all of the source code as JAVA." + "\n\n" +
                 sciBaseTableCode.Text + "\n\n";
 
             lblworking.Visible = true;
 
             Application.DoEvents();
             
-            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel());
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel(), GetTimeoutMinutes());
 
             lblworking.Visible = false;
 
@@ -6849,7 +6858,7 @@ namespace TAICodeComplete
 
             Application.DoEvents();
 
-            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel());
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel(), GetTimeoutMinutes());
 
             lblworking.Visible = false;
 
@@ -6873,7 +6882,7 @@ namespace TAICodeComplete
 
             Application.DoEvents();
 
-            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel());
+            string generatedCode = await _lmStudioClient.GetCSharpCodeAsync(prompt, GetSelectedModel(), GetTimeoutMinutes());
 
             lblworking.Visible = false;
 
