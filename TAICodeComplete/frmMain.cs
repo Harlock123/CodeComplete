@@ -6850,8 +6850,9 @@ namespace TAICodeComplete
                 "specific database table using C# and standard microsoft .net libraries " +
                 "like SQLDATACLIENT and what not. I want to create a PYTHON version of " +
                 "this same class employing PYTHON standards libraries. Do full implementation of " +
-                "the ADD/UPDATE/COPYFIELDS methods BY FULL implementation I mean a LINE by LINE recreation of the source C# code " +
-                " into Python. Do not shortcut the result by saying something like ... Implement Rest of the content.. Create the PYTHON class a fully as possible ..." + "\n\n" +
+                "the ADD/UPDATE/COPYFIELDS methods. BY FULL implementation I mean a LINE by LINE recreation of the source C# code " +
+                " into PYTHON. Do not shortcut the result by saying something like ... // Repeat for all other fields...  " +
+                "Implement all of the source code as PYTHON." + "\n\n" +
                 sciBaseTableCode.Text + "\n\n";
 
             lblworking.Visible = true;
@@ -6875,7 +6876,7 @@ namespace TAICodeComplete
                 "this same class as a series of API endpoints employing .NET 8.0 standards libraries running on a IIS webserver at " +
                 "https://WHATEVERADDRESS.COM/API/V1. Do full implementation of " +
                 "the ADD/UPDATE/READ/DELETE/COPYFIELDS methods. BY FULL implementation I mean a LINE by LINE recreation of the source C# code " +
-                " into C# endpoint. Do not shortcut the result by saying something like ... Implement Rest of the content. Create the API endpoints a fully as possible ..." + "\n\n" +
+                " into C# endpoint. Do not shortcut the result by saying something like ... // Repeat for all other fields.... Create the API endpoints a fully as possible ..." + "\n\n" +
                 sciBaseTableCode.Text + "\n\n";
 
             lblworking.Visible = true;
